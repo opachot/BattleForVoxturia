@@ -1,0 +1,50 @@
+Lvl: 1
+-Poing Dimentionel (degats)
+-Fuite (deplacement)
+-Invocation de Portails (placement)
+-Portail Protecteur (boost/protection)
+
+Lvl: 4
+-Cinétose (degats)
+
+Lvl: 7
+-Eye de Lynx (boost)
+
+Lvl: 10
+-Propulseur (deplacement/placement)
+
+Lvl: 17
+-Portail Venteux (placement)
+
+Lvl: 24
+-Energie Dimentionel (degats)
+
+Lvl: 31
+-Energie de Portail (degats)
+
+Lvl: 38
+-Invertion (placement/deplacement)
+
+Lvl: 45
+-Aspiration Vortex (placement)
+
+Lvl: 52
+-Maraton (deplacement)
+
+Lvl: 59
+-Surcharge (degats)
+
+Lvl: 66
+-Course Dimentionel (deplacement)
+
+Lvl: 73
+-Vortex Spaciale (degats)
+
+Lvl: 80
+-Portail Temporel (boost)
+
+Lvl: 90
+-Plastron Dimentionel (malus)
+
+Lvl: 100
+-Portail Dimentionel (protection/invisibiliter)

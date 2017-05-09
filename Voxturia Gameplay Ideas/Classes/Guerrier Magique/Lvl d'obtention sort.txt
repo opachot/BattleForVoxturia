@@ -1,0 +1,50 @@
+Lvl: 1
+-Charge Magique (Sort de base: cumulle point d'action secondair)
+-Boule Magique (degats magie)
+-Coup Ensanglanter (degats physic)
+-Salto Arriere (deplacement)
+
+Lvl: 4
+-Connaisanse du Feu (boost)
+
+Lvl: 7
+-Connaisanse de la Glace (boost)
+
+Lvl: 10
+-Charge (deplacement/degats physic)
+
+Lvl: 17
+-Absorbtion Magique (boost)
+
+Lvl: 24
+-Attaque Sauvage (degats physic)
+
+Lvl: 31
+-Slash (degats physic)
+
+Lvl: 38
+-Bouclier Magique (protection)
+
+Lvl: 45
+-Decuplement Magique (boost)
+
+Lvl: 52
+-Coup Final (degats physic)
+
+Lvl: 59
+-Evasion (protection)
+
+Lvl: 66
+-Coup Bas (degats physic/entrave)
+
+Lvl: 73
+-Furie (boost/protection)
+
+Lvl: 80
+-Explosion d'Energie (degats physic et magique)
+
+Lvl: 90
+-Art de l'Ambidextrie (deplacement/degats physic et magique)
+
+Lvl: 100
+-Orage de Magie (degats magie)

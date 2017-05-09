@@ -1,0 +1,50 @@
+Lvl: 1
+-Coup de Bouclier (degats)
+-Orbe de Protection (protection)
+-Renforcement d'Armure (protection)
+-Demi-Tonne (Entrave)
+
+Lvl: 4
+-Retour de Flamme (degats/protection)
+
+Lvl: 7
+-Invocation Gardna (invok)
+
+Lvl: 10
+-Charge Offansive (deplacement/degats)
+
+Lvl: 17
+-Time-Out! (protection/soin)
+
+Lvl: 24
+-Orbe de Protection Superieur (protection)
+
+Lvl: 31
+-Chute de Bouclier (degats)
+
+Lvl: 38
+-Charge Defensive (placement/degats)
+
+Lvl: 45
+-Tornade Métalique (degats)
+
+Lvl: 52
+-Barricade (entrave)
+
+Lvl: 59
+-Bouclier Boomrang (degats)
+
+Lvl: 66
+-Fusion d'Esprit (deplacement)
+
+Lvl: 73
+-Bouclier Strategique (protection)
+
+Lvl: 80
+-Provocation (protection)
+
+Lvl: 90
+-Bouclier Revenchar (degats)
+
+Lvl: 100
+-Métamorphose Contre-Nature (boost)

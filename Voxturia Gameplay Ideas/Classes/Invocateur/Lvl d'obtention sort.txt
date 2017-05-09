@@ -1,0 +1,50 @@
+Lvl: 1
+-Feu Follet (invok)
+-Empalement (degats)
+-Appel à l'Aide (boost)
+-Solitude (deplacement)
+
+Lvl: 4
+-Festin (soin)
+
+Lvl: 7
+-Corbeau (invok)
+
+Lvl: 10
+-Fusion Spirituel (boost)
+
+Lvl: 17
+-Paratonnere (degats)
+
+Lvl: 24
+-Renard (invok)
+
+Lvl: 31
+-Ride-On! (boost)
+
+Lvl: 38
+-Gargouille (invok)
+
+Lvl: 45
+-Invocation d'Orage (degats)
+
+Lvl: 52
+-Salamandre (invok)
+
+Lvl: 59
+-Chat (invok)
+
+Lvl: 66
+-Esprit du Dragon (degats)
+
+Lvl: 73
+-Golem (invok)
+
+Lvl: 80
+-Réincarnation (boost/protection)
+
+Lvl: 90
+-Phénix (invok)
+
+Lvl: 100
+-Dragon (invok)

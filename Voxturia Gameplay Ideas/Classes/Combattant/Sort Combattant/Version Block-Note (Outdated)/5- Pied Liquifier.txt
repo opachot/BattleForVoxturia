@@ -1,0 +1,149 @@
+              [Lvl:1] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 10% resistance dans tout les elements))
+[[Degats:57-60 Eau]] // [[Degats:47-50 Eau 20%]]
+
+
+              [Lvl:2] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 11% resistance dans tout les elements))
+[[Degats:58-61 Eau]] // [[Degats:48-51 Eau 23%]]
+
+
+              [Lvl:3] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 12% resistance dans tout les elements))
+[[Degats:59-62 Eau]] // [[Degats:49-52 Eau 26%]]
+
+
+              [Lvl:4] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 13% resistance dans tout les elements))
+[[Degats:60-63 Eau]] // [[Degats:50-53 Eau 29%]]
+
+
+              [Lvl:5] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 14% resistance dans tout les elements))
+[[Degats:61-64 Eau]] // [[Degats:51-54 Eau 32%]]
+
+
+              [Lvl:6] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 15% resistance dans tout les elements))
+[[Degats:62-65 Eau]] // [[Degats:52-55 Eau 35%]]
+
+
+              [Lvl:7] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 16% resistance dans tout les elements))
+[[Degats:63-66 Eau]] // [[Degats:53-56 Eau 38%]]
+
+
+              [Lvl:8] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 17% resistance dans tout les elements))
+[[Degats:64-67 Eau]] // [[Degats:54-57 Eau 41%]]
+
+
+              [Lvl:9] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 18% resistance dans tout les elements))
+[[Degats:65-68 Eau]] // [[Degats:55-58 Eau 45%]]
+
+
+              [Lvl:10] PIED LIQUIFIER
+[[PA:4]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[L'effet dure 1 tour]]
+((L'effet ''Pied Liquifier''))
+((Retire 20% resistance dans tout les elements))
+[[Degats:67-70 Eau]] // [[Degats:57-60 Eau 50%]]
+

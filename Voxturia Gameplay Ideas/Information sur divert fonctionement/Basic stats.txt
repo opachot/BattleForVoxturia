@@ -1,0 +1,34 @@
+
+
+NOTE: Limitation de 15 PA et 7PM
+
+
+Note Non Sure : degats de base sort de 20 a 150 Environ
+
+
+
+(-------------------------)
+(-Debute avec 8 PA        )
+(-Lvl: 50: +1PA           )
+(-LVl: 100: +1PM          )
+(-Lvl: 150: +1PA          )
+(-------------------------)
+
+
+
+
+(------------------------------------------------------)
+(-PDV de base 200                                      )
+(                                                      )
+(- +20 par lvl. (3180 pdv de base lvl 150)             )
+(------------------------------------------------------)
+
+
+(------------------------------------------)
+(        Pour 8 Items d'Equipement         )
+(-Environ 1500 pdv par item 150            )
+(                                          )
+(-ENVIRON 20 PDV Par item avent lv 5.      )
+(========================================= )
+(-Environ 10 pdv bonus par lv d'equipement )
+(------------------------------------------)

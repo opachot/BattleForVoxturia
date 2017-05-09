@@ -1,0 +1,50 @@
+Lvl: 1
+-Cyanide (degats/sort de base)
+-Ninjato (degats)
+-Evasion (boost)
+-Infiltration (deplacement)
+
+Lvl: 4
+-Geta (boost/protection)
+
+Lvl: 7
+-Kunai (degats)
+
+Lvl: 10
+-Ashiko (boost/protection)
+
+Lvl: 17
+-Makibishi (degats)
+
+Lvl: 24
+-Shuriken (degats)
+
+Lvl: 31
+-Rin-Hyo (boost)
+
+Lvl: 38
+-Tatami (boost/protection)
+
+Lvl: 45
+-Nunchaku (degats)
+
+Lvl: 52
+-Illusion (protection)
+
+Lvl: 59
+-Fukimibari (degats)
+
+Lvl: 66
+-Metsubushi (invisibiliter)
+
+Lvl: 73
+-Tegaki (boost/deplacement)
+
+Lvl: 80
+-Explosif (degats)
+
+Lvl: 90
+-Chakram (degats)
+
+Lvl: 100
+-Clonage (invok)

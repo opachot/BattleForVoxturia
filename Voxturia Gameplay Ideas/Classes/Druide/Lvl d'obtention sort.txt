@@ -1,0 +1,50 @@
+Lvl: 1
+-Potion Magique (degats/soin)
+-Autel de Rituel (Sort de base qui sert a lancer d'autre sort)
+-Beltaine (Boost/protection)
+-Elixir d'Oublie (Debuff)
+
+Lvl: 4
+-Art de Barde (Boost)
+
+Lvl: 7
+-Potion de Surpuissance (Boost)
+
+Lvl: 10
+-Fontaine (degats/soin)
+
+Lvl: 17
+-Immortaliter de l'Ame (protection)
+
+Lvl: 24
+-Geis (degats/soin)
+
+Lvl: 31
+-Pierre de Connaisence (boost)
+
+Lvl: 38
+-Medecine Avencer (soin)
+
+Lvl: 45
+-Samain (Soin)
+
+Lvl: 52
+-Divination (protection/soin)
+
+Lvl: 59
+-Brouillard (invisibiliter)
+
+Lvl: 66
+-Imbolc (debuff/soin)
+
+Lvl: 73
+-Sacrifice Animal (degats/soin)
+
+Lvl: 80
+-Lugnasad (soin)
+
+Lvl: 90
+-Fontaine de Vie (retour a la vie)
+
+Lvl: 100
+-Glam Dicinn

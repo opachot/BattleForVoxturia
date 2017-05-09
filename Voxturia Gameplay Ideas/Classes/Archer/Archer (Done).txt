@@ -1,0 +1,160 @@
+-Archer-
+
+Idée de skill
+
+*Zone de Distortion: L'archer tire une flèche qui fera une distortion temporel.
+-L'archer doit etre en ligne avec le centre de la zone de distortion pour que celle-ci 
+ declanche les effet des autre sort
+-Pose une zone qui empeche tout les entiters d'entrer dans cette zone.
+-Si quelqun est dans la zone il peut en sortire.
+-Toute les cibles dans la zone de distortion subise des degats a leur debut de tour.
+-Les sorts peuve etre lancer n'importe ou dans la zone de distortion et ils seront redeclancher
+ par le centre de la zone de distortion et lancer a partire du contour de la zone de distortion.
+-Si un sort frappe une personne dans la zone de distortion, la zone de distortion ne declanchera
+ pas l'effet du sort lier a la zone de distortion.
+-Zone de 1 hexagone autour du centre.
+-Si utiliser sous l'effet du sort Arc Mystique, la zone est de 2 hexagone autour du centre.
+-Dure quelques tour avec cooldown de 1 tour de plus que la durer de la zone.
+-PO minimum pour etre lancer.
+-Degats element Air.
+
+*Flèche de Distortion: L'archer tire une flèche de faible constitution.
+-Lancer en ligne
+-Degats beaucoup moin elever si utiliser directement sur un adversere.
+-Si lancer dans la zone de distortion, la fleche se multiplira en 5 fleches et resortirons en ligne du centre de la
+ zone de distortion sauf la ligne de l'archer.
+-Sous l'effet du sort Arc Mystique, les fleches du sort parcoureront 2x plus de distence.
+-PO minimum pour etre lancer.
+-Degats element Air.
+
+*Expultion: L'archer expulse tout les adversaires de la zone de distortion.
+-Lancable seulement sur le centre de la zone de distortion, expulse tout les joueurs  qui sont dans la zone de distortion.
+-Le sort inflige de faible degats au ennemie mais pas au allier.
+-Expulse les joueurs a coter de la zone de distortion ou sur leur prochaine case de diagonal (si grande zone de distortion).
+-Sous l'effet Arc Mystique, expulse une case plus loin.
+-Degats element Air.
+
+*Flèche Tournoyante: L'archer tir une flèche qui tourne sur elle même.
+-Degats plutot elever.
+-Si elle passe dans la zone de distortion pour aller attaquer une personne dedent ou de l'autre coter, la fleche perd
+ beaucoup de sa puissance.
+-Si elle cible le centre de la zone de distortion, la zone de distortion disparaitras.
+-Si sous l'effet du sort Arc Mystique, si la fleche cible le centre de la zone de distortion, elle retireras la zone
+ de distortion et reduiras le temp de relance du sort Zone de Distortion de 1 tour.
+-Temps de relance.
+-Si l'archer est sous l'effet ''Furie du Vent'', se sort gagne 2x le bonus normal de Furie du Vent.
+-PO minimum pour etre lancer.
+-Degats element Air.
+
+*Flèche de Lumière: L'archer utilise une immence flèche de lumière qu'il tirera sur son adversaire
+ pour lui occasionner des degats et l'aveugler.
+-Degats avec perte de PO a la cible si vise directement un joueur.
+-Si lancer dans la zone de distortion, le centre de la zone de distortion lance 6 fleches en ligne du centre qui inflige de faible
+ degats au ennemie mais soigne les alliers et l'archer.
+-Si sous l'effet Arc Mystique les fleche qui sorte de la zone de distortion enleverons de la PO en plus au ennemie
+ et soigneront plus efficasement les alliers et l'archer.
+-PO minimum pour etre lancer.
+-Degats element Lumiere
+
+*Flèche Puissante: La force d'impacte de cette fleche est enorme mais elle n'est pas tres dommagable.
+-Pousse la cible de quelques cases.
+-Si la cible est un ennemie, inflige de faible degats en plus.
+-Sous l'effet du sort Arc Mystique, le sort fait reculer d'une case supplementair.
+-PO minimum pour etre lancer.
+-Degats element Neutre.
+
+*Couteau de Chasse: Lorsque un ennemie un peut trop collent entrave l'archer, celui-ci lui met un bon coup de couteau entre les cotes.
+-Degats mono-cible au CAC.
+-Degats plus importent si la cible se trouve dans la zone de distortion.
+-Si l'archer est dans l'etats ''Residu Sanglant'', le sort ajoute en plus un poison qui dure 2 tour et qui est cummulable.
+-Degats element Terre.
+
+*Flèche de Cupidon: L'archer designe 2 personnes pour qu'ils tombe amoureux l'un de l'autre.
+-Lancable sur l'archer pour choisi 2 cible et il leur lancera une fleche a chaqun.
+-Les 2 cibles ne pourons pas s'infliger de degats l'un a l'autre pour 1 tour.
+-L'archer ne peut pas recevoir l'effet du sort.
+
+*Flèche Déviante: Cette flèche est tellement mal fait qu'elle est incapable de garder une trajectoire droite.
+-Lancable au CAC seulement, les degats serons sur le 2em hexagone autour de l'archer.
+-Lancable si la cases de lancement n'est pas occuper.
+-La fleche perd 20% de sa puissance par ennemie toucher. (ex: premeire personne toucher 100% degats, second 80% degats,etc...)
+-Degats element Neutre.
+
+*Furie du Vent: Les attaques deviennent accompagner d'un vent tranchant qui augmente la puissance des
+ attaques si elles sont utiliser a distance.
+-Augmente la puissance des sorts qui sont lancer a 4PO et plus. 
+-Zone de 1 hexagone autour de l'archer.
+-Les alliers et ennemie peuve etre affecter.
+-Les bonus apporter par Furie du Vent sont augmenter si utiliser sous l'effet Arc Mystique.
+-Les degats en plus infliger grace a se sort sont d'element Air.
+
+*Flèche du Temps: Cette flèche peu être utiliser pour ralentir l'ennemie.
+-Sur lancer sur une personne, inflige des degats et retire 1 PM. (retrait PM cummulable 1 fois (-2 PM max))
+-Si lancer sur la zone de distortion, elle disparait et apret 3 Fleche du Temps utiliser sur la zone de distortion,
+ le centre de la zone expulsera les 3 fleches du coter opposer de ou elle sont entrer.
+-Si lancer sur la zone de distortion, chaque fleche infligeras 3x plus de degats que le sort normal mais n'enlevera pas de PM.
+-Si l'archer est sous l'effet Arc Mystique, les fleches expulser par la zone de distortion enleverons 1 PM chaque.
+-Si les 3 flèches son lancer dans la même ligne de vue, elle réaparaitron l'une a coter de l'autre comme
+ ceci (  \ | /  ) dont celle du centre sera celle de la ligne de viser.)
+-PO minimum pour etre lancer.
+-Degats element Eau.
+
+*Survie: L'archer a un instinct de survie puissant qui augmente son adrénaline.
+-Augmente la vitaliter pour 3 tours.
+-Double les PM pour 1 tour.
+-Lancable seulement si les pdv de l'archer sont de 30% et moin.
+-Temps de relance de 4 tours et plus.
+
+*Compagnon: L'archer invoque un loup qui se battra a ces coter.
+-Invocation d'un Loup avec des pdv moyen et pamal de PM.
+-Le sort du loup ''Morsure Sanglante'' inflige de faible degats et met un poison qui se declancheras au debut
+ du second tour du Loup. Le poison inflige plus de degats que la morsure elle-meme.
+-Le Loup peut entrer et sortire de la zone de distortion.
+-Temps de relance asser elever.
+-Degats du loup element Terre, Les poison du loup element Obscure.
+
+*Fleche Enflammer: L'archer tire une fleche qui enflamme le sol.
+-Sur une cible, inflige de faible degats et pose une glyf enflammer de 1 hexagone autour de lui.
+-Sur une case vide, pose la glyf.
+-La glyf dure 3 tours.
+-Temps de relance de 3 tours.
+-La glyf inflige des degats au debut de tour et pour chaque cases marcher dessu.
+-Sous l'effet du sort Arc Mystique, la glyf dure 1 tour de plus.
+-PO minimum pour etre lancer.
+-Degats element Feu.
+
+*Arc Mystique: L'archer transforme son arc habituel en arc d'energie au pouvoir étonnant.
+-Effet qui dure 2 tour.
+-Temp de relance 2x plus elever que la durer.
+-Ne peut pas etre lancer avent le tour 2.
+
+*Flèche de Pression: Une fleche qui est lancer avec une pression enorme se qui a pour effet de fair reculer l'archer.
+-Lancer en ligne.
+-Fait reculer l'archer de 2 cases dans le sense inverse.
+-Inflige de faible degats au ennemie.
+-Donne l'etats ''Lourd'' au ennemie. (Empeche l'ennemie d'utiliser ses sorts de deplacement)
+-Donne l'etats ''Equilibre'' au allier. (Empeche l'allier d'etre deplacer par des sorts autre que les siens)
+-Si lancer sous l'effet du sort Arc Mystique, l'archer reculera de 3 cases plutot que 2.
+-Degats element Neutre.
+
+*Flèche Sanglante: L'archer tire une flèche surpuissante qui nécessite un peu de son sang.
+-Gros degats mono-cible.
+-Retire une partie de la vie a l'archer
+-Donne l'etats ''Résidu Sanglant'' a l'archer.
+-La prochaine fois que se sort est reutiliser, l'archer ne perderas pas de pdv mais perdras l'etats ''Résidu Sanglant''.
+-Degats element Feu/Obscure.
+
+*Flèche Empoisonner: L'archer tire une flèche qui rend malade les gens qu'elle attein.
+-Inflige un poison qui dure 2 tour et qui est cummulable.
+-Si le sort est lancer sous l'effet du sort Arc Mystique, le poison infligeras plus de degats.
+-Si la flèche est tirer sous l'etats "Résidu sanglant", le poison persistera un tour de plus.
+-Degats element Obscure.
+
+*Compagnon Loyale: L'archer absorbe l'âme de sont compagnon.
+-Permet de sacrifier sont Loup pour recupéré de la vie.
+-Si se sort est utiliser, le sort Compagnon ne pouras plus etre utiliser pour le reste du combat.
+-Permet de recuperer les pdv restent du Loup.
+
+------------------------------------------------------------------------------------------------------------------
+
+Archer: Je ne manque jamais ma cible.

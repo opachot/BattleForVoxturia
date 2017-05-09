@@ -1,0 +1,119 @@
+                   [Lvl:1] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 10%))
+[[Temps de relance de 3 tours]]
+[[Degats:17-20 Neutre]]
+
+
+                   [Lvl:2] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 11%))
+[[Temps de relance de 3 tours]]
+[[Degats:18-21 Neutre]]
+
+
+                   [Lvl:3] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 12%))
+[[Temps de relance de 3 tours]]
+[[Degats:19-22 Neutre]]
+
+
+                   [Lvl:4] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 13%))
+[[Temps de relance de 3 tours]]
+[[Degats:20-23 Neutre]]
+
+
+                   [Lvl:5] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 14%))
+[[Temps de relance de 2 tours]]
+[[Degats:21-24 Neutre]]
+
+
+                   [Lvl:6] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 15%))
+[[Temps de relance de 2 tours]]
+[[Degats:22-25 Neutre]]
+
+
+                   [Lvl:7] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 16%))
+[[Temps de relance de 2 tours]]
+[[Degats:23-26 Neutre]]
+
+
+                   [Lvl:8] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 17%))
+[[Temps de relance de 2 tours]]
+[[Degats:24-27 Neutre]]
+
+
+                   [Lvl:9] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 18%))
+[[Temps de relance de 1 tours]]
+[[Degats:25-28 Neutre]]
+
+
+                   [Lvl:10] RETRAITE STRATEGIQUE
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 1 tour]]
+((Effet ''Retraite Strategique''))
+((Augmente les degats infligés: 20%))
+[[Temps de relance de 1 tours]]
+[[Degats:27-30 Neutre]]
+

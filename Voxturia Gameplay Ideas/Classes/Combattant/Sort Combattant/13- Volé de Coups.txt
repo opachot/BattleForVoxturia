@@ -1,0 +1,129 @@
+         [Lvl:1] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 50%))
+[[Temps de relance de 4 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:32-35 Air]]
+
+
+         [Lvl:2] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 60%))
+[[Temps de relance de 4 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:33-36 Air]]
+
+
+         [Lvl:3] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 70%))
+[[Temps de relance de 4 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:34-37 Air]]
+
+
+         [Lvl:4] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 80%))
+[[Temps de relance de 4 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:35-38 Air]]
+
+
+         [Lvl:5] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 90%))
+[[Temps de relance de 3 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:36-39 Air]]
+
+
+         [Lvl:6] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 100%))
+[[Temps de relance de 3 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:37-40 Air]]
+
+
+         [Lvl:7] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 110%))
+[[Temps de relance de 3 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:38-41 Air]]
+
+
+         [Lvl:8] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 120%))
+[[Temps de relance de 3 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:39-42 Air]]
+
+
+         [Lvl:9] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 130%))
+[[Temps de relance de 2 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:40-43 Air]]
+
+
+         [Lvl:10] VOLÉ DE COUPS
+[[PA:4]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tour]]
+((Etat ''Marque d'Energie''))
+((Augmente les degats de: 150%))
+[[Temps de relance de 2 tours]]
+((Zone: 1 Hexagone autour du combattant))
+[[Degats:43-45 Air]]
+

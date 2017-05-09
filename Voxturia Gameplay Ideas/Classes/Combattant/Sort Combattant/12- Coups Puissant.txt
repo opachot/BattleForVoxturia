@@ -1,0 +1,95 @@
+    [Lvl:1] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 2 tours]]
+[[Degats:22-25 Neutre]]
+
+
+    [Lvl:2] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 2 tours]]
+[[Degats:23-26 Neutre]]
+
+
+    [Lvl:3] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Degats:24-27 Neutre]]
+
+
+    [Lvl:4] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Degats:25-28 Neutre]]
+
+
+    [Lvl:5] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:26-29 Neutre]]
+
+
+    [Lvl:6] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:27-30 Neutre]]
+
+
+    [Lvl:7] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:28-31 Neutre]]
+
+
+    [Lvl:8] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:29-32 Neutre]]
+
+
+    [Lvl:9] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[Degats:30-33 Neutre]]
+
+
+    [Lvl:10] COUPS PUISSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:3]]
+[[Nombre de lancer par tour par joueur:2]]
+[[Degats:32-35 Neutre]]
+

@@ -1,0 +1,145 @@
+-Combattant-
+
+*Méditation du Combattant: Se sort permet au combattant de se concentrer pour augmenter son endurance.
+-Bonus vitaliter et resistance.
+-Durer de 2 a 3 tour.
+-Ne peu pas être activer en même temps que "Aura du combattant". (debuff l'aura si utilise se sort)
+-Seulement lancable sur le combattant.
+-Au moin 7-8 tour de cooldown.
+
+*Aura du Combattant: Se sort permet au combattant de preparer ses muscle a un effort intense.
+-Bonus de puissance et 1 energie.
+-Durer de 2 a 3 tour.
+-Ne peu pas être activer en même temps que "Méditation du Combattant". (debuff la méditation si utilise se sort)
+-Seulement lancable sur le combattant.
+-Au moin 7-8 tour de cooldown.
+
+*Focus: Designe une cible prioritair a abatre.
+-L'adversaire ciblé par "Focus" recevra plus de dommage.
+-Dure 1 a 3 tours. 
+-Temps de relance de 2 a 4 tour
+-Si le combattant inflige des degats a un ennemie autre que la cible du sort focus, l'effet focus est desenvouter.
+
+*Frappe de Précision: Plus le combattant frappe son adversere, plus ses coup devienne devastateur.
+-Degats mono-cible au CAC.
+-Un lancer par cibles par tour.
+-Donne l'etats ''Précision'' a la cible se qui augmente les degats que la cible va subire par le sort
+ ''Frappe de Précision'' au prochain tour ( 1lvl d'effet = 2x degats de base du sort, 2lvl= 3x les degats de base,etc)
+-L'etats se cummule 5x.
+-Si la cible n'est pas reattaquer par le sort frappe de présision au prochain tour, elle perd l'effet.
+-Si la cible est sous l'effet de ''Focus'' le lvl de l'effet augmente de 2 par Frappe de Précision plutot que 1.
+-Degats element Air.
+
+*Changement de Position: Le combattant excelle au combat rapprocher grace a ses poing et a ses pieds.
+-Etats de base : Punch.
+-A chaque utilisation, change l'etats pour sont etats inverse. (Punch/Kick)
+-Cout en energie de 0 ou/a 1.
+-Lancable 1x par tour.
+
+*Frappe du Dragon: Le combattant enflamme ses poings et ses pieds pour donner une attaque puissante.
+-Degats mono-cible au CAC.
+-Donne un effet a la cible si elle est sous l'etats ''Focus'' qui feras en sorte qu'elle va subire plus de
+ degats par se sort lors de sa prochaine utilisation (Dure 2 tour de plus que le cooldown du sort)
+-Minimum 3 tour de relance.
+-Le sort est plus efficace dans l'etats ''Punch''.
+-Apret avoir infliger les degats, retourne la cible face au combattant.
+-Degats element Terre/Feu.
+
+*Glisse-Sol: Le combattant glisse au sol pour se rapprocher d'une personne.
+-Permet de se rapprocher d'une cible.
+-Donne un bonus de puissance pour la prochaine attaque lancer dans l'etats ''Kick'' pour le reste du tour.
+-Si le combattant est dans l'etats ''Kick'', le sort infligeras en plus des degats.
+-Lancable 1x par tour.
+-Degats element Terre.
+
+*Retraite Strategique: Le combattant s'eloigne d'une personne.
+-Permet de reculer d'une case dans le sense inverse du sort.
+-Donne un bonus de puissance pour la prochaine attaque lancer dans l'etats ''Punch'' pour le reste du tour.
+-Si le combattant est dans l'etats ''Punch'', le sort infligeras en plus des degats.
+-Lancable 1x par tour
+-Degats element Neutre.
+
+*L'Envole de l'Aigle: Le combattant saute par dessu les obstacles qui lui barre la route.
+-Sort sans ligne de vue.
+-Lancable 1x tour les 3 tours.
+-Permet au Combattant de se deplacer a 2 PO. (Non modifiable)
+
+*Crie du Combattant: Le combattant pousse un crie de guerre qui encourage ses alliés.
+-Affect tout les joueurs
+-Augmente la puissance de ceux dans la zone du sort.
+-Augmente egalement de 1 l'energie.
+-Reduit les resistances.
+-Desenvoute l'etats ''Focus'' si la cible qui a cette etats est dans la zone.
+
+*Poing d'Acier: Le combattant utilise un poing en acier pour donner un coups puissant qui affaiblie ses adversaire.
+-Degats mono-cible au CAC.
+-Donne un effet a la cible qui reduit pour 1 tour la puissance de ses attaques
+-Lancable seulement dans l'etats ''Punch''.
+-Apret avoir infliger les degats, retourne la cible face au combattant.
+-Degats element Terre.
+
+*Coups Mortel: Le combattant frappe son adversaire pour tenter de le mettre K.O.
+-Degats mono-cible au CAC.
+-Si l'attaque tue la cible, le combattant regagne 1 a 2 energie. (selon Lvl sort)
+-Si l'attaque tue une cible qui etais sous l'etats ''Focus'', le combattant regagne l'energie du sort Coups Mortel.
+-Lancable 1x par cible par tour.
+-Apret avoir infliger les degats, retourne la cible face au combattant.
+-Degats element Terre/Obscure.
+
+*Double: Le combattant bouge tellement rapidement qu'on a l'impression qu'il se dedouble.
+-Invok un double du combattant.
+-Le double et le combattant on -50% au degats final.
+-Le double a les meme sort sans les cooldown que le combattant avais.
+-Le double ne peut pas utiliser le sort ''Double''.
+-Le double et le combattant gagne -25% de degats final subit mais si le double subit des
+ degats, il sont transferer au combattant.
+-Le double peut attaquer d'autre cible sans fair perdre ''Focus'' a un ennemie.
+-Lancable sur la case au CAC du combattant.
+-Dure 2 tours avec un tres long cooldown. (7-8 tours ?)
+
+*Coups Puissant: Le combattant donne un coups asser puissant pour faire reculer une personne.
+-sort mono-cible au CAC.
+-Si sur ennemie, inflige en plus de faible degats.
+-Pousse la cible de 1 case.
+-Si la cible est dans l'etats ''Focus'', elle sera pousser de 2 cases.
+-Lancable 3x par tour.
+-Degats element Neutre.
+
+*Volé de Coups: Le combattant attaque tout les personnes autour de lui et leur applique une marque d'energie.
+-Degats de zone a tout les personnes coller au combattant.
+-Les personnes toucher par se sort auront un effet ''Marque d'Energie'' qui augmente les degats subit par le sort 
+ ''Explosion d'Énergie'' au prochain tour. (plus que le double de degats de base du sort)
+-Degats element Air.
+
+*Coups Renversant: Le combattant place un coup sous la machoire de son adversair et peut lui fair perdre connaisance 
+ si il le place avec précision.
+-Degats mono-cible au CAC.
+-Si la cible a l'effet ''Frappe de Précision Lvl 5 et l'etats ''Focus'', il tomberas dans l'etats ''Étourdie''
+ se qui lui feras passer son prochain tour.
+-Si une cible entre dans l'etats ''Étourdie'', elle seras immuniser a cette etats pour  tres longtemp (7-8 tour ?)
+-Apret avoir infliger les degats, retourne la cible face au combattant.
+-Degats element Terre.
+
+*Explosion d'Énergie: Le combattant concentre son énergie et l'expulse se qui a pour effet de blesser et
+ de repousser tout ceux autour de lui.
+-Degats de zone autour du combattant.
+-Fait reculer de 1 case tout les personnes toucher.
+-Si une cible autre que la cible avec l'etats ''Focus'' est toucher, la cible perdras l'etats ''Focus''
+ avent le declanchement des degats.
+-Degats element Feu/Lumiere.
+
+*Échauffement: Le combattant organise un echauffement pour repartire a neuf.
+-Sort de zone autour du combattant.
+-Desenvoute tout les cibles dans la zone d'effet du sort.
+
+*Pied Liquifier: Le combo warrior donne un coups de pied impregner d'humiditer
+-Degats de 1 a 2 PO.
+-Chance de donner un 2em coup automatiquement sans couts en energie (Environ 50%)
+-Doit etre dans l'etats ''Kick'' pour etre utiliser.
+-Le 2em coup qui se declanche automatiquement retire des resistances a la cible pour 1 tour(cummulable).
+-Degats element Eau.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Combo Warrior: Si tu ne te bat pas toi même, alors tu as déjas perdu ton combat.
+

@@ -1,0 +1,50 @@
+Lvl: 1
+-Rituel (boost/sort principale)
+-Rituel de Scellage (debuff/soin)
+-Sceau Effectus (sceau/sort principal)
+-Coup Pourfendeur (degats)
+
+Lvl: 4
+-Rituel d'Expultion (placement)
+
+Lvl: 7
+-Sceau Pugna (sceau/sort principal)
+
+Lvl: 10
+-Rituel Explosif (degats/soin)
+
+Lvl: 17
+-Sceau Induere (sceau/sort principal)
+
+Lvl: 24
+-Mouvement de Sceau (placement)
+
+Lvl: 31
+-Sceau Uti (sceau/sort principal)
+
+Lvl: 38
+-Rituel de Depandance (boost/protection)
+
+Lvl: 45
+-Sceau Obsessio (sceau/sort principal)
+
+Lvl: 52
+-Lien de Sceau (degats)
+
+Lvl: 59
+-Coup Rituélique (degats)
+
+Lvl: 66
+-Sceau Aimenter (deplacement)
+
+Lvl: 73
+-Rituel Sismique (degats/entrave)
+
+Lvl: 80
+-Rituel de Téléportation (deplacement)
+
+Lvl: 90
+-Concentration (protection)
+
+Lvl: 100
+-Rituel de Bannisement (entrave)

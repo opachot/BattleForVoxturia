@@ -1,0 +1,160 @@
+-Ritualiste et Mage de Sceau-
+
+idee de skill
+
+*Sceau Obsessio: Le ritualiste pose un sceau entourer d'emanation toxique. Un des 5 sceau qui permet
+ de desceller la puissance de l'Epee Taiji.
+-Pose le sceau Obsessio sur une case vide.
+-La case du sceau et celle autour sont une glyf de durer infini mais qui disparais si le sceau est
+ remplacer par le meme sceau, deplacer ou devien un ''sceau dechu''
+-Donne l'effet ''Obsessio'' infini au ritualiste.
+-L'effet ''Obsessio'' donne 1 PM.
+-La glyf donne un poison qui se declanche a la fin du tour pour chaque point de deplacement utiliser.
+-La glyf se declanche au debut du tour d'une personne qui commence dessu.
+-Degats element Obscure.
+
+*Sceau Uti: Le ritualiste pose un sceau entourer d'emanation toxique. Un des 5 sceau qui permet
+ de desceller la puissance de l'Epee Taiji.
+-Pose le sceau Uti sur une case vide.
+-La case du sceau et celle autour sont une glyf de durer infini mais qui disparais si le sceau est
+ remplacer par le meme sceau, deplacer ou devien un ''sceau dechu''
+-Donne l'effet ''Uti'' infini au ritualiste.
+-L'effet ''Uti'' donne 1 Energie.
+-La glyf donne un poison qui se declanche a la fin du tour pour chaque point d'energie utiliser.
+-La glyf se declanche au debut du tour d'une personne qui commence dessu.
+-Degats element Obscure.
+
+*Sceau Induere: Le ritualiste pose un sceau entourer d'emanation toxique. Un des 5 sceau qui permet
+ de desceller la puissance de l'Epee Taiji.
+-Pose le sceau Induere sur une case vide.
+-La case du sceau et celle autour sont une glyf de durer infini mais qui disparais si le sceau est
+ remplacer par le meme sceau, deplacer ou devien un ''sceau dechu''
+-Donne l'effet ''Induere'' infini au ritualiste.
+-L'effet ''Induere'' donne 1 PO.
+-La glyf donne un poison qui se declanche a la fin du tour pour chaque caze de distence un sort a eter lancer.
+-La glyf se declanche au debut du tour d'une personne qui commence dessu.
+-Degats element Obscure.
+
+*Sceau Effectus: Le ritualiste pose un sceau entourer d'emanation toxique. Un des 5 sceau qui permet
+ de desceller la puissance de l'Epee Taiji.
+-Pose le sceau Effectus sur une case vide.
+-La case du sceau et celle autour sont une glyf de durer infini mais qui disparais si le sceau est
+ remplacer par le meme sceau, deplacer ou devien un ''sceau dechu''
+-Donne l'effet ''Effectus'' infini au ritualiste.
+-L'effet ''Effectus'' donne des bonus degats en %.
+-La glyf donne un malus de degats en %.
+-La glyf se declanche au debut du tour d'une personne qui commence dessu.
+-Degats element Obscure.
+
+*Sceau Pugna: Le ritualiste pose un sceau entourer d'emanation toxique. Un des 5 sceau qui permet
+ de desceller la puissance de l'Epee Taiji.
+-Pose le sceau Pugna sur une case vide.
+-La case du sceau et celle autour sont une glyf de durer infini mais qui disparais si le sceau est
+ remplacer par le meme sceau, deplacer ou devien un ''sceau dechu''
+-Donne l'effet ''Pugna'' infini au ritualiste.
+-L'effet ''Pugna'' donne des bonus resistances en %.
+-La glyf donne un malus de resistances en %.
+-La glyf se declanche au debut du tour d'une personne qui commence dessu.
+-Degats element Obscure.
+
+*Rituel: Le ritualiste entame sont rituel principale pour desceller la puissance de l'Epee Taiji
+-Tout les sceau sur le terrain se transforme en ''Sceau Dechu''.
+-Le ritualiste perd tout les effets de sceau.
+-Permet d'utiliser les sorts: Rituel de Teleportation, Coup Rituelique, Rituel Sismique, Coup Pourfendeur et
+ Rituel de Scellage.
+-Le ritualiste gagne l'etats ''Puissance Desceller'' qui donne les effets des sceau qui etais sur le
+ terrain quand le sort Rituel a eter lancer.
+-Imposible a lancer sous l'effet ''Puissance Desceller''.
+-Quelques tour de relance.
+
+*Rituel de Téléportation: Le ritualiste se lie spirituelement a ses ancien sceau.
+-Utilisable sur un ''Sceau Dechu'' seulement.
+-Donne l'etats ''Sceau spirituel'' infini
+-Permet de se teleporter d'un ''Sceau Dechu'' a un autre pour 1 PM si il sont a une certaine 
+ distance maximum l'un de l'autre.
+-Si un ennemi est au contact du ritueliste, le ritueliste peut se deplacer via les sceau sans etre tackler.
+
+*Coup Rituélique: Le ritualiste utilise les pouvoirs de l'Epee Taiji pour impregner une personne de tout ses
+ effet negatif.
+-Donne un coup d'epee qui fait de tres faible degats.
+-Applique a la cible tout les effets negatif des sceau qui on eter utiliser pour lancer le sort ''Rituel''.
+-Quelque tour de relance.
+-Cout en energie elever.
+
+*Rituel Sismique: Le ritualiste plante l'Epee Taiji dans le sol pour declancher une secouse sismique.
+-Le sort se lance sur une case vide.
+-Degats de zone sur 2 cases de PO sur les 6 ligne de la case cibler sauf la ligne ou se trouve le ritualiste.
+-Retire 1 PM a ceux dans la zone du sort.
+-Degats element Terre.
+
+*Lien de Sceau: Le ritualiste lie ses sceau les un au autre avec un lien magique qui inflige des degats.
+-Doit cibler un sceau ou ''sceau dechu''.
+-Cree un lien magique entre chaque sceau ou ''sceau dechu'' si il sont en ligne l'un de l'autre.
+-Les sceau ne doive pas etre trop eloigner l'un de l'autre pour que les lien se cree.
+-Occasione des degats a tout ceux qui se trouvais sur une case ou un lien ses cree, en commencent sont tour
+ sur une case ou se trouve un lien et pour chaque case de deplacement sur un lien.
+-La case des sceau ne contien pas de lien.
+-Degats element Neutre.
+
+*Rituel Explosif: Le ritualiste fait exploser un de ses sceau se qui inflige de gros degats.
+-Fait exploser un sceau ou ''sceau dechu'' en infligeant de gros degas dans la case du sceau et celles autour.
+-Retire le sceau qui a exploser.
+-Soigne de 5% la vie du ritualiste.
+-Impossible a utiliser si a poser un sceau se tour et impossible a poser un sceau se tour si a utiliser se sort.
+-Degats element Feu/Obscure.
+
+*Coup Pourfendeur: Le ritualiste donne un violent coup de l'Epee Taiji en ligne.
+-Degats de zone sur quelques case en ligne.
+-Le nombre de sceau utiliser pour le sort Rituel augmente plus la puissance du se sort que les autre sort.
+-Degats element Terre.
+
+*Rituel de Scellage: Rescelle la puissance de l'Epee Taiji.
+-Desenvoute le ritualiste de tout ses envoutement, effet et etats.
+-Fait exploser tout les ''sceau dechu'' en infligeant de gros degas dans la case du sceau et celles autour.
+-Pour chaque sceau qui on exploser, soigne le ritualiste et ses allier de 5% de leur vie.
+-Quelques tour de relance.
+-Degats element Feu/Obscure.
+
+*Mouvement de Sceau: Le ritualiste deplace un de ses sceau.
+-Cible un sceau ou ''sceau dechu'' a deplacer puit cible la case ou on veux le placer.
+-Doit etre placera une PO minimum et maximum d'un autre sceau.(Pour ne pas que 2 sceau est leur glyf uen sur l'autre)
+ (Exemple: 3 a 6 PO)
+-Si que 1 sceau sur le terrain, peut le deplacer sans contrainte.
+-Si le sceau n'est pas deplacer avent la fin du tour de jeux le sort est annuler et le cooldown ne
+ s'appliqueras pas.
+-Temps de relance de 2 tour. (1 tour de trou)
+
+*Rituel de Bannisement: Le ritualiste rend une zone du terrain impossible a acceder.
+-Rend la zone impossible a marcher et invoquer dessu.
+-Zone en hexagone a 2 PO du centre de la zone.
+-Ne peut etre lancer que s'il n'y a aucune entiter vivante dans la zone.
+-Si un ''sceau dechu'' est dans la zone, le ritualiste ne peut pas se teleporter dessu.
+-La zone dure 1 a 2 tour (selon Lvl sort)
+-Long temps de relance.
+
+*Rituel d'Expultion: Le ritualiste pousse tout ceux qui sont a sont contact.
+-Pousse de 1 a 3 cases tout ceux au contact du ritualiste. (Selon Lvl sort)
+-Lancable 1x par tour.
+
+*Concentration: La concentration permet au ritualiste ou a un de ses allier 
+ de reduire la majoriter des degats subit.
+-Reduit une grande partie des degats subit en % pour 1 tour.
+-Cout en energie tres elever.
+-Long temp de relance.
+-Lancable sur sois-meme ou allier.
+
+*Rituel de Depandance: Le ritualiste fait un rituel qui permet d'immuniser au poison des sceau tout en
+les transforment en effet positif et d'augmenter la puissance des sceau sur l'Epee Taiji.
+-Double les effets du ritualiste au effet suivent(Obsessio,Uti,Induere,Effectus et Pugna) 1 tours
+-Double les effets du ritualiste a l'etats '' Puissance Desceller'' 1 tour.
+-Si lancer sur un allier, il gagne l'etats positif de la glyf sur laquel il est et 
+ devien immuniser au poison des sceau pour 2 tours.
+-Coute 1 en energie a etre lancer.
+-Immunise sois-meme ou allier au poison des glyfs de sceau.
+-Long temp de relance.
+
+*Sceau aimenter: Le ritualiste aimente un de ses sceau pour attirer tout ceux en ligne.
+-Doit cibler un sceau ou ''sceau dechu''.
+-Attire tout les joueurs en ligne avec le sceau de 1 a 3 cases. (Selon Lvl sort)
+-Attire juste si les joueurs sont a une PO de 2 a 6 du sceau. (Selon Lvl sort)
+-Arrete d'attirer une fois entrer dans la glyf.

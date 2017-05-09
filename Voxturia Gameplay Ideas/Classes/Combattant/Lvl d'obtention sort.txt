@@ -1,0 +1,51 @@
+Lvl: 1
+-Focus (boost)
+-Frappe de Précision (degats)
+-Changement de Position (boost/principale)
+-Retraite Strategique (degats/deplacement)
+
+Lvl: 4
+-Pied Liquifier (degats)
+
+Lvl: 7
+-Aura du Combattant (boost)
+
+Lvl: 10
+-Coups Mortel (degats)
+
+Lvl: 17
+-Glisse-Sol (degats/deplacement)
+
+Lvl: 24
+-Méditation du Combattant (boost/protection)
+
+Lvl: 31
+-Coups Renversant (degats)
+
+Lvl: 38
+-Échauffement (debuff)
+
+Lvl: 45
+-Coups Puissant (degats/placement)
+
+Lvl: 52
+-Volé de Coups (degats)
+
+Lvl: 59
+-L'Envole de l'Aigle (deplacement)
+
+Lvl: 66
+-Explosion d'Énergie (degats)
+
+Lvl: 73
+-Crie du Combattant (boost)
+
+Lvl: 80
+-Poing d'Acier (degats/malus)
+
+Lvl: 90
+-Double (invok)
+
+Lvl: 100
+-Frappe du Dragon (degats)
+

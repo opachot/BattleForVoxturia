@@ -1,0 +1,51 @@
+Lvl: 1
+-Morsure (degats/vol de vie)
+-Manipulation de l'Ombre (degats)
+-Cercueil (invok)
+-Cape d'Ombre (invisibiliter)
+
+Lvl: 4
+-Sombre Nuit (boost)
+
+Lvl: 7
+-Illusion (invok)
+
+Lvl: 10
+-Marque du Vampire (degats/vol de vie)
+
+Lvl: 17
+-Aura de Terreur (protection)
+
+Lvl: 24
+-Transfusion Sanguine (soin)
+
+Lvl: 31
+-Vision Nocturne (boost)
+
+Lvl: 38
+-Invocation de Goule (invok)
+
+Lvl: 45
+-Lance de l'Ombre (degats)
+
+Lvl: 52
+-Envoler de Chauve-Sourie (deplacement/protection)
+
+Lvl: 59
+-Reflexe de l'Ombre (degats/protection)
+
+Lvl: 66
+-Enfermement (protection)
+
+Lvl: 73
+-Fouet de l'Ombre (degats/boost)
+
+Lvl: 80
+-Nuit Rouge (boost)
+
+Lvl: 90
+-Lien de Sang (soin)
+
+Lvl: 100
+-Folie Vampirique (boost)
+

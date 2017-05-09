@@ -1,0 +1,109 @@
+        [Lvl:1] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 6 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 1 case))
+[[Degats:65-70 Feu/25-30 Lumiere]]
+
+
+        [Lvl:2] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 6 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 1 case))
+[[Degats:68-73 Feu/27-32 Lumiere]]
+
+
+        [Lvl:3] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 6 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 1 case))
+[[Degats:71-76 Feu/29-34 Lumiere]]
+
+
+        [Lvl:4] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 5 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 1 case))
+[[Degats:74-79 Feu/31-36 Lumiere]]
+
+
+        [Lvl:5] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 5 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 1 case))
+[[Degats:77-82 Feu/33-38 Lumiere]]
+
+
+        [Lvl:6] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 5 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 1 case))
+[[Degats:80-85 Feu/35-40 Lumiere]]
+
+
+        [Lvl:7] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 4 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 1 case))
+[[Degats:83-88 Feu/37-42 Lumiere]]
+
+
+        [Lvl:8] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 4 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 1 case))
+[[Degats:86-91 Feu/39-44 Lumiere]]
+
+
+        [Lvl:9] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 4 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 2 cases))
+[[Degats:89-94 Feu/41-46 Lumiere]]
+
+
+        [Lvl:10] EXPLOSION D'ÉNERGIE
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 3 tours]]
+((Zone: 1 Hexagone autour du combattant))
+((Pousse les personnes touchés de: 2 cases))
+[[Degats:95-100 Feu/45-50 Lumiere]]
+

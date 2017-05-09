@@ -1,0 +1,91 @@
+                     [Lvl:1] CHANGEMENT DE POSITION
+[[PA:3]]
+[[PM:2]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:2] CHANGEMENT DE POSITION
+[[PA:3]]
+[[PM:2]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:3] CHANGEMENT DE POSITION
+[[PA:3]]
+[[PM:2]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 2 tours]]
+
+
+                     [Lvl:4] CHANGEMENT DE POSITION
+[[PA:2]]
+[[PM:2]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 2 tours]]
+
+
+                     [Lvl:5] CHANGEMENT DE POSITION
+[[PA:2]]
+[[PM:2]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 2 tours]]
+
+
+                     [Lvl:6] CHANGEMENT DE POSITION
+[[PA:2]]
+[[PM:1]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 2 tours]]
+
+
+                     [Lvl:7] CHANGEMENT DE POSITION
+[[PA:1]]
+[[PM:1]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 2 tours]]
+
+
+                     [Lvl:8] CHANGEMENT DE POSITION
+[[PA:1]]
+[[PM:1]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 2 tours]]
+
+
+                     [Lvl:9] CHANGEMENT DE POSITION
+[[PA:1]]
+[[PM:1]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 1 tours]]
+
+
+                     [Lvl:10] CHANGEMENT DE POSITION
+[[PA:1]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure Infini tour]]
+[[Temps de relance de 1 tours]]
+
+
+

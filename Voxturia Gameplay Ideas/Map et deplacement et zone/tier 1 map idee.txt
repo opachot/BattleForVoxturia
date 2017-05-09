@@ -1,0 +1,3 @@
+foret,clairiere,lac, petite ruine avec dj. zone propice au debut des metier de recolte. cimetiere.
+
+ville de depart: Kigen (ambience calme, style rurale, genre de campement agrendit).

@@ -1,0 +1,159 @@
+        [Lvl:1] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 10%))
+[[Temps de relance de 3 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 1 case)
+[[Degats:17-20 Terre]]
+
+
+        [Lvl:2] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 11%))
+[[Temps de relance de 3 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 1 case)
+[[Degats:18-21 Terre]]
+
+
+        [Lvl:3] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 12%))
+[[Temps de relance de 3 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 1 case)
+[[Degats:19-22 Terre]]
+
+
+        [Lvl:4] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 13%))
+[[Temps de relance de 3 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 1 case)
+[[Degats:20-23 Terre]]
+
+
+        [Lvl:5] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 14%))
+[[Temps de relance de 2 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 1 case)
+[[Degats:21-24 Terre]]
+
+
+        [Lvl:6] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 15%))
+[[Temps de relance de 2 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 1 case)
+[[Degats:22-25 Terre]]
+
+
+        [Lvl:7] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 16%))
+[[Temps de relance de 2 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 2 cases)
+[[Degats:23-26 Terre]]
+
+
+        [Lvl:8] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 17%))
+[[Temps de relance de 2 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 2 cases)
+[[Degats:24-27 Terre]]
+
+
+        [Lvl:9] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 18%))
+[[Temps de relance de 1 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 2 cases)
+[[Degats:25-28 Terre]]
+
+
+        [Lvl:10] GLISSE-SOL
+[[PA:3]]
+[[PM:0]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Oui]]
+[[L'effet dure 1 tour]]
+((Effet ''Glisse-Sol''))
+((Augmente les degats infligés: 20%))
+[[Temps de relance de 1 tours]]
+[[Nombre de lancer par tour:1]]
+(Se rapproche de: 2 cases)
+[[Degats:27-30 Terre]]
+

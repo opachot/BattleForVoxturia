@@ -1,0 +1,119 @@
+  [Lvl:1] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 10%))
+((Augmente la résistence de: 5%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:2] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 12%))
+((Augmente la résistence de: 6%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:3] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 14%))
+((Augmente la résistence de: 7%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:4] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 16%))
+((Augmente la résistence de: 8%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:5] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 18%))
+((Augmente la résistence de: 9%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:6] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 20%))
+((Augmente la résistence de: 10%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:7] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 22%))
+((Augmente la résistence de: 11%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:8] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 24%))
+((Augmente la résistence de: 12%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:9] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 3 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 26%))
+((Augmente la résistence de: 13%))
+[[Temps de relance de 8 tours]]
+
+
+  [Lvl:10] MÉDITATION DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 3 tours]]
+((L'effet ''Méditation du Combattant''))
+((Augmente la vitaliter de: 30%))
+((Augmente la résistence de: 15%))
+[[Temps de relance de 7 tours]]
+

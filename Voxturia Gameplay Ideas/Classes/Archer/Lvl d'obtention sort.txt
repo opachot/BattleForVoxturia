@@ -1,0 +1,51 @@
+Lvl: 1
+-Zone de Distortion (entrave)
+-Couteau de Chasse (degats)
+-Arc Mystique (boost)
+-Fleche du Temps (degats/entrave)
+
+Lvl: 4
+-Expultion (placement)
+
+Lvl: 7
+-Fleche de Distortion (degats)
+
+Lvl: 10
+-Fleche Puissante (placement/degats)
+
+Lvl: 17
+-Furie du Vent (boost)
+
+Lvl: 24
+-Fleche Empoisonner (degats)
+
+Lvl: 31
+-Fleche de Pression (deplacement/entrave)
+
+Lvl: 38
+-Fleche Déviante (degats)
+
+Lvl: 45
+-Fleche de Cupidon (protection)
+
+Lvl: 52
+-Fleche Enflammer (degats)
+
+Lvl: 59
+-Survie (boost)
+
+Lvl: 66
+-Fleche de Lumiere (degats/soin/malus)
+
+Lvl: 73
+-Fleche Tournoyante (degats)
+
+Lvl: 80
+-Compagnon (invok)
+
+Lvl: 90
+-Compagnon Loyale (regen pdv)
+
+Lvl: 100
+-Fleche Sanglante (degats/boost)
+

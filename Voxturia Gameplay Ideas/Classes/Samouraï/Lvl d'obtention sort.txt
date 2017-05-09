@@ -1,0 +1,50 @@
+Lvl: 1
+-Do-Maru (boost principal)
+-Keikogi (boost principal)
+-Nukitsuke (degats)
+-Noto (boost)
+
+Lvl: 4
+-Katana (degats)
+
+Lvl: 7
+-Bokken (degats/boost)
+
+Lvl: 10
+-Kiai (boost)
+
+Lvl: 17
+-Wakizashi (degats/malus)
+
+Lvl: 24
+-Ritsu-Rei (boost)
+
+Lvl: 31
+-Zanshin (boost/protection)
+
+Lvl: 38
+-Chiburi (entrave)
+
+Lvl: 45
+-Yumi (degats)
+
+Lvl: 52
+-Jinsoku (boost)
+
+Lvl: 59
+-Shogai-Mono (protection)
+
+Lvl: 66
+-Nito Ryu (degats/malus)
+
+Lvl: 73
+-Seppuku (suicide/boost/malus)
+
+Lvl: 80
+-Etandar (boost)
+
+Lvl: 90
+-Saihai (boost)
+
+Lvl: 100
+-Nodachi (degats)

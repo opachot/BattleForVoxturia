@@ -1,0 +1,51 @@
+Lvl: 1
+-Fauche de l'Ame (degats/vol de vie)
+-Puie de Vie (boost)
+-Sol vivant (degat/entrave)
+-Aura Maléfique (boost)
+
+Lvl: 4
+-Tombe Protectrice (entrave)
+
+Lvl: 7
+-Meurtrissure (degats)
+
+Lvl: 10
+-Allonge Lame (degats/boost)
+
+Lvl: 17
+-Drain Vital (degats/vol de vie)
+
+Lvl: 24
+-Âme de Bonter (malus/protection)
+
+Lvl: 31
+-Faux Circulaire (degats)
+
+Lvl: 38
+-Faux Tournoyante (protection)
+
+Lvl: 45
+-Volé de Corbeau (degats)
+
+Lvl: 52
+-Envoler Funèbre (deplacement)
+
+Lvl: 59
+-Faux du Jugement (degats/malus)
+
+Lvl: 66
+-Âme Vengeresque (degats/entrave)
+
+Lvl: 73
+-Ailes Protectrice (protection)
+
+Lvl: 80
+-Brume Noir (entrave)
+
+Lvl: 90
+-Réanimation Morbide (resurection)
+
+Lvl: 100
+-Échange Vital (protection)
+

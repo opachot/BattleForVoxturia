@@ -1,0 +1,30 @@
+*Lvl up sort  sert a les rendre plus flexible.
+*Lvl up sort sert a augmenter legerement les degats
+*Pour up un sort, il doit avoir attein le seuille d'xp pour 
+ le Lvl up + avoir les points de sort pour le debloquer.
+*Les sort on un maximum d'xp (Exemple 0 a 20 000)
+*Les sort accumule l'xp jusquau maximum meme si il n'est pas up
+ (Exemple: si le seuille pour le monter lv 2 est de 1000 xp il peut
+ monter jusqua 20 000 pour pouvoir le up max plus tard.)
+*10 Lvl par sort.
+*Chaque sort a besoin de 1 point de sort pour up de niveau (Gagne
+ 1 point de sort par lvl up du personnage)
+*Les sort sont disponible via le Lvl du personnage.
+*NOTE: 10 point de sort obtenable par pallier de Tier
+ Via les quete du jeu. (50 total+1 Via la quete finial (Sort demon/ange))
+ (Si tout les quete faite et perso Lvl max il peut up tout ses sort max
+ y comprit le sort demon/ange de la fin)
+*Si de nouveau sort globeau sont ajouter, il seront via quete.
+ (Quete pour les obtenir et pour chaque lvl up du sort)
+ (ne coutera pas de Point sort)
+ (Le sort final Demon/Ange n'en fait pas partie et va compter comme 
+ un sort classe)
+*Lvl max des sorts est de 8 avent le lvl 100 de 9 entre 100 et 124
+ et de 10 lvl 125+.
+*Pour le sort demon/ange, si change d'allignement, change le sort mais les point
+ resterons dans le nouveau sort d'allignement.
+
+
+*NOTE: animation de sort legerement different si ange OU demon OU neutre.
+ (Couleur d'effet de certain sort par exemple)
+

@@ -1,0 +1,224 @@
+-Invocateur-
+
+(avent lv 100 1 invoc max apret lv 100 2 invoc max)
+
+Idée de skill
+
+*Empalement: L'invocateur utilise sa lance pour transpercer tout se qui se trouve sur les
+2 cases en face de lui.
+-Attaque en zone de 2 cases en ligne en face de l'invocateur.
+-Applique l'etats ''Cibler'' 1 tour se qui a pour effet d'augmenter les degats des invocations.
+-Degats element Terre.
+
+*Paratonnere: L'invocateur pointe sa lance vers le ciel pour forcer l'apparition d'un eclair qui frappera
+la lance pour ensuite diciper l'energie autour de l'invocateur.
+-Degats de zone autour de l'invocateur.
+-Pouse tout les cibles de 1 ou 2 case
+-Augmente les degats du sort ''Invocation d'orage'' pour 2 tour (etats ''Residu Electrique''). Augmente que
+la 2em ligne de degats du sort.
+-Degats element Electrique.
+
+*Invocation d'orage: L'invocateur plante sa lance dans le sol se qui inflige de faible degats de zone et
+apret 1 tour planter dans le sol, invoc une eclair divin qui feras d'enorme degats de zone autour d'elle.
+-La case cibler doit etre vide.
+-Applique l'etats ''Déarmer'' a l'invocateur se qui l'empeche d'utiliser ses sort d'attaque le reste du tour.
+-inflige de faible degats de zone et retire 1 pm au ennemie.
+-la lance dans le sol est un obstacle infranchisable mais qui ne bloque pas les ligne de vue.
+-Au debut du prochain tour de l'invocateur inflige d'enorme degats de zone au ennemie et allier sauf au
+invocation et a l'invocateur lui-meme.
+-Long temp de relance.
+-Degats elementair Terre le premier tour, le second tour Degats Electrique/Lumiere.
+
+*Esprit du dragon: L'invocateur pointe sa lance vers une cible et de sa lance sort un esprit de dragon qui
+fonce vers la cible pour lui infliger des degats a distence.
+-attaque en ligne a distence (PO minimum de 3)
+-Lancable sans ligne de vue.
+-Degats element Feu.
+
+*Appel a l'aide: Si l'invocateur subit des degats d'un ennemie, ses invocation devienne enrager.
+-Si un ennemie attaque l'invocateur, les PM et les degats des invocations sont doubler 1 tour.
+-Dure 1 tour.
+
+*Solitude: L'invocateur se sans seul et s'empresse de rejoindre une de ses invocation.
+-L'invocateur s'attire de quelques cases vers une de ses invocation.
+
+*Festin: L'invocateur sacrifi une invocation pour la devorer et regagner des PDV.
+-Retire l'invocation du combat.
+-regagne un pourcentage de pdv dependament de l'invocation.
+
+*Ride-on!: L'invocateur monte sur le dos d'une invocation pour se deplacer plus vite et augmenter ses degats.
+-Lancable sur Renard ou Dragon seulement.
+-Sur renard: +2PM et +%degats
+-Sur Dragon +2PM et bcp plus de %degats que sur renard.
+-Si subit des degats, se fait ejecter de l'invocation dans la direction inverse des degats subit.
+-Temps de relence de 2 a 3 tour?
+
+*Fusion spirituel: L'invocateur fusionne avec une invocation.
+-Gagne les sorts de l'invocation cibler en plus des sort habituel.
+-Si relancer sur soi-meme défusionne et retire l'invocation du combat.
+-Dure quelques tour, une fois la limite attein, defusionne et retire l'invocation du combat.
+
+*Réincarnation: L'invocateur abendonne sont enveloppe corporelle pour se reincarner dans la derneire
+de ses invocation a etre morte.
+-Abendonne sont corp pour revive dans le corp de la derneire de ses invocation a etre morte.
+-Se reincarne a l'emplacement ou l'invocation etais morte.
+-Irreversible.
+(lancer qui emt un etats ? ex: lancer sur sois ou allier, si on meur durent se tour ou le prochain
+ , se reincarne)
+
+----------------------------------------------------INVOCATION------------------------------------------------
+
+*Salamandre: Invoque une Salamandre qui combat a l'aide du feu et de poison.
+-Etats permanent: Invulnerable a l'element de feu.
+-vita et PM moyenne. 
+-Utilisable 1x par combat.
+-Sort 1: Boule de feu: La salamandre lance uen boule de feu avec sa bouche.
+        -Lancable a quelques cases de porter.
+        -Degats element Feu.
+-Sort 2: Samandarin: La salamandre bave sur la cible avec sa salive toxique.
+        -Lancable au CAC, met un poison quelque tour a la cible.
+        -Degats element Obscure.
+-Sort 3: Mue: La salamandre mue et fait peau neuve.
+        -Regagne % de sa vita.
+-sort 4: Embrasement: La salamandre crache au sol pour declancher un feu.
+        -Pose un glyf de feu qui se declanche a chaque debut de tour d'un joueur.
+        -Degats element Feu.
+
+*Phénix: Invoque un Phénix qui pose le pouvoir de retour a la vie.
+-Quand meur, est retire du combat.
+-Etats permanent: Invulnerable a l'element de feu.
+-Vita faible et PM moyen
+-Utilisable 1x par combat
+-Quend meur, laisse sur la case ses cendre qui soignera l'allier qui marchera dessu.
+-Sort 1: Envol: Le phénix s'envole pour aller sur une autre case.
+-Sort 2: Vent de feu: Le phénix bat des ails pour delcancher un vent enflammer.
+        -Inflige des degats a un ennemie a quelques cases.
+        -Degats element Feu.
+-Sort 3: Retour a la vie: Le phénix utilise ses pouvoir pour resuciter une invocation.
+        -Resucite une invocation morte mais encor en combat avec un pourcentage de sa vie.
+-Sort 4: Sacrifice: Le phénix se sacrifie pour ramener a la vie un joueur mort mais encor en combat.
+        -Ramenne a la vie un joueur avec un pourcentage de sa vie.
+        -Retire du combat le phénix.
+
+*Dragon: Invoque la statue d'un puissant dragon.
+-Grande vitaliter, PM moyen. 
+-Etats permanent: Invulnerable a l'element de feu.
+-Invoque une statue de dragon qui met 2 tour a prendre vie.
+-Utilisable 1x par combat.
+-Peut etre la cible du sort ''Ride-On!''.
+-Sort 1: Souffle enflammer: Le dragon souffle sur une zone devent lui.
+        -Degats de zone en cone devent lui.
+        -Degats element Feu.
+-Sort 2: Lance flamme: Le dragon lance un jet de feu en ligne.
+        -Degats sur plusieur cases en ligne du dragon.
+        -Degats element Feu.
+-Sort 3: Charge: Le dragon baisse la tete et fonce vers un ennemie lui infligeant des degats avec ses corne.
+        -Lancable en ligne uniquement.
+        -Se déplace devent l'ennemie.
+        -Degats element Terre.
+-Sort 4: Envol: Le dragon s'envole pour aller sur une autre case.
+
+*Feu Follet: Invoque un feu follet, une creature feerique.
+-Quand meur, est retirer du combat.
+-Etats permanent: Invulnerable au degats subit a distance.
+-Tres faible vitaliter, beaucoup de PM.
+-Utilisable 1x par combat.
+-Sort 1: Aveuglement: Le feu follet se met a briller de mille feu pour aveugler sont ennemie.
+        -Reduit l'energie d'un ennemie a distance.
+-Sort 2: Chaleur: Le feu follet augmente sa chaleur corporel et la redirige vers un ennemie pour le bruler.
+        -Inflige une brulure qui se declanche a chaque debut de tour de l'ennemie.
+        -Dure 2 tour.
+        -Effet cumulable.
+        -Degats element Feu.
+-Sort 3: Derniere flamme: Le feu follet s'explose au contact d'un ennemie dans une ultime attaque.
+        -Lancable au cac.
+        -Retire le feu follet du combat.
+        -Degats element Feu.
+
+*Gargouille: Invoque une gargouille, une creature qui entrave et a la pouvoir de se transformer en pierre.
+-Vita et PM moyen.
+-Utilisable 1x par combat.
+-Sort 1: Mise en terre: La gargouille creuse une tombe pour bloquer le chemin.
+        -Cree une tombe pour bloquer les deplacement mais ne bloque pas les ligne de vue.
+        -Tombe avec petite vitaliter possible a detruire.
+-Sort 2: Vent repoussent: La gargouille utilise ses ail pour cree un vent qui repousse la cible.
+        -Pousse la cible de 1 case.
+        -Lancer en ligne.
+-Sort 3: Coup de griffe: La gargouille utilise ses griffes pour infliger des degats.
+        -Degats au cac.
+        -Degats element Terre.
+-Sort 4: Solidification: La gargouille utilise sont pouvoir de transformation en pierre.
+        -Utilisable sur lui-meme ou sur un allier a petit distence.
+        -Passe le tour une fois en pierre.
+        -Dure 1 tour.
+        -Rend invulnerable et indeplacable pour 1 tour.
+
+*Golem: Invoque un golem qui est tres resistent.
+-Beaucoup de vita,peut de PM bonne resistence.
+-Inciblable par festin.
+-Utilisable 1x par combat.
+-Sort 1: Tremblement de terre: Le golem frappe la sol avec sont pied pour fair trembler le sol.
+        -Reduit les pm des cible autour du golem.
+-Sort 2: Chute de pierre: Le golem lance une roche dans les air qui retombe sur la cible.
+        -Lancable a quelques PO max.
+        -Degats element Terre.
+-Sort 3: Lourdeur: Le golem utilise sont energy pour rendre une cible plus lourde.
+        -Rend une cible imposible a deplacer.
+-Sort 4: Frappe de pierre: Le golem frappe une cible avec sont poing.
+        -Degats au CAC.
+        -Degats element Terre.
+
+*Corbeau: Invoque un corbeau qui porte malheurs aux ennemies.
+-Etats permanent: Invulnerable au degats subit au CAC.
+-Peut de vita, beaucoup de PM.
+-Utilisable 1x par combat.
+-Sort 1: Aveuglement: Le corbeau regarde sa cible droit dans les oeil et affaiblie sa vision.
+        -Retire de la PO a la cible pour 2 tour (cumulable).
+Sort 2: Envol: Le corbeau s'envole pour aller sur une autre case.
+Sort 3: Mauvais oeil: Le corbeau tourne autour de la cible pour lui porter malheurs.
+       -Met la cible dans l'etats ''Mauvais Oeil'' (Chance en % de rater une attaque)
+       -Dure 1 tour.
+       -Lancer a distence.
+Sort 4: Chasse: Le corbeau se met en chasse vers une cible.
+       -Fonce vers un ennemie pour le blesser puit revien a sa position initial.
+       -Degats element Air.
+
+*Renard: Invoque un renard fourbe qui a la pouvoir d'affaiblir les ennemies.
+-Vita moyenne, beaucoup de PM.
+-Utilisable 1x par combat.
+-Peut etre la cible du sort ''Ride-On!''.
+-Sort 1: Fourberi: Le renard se tapie dans le decor pour praparer sont attaque.
+        -Rend le Renard invisible 2 tour.
+        -Si il utilise un sort le rend de nouveau visible.
+        -Cooldown de 4 tour ou +.
+-Sort 2: Mulotage: Le renard utilise sa technique de chasse preferer pour attraper sa proie.
+        -Le renard bondi sur la cible pour la blesser.
+        -Lancable de 2 a 3 PO.
+        -Plus de degats si lancer de 3 PO.
+        -Degats element Terre.
+-Sort 3: Morsure infecter: Le renard mord un ennemie pour lui fair des degats et l'affaiblir avec une infection.
+        -Inflige des degats au CAC.
+        -Reduit un pourcentage de resistence a la cible pour 1 a 2 tour.
+        -Degats element Terre.
+-Sort 4: Coup de patte arriere: Le renard se met de dos et donne un coup de patte arriere pour repousser.
+        -Lancable au CAC.
+        -Pousse de 1 a 2 case la cible.
+        -Si sur un ennemie, inflige des degats.
+
+*Chat: Invoque un chat agile qui vous soutiendra.
+-Vita moyenne,beaucoup de PM.
+-Utilisable 1x par combat.
+-Sort 1: Lechouille: Le chat se met a lecher sa plaie ou celle d'un allier pour le soigner.
+        -Soigne la cible au CAC.
+-Sort 2: Griffure: Le chat donne un coup de griffe pour infliger de faible degats.
+        -Degats au CAC.
+        -Degats element Eau.
+-Sort 3: Oeil de lynx: Le chat libere sont pouvoir de lynx pour lui et ses allier.
+        -Lancable sur lui meme et affecte les allier autour de lui.
+        -Donne un bonus de po a ses allier 2 tour.
+        -Permet a lui-meme et a ses allier de voir au traver les obstacle 1 tour.
+-Sort 4: Subtiliter: Le chat fait preuve de subtiliter pour se cacher de ses adversair.
+        -Rend le Chat invisible 2 tour.
+        -Si il utilise un sort le rend de nouveau visible.
+        -Cooldown de 4 tour ou +.
+

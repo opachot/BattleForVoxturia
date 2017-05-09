@@ -1,0 +1,38 @@
+                     [Lvl:1] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 10%]]                    )
+-[[L'effet dure 1 tour]]
+-[[Temps de relance de 3 tours]]
+------------------------------------------   
+        LIST DES CARACTERISTIQUE
+
+[[PA:0]]
+[[PM:0]]
+[[PO:0-1]]
+
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+
+[[L'effet dure 1 tour]]
+[[Temps de relance de 0 tours]]
+
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+
+[[Degats:0 Neutre]]
+
+((Zone: 1 Hexagone autour du combattant))
+------------------------------------------
+
+
+
+
+
+

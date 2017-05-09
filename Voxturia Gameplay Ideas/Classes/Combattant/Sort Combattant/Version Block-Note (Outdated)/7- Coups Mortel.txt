@@ -1,0 +1,119 @@
+                    [Lvl:1] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 1 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:37-40 Terre/37-40 Obscure]]
+
+
+                    [Lvl:2] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 1 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:38-41 Terre/38-41 Obscure]]
+
+
+                    [Lvl:3] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 1 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:39-42 Terre/39-42 Obscure]]
+
+
+                    [Lvl:4] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 1 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:40-43 Terre/40-43 Obscure]]
+
+
+                    [Lvl:5] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 2 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:41-44 Terre/41-44 Obscure]]
+
+
+                    [Lvl:6] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 2 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:42-45 Terre/42-45 Obscure]]
+
+
+                    [Lvl:7] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 2 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:43-46 Terre/43-46 Obscure]]
+
+
+                    [Lvl:8] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 2 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:44-47 Terre/44-47 Obscure]]
+
+
+                    [Lvl:9] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 2 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:45-48 Terre/45-48 Obscure]]
+
+
+                    [Lvl:10] COUPS MORTEL
+[[PA:5]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+((Si la cible meur, regagne 3 energie))
+((Si la cible meur avec l'effet ''Focus'', regagne 5 energie))
+[[Degats:48-50 Terre/48-50 Obscure]]
+

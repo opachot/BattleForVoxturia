@@ -1,0 +1,79 @@
+Lvl: 1
+-Epee-Lectronique (Sort de base: cumulle point d'action secondair)
+-Coup Supercondensateur (sort degat)
+-Grapin Attirent (sort placement)
+-Jetpack (boost/protection)
+
+Lvl: 4
+-Botte Gravitationel (boost/deplacement)
+
+Lvl: 7
+-Electrotherapie (soin)
+
+Lvl: 10
+-Charge (boost)
+
+Lvl: 17
+-Grapin de Contournement (degats/placement)
+
+Lvl: 24
+-Cyber-slash (degat)
+
+Lvl: 31
+-Queue Mechanique (boost)
+
+Lvl: 38
+-Champ de Force (boost/protection)
+
+Lvl: 45
+-Vision-X (Boost)
+
+Lvl: 52
+-Borne de recharge (boost)
+
+Lvl: 59
+-Puce Electronique (placement)
+
+Lvl: 66
+-Check Point (placement)
+
+Lvl: 73
+-Surcharge (boost)
+
+Lvl: 80
+-Bombe IEM (degat)
+
+Lvl: 90
+-Recyclage (boost)
+
+Lvl: 100
+-Epee Taser
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

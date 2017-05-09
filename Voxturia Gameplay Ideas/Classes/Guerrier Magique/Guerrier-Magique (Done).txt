@@ -1,0 +1,155 @@
+*Art de l'Ambidextrie: Utilise sa magie pour cree une 2em epee puit fonce sur ses
+ adversair avec une agiliter deconcertante.
+-Permet de foncer sur un ennemie si il se situe a une certaine porter maximum.
+-Sort qui se declanche 3x par lancer de sort: lors du lancer de sort, peut lancer 3 coup
+ sur des personne differente ou la meme.
+-Lancer en ligne.
+-Le sort empeche d'utiliser ses PM lors de sont utilisation mais avent de lancer le sort et apret les 3 coups
+ du sort, les PM sont utilisable.
+-Doit avoir 3 Charge Magique ou plus pour etre utiliser.
+-Utilise 1 charge par coup.
+-PO de 1 a 4 (Si lancer a un PO aucun deplacement vers la cible seras fait puisque deja au CAC).
+-Doit cibler une entiter pour que les attaques se fasse (Pas de lancer dans le vide)
+-Degats element Air/Lumiere.
+
+*Charge Magique: Le guerrier-magique genere des charges magique qu'il utilise par la suite pour ses sort magique.
+-Lancer sans limite de fois par tour.
+-Cout en energie tres faible.
+-Permet de gagner 1 en charge magique par lancer.
+-Si au debut du tour du guerrier-magique il a 1 ou plusieur charge magique, il en gagneras 1 de plus.
+-Nombre de charge max sur soit selon Lvl sort.
+
+*Connaisense du Feu: Libere la puissance du feu qui sommeil en sois.
+-Les sorts qui inflige des degats devienne tous d'element de feu.
+-Augmente les degats des sort qui utilise des charge par charge utiliser par degats.
+-Le sort dure 1 tour avec au moin 3-4 tour de trou
+-Empeche l'utilisation du sort ''Connaissance de la Glace.
+
+*Connaisanse de la Glace: Libere la puissance de la glace qui sommeil en sois.
+-Les sorts qui inflige des degats devienne tous d'element d'eau.
+-Reduit de 1 l'energie des cibles des sorts de degats qui utilise un ou plusieur charge.
+-Le sort dure 1 tour avec au moin 3-4 tour de trou
+-Empeche l'utilisation du sort ''Connaissance du Feu.
+
+*Bouclier Magique: Les charge magique se transforme en bulle magique qui entour sont porteur pour le proteger.
+-Reduit les degats final d'environ 50% max selon Lvl sort.
+-Par degats subit et reduit, retire une charge magique.
+-Si ne reste plus de charge magique, les reductions ne se declancherons plus.
+-Les attaque indirect/poison ne compte pas, leur degats ne seras pas reduit et n'utiliseras pas de charge magique.
+-Dure 1 tour avec long temps de relance.
+-Si lancer sur un allier, la totaliter des charges sont transferer a l'allier de facon permanante.
+-Les alliers n'ont pas de limitation sur le nombre de charge qu'il peuve avoir sur eux.
+
+*Explosion d'Energie: Propule une onde de choc vers une personne qui une fois atteinte, libere la magie du Guerrier-Magique
+ autour d'elle.
+-La cible du sort subit des degats.
+-Sur les 6 ligne autour de la cible, lance des boule magique qui inflige des degats au ennemie mais qui soigne les allier.
+-Aussitot que une boule magique touche une cible ou un obstacle qui bloque les ligne de vue elle arrete sont chemain.
+-Les degats des boule magique est moin importent que ceux de la cible du sort.
+-La PO max des boule magique depent du Lvl du sort.
+-Les degats sur les ennemies sont plus beaucoups plus elever seulement sur les boule magique via le sort ''Connaissance du Feu''
+-Les soin sont beaucoups plus elever via la sort ''Connaissance de la Glace''
+-L'effet ''Connaissance de la Glace enleve 1 Energie seulement avec les boule magique.
+-Lancer avec PO minimum.
+-Faible cout en  energie et cout en charge de 6 (1 charge par boule magique). 
+-Degats element Terre a L'impact et Lumiere les boules d'energie.
+
+*Attaque Sauvage: Dans un excet de rage le guerrier-magique bondit vers une personne pour la blesser.
+-Doit cibler une entiter pour etre lancer.
+-Degats sur la cible + faible degats autour du guerrier-magique.
+-Permet de se deplacer au contact de la cible avec un saut.
+-Lancer a 2 PO minimum a 4 PO maximum.
+-Plus le sort est lancer de loin, plus les degats seront elever. (Ex: +25% degats de base par Case deplacer via le sort)
+(Ex: si lancer a 2Po le guerrier et deplacer de 1 case donc +25% degats de base du sort si lancer a 4PO 3 cases deplacer donc +75%)
+-Degats element Air/Terre.
+
+*Charge: Le Guerrier-Magique fonce sur la cible.
+-Lancable a 2 PO minimum et 5 PO max (selon Lvl sort).
+-Fonce au contact de la cible.
+-Si la cible est un ennemie, inflige des degats.
+-Utilisable 1x par tour.
+-Lancable en ligne uniquement.
+-Degats element Terre.
+
+*Orage de Magie: Les charge magique se transforme en orage qui abat sa magie sur les adversairs qui entre dans la zone
+ de l'orage.
+-Zone de 4 hexagone autour de la cible.
+-Les ennemie subiront des degats par case qu'il parcoure dans la zone du sort.
+-Chaque declanchement de l'effet du sort reduit de 1 les charges magique du porteur du sort.
+-Cout en energie mais le sort consomme des charge.
+-Si ne reste plus de charge magique, le sort ne se declanchera plus.
+-Si lancer sur un allier ou ennemie, transfer toute les charge du guerrier-magique vers la cible du sort.
+-Les effet des sorts connaissance du feu et de la glace s'applique seulement si le sort est utiliser sur sois-meme.
+-Si lancer sur un autre personne, la totaliter des charges sont transferer la personne de facon permanante.
+-Les autre personnes n'ont pas de limitation sur le nombre de charge qu'il peuve avoir sur eux.
+-Si un ennemie a le sort sur lui, il ne peut pas etre cibler par les attaques du sort.
+-Si un allier a le sort sur lui, si il se deplace autour d'ennemie, le sort ne les attaqueras pas a moin que les ennemies
+ se deplace dans la zone de l'orage.
+-Degats element Eau.
+
+*Evasion : Augmente les reflex pour esquiver la prochaine attaque.
+-Permet d'esquiver une attaque (immuniter contre le prochain sort de degats).
+-Peut se declancher de 1 a 3 fois (Selon Lvl sort)
+-Lancable sur sois-meme ou un allier.
+
+*Decuplement Magique: Decuple la magie du guerrier-magique.
+-Lancable sur le Guerrier-Magique seulement.
+-Gagne des charge jusqua etre au maximum possible. (Depent du Lvl sort charge magique)
+-Pour les 2 prochain tour, imposibiliter de gagner des charge magique.
+-Doit avoir au moin 1 en charge magique pour etre lancer.
+
+*Salto Arriere: Saut arriere pour fuire le contact d'une personne trop collente.
+-Doit etre lancer sur une entiter.
+-Lancable au Cac seulement.
+-Saute par en arriere en tournent pour s'eloigner de la cible.
+-S'eloigne a 3 ou 4 PO de la cible. (Selon Lvl sort)
+
+*Furie: Instaure un auras de furie autour d'une personne se qui lui la rend en colere et ignore les degats qu'il
+va subire.
+-Devien immuniser a tout les degats mais les receveras en retour a la fin de sont prochain tour.
+-Perd des % resistance
+-Gagne des % degats.
+-Lancable sur sois-meme, allier et ennemie.
+-Les degats accumuler sur la cible sont non debuffable.
+
+*Coup Final: Un coup d'epee mortel qui envoie sa victime dans l'autre monde la plupar du temps.
+-Degats cac monocible.
+-Si la cible a seulement 10% a 25% de sa vie restente (selon Lvl sort) augmente de 50% a 100% les degats du sort.
+-Degats element Obscure.
+
+*Coup Ensanglanter: Un coup d'epee qui fait des degats et provoque un hemoragie.
+-Degats Cac monocible.
+-Ajoute un poison (Hemoragie) en plus sur la cible qui se declanche au 2 prochain tour de la cible
+-Le poison n'est pas affecter par les changements d'element des sorts connaissance du feu et de la glace.
+-Degats element Neutre et Poison Obscure.
+
+*Coup Bas: Les coup bas sont autoriser alors.. Pourquoi pas ?
+-Degats cac monocible.
+-Rend les PM de la cible a 0 pour 1 tour.
+-Long temp de relance.
+
+*Slash: Un coup d'epee horizontal pour abattre le plus de vie possible.
+-Degats de zone lancer a partire d'une case au CAC.
+-Zone de 3 cases coller au guerrier-magique et de 2 PO de profondeur.
+-Degats element Air.
+
+*Boule Magique: Une orbe d'energie qui inflige des degats au ennemie et qui soigne ses allier. 
+-Lancer sur un ennemie, une boule magique qui inflige des degats a distance.
+-Lancer max 3 fois par cible.
+-Faible cout en charge et energie.
+-Lancer sur sois-meme ou un allier soigne legerement.
+-Si dans l'effet connaissanse de la glace, les soin sont augmenter.
+-Degats elementair Lumiere.
+
+*Absorbtion Magique: Absorbe la force magique de plusieur personne.
+-Coute 1 en charge magique et tres faible cout energie.
+-Attaque les alliers comme les ennemies. 
+-Attaque la cible puit attaque tout ceux de 1 a 2 ou 3 PO (selon lv sort) en ligne de la cible. 
+-Gagne 1 en charge magique par personne toucher.
+-Faible degats et temp de relance de 1 (1 tour de trou).
+-Les personne qui on deja eter toucher par le sort se tour ne peuve plus l'etre pour le reste du tour.
+
+
+
+
+

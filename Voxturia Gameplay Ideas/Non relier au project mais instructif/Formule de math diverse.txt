@@ -1,0 +1,242 @@
+---------------------------------------------------------------------------------------------
+
+                                FORMULE CALCULE DEGATS
+
+Les dégâts des Sorts
+Pour déterminer les dégâts d'un Sort, sont pris en compte :
+les dégâts de Base du Sort
+la Caractéristique de l'élément (Neutre ou Terre = Force, Feu = Intelligence, ...)
+Le bonus ''Puissance''
+Le bonus ''+ Dommages'' appelé ici ''Dommages Fixes''
+Formule
+Dégâts = Base x (100 + Caractéristique + Puissance) / 100 + Dommages Fixes
+
+Remarque : les résultats sont toujours arrondis à l'inférieur (99,99 donne 99 et pas 100). De plus, si la caractéristique d'un élément est inférieure à 0, elle est comptée comme égale à 0 dans le calcul (0 ou -100 Force donne le même calcul)
+
+Exemple
+Soit un Crâ ayant, équipement inclus : 400 en Intelligence, +23% Dommages et +14 Dommages fixes, utilisant le sort Flèche Magique niveau 5 (11 à 15 dommages feu), les dommages qu'il fera seront de :
+
+Minimum : 11 x (100 + 400 + 23) / 100 + 14 = 71,53 arrondi à 71
+Maximum : 15 x (100 + 400 + 23) / 100 + 14 = 92,45 arrondi à 92
+---------------------------------------------------------------------------------------------
+
+                                FORMULE CALCULE SOIN
+
+Les Soins (Sorts)
+Pour déterminer les Soins d'un Sort, sont pris en compte :
+les Soins de Base du Sort
+l'Intelligence
+Le bonus ''+ Soins''
+Formule
+Soins = Base x (100 + Intelligence ) / 100 + Soins
+
+Exemple
+Soit un Eniripsa ayant, équipement inclus : 449 en Intelligence, et +34 Soins, utilisant le sort Mot Soignant niveau 5 (8 à 11 Soins), les Points de Vie qu'il fera récupérer seront de :
+
+Minimum : 8 x (100 + 449 ) / 100 + 34 = 77.92 arrondi à 77
+Maximum : 11 x (100 + 449 ) / 100 + 34 = 94.39 arrondi à 94
+--------------------------------------------------------------------------------------------------
+
+                                FORMULE CALCULE Retraits PA/PM
+
+Les Retraits de PA et PM
+Pour déterminer les chances de retirer des PA(Points d'Action) ou Pm (Points de Mouvement) retirés, sont pris en compte:
+Le nombre de PA ou PM totaux de la cible.
+Le nombre de PA ou PM restants de la cible au moment du retrait du PA
+L' esquive de base du lanceur. C'est à dire son esquive sans sorts donnant ou retirant de l'esquive.
+L'esquive aux pertes de PA (ou PM)de la cible. . (sorts tels que "Démotivations" et "Protection Aveuglante" compris)
+
+Les retraits sont considérés un par un,c'est à dire qu'il est équivalent de tenter de retirer 5 fois un PA ou 5 PA d'un coup. Lorsqu'un PA/PM est retiré, le nombre de PA/PM restants de la cible est modifié pour le retrait suivant.
+(source = devblog)
+
+Formule
+
+pourcentage de chance de retirer un PA = PA ou PM restants de la cible/PA ou PM totaux de la cible x esquive de base du lanceur/esquive de la cible. x 1/2
+
+
+Exemple
+Le nombre de PA totaux de la cible = 10.
+Le nombre de PA/PM restants de la cible au moment du retrait du PA=7
+La esquive de base du lanceur = 150 .
+L'esquive aux pertes de PA de la cible = 90.
+
+pourcentage de chance de retirer le septième PA = 7/10 x 150/90 x 1/2 = ~58%
+
+Si le sort retire deux PA, donc deux tentatives de retrait, soit le retrait est esquivé et on conserve les mêmes chances de retrait, soit on remplace B]7[/B] par 6 dans la formule. 
+
+pourcentage de chance de retirer le sixième PA = 6/10 x 150/90 x 1/2 = 50%
+------------------------------------------------------------------------------------------------
+
+                              FORMULE CALCULE REDUCTION DMG (SORT)
+
+Les réductions de dommages (sorts)
+MàJ 2.3.5
+Quel que soit le sort de réduction, la formule est la même.
+Voici les éléments à prendre en compte pour le calcul:
+Réduction de base.
+Niveau du lanceur.
+Formule
+La réduction finale est: Réduction x (100 + 5xNiveau)/100
+
+Exemple
+Pour une armure feca niveau 6 (hors critique), au niveau 200:
+Réduction : 14
+Niveau : 200
+14 x (100 + 5x200)/100 = 14x11 = 154
+------------------------------------------------------------------------------------------------
+
+                           FORMULE CALCULE REDUCTION DMG (EQUIPEMENT)
+
+Les réductions de dommages (équipements)
+Les réductions données par les boucliers interviennent seulement sur les dégâts infligés par un autre joueur (même en pvm donc) mais pas sur ceux infligés par un monstre. Voici les éléments à prendre en compte pour le calcul:
+Dommages : les dommages non réduits.
+Résistance% : la résistance en pourcentage à l'élément des dégâts (neutre, terre, feu, eau ou air). Le bouclier feca intervient ici.
+Résistance : la résistance fixe à l'élément des dégâts (neutre, terre, feu, eau ou air). Les armures feca interviennent ici.
+RéductionP : la réduction physique qui intervient seulement sur les dégâts de type neutre et terre.
+RéductionM : la réduction magique qui intervient seulement sur les dégâts de type feu, eau et air.
+Formules
+Sur une attaque de type neutre ou terre, DommagesSubis = ( 1 - Résistance% / 100 ) x ( Dommages - Résistance - RéductionP )
+Sur une attaque de type feu, eau ou air, DommagesSubis = ( 1 - Résistance% / 100 ) x ( Dommages - Résistance - RéductionM )
+
+Remarque : les résultats sont toujours arrondis à l'inférieur (99,99 donne 99 et pas 100).
+
+Exemples
+Dommages1 : 600 neutre.
+Dommages2 : 400 feu.
+Résistance% : 40% neutre et 35% feu.
+Résistance : +20 neutre et +17 feu.
+RéductionP : +13 réduction physique.
+RéductionM : +11 réduction magique.
+DommagesSubis1 = ( 1 - 40 / 100 ) x ( 600 - 20 - 13 ) = 340,2 arrondi à 340
+DommagesSubis2 = ( 1 - 35 / 100 ) x ( 400 - 17 - 11 ) = 241,8 arrondi à 241
+--------------------------------------------------------------------------------------------------
+
+                                  FORMULE CALCULE RENVOIS DMG
+
+Les renvois de dommages
+Quelque soit le sort de réduction, la formule est la même.
+Voici les éléments à prendre en compte pour le calcul:
+Renvoi du sort (Exemple : Contre, Protection Aveuglante).
+Renvoi de l'équipement (Exemple : Panoplie Prespic, Piruk, etc.).
+Sagesse totale.
+Formule
+La réduction finale est: Renvoi du sort x (1 +(Sagesse / 100)) + Renvoi de l'équipement
+
+Exemple
+Renvoi du sort : 8
+Renvoi de l'équipement : 0
+Sagesse : 600
+8 x (1 +(600 / 100)) + 0 = 56
+-------------------------------------------------------------------------------------------------
+
+                               FORMULE CALCULE INITIATIVE
+
+L'initiative
+Voici les éléments à prendre en compte pour le calcul:
+Points de vie max
+Points de vie actuels
+Bonus initiative
+Bonus caractéristiques
+
+
+Formule
+Total Initiative = ( Bonus Caractéristiques + Bonus initiative) x ( Points de vie actuels / Points de vie max )
+
+Les arrondis sont toujours à l'inférieur (99,99 donne 99 et pas 100)
+
+(cette formule fonctionne aussi pour l'initiative des monstres)
+
+Exemple
+Pour un personnage avec ces caractéristiques :
+Force = 314
+Chance= 56
+Intelligence = 11
+Agilité = 108
+Bonus initiative = 350
+Le total d'initiative sera : 314 + 56 + 11 + 108 + 350 = 839
+
+Ensuite, si le personnage en question est a 2000/3500 pdv :
+Total Initiative = (839) x ( 2000 / 3500 ) = 479
+--------------------------------------------------------------------------------------------------
+
+                                 FORMULE CALCULE TACLE ET FUITE
+
+Tacle et fuite
+MàJ 2.3.4 - devblog
+Pour déterminer les Pa et Pm restants de votre adversaire après une tentative de fuite, sont pris en compte:
+Votre score de Tacle
+Le score de Fuite de votre adversaire
+Les Pa de votre adversaire au moment de la tentative
+Les Pm de votre adversaire au moment de la tentative
+N'oubliez pas que pour chaque 10 points en agilité, vous bénéficiez d'un point supplémentaire en tacle et en fuite.
+
+Formule (un unique tacleur)
+
+Après sa tentative de fuite, votre adversaire conservera:
+P = (Fuite + 2) / ((2 x (Tacle + 2)) % de ses Pa et Pm (arrondis à l'inférieur)
+
+P étant bien entendu ramené dans l'intervalle [0;1] (c'est à dire entre 0% et 100%)
+c'est à dire:
+Pa_Restants = E( Pa*P/100 )
+Pm_Restants = E( Pm*P/100 )
+
+Cas des tacleurs multiples
+
+Si plusieurs adversaires sont au contact du fuyard, on calcule le pourcentage P de Pa et Pm conservés pour chaque personnage tacleur comme vu précédemment. Le pourcentage effectif de Pa et Pm conservé est alors le produit de ces pourcentages, autrement dit, pour 2 personnages:
+P1 est le pourcentage de Pa et Pm restants lorsque le fuyard est taclé par le tacleur 1 uniquement
+P1 est le pourcentage de Pa et Pm restants lorsque le fuyard est taclé par le tacleur 2 uniquement
+le pourcentage P de Pa et Pm conservés effectifs est alors égal à:
+P = (P1/100) x (P1/100)
+
+Les Pa et Pm restants sont alors calculés comme précédemment avec ce dernier pourcentage P.
+
+Exemple
+
+Un fuyard est au contact de 3 adversaires.
+Ces quatre personnages ont respectivement 28 fuite, 28 tacle, 58 tacle et 0 tacle.
+
+P1 = (28+2)/(2x(28+2)) = 50%
+P2 = (28+2)/(2x(58+2)) = 25%
+P3 = (28+2)/(2x(0+2)) = 750% (bridé à 100%)
+
+P = P1*P2*P3 = 0,5*0,25*1 = 12,5%
+
+Supposons que le fuyard ait 10Pa et 9Pm au moment de sa tentative, il lui restera alors 1Pa et 1Pm lors de sa fuite.
+Si le fuyard disposait de 7Pm ou moins, alors il n'aurait pas pu bouger ( E( 7*12,5/100 ) = 0 )
+--------------------------------------------------------------------------------------------------
+
+                              FORMULE CALCULE DMG POUSSER
+
+Dégâts de poussée
+MàJ 1.27.0
+Pour déterminer les dégâts de poussée, sont pris en compte:
+Le Niveau du personnage pousseur
+Les DoPou (dommages de poussée) du personnage pousseur
+La Distance que la cible aurait du parcourir s'il n'avait pas été bloqué (autrement dit le nombre de cases que la cible aurait du parcourir après avoir été bloqué par un obstacle)
+Les RéPou (résistance à la poussée) de la cible
+
+Formule
+
+Les dégâts D subis par le personnage poussé sont égaux à:
+D = (8 + R * Niveau / 50) * Distance + DoPou - RéPou
+où R est un nombre aléatoire compris entre 1 et 8
+autrement dit, les dégâts varient entre
+DMin = (8 + 1 * Niveau / 50) * Distance + DoPou - RéPou
+et
+DMax = (8 + 8 * Niveau / 50) * Distance + DoPou - RéPou
+
+Cas des chaînes de personnages
+
+Si l'obstacle s'avère être un autre personnage, il reçoit la moitié des dommages D reçus par le joueur précédent, arrondie à l'inférieur, à laquelle on soustrait ensuite les RéPou 
+de ce nouveau personnage. La transmission s'effectue de même sur chaque autre personnage directement derrière le précédent en divisant à chaque fois les dégâts par 2 et en ôtant les RéPou.
+
+Note : Distance n'est pas doublé pour la poussée en diagonale (par exemple, Distance vaut 1 ou 2 pour ressac suivant que le personnage ait été déplacé ou non), 
+de plus, les dégâts de poussée ne sont transmis que dans la diagonale et pas sur les cases adjacentes même si elles ont bloqué la poussée du personnage.
+
+
+
+
+
+
+
+

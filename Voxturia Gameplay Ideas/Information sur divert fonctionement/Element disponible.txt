@@ -1,0 +1,10 @@
+-Air (Principalement distence)
+-Terre (principalement cac)
+-Eau (principalement soin/malus)
+-Feu (principalement zone,vol de vie)
+-Electrique ( Pas de domaine predominent)
+
+-Neutre (Affilier a aucun element)
+
+-Obscure (principalement poison/degats mortel)
+-Lumiere (principalement soin)
