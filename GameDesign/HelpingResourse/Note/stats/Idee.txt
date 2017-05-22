@@ -1,0 +1,9 @@
+Element based armor
+ex: set d'equipement de feu
+
+artefact(treasure) de classe auront des modification de sort sur certaine.
+
+-----------------------
+
+Soin des sort generalement en % mais les equipement aurons des jet de soin fix qui s'aditionerons
+a la suite des jet de heal %.

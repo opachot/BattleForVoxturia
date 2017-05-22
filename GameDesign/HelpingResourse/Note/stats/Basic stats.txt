@@ -1,11 +1,4 @@
-
-
-NOTE: Limitation de 15 PA et 7PM
-
-
 Note Non Sure : degats de base sort de 20 a 150 Environ
-
-
 
 (-------------------------)
 (-Debute avec 8 PA        )
@@ -14,15 +7,11 @@ Note Non Sure : degats de base sort de 20 a 150 Environ
 (-Lvl: 150: +1PA          )
 (-------------------------)
 
-
-
-
 (------------------------------------------------------)
 (-PDV de base 200                                      )
 (                                                      )
 (- +20 par lvl. (3180 pdv de base lvl 150)             )
 (------------------------------------------------------)
-
 
 (------------------------------------------)
 (        Pour 8 Items d'Equipement         )
@@ -32,3 +21,16 @@ Note Non Sure : degats de base sort de 20 a 150 Environ
 (========================================= )
 (-Environ 10 pdv bonus par lv d'equipement )
 (------------------------------------------)
+
+
+
+-Air (Principalement distence)
+-Terre (principalement cac)
+-Eau (principalement soin/malus)
+-Feu (principalement zone,vol de vie)
+-Electrique ( Pas de domaine predominent)
+
+-Neutre (Affilier a aucun element)
+
+-Obscure (principalement poison/degats mortel)
+-Lumiere (principalement soin)
