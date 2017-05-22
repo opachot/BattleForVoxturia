@@ -1,0 +1,99 @@
+   [Lvl:1] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 6 tours]]
+
+
+   [Lvl:2] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 5 tours]]
+
+
+   [Lvl:3] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 5 tours]]
+
+
+   [Lvl:4] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 5 tours]]
+
+
+   [Lvl:5] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 4 tours]]
+
+
+   [Lvl:6] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 4 tours]]
+
+
+   [Lvl:7] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 4 tours]]
+
+
+   [Lvl:8] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 3 tours]]
+
+
+   [Lvl:9] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2-4]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Oui]]
+[[Temps de relance de 3 tours]]
+
+
+   [Lvl:10] L'ENVOL DE L'AIGLE
+[[PA:3]]
+[[PM:1]]
+[[PO:2-4]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Non]]
+[[Lancer en ligne: Non]]
+[[Temps de relance de 3 tours]]
+

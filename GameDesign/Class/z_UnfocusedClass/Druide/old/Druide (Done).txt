@@ -1,0 +1,167 @@
+-Druide-
+
+idee de skill
+
+NOTE: erosion appliquer au gens soigner (tout les sort de soin des autre classse aussi) via certain sort.
+
+*Fontaine de Vie: Le druide invoque la Fontaine de Vie qui a le pouvoir de retour a la vie 
+ selon les vieilles legende druide.
+-Si le druide ou un allier meur dans la glyf autour de la fontaine de vie, il revien a la vie
+ lors de sont tour de jeu.(Le tour du joueur mort)
+-Le joueur est ressuciter avec un nombre de pdv en % predefini selon le Lvl du sort.
+-Est insoignable de facon permanente et ne peut plus etre ressuciter via la fontaine de vie.
+-Si le druide meur, seul la fontaine de vie reste sur le terrain parmit tout ses sorts.
+-Quend un joueur revien a la vie, il n'a plus d'envoutement et tout ses temps de relance son a 0.
+-La fontaine reste sur le terrain temp qu'elle n'est pas reinvoquer ou que le druide hord combat.
+-Si le druide est mort et expulser du combat, la fontaine disparais.
+-La fontaine est une case inmarchable mais qui ne bloque pas les lignes de vues.
+-La zone de la glyf est de 2 hexagone autour de la fontaine.
+-Si un ennemie avec Glam Dicinn meur dan sla glyf de fontaine de vie, sont ame est retirer du combat.
+
+*Fontaine: Le druide invoque une fontaine qui regenaire sont equipe mais devien toxique pour les ennemies.
+-La fontaine est une case inmarchable mais qui ne bloque pas les lignes de vues.
+-La zone de la glyf est de 2 hexagone autour de la fontaine.
+-Soigne les allier qui commence leur tour sur la glyf.
+-Inflige des degats au ennemie qui commence leur tour sur la glyf.
+-Degats element Eau.
+
+*Elixir d'Oubli: Une potion qu'on ne se souvien plus de sont utiliter une fois bue...
+-Enleve les envoutements de la cible.
+-Lancable sur allier et ennemie.
+-Temps de relance de 1 (1 tour de trou)
+
+*Potion de Surpuissance: Une potion qui se transmet de bouche de druide a oreille de druide depuit la nuit des temps.
+-Applique l'effet Potion de Surpuissance qui donne un gros bonus de degats si la cible de se sort subit
+ un nombre en % de degats sur ses point de vie avent sont prochain tour.
+-Un compteur indiqueras  le nombre de pdv a enlever avent le declanchement. (Du genre comme plastron sur dofus)
+-Si un ennemie est la cible de se sort et qu'il a Glam Dicinn, si il perd le nombre requi de % vita pour que la 
+ potion se declanche, cela va lui retirer un gros bonus de degats lors de sont prochain tour.
+
+*Immortaliter de l'Ame: Le druide benie une personne pour lui accorder l'immortaliter.
+-Lancable 1x par combat.
+-Si lancer sur le druide, si il meur il ne seras pas expulser du combat.
+-Si lancer sur un allier mort mais encor en combat, il ne seras pas expulser du combat et resteras sous forme
+ d'esprit jusqua la fin du combat.(peut etre lancer sur l'allier meme si il est encor vivant).
+-Etats indebuffable de durer infini.
+
+*Autel de Rituel: Pour accomplire la plupar de ses rituel saisonier, le druide doit utiliser un autel de rituel.
+-Durer infini a moin d'etre reinvoquer.
+-L'autel de rituel est une case inmarchable mais qui ne bloque pas les lignes de vues.
+-La zone de la glyf est de 3 hexagone autour de l'autel de rituel.
+-Sert de condition pour lancer les sorts: Glam Dicinn, Geis, Samain, Imbolc, Beltaine, Lugnasad.
+-Reinvoquer l'autel de rituel annule les rituels en attente d'execution qui etais sur l'ancienne autel.
+
+*Potion Magique: Les potion magique du druide sont a effet variable, certain soigne d'autre rende malade.
+-Si lancer sur un allier, soigne l'allier cibler.
+-Si lancer sur un ennemie, inflige des degats a l'ennemie cibler.
+-Si l'ennemie a la sort Glam Dicinn, il subiras plus de degats.
+-Lancable 1x maximum par personne par tour.
+-Degats element Eau.
+
+*Medecine Avencer: La medecine avencer est une chirurgie qui permet de soigner de grosse blessur mais force a utiliser
+ moin d'energie et a moin se deplacer pour longtemp. Le druide sacrifie sa santer pour se devouer corp et ame au patient.
+-Soigne bcp de % vita si lancer sur sois-meme ou un allier mais en contrepartie, la cible perd 1 en energie
+ et 1 en PM pour 20 tour. Le druide perd un faible % en pdv max pour tout le combat non debuffable et effet cummulable.
+-Si lancer sur un ennemie avec Glam Dicinn, lui inflige de gros degats et lui retire 1 energie pour 3 tour 
+ non debuffable. Le duide lui auras une perte en pdv max en % pour le reste du combat (perte de pdv max  asser importente, 
+ non debuffable et cummulable).
+-Degats element Lumiere.
+ 
+*Sacrifice Animal: Le sacrifice animal sert a soigner les allier ou si vous confonder un cochon avec
+ votre adversair au moin cela lui feras bien mal.
+-Sacrifie une invocation allier puit choisie un allier a soigner(peut etre le druide lui-meme).
+-Si lancer sur un ennemie, lui inflige des degats.
+-Les soin sur les allier sont plus efficase si l'invocation sacrifier se trouvais dans la glyf de l'autel
+ de rituel.
+-Les degats sur les ennemies sont plus elever si l'ennemie se trouve dans la glyf de l'autel de rituel.
+-Degats element Feu/Obscure.
+
+*Art de Barde: Le druide est un excellent musicien et sa musique rend plus competant ceux qui l'entende.
+-Zone sur les cases autour du druide.
+-Augmente de 1 Lvl les sorts des allier comme des ennemie situer dans la zone du sort pour 1 tour.
+-Si les sorts on un cooldown moin elever sur leur sort avec le lvl de plus, le cooldown du sort avec
+ 1 Lvl de plus seras appliquer.
+-Si un ennemie avec Glam Dicinn se trouve dans la zone, tout ses sort perde 1 Lvl pour 1 tour.
+-Si les sorts on un cooldown plus elever sur leur sort avec le lvl de moin, le cooldown du sort avec
+ 1 Lvl de moin seras appliquer.
+
+*Pierre de Connaisence: Les legende raconte que la pierre de connaisence permet d'apprendre plus vite.
+-Sort monocible.
+-Temps de relance elever.
+-Permet de reduire de 1 tour le temps de relance des sorts de la cible du sort.
+-Si lancer sur un ennemie avec Glam Dicinn, cela lui ajouteras 1 tour de temps de relance sur ses sort
+ en attente de relance.
+
+*Brouillard: Le druide est capable de se deplacer discretement dans la brume ou d'apprendre a une personne a le fair.
+-Rend la cible du sort invisible pour 2 tour.
+-Si un sort est utiliser durent l'invisibiliter, rend la personne de nouveau visible.
+-Bonus de fuite pour 5 tour environ.
+-Long temp de relance.
+
+*Glam Dicinn: Glam Dicinn est la malediction supreme que peut infliger un druide de grand pouvoir. La personne maudite
+ est alors condamner a de grande souffrance et tourment.
+-Lancable sur un ennemie seulement.
+-Long temps de relance.
+-Le druide doit etre sur la glyf de l'autel de rituel pour lancer le sort.
+-Change tout les effet positif pour leur equivalent en effet negatif.
+ (Ex: si Boost degats, devien malus degats.)
+ (Ex: si recois du soin, devien des degats.)
+ (Ex: si a un sort de reduction de degats devien un sort qui va augmenter les degats qu'il va subir.)
+-Inverse aussi les effet des etats qui donne des bonus avec un equivalent negetif.
+
+*Geis: Geis est une incantation constituée d'obligations et d'interdits, celui qui enfreint
+ les regles de l'incantation le regrete toujours.
+-Lancable sur allier ou ennemie.
+-Long temps de relance.
+-Le druide doit etre sur la glyf de l'autel de rituel pour lancer le sort.
+-Si lancer sur un ennemie: Obligation de ne pas fair de degats lors de sont tour sinon il recois de gros degats.(declancher fin de tour)
+-Si lancer sur un allier: Obligation de ne pas fair de degats lors de sont tour sinon il recois de gros degats,
+ si ne fait pas de degats, soigne la cible en % vita.(declancher din de tour)
+-Degats element Lumiere.
+
+*Divination: Le druide peut voir dans le future et a chaque fois que ses vision se concretise ses a sont aventage.
+-Lancer sur un allier, si il perd un certain % de vie, declanche l'effet du sort : Soigne de la vie en % (plus de regen que se
+ que la cible devais perdre pour declancher le soin).
+-L'effet prend fin au prochain tour du druide.
+-L'effet se declanche aussitot que le % de vie perdue est attein pour declancher l'effet du sort.
+-Lancer sur un ennemie, si il ne tape pas de joueur adverse (Les invocation ne compte pas), il subit des degats.
+-L'effet se declanche a la fin du tour de la cible ennemie si il na pas fait de degats a un joueur adverse.
+-Degats element Lumiere.
+
+*Samain: Samain est un rituel qui permet de regenerer les blessures.
+-Le sort doit cibler directement l'autel de rituel.
+-Au debut du prochain tour du druide, la glyf de l'autel de rituel va soigner tout les membres de l'equipe
+ du druide qui sont dans la glyf de l'autel de rituel en % vita.
+-Faible temps de relance (2-3 tour).
+-Rend imposible l'utilisation du sort: Imbolc, Beltaine et Lugnasad pour le reste du tour.
+
+*Imbolc: Imbolc est un rituel de purification et de regeneration.
+-Le sort doit cibler directement l'autel de rituel.
+-Desenvoute les alliers et les ennemies qui sont dans la glyf de l'autel de rituel.
+-Au prochain tour, lors de la fin[debut?] du tour du druide, les membres de l'equipe du druide qui sont dans la glyf
+ de l'autel de rituel sont soigner en % vita. ( soigne moin que le sort samain a Lvl equivalent)
+-Moyen temps de relance (2-4 tour).
+-Rend imposible l'utilisation du sort: Samain, Beltaine et Lugnasad pour le reste du tour.
+
+*Beltaine: Beltaine est un rituel de protection.
+-Le sort doit cibler directement l'autel de rituel.
+-Applique l'effet ''Feu de Bel'' au druide et a ses allier si ils sont dans la glyf de l'autel de rituel.
+-L'effet ''Feu de Bel'' donne une protection en resistance fix contre les degats subit pour 1 tour.
+-Rend imposible l'utilisation du sort: Samain, Imbolc et Lugnasad pour le reste du tour.
+
+*Lugnasad: Lugnasad est un rituel de paix et d'abondance.
+-Le sort doit cibler directement l'autel de rituel.
+-Soigne beaucoup de point de vie sur les allier et sur les ennemies dans toute la map du combat.
+ (Soigne environ 50% de la vita max du Druide)
+-Ne peut pas etre utiliser si le sort Glam Dicinn a eter utiliser se tour.
+-Rend imposible l'utilisation du sort: Samain, Imbolc et Beltaine pour le reste du tour.
+
+
+
+
+
+
+
+
+
+

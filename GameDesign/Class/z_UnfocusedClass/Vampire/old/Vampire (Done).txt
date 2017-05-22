@@ -1,0 +1,129 @@
+-Vampire-
+
+idée de skill
+
+*Morsure: Le vampire mord son adversaire pour lui voler son sang.
+-Degats au Cac et mono cible.
+-Degats en vol de vie.
+-Degats plus efficace sous l'effet ''Sombre Nuit''.
+-Degats element Feu.
+
+*Envoler de Chauve-Sourie: Le vampire disparait dans une envolé de chauve-sourie.
+-Transforme le vampire en plusieur chauve-sourie pour 1 tour.
+-Deplace le vampire sur une autre cases.
+-Lancable de 1 a quelques PO.
+-Devient invulnérable au attaque recue au corps a corps pour 1 tour.
+-Utilisable seulement dans l'etats ''Sombre Nuit''.
+
+*Sombre Nuit: Le vampire crée une illusion de la nuit pour que son sang de vampire le rendre plus puissant.
+-Donne l'etats ''Sombre Nuit'' a toute les entiter du combat.
+-L'etats ''Sombre Nuit'' augmente la puissance,la resistance et la vitaliter du vampire et du goule seulement.
+-Empeche l'utilisation des sorts d'ombre suivent: Manipulation de l'Ombre, Lance de l'Ombre, Reflexe de l'Ombre,
+ Fouet de l'Ombre et Cape d'Ombre.
+
+*Manipulation de l'Ombre: Le vampire utilise son ombre pour frapper son adversaire. 
+-Degats de 2 a quelques PO.
+-Lancer en ligne.
+-Inutilisable sous l'etats ''Sombre Nuit''.
+-Degats element Obscure.
+
+*Transfusion Sanguine: Le vampire transfer une partie de sa vie a une autre personne.
+-Transfer une partie de sa vie a une personne.
+-Transfer plus de vie a la cible que le vampire en perd.
+
+*Marque du Vampire: Le vampire mord son adversaire pour lui poser une marque de vampire.
+-Donne l'etats ''Marque du Vampire'' a la cible.
+-Inflige un poison sur 3 tour a la cible, les degats subit par le poison est en vol de vie.
+-Le poison est plus puissant si utiliser sous l'etats ''Sombre Nuit''.
+-Degats element Feu.
+
+*Lance de l'Ombre: Le vampire utilise son ombre comme une lance pour transpercer l'âme de l'adversaire et la rendre Impure. 
+-Degats de 2 a quelques po.
+-Lancer en ligne.
+-Inflige aussi un poison qui dure quelques tour.
+-Inutilisable sous l'etats ''Sombre Nuit''.
+-Degats element Obscure pour les 2 degats.
+
+*Cercueil: Le vampire invoque son cercueil sur le terrain.
+-Lancer en ligne.
+-Invocation statique qui bloque le passage et les lignes de vue.
+-Posede des pdv et peut etre demolie.
+-Glyf qui enleve quelques Energy au ennemye dans sa zone
+
+*Enfermement: Le vampire enferme quelqun dans un cercueille.
+-Lancable sur n'importe qui.
+-Fait passer le prochain tour de la cible.
+-Rend la cible invulnerable au degats.
+-Si lancer sur lui-meme, met fin au tour du vampire et lui fait passer sont prochain tour.
+-La protection fini a la fin du prochain tour du vampire
+
+*Lien de Sang: Le vampire utilise une personne qu'il a marquer pour aspirer le sang qu'elle feras couler.
+-Lancable uniquement sur une cible qui posede l'etats ''Marque du Vampire''.
+-Les degats que la cible va infliger lors de sont prochain tour seront en vol de vie et les pdv iront au vampire.
+
+*Reflexe de l'Ombre: Le vampire utilise son ombre pour contre attaquer l'adversaire si celui-ci l'attaque.
+-Dure 1 tour.
+-Effet qui se declanche si la cible subit des degats d'une personne de 1 a 3 PO de lui.
+-Declanche une attaque de la par de l'ombre de la personne qui a l'effet du sort reflexe de l'Ombre. 
+-Inutilisable sous l'etats ''Sombre Nuit''.
+-Empeche l'utilisation du sort Sombre Nuit pour 1 tour.
+-Degats element Obscure.
+
+*Vision Nocturne: Le vampire  utilise sa vision nocturne pour mieu reperer ses adversair.
+-Si utiliser dans l'etats ''Sombre Nuit'', le vampire voie au travers des obstacles pour 2 tours.
+-Si utiliser hors de l'etats ''Sombre Nuit'', le vampire gagne quelques PO pour 2 tours sur les sorts suivent: 
+ Manipulation de l'Ombre, Lance de l'Ombre, Cercueille, Aura de Terreur et Fouet de l'Ombre.
+
+*Aura de Terreur: Le vampire crée une aura qui effrait tout les etres vivant.
+-Applique une aura de terreur sur une personne.
+-L'aura de terreur empeche toute les entiters de s'approcher du porteur de l'aura de terreur.
+-Dure 1 tour.
+
+*Invocation de Goule: Le vampire invoque un Goule par son cercueil. 
+-Doit etre lancer sur une des cases autour de l'invocation du sort ''Cercueil''.
+-La puissance du Goule est augmenter par l'etats de ''Sombre Nuit''.
+-Le goule a un sort qui rend les soins en degats et un sort de degats au CAC qui inflige aussi un poison qui dure 2 tour.
+-Un seul goule peut etre sur le terrain a la fois. Si un goule est reinvoquer, cela desinvoque lui qui etais deja invoquer.
+-Degats cac du goule element Terre, le poison du goule element Obscure.
+
+*Illusion: Le vampire crée un illusion de lui.
+-Crée une illusion de lui-meme qui a 25% de la vie max du vampire sur une case au CAC.
+-L'illusion block le deplacement et les lignes de vue.
+-Le nombre maximum d'illusion sur le terrain depent du Lvl du sort.
+-Si le nombre maximum d'illusion est attein et que une nouvelle est poser, retire la plus ancien des illusion du combat.
+-Invulnerable sort de vol de vie
+
+*Nuit Rouge: Le vampire crée une lune de sang dans le ciel qui reflete sa couleur dans la nuit.
+-Donne l'etats ''Nuit Rouge'' a tout les entiters du combat.
+-Utilisable seulement dans l'etats ''Sombre Nuit''.
+-Toute les personnes possédent l'etats ''Marque du Vampire'' receverons de gros degats en vol de vie.
+-Cooldown 2x plus long que Sombre Nuit (Au Lvl de sort equivalent).
+-Inflige de faible degats a tout les joueurs qui ne possede pas l'etats ''Marque du Vampire''.
+-Les sort de vol de vie passe de 50% a 100% d'absorbsion de vie par rappor au degats infliger pour tout les joueurs.
+-Si le vampire a plus de 25% de vie restent, il perdra 20% de sa vie max en utilisent se sort.
+-Les goules attaques en vol de vie sous l'etats de ''Nuit Rouge''.
+-Degats element Obscure sur tout le monde, Degats element feu sur ceux qui on la marque du vampire.
+
+*Fouet de l'Ombre: Le vampire utilise son ombre pour foueter son adversaire.
+-Degats de 1 a quelques porter.
+-Augmente les degats du prochain sort d'ombre de 25%. (Affect les sorts suivent: Fouet de l'Ombre, Reflexe de l'Ombre, 
+ Lance de l'Ombre et Manipulation de l'Ombre.)
+-Lancable 1x par tour.
+-Inutilisable sous l'etats ''Sombre Nuit''
+-Degats element Obscure.
+
+*Folie Vampirique: Tout les joueurs sont prit d'une folie vampirique provoquer par la Nuit Rouge et la soif de sang du vampire.
+-Les sorts de tout les joueurs passe en vole de vie a 25% de vol de vie pour 100% des degats. (N'affect pas les sorts qui 
+ sont deja en vol de vie et qui sont a 100% de vol de vie  grace au sort Nuit Rouge)
+-N'affect pas les goules du vampire.
+-Utilisable seulement sous l'effet "Nuit Rouge"
+-Long temp de relance. (1 tour de plus que le sort Nuit Rouge a LVL equivalent)
+
+*Cape d'Ombre: Le vampire se rend invisible a la vue de ces adversaires.
+-Rend le vampire invisible pour 1 tour.
+-Si effectue une action, le vampire redevien visible.
+-Inutilisable sous l'etats ''Sombre Nuit''.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Le vampire : Ton sang et ton âme m'appartiendron.

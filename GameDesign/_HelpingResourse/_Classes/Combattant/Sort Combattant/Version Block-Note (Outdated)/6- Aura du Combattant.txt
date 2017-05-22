@@ -1,0 +1,112 @@
+   [Lvl:1] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 100))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:2] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 110))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:3] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 120))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:4] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 130))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:5] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 140))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:6] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 150))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:7] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 160))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:8] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 170))
+((Augmente l'energie de: 1))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:9] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 3 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 180))
+((Augmente l'energie de: 1))
+[[Temps de relance de 8 tours]]
+
+
+   [Lvl:10] AURA DU COMBATTANT
+[[PA:3]]
+[[PM:0]]
+[[PO:0-1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 3 tours]]
+((L'effet ''Aura du Combattant''))
+((Augmente la puissance de: 200))
+((Augmente l'energie de: 1))
+[[Temps de relance de 7 tours]]
+

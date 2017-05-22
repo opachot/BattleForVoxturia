@@ -1,0 +1,77 @@
+-Combattant-
+
+*Méditation du Combattant: Se sort permet au combattant de se concentrer pour augmenter son endurance.
+-Bonus vitaliter et resistance.
+-Durer de 2 a 3 tour.
+-Ne peu pas être activer en même temps que "Aura du combattant". (debuff l'aura si utilise se sort)
+-Seulement lancable sur le combattant.
+-Au moin 7-8 tour de cooldown.
+
+*Aura du Combattant: Se sort permet au combattant de preparer ses muscle a un effort intense.
+-Bonus de puissance et 1 energie.
+-Durer de 2 a 3 tour.
+-Ne peu pas être activer en même temps que "Méditation du Combattant". (debuff la méditation si utilise se sort)
+-Seulement lancable sur le combattant.
+-Au moin 7-8 tour de cooldown.
+
+*Focus: Designe une cible prioritair a abatre.
+-L'adversaire ciblé par "Focus" recevra plus de dommage.
+-Dure 1 a 3 tours. 
+-Temps de relance de 2 a 4 tour
+-Si le combattant inflige des degats a un ennemie autre que la cible du sort focus, l'effet focus est desenvouter.
+
+*Frappe de Précision: Plus le combattant frappe son adversere, plus ses coup devienne devastateur.
+-Degats mono-cible au CAC.
+-Un lancer par cibles par tour.
+-Donne l'etats ''Précision'' a la cible se qui augmente les degats que la cible va subire par le sort
+ ''Frappe de Précision'' au prochain tour ( 1lvl d'effet = 2x degats de base du sort, 2lvl= 3x les degats de base,etc)
+-L'etats se cummule 5x.
+-Si la cible n'est pas reattaquer par le sort frappe de présision au prochain tour, elle perd l'effet.
+-Si la cible est sous l'effet de ''Focus'' le lvl de l'effet augmente de 2 par Frappe de Précision plutot que 1.
+-Degats element Air.
+
+*Glisse-Sol: Le combattant glisse au sol pour se rapprocher d'une personne.
+-Permet de se rapprocher d'une cible.
+-Donne un bonus de puissance pour la prochaine attaque lancer dans l'etats ''Kick'' pour le reste du tour.
+-Si le combattant est dans l'etats ''Kick'', le sort infligeras en plus des degats.
+-Lancable 1x par tour.
+-Degats element Terre.
+
+*Retraite Strategique: Le combattant s'eloigne d'une personne.
+-Permet de reculer d'une case dans le sense inverse du sort.
+-Donne un bonus de puissance pour la prochaine attaque lancer dans l'etats ''Punch'' pour le reste du tour.
+-Si le combattant est dans l'etats ''Punch'', le sort infligeras en plus des degats.
+-Lancable 1x par tour
+-Degats element Neutre.
+
+*L'Envole de l'Aigle: Le combattant saute par dessu les obstacles qui lui barre la route.
+-Sort sans ligne de vue.
+-Lancable 1x tour les 3 tours.
+-Permet au Combattant de se deplacer a 2 PO. (Non modifiable)
+
+*Poing d'Acier: Le combattant utilise un poing en acier pour donner un coups puissant qui affaiblie ses adversaire.
+-Degats mono-cible au CAC.
+-Donne un effet a la cible qui reduit pour 1 tour la puissance de ses attaques
+-Lancable seulement dans l'etats ''Punch''.
+-Apret avoir infliger les degats, retourne la cible face au combattant.
+-Degats element Terre.
+
+*Coups Puissant: Le combattant donne un coups asser puissant pour faire reculer une personne.
+-sort mono-cible au CAC.
+-Si sur ennemie, inflige en plus de faible degats.
+-Pousse la cible de 1 case.
+-Si la cible est dans l'etats ''Focus'', elle sera pousser de 2 cases.
+-Lancable 3x par tour.
+-Degats element Neutre.
+
+*Pied Liquifier: Le combo warrior donne un coups de pied impregner d'humiditer
+-Degats de 1 a 2 PO.
+-Chance de donner un 2em coup automatiquement sans couts en energie (Environ 50%)
+-Doit etre dans l'etats ''Kick'' pour etre utiliser.
+-Le 2em coup qui se declanche automatiquement retire des resistances a la cible pour 1 tour(cummulable).
+-Degats element Eau.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Combo Warrior: Si tu ne te bat pas toi même, alors tu as déjas perdu ton combat.
+

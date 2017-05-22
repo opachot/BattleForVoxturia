@@ -1,0 +1,119 @@
+        [Lvl:1] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 8 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:47-50 Terre]]
+
+
+        [Lvl:2] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 8 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:48-51 Terre]]
+
+
+        [Lvl:3] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 8 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:49-52 Terre]]
+
+
+        [Lvl:4] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 8 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:1]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:50-53 Terre]]
+
+
+        [Lvl:5] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 8 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:51-54 Terre]]
+
+
+        [Lvl:6] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 8 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:52-55 Terre]]
+
+
+        [Lvl:7] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 8 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:53-56 Terre]]
+
+
+        [Lvl:8] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 8 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:54-57 Terre]]
+
+
+        [Lvl:9] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 7 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:55-58 Terre]]
+
+
+        [Lvl:10] COUPS RENVERSANT
+[[PA:3]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[L'effet dure 7 tour]]
+((Etat ''Reveiller''))
+[[Nombre de lancer par tour:2]]
+[[Nombre de lancer par tour par joueur:1]]
+[[Degats:57-60 Terre]]
+

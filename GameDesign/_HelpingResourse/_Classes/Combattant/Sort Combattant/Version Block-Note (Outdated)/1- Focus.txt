@@ -1,0 +1,134 @@
+                     [Lvl:1] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 10%]]                    )
+-[[L'effet dure 1 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:2] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-1]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 12%]]                    )
+-[[L'effet dure 1 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:3] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 12%]]                    )
+-[[L'effet dure 1 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:4] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 14%]]                    )
+-[[L'effet dure 1 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:5] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 14%]]                    )
+-[[L'effet dure 2 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:6] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-2]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 16%]]                    )
+-[[L'effet dure 2 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:7] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 16%]]                    )
+-[[L'effet dure 2 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:8] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 18%]]                    )
+-[[L'effet dure 2 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:9] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-3]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 18%]]                    )
+-[[L'effet dure 3 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+                     [Lvl:10] FOCUS
+[[PA:2]]
+[[PM:0]]
+[[PO:1-4]]
+[[Portée modifiable: Non]]
+[[Ligne de vue: Oui]]
+[[Lancer en ligne: Non]]
+(-L'adversaire ciblé par "Focus" recevra plus de dommage.)
+( [[Augmente les degats recu de 20%]]                    )
+-[[L'effet dure 3 tour]]
+-[[Temps de relance de 3 tours]]
+
+
+
+
+
+

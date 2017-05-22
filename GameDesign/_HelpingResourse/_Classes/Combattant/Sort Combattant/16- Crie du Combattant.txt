@@ -1,0 +1,129 @@
+       [Lvl:1] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 50 ))
+((Augmente l'energie de: 1))
+((Reduit les resitances de: 5% ))
+[[Temps de relance de: 8 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:2] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 60 ))
+((Augmente l'energie de: 1))
+((Reduit les resitances de: 7% ))
+[[Temps de relance de: 8 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:3] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 70 ))
+((Augmente l'energie de: 1))
+((Reduit les resitances de: 9% ))
+[[Temps de relance de: 7 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:4] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 80 ))
+((Augmente l'energie de: 1))
+((Reduit les resitances de: 11% ))
+[[Temps de relance de: 7 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:5] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 90 ))
+((Augmente l'energie de: 1))
+((Reduit les resitances de: 13% ))
+[[Temps de relance de: 7 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:6] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 100 ))
+((Augmente l'energie de: 1))
+((Reduit les resitances de: 15% ))
+[[Temps de relance de: 6 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:7] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 110 ))
+((Augmente l'energie de: 1))
+((Reduit les resitances de: 17% ))
+[[Temps de relance de: 6 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:8] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 120 ))
+((Augmente l'energie de: 1))
+((Reduit les resitances de: 19% ))
+[[Temps de relance de: 6 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:9] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 130 ))
+((Augmente l'energie de: 2))
+((Reduit les resitances de: 21% ))
+[[Temps de relance de: 5 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+       [Lvl:10] CRIE DU COMBATTANT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[L'effet dure 2 tours]]
+((Augmente la puissance de: 150 ))
+((Augmente l'energie de: 2))
+((Reduit les resitances de: 25% ))
+[[Temps de relance de: 5 tours]]
+((Zone: 2 Hexagone autour du combattant))
+

@@ -1,0 +1,145 @@
+-Guerrier Dimentionel-
+
+idee de skill
+
+*Invocation de Portail: Le guerrier Dimentionel utilise ses pouvoir pour relier 2 endroit different avec
+ des portails dimentionel.
+-Pose un portail, puit un second.
+-Quend un joueur marche sur la case d'un portail, il est teleporter sur l'autre portail.
+-Si le 2em portail n'est pas poser avent la fin du tour de jeux le sort est annuler et le cooldown ne
+ s'appliqueras pas.
+-Les portails on une durer defini selon le lv du sort. (Fair en sorte que max 4 portail(2x le sort))
+
+*Energie de Portail: Le guerrier Dimentionel utilise un courent electrique pour relier chaque portail.
+-Si des portails sont alligner, cree un courent electrique entre eux.
+-Certaine PO max a definir selon lv du sort pour relier des portail.
+-Une fois par tour, si relancer desactive les courent electrique.
+-A chaque debut de tour et deplacement dans la zone electrique, inflige des degats.
+-Case du portail non electrique.
+-Degats element Electrique.
+
+*Course Dimentionel: Le guerrier Dimentionel entre un bref instant dans une autre dimention pour en 
+ resortire plus loin.
+-Lancable en ligne uniquement.
+-Temp de relance asser long.
+-Lancable sans ligne de vue.
+-Permet de traverser les obstacles.
+-Si traverse un ou plusieur ennemies, leur inflige des degats au passage.
+-Degats element Air.
+
+*Portail Dimentionel: Le Guerrier Dimentionel ouvre un portail instable vers une autre dimention, qui apret
+ 1 tour disparait.
+-Ouvre un portail qui dure 1 tour.
+-Tout ceux qui marche sur la case du portail devienne invisible, inciblable par des sort et immateriel.
+ (Peut passer au traver des obstacles et joueur)
+-Si un autre joueur entre dans le portail, il peut voir tout ceux qui sont dedent et les cibler avec leur
+ sort.
+-Imposible de cibler des gens qui ne se trouve pas dans le portail quend on est a l'interieur de celui-ci.
+-Au debut du prochain tour du Guerrier Dimentionel, tout ceux qui etais entrer dans le portail en resorte.
+-Long temp de relance.
+-Si redevien visible sur une entiter vivente, inflige des degats en % vita au 2 joueur.
+-Si redevien visible dans un element de decor, inflige 2x plus de degats et reapparait sur la case disponible
+ le plus pret du joueur.
+-Cout en energy tres elever.
+
+*Poing Dimentionel: Le Guerrier Dimentionel utilise ses portail le temps de donner un coup de poing rapide
+ a la figure de sont adversair.
+-Degats de distance a 2 PO minimum.
+-Lancer en ligne.
+-Degats element Terre.
+
+*Plastron Dimentionel: Le Guerrier Dimentionel colle a la peau d'une personne un plastron dimentionel relier
+ a un portail au sol.
+-Lancer au CAC seulement pour les 2 portails.
+-Pose 1 portail, puit un second.
+-Pose le premier portail contre une entiter vivante seulement, puit le second sur une case inoccuper.
+-Si le 2em portail n'est pas poser avent la fin du tour de jeux le sort est annuler et le cooldown ne
+ s'appliqueras pas.
+-Dure 1 a 2 tour
+-Le portail au sol est une case inmarchable mais qui ne bloque pas les lignes de vue.
+-Les sorts lancer sur le 2em portail sont retransmi au porteur du premier portail.
+
+*Portail Venteux: Le Guerrier Dimentionel ouvre un portail d'ou il sort un vent puissant.
+-Invocation statique indeplacable qui bloque le deplacement et les lignes de vue.
+-possede une vitaliter moyenne.
+-Pousse de quelques cases (Depent Lvl sort) Tout ceux qui sont en ligne du portails et a une certaine PO de lui.
+-Si un ennemie est pousser, lui inflige de faible degats en plus.
+-Seulement 1 portail venteux dans le combat, si reutilise le sort fait disparaitre l'ancien portail.
+
+*Vortex Spaciale: Le Guerrier Dimentionel ouvre un vortex spaciale pour fair tomber une meteorite sur le terrain.
+-Degats de zone sur ennemie comme sur les allier.
+-Sort a distance.
+-Sort a 4 effet: 25% chace petite roche, 25% chance petite meteorite, 25% chance moyenne meteorite, 
+ 25% chance grande meteorite.
+-Degats elementair Terre ou Terre/Feu ou Terre/Feu/Lumiere ou Terre/Feu/Lumiere/Obscure.
+
+*Cinétose: Le Guerrier Dimentionel donne le mal des transports a un adversair.
+-Poison qui se declanche suite a un deplacement du a un portail.
+-Puissance du poison augmente pour chaque cases deplacer.
+-Limite de puissance du poison. (Nombre de cases parcourue qui declanche le poison), (Selon Lvl sort).
+-Sort qui peuve declancher le poison: Invocation de Portail, Portail Venteux, Aspiration Vortex.
+-Degats element Air.
+
+*Maraton: Le Guerrier Dimentionel organise un maraton, qui va y participer?
+-Permet de doubler les PM d'une personne pour 1 tour
+-Le tour suivent la personne perd tout ses PM et devien imposible a etre deplacer (Etats: Epuiser).
+
+*Surcharge: Le Guerrier Dimentionel fait exploser ses portails en les surchargeants.
+-Lancer sur un portail uniquement.
+-Degats de zone autour des portails.
+-Lancable sur un portail du sort ''Invocation de portail''.
+-Fait exploser les 2 portails.
+-Le portail doit avoir perdue au moin 1 charge. (1 tour passer sur le terrain minimum)
+-Degats element Electrique.
+
+*Portail Temporel: Le Guerrier Dimentionel enferme les degats de la cible dans un portail temporel.
+-Lancable sur allier et ennemies.
+-Enregistre 50% des degats que la cible tenteras de fair (sort sur cible ou non)
+-Degats reduit a 0 pour se tour.
+-Au tour suivent lors de sa premiere attaque qui inflige des degats, libere les degats enregistrer le
+ tour precedent.
+
+*Eye de Lynx: Permet de gagner de la PO.
+-Sort mono-cible lacable sur sois-meme ou allier.
+-Permet de gagner de la Porter. (PO)
+
+*Fuite: se degage de quelques caze de la cible (doit viser un joueur ou une invocation 
+ (si ennemie inflige des dega)
+-Doit etre lancer sur une cible.
+-Se degage de 1 a 2 cases dan sle sens opposer de la cible.
+-Si la cible est un adversair, lui inflige de faible degats en plus.
+-Cout de 1 PM ? OU lancer 1x par tour ?
+
+*Propulseur: Le Guerrier Dimentionel pose un propulseur au sol pour accelerer les deplacements.
+-Permet de poser un propulseur au sol (Glyf)
+-Quend on marche dessu, nous fait deplacer de 2 case dans la direction inverse du coter ou on est entrer.
+-Dure 3 a 4 tour selon lv sort.
+-Intervale de relance. (Lancable tout les 2 tour) (Pour avoir 2 propulseur sur le terrain en tout temp)
+
+*Energie Dimentionel: Le Guerrier Dimentionel utilise de l'energie venue d'une autre dimention pour fair
+ mal a ses adversair.
+-Degats cac et distance.
+-Sur un ennemie, inflige des degats
+-Sur un portail du sort ''Invocation de portail'', inflige des degats de zone autour de lui au adversair.
+-Degats legerement plus elever si lancer sur un portail.
+-Degats element Electrique.
+
+*Aspiration Vortex: Le Guerrier Dimentionel utilise ses portail comme vortex pour aspirer tout ceux qui sont
+ alligner avec celui-ci.
+-Lancable sur un portail du sort ''invocation de portail'' seulement.
+-Attire tout se qui est en ligne du portail a quelques case du portail. (Selon Lvl sort)
+-Attire ceux qui son le plus proche en prioriter. (Pour eviter d'attirer sur une cible qui elle seras 
+ aussi deplacer)
+-Peut attirer sur la case du portail se qui teleporteras la ou les cible qui auront eter attirer.
+
+*Invertion: Le Guerrier Dimentionel echange sa position avec quelqun.
+-Echange de place avec la cible.
+-Lancer de 1 a 2 PO en diagonal
+-Faible temp de relance.
+
+*Portail Protecteur: Le Guerrier Dimentionel utilise de petit portail pour absorber des degats.
+-Invoque quelque petit portail autour de la cible. (Animation sur la meme case que la cible)
+-Nombre de portail de 1 a 3 selon Lvl sort.
+-Chaque fois que la cible subit une attaque qui devrais lui retirer de la vie, reduit les degats a 0.
+-Pour chaque attaque reduite a 0 le nombre de portail autour de la cible diminue de 1.
+-Temp de relance plutot long.

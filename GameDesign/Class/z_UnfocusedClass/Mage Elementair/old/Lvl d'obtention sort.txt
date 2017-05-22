@@ -1,0 +1,50 @@
+Lvl: 1
+-Explosion Magique (malus)
+-Presion Magique (deplacement/degats)
+-Souffle Magique (degats)
+-Pillier de Feu (sort de base)
+
+Lvl: 4
+-Immuniter Magique (protection)
+
+Lvl: 7
+-Pillier d'Air (sort de base)
+
+Lvl: 10
+-Averse de Magie (degats)
+
+Lvl: 17
+-Pillier d'Eau (sort de base)
+
+Lvl: 24
+-Teleportation (deplacement)
+
+Lvl: 31
+-Pillier de Terre (sort de base)
+
+Lvl: 38
+-Stalagmite Magique (degats)
+
+Lvl: 45
+-Lien Magique (protection)
+
+Lvl: 52
+-Marche Enflammer (degats)
+
+Lvl: 59
+-Renforcement Elementair (malus)
+
+Lvl: 66
+-Bouclier Elementair (protection/malus)
+
+Lvl: 73
+-Onde de Choc (degats)
+
+Lvl: 80
+-Reatribution Magique (soin)
+
+Lvl: 90
+-Rayon Magique (degats)
+
+Lvl: 100
+-Barriere Magique (entrave)

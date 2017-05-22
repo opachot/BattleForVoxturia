@@ -1,0 +1,109 @@
+                      [Lvl:1] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 10 Air]]
+
+
+                      [Lvl:2] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 11 Air]]
+
+
+                      [Lvl:3] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 11 Air]]
+
+
+                      [Lvl:4] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 12 Air]]
+
+
+                      [Lvl:5] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 12 Air]]
+
+
+                      [Lvl:6] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 13 Air]]
+
+
+                      [Lvl:7] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 13 Air]]
+
+
+                      [Lvl:8] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 14 Air]]
+
+
+                      [Lvl:9] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 14 Air]]
+
+
+                      [Lvl:10] FRAPPE DE PRÉCISION
+[[PA:2]]
+[[PM:0]]
+[[PO:1]]
+[[Portée modifiable: Non]]
+[[Nombre de lancer par tour par joueur:1]]
+[[L'effet dure 2 tour]]
+((État ''Précision''))
+[[Degats: 15 Air]]
+

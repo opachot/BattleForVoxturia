@@ -1,0 +1,129 @@
+-PROTECTEUR-
+
+idee skill-
+
+*Renforcement d'Armure: Augmente les resistances du protecteur.
+-Augmente les resistances du protecteur en %.
+-Cooldown 2x plus long que la durer du sort.
+
+*Orbe de Protection: Le protecteur utilise ses pouvoir pour proteger lui-meme et ses allier.
+-Chance en % de reduire les degats d'une attaque.
+-Cooldown 2x plus long que la durer du sort.
+-Affect les alliers qui sont autour du protecteur.
+-Environ 50% de chance de se declancher.
+
+*Orbe de Protection Superieur: Le protecteur utilise une version plus puissante de l'orbe de protection.
+-Chance en % de reduire a 100% les degats d'une attaque.
+-Environ 25% les chances de se declancher.
+-Affect les alliers qui sont autour du protecteur.
+-Dure 1 tour avec cooldown de 3-4 tour minimum.
+
+*Time-Out!: Le protecteur impose un temps de pause pour les 2 camps.
+-Immunise tout les entiters vivante dans le combat pour 1 tour.
+-Soigne de 5% la vita maximum de tout les entiter vivente du combat.
+-Long cooldown.
+
+*Retour de Flamme: Le protecteur utilise ses pouvoir pour couvrir tous ceux autour de lui d'un mince miroir.
+-Renvoi 20% environ des degats subit.
+-Affect les alliers qui sont autour.
+-Dure 2 tour
+-Cooldown 3x plus long que la durer du sort.
+
+*Bouclier Revenchar: Le protecteur utilise discretement un bouclier qui renvoie la moitier des degats subit.
+-Coute 0 energy.
+-Lancable 1x par combat.
+-Les ennemie ne peuve pas voir se sort.
+-Renvoie 50% des degats subit a la fin du tour de l'attaquent.
+-Lancable sur sois-meme ou allier.
+
+*Bouclier Strategique: Le protecteur fait apparaitre 2 immense bouclier sur les coter d'une personne pour le 
+proteger des degats subit de coter.
+-Fait apparaitre 2 bouclier sur les coter de la cible.
+-Immunise au degats subit sur les coter.
+-Dure 2 tour et temp de relance de 3 tour.
+
+*Coup de Bouclier: Frappe violament un ennemie avec un bouclier.
+-Degats mono-cible au cac.
+-Chance d'assomer l'ennemie et de lui fair passer 1 tour. (1 a 2% par coup)
+-Si sous l'effet ''Rush'' les chance d'assomer l'ennemie passe a 5% par coup.
+-Degats element Terre.
+
+*Charge Offansive: Le protecteur fonce sur une cible avec sont bouclier et se prepar au combat.
+-Lancable a 2 PO minimum et 7 PO max (selon Lvl sort).
+-Fonce au contact de la cible.
+-Ajoute l'etats ''Rush'' au protecteur.
+-Si la cible est un ennemie, inflige des degats.
+-Utilisable 1x par tour.
+-Degats element Terre.
+
+*Barricade: Le protecteur utilise une barricade pour proteger sont equip. 
+-Invoc une baricade ''invocation statique'' qui a une vitaliter moyenne mais beaucoup de resitance.
+-Sur 3 cases en arc de cercle.
+-Au moin 5 tour de relance.
+-La barricade bloque le passage et les lignes de vue.
+-Lancer en ligne.
+
+*Demi-Tonne: Le protecteur utilise ses pouvoir pour rendre ceux autour de lui tellement lourd qu'il ne peuve
+plus se deplacer ou etre deplacer.
+-Rend tout ceux autour du protecteur a 0 PM et leur met un etats qui les empeche de se deplacer et de
+se fair deplacer.
+-Met fin au tour du protecteur.
+
+*Provocation: Le protecteur provoque ses adversair et fait en sorte d'etre leur cible.
+-Reduit les degats subit de tout les allier en % (ex: 50%).
+-Augmente les degats subit par le protecteur en % (ex: 50%).
+-Dure 1 tour avec long cooldown.
+
+*Invocation Gardna: Le protecteur invoque un esprit protecteur avec l'apparence d'un bouclier.
+-Invoque un bouclier avec 1 PM et tres peut de vie et immuniser au degats direct.
+-Peut donner des resistences fixe a moyenne porter 1x par tour en cercle (Zone).
+-Long temp de relance.
+-seulement 1 seul gardna peut etre present dans le combat.
+
+*Bouclier Boomrang: Le protecteur lance un bouclier qui revien dans ses main et fait des degats au passage.
+-Lance un bouclier circulair qui tourne en arc de cercle pour revenir dans les main du protecteur 
+(Arc de cercle de 5 cases en forme de ''U'') 
+-Inflige des degats a toute les entiter dans la zone.
+-Degats element Air.
+
+*Chute de Bouclier: Le protecteur fait apparaitre un bouclier geant au dessut d'un ennemie pour qu'il tombe
+violament sur l'ennemie.
+-Degats mono-cible, lancer en ligne uniquement avec 4 de PO max.
+-Lancable 1x par tour.
+-Degats element Terre.
+
+*Métamorphose Contre-Nature: Le protecteur pert tout ses envoutement et etats et scel ses sort de protection
+pour les transformer en une Epee de Titane.
+-Retire tout les envoutements et etats present sur lui.
+-Retire tout les envoutement qu'il a donner a ses allier.
+-Rend imposible l'utilisation des sort de protection (Renforcement d'Armur, Orbe de Protection,
+Orbe de Protection Superieur, Time-Out!, Retour de Flamme, Bouclier Revenchar, Bouclier strategique,
+Barricade, Provocation, Invocation Gardna).
+-Dure 2 tour avec long cooldown.
+-Augmente les % degats du protecteur.
+-Change l'element de degats de tout les sort pour l'element Lumiere 2 tour (Sauf Epee de Titane).
+-Change le sort Metamorphose pour le sort ''Epee de Titane'' 2 tour.
+ ------------------------------------------------------------------------------------------
+(*Epee de Titane: Le protecteur donne un coup violent de cette epee pour terraser sa cible.)
+(-Degats mono-cible au cac.                                                                )
+(-Utilisable 1x par tour.                                                                  )
+(-Tres gros degats. (Terre/Lumiere)                                                        )
+(-Pour chaque PM restent au protecteur, augmente les degats de base du sort Epee de Titane.)
+(-Le Lvl du sort Epee de Titane depent du Lvl du sort Metamorphose Contre-Nature.          )
+------------------------------------------------------------------------------------------
+*Fusion d'Esprit: Le protecteur se teleporte et fusionne avec l'esprit protecteur ''Gardna''. 
+-Desinvoc Gardna et se teleporte ou il etais.
+-Ajoute l'etats ''Fusion Spirituel'' sur le protecteur se qui a pour effet de retirer un peut de % resistance au 
+cible de ses attaques. (2 a 3 tour)
+
+*Tornade métalique: Le protecteur place ses bouclier position horizontale et tourne sur lui-meme.
+-Degats de zone au cible autour du protecteur.
+-Pousse de 1 case tous les cibles.
+-Degats element Air.
+
+*Charge Defensive: Le protecteur fonce sur une cible pour la repousser.
+-Lancable a 2 PO minimum.
+-Fonce au contact de la cible puit la pousse de 3 cases.
+-Si la cible est un ennemie, lui inflige des degats.
+-Degats element Neutre.
+

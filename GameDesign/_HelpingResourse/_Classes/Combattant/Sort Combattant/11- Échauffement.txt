@@ -1,0 +1,89 @@
+         [Lvl:1] ÉCHAUFFEMENT
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 10 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+         [Lvl:2] ÉCHAUFFEMENT
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 9 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+         [Lvl:3] ÉCHAUFFEMENT
+[[PA:6]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 8 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+         [Lvl:4] ÉCHAUFFEMENT
+[[PA:5]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 8 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+         [Lvl:5] ÉCHAUFFEMENT
+[[PA:5]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 7 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+         [Lvl:6] ÉCHAUFFEMENT
+[[PA:5]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 6 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+         [Lvl:7] ÉCHAUFFEMENT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 6 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+         [Lvl:8] ÉCHAUFFEMENT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 5 tours]]
+((Zone: 1 Hexagone autour du combattant))
+
+
+         [Lvl:9] ÉCHAUFFEMENT
+[[PA:4]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 5 tours]]
+((Zone: 2 Hexagone autour du combattant))
+
+
+         [Lvl:10] ÉCHAUFFEMENT
+[[PA:3]]
+[[PM:0]]
+[[PO:0]]
+[[Portée modifiable: Non]]
+[[Temps de relance de 5 tours]]
+((Zone: 2 Hexagone autour du combattant))
+
