@@ -1,0 +1,74 @@
+-Archer-
+
+Idée de skill
+
+*Zone de Distortion: L'archer tire une flèche qui fera une distortion temporel.
+-L'archer doit etre en ligne avec le centre de la zone de distortion pour que celle-ci 
+ declanche les effet des autre sort
+-Les sorts peuve etre lancer sur la zone de distortion et ils seront redeclancher
+ par la zone de distortion.
+-Dure quelques tour avec cooldown de 1 tour de plus que la durer de la zone.
+-PO minimum pour etre lancer.
+
+*Flèche Puissante: La force d'impacte de cette fleche est enorme mais elle n'est pas tres dommagable.
+-Pousse la cible de quelques cases.
+-Si la cible est un ennemie, inflige de faible degats en plus.
+-Si lancer dans la zone de distortion, la fleche se multiplira en 4 fleches et resortirons en ligne du centre de la
+ zone de distortion.
+-PO minimum pour etre lancer.
+-Degats element Neutre ou air.
+
+*Flèche de Lumière: L'archer utilise une immence flèche de lumière qu'il tirera sur son adversaire
+ pour lui occasionner des degats et l'aveugler.
+-Degats avec perte de PO a la cible si vise directement un joueur.
+-Si lancer dans la zone de distortion, le centre de la zone de distortion lance 4 fleches en ligne du centre qui inflige de faible
+ degats au ennemie mais soigne les alliers et l'archer.
+-PO minimum pour etre lancer.
+-Degats element Lumiere
+
+*Flèche percente: Cette flèche traverse tout se quel croise.
+-Lancable au CAC seulement, poursuis sa trajectoire d'un bout a l'autre de la map meme si se trouve des obstacle..
+-La fleche perd 20% de sa puissance par entiter toucher. (ex: premeire personne toucher 100% degats, second 80% degats,etc...)
+-Degats element terre
+
+*Fleche Enflammer: L'archer tire une fleche qui enflamme le sol.
+-Sur une cible, inflige de faible degats et pose une glyf enflammer de carrer de 3x3 cell autour de lui.
+-Sur une case vide, pose la glyf 3x3 cell.
+-La glyf dure 3 tours.
+-Temps de relance de 3 tours.
+-La glyf inflige des degats au debut de tour et pour chaque cases marcher dessu.
+-PO minimum pour etre lancer.
+-Degats element Feu.
+
+*Flèche Sanglante: L'archer tire une flèche surpuissante qui nécessite beaucoup de son sang.
+-Degat normal(feu) si n'a pas residu sanglan, Gros degats si consome residu sanglant(feu + obscure).
+-Retire une partie de la vie a l'archer
+-Donne l'etats ''Résidu Sanglant'' a l'archer si ne l'avais pas, sinon le retire.
+-La prochaine fois que se sort est reutiliser, l'archer ne perderas pas de pdv mais perdras l'etats ''Résidu Sanglant''.
+-Degats element Feu/Obscure.
+
+*Flèche Empoisonner: L'archer tire une flèche qui rend malade les gens qu'elle attein.
+-Inflige un poison qui dure 2 tour et qui est cummulable.
+-Si la flèche est tirer sous l'etats "Résidu sanglant", le poison persistera un tour de plus.
+-Degats element Obscure.
+
+*Survie: L'archer a un instinct de survie puissant qui augmente son adrénaline.
+-Augmente la vitaliter pour 3 tours.
+-Double les PM pour 1 tour.
+-Lancable seulement si les pdv de l'archer sont de 30% et moin.
+-Temps de relance de 4 tours et plus.
+
+*Compagnon: L'archer invoque un loup qui se battra a ces coter.
+-Invocation d'un Loup avec des pdv moyen et pamal de PM.
+-Le sort du loup ''Morsure Sanglante'' inflige de faible degats et applique du poison. Le poison inflige plus de degats que la morsure elle-meme.
+-Temps de relance asser elever.
+-Degats du loup element Terre, Les poison du loup element Obscure.
+
+*Compagnon Loyale: L'archer absorbe l'âme de sont compagnon.
+-Permet de sacrifier sont Loup pour recupéré de la vie.
+-Si se sort est utiliser, le sort Compagnon ne pouras plus etre utiliser pour le reste du combat.
+-Permet de recuperer les pdv restent du Loup.
+
+------------------------------------------------------------------------------------------------------------------
+
+Archer: Je ne manque jamais ma cible, sauf une fois au chalet...
