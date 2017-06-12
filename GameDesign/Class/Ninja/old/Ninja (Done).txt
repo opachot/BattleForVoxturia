@@ -11,32 +11,22 @@ idee de skill
 -Durer des poisons de 2 tour.
 -Degats element Obscure (poison)
 
-*Metsubushi: Le ninja lance une capsule sur le sol qui explose pour former un nuage de fumer.
--Rend une zone remplie de fumer se qui a pour effet de rendre allier, ennemie, glyf et element de decor invisible.
--Si le ninja est sous l'etats ''Connaisance du poison'', allier comme ennemie subise des degats dans la zone
-de Metsubushi, degats declancher a chaque debut et fin de tour et pour chaque case parcouru dans la zone.
--Degats element Obscure.
-
 *Geta: Le ninja utilise des geta pour se deplacer sans declancher les pieges sur sont chemin.
 -Permet de se deplacer sur des glyfs ou case pieger sans les declancher.
 -Desenvoute l'effet Ashiko.
 -Lancable aussi sur allier.
+
+*REMOVED FOR JIKA-TABI*
+*Ashiko: Le ninja utilise ses chaussure a pointe pour proteger des deplacement forcer.
+-Permet de rendre impossible a attirer ou pousser.
+-Utilisable sur sois-meme, allier et ennemie.
+-Desenvoute l'effet Geta.
 
 *Ninjato: Le ninja attaque avec sont Ninjato.
 -Degat mono-cible au cac.
 -Faible coup en energy mais inflige des degats correct.
 -Si sous l'effet ''Connaisance du poison'': Inflige 2 Lvl de Cyanide par coup a la cible.
 -Degats element Terre.
-
-*Ashiko: Le ninja utilise ses chaussure a pointe pour proteger des deplacement forcer.
--Permet de rendre impossible a attirer ou pousser.
--Utilisable sur sois-meme, allier et ennemie.
--Desenvoute l'effet Geta.
-
-*Tegaki: Le ninja s'equipe de crochais dans les mains pour escalader ou decendre d'un endroit a l'autre.
--Permet de rendre possible le deplacement sur une case normalement infranchisable car trop elever ou trop bas.
--Utilisable sur sois-meme et allier.
--cooldown asser elever.
 
 *Kunai: Le ninja lance un kunai a distance.
 -Lancer a 2 PO minimum.
@@ -56,60 +46,18 @@ de Metsubushi, degats declancher a chaque debut et fin de tour et pour chaque ca
 -Si sous l'effet ''connaisance du poison'' chaque deplacement sur un makibishi ajoute 1 Lvl de Cyanide.
 -Degats element Terre.
 
-*Fukimibari: A l'aide de sont bracelet sur sont avent-bras, le ninja lance 3 aiguille.
--Degats faible mais grande porter.
--Lance 3 aiguilles, 1 aiguille par ligne en face et sur les diagonal face au ninja.
--Ne transperce par les cibles. (Si un ennemie est toucher, aiguille ne continue pas son chemin).
--Si sous l'effet ''Connaisance du poison'', ajoute 2 Lvl de Cyanide.
--Degats element Air.
-
-*Nunchaku: Le ninja utilise ses Nunchaku pour frapper plusieur adversair.
--Degats de zone.
--Attaque en zone sur 3 faces et 2 cases de profondeur.
--Degats element Terre.
-
-*Infiltration: Le ninja est un expert pour s'inviter dans le dos de ses adversair.
--faible degats de 1 a 2 PO.
+*Infiltration: Le ninja est un expert pour s'inviter dans le dos.
+-faible degats de 1 a 2 PO (ou +).
 -Permet de se deplacer derriere la cible.
 
 *Rin-Hyo: Le ninja se concentre pour ameliorer sa vitesse d'action.
 -Se tour touts les sorts du ninja couterons 1 en energy de moin.
 -Au prochain tour le ninja entre dans l'etats ''Epuisser'', ces sort couterons 1 en energy de plus a utiliser.
-(lancable sur allier aussi?)
+(self only)
 
-*Clonage: Le ninja est capable de se dedoubler, au plus grand deplaisir de ses adversair.
--Invoque un double de sois-meme mais qui a 25% ou moin de ses degats/resistence et vitaliter.
--Dure 2 ou 3 tour.
--Long cooldown.
-
-*Evasion: Le ninja est un expert pour s'evader d'une situation difficile.
--Rend une personne intacklable pour 1 tour.
--Relance de 2 a 3 tour.
-
-*Illusion: Le ninja bouge tellement rapidement qu'il est capable de cree des images de lui-meme pour berner
-ses adversair.
--Crée des ''images'' de lui meme en ligne mais une seul est le vrai ninja.
--Si une ''image'' subit des degats elle disparais.
--Si le Ninja subit des degats, tout les ''images'' disparaise.
--Met fin au tour.
-
-*Explosif: Le ninja pose un explosif au sol pour dissuader ses adversaires de le poursuivre.
--Pose un explosif au sol, (Case in-marchable mais bloque pas la ligne de vue). Non deplacable.
--Apret etre poser, explose a la fin du prochain tour du ninja.
--Zone de 3 cases de long sur les 6 ligne de la bombe.
--Degats element Feu/Lumiere/Terre.
-
-*Tatami: Le ninja utilise des tatami pour se proteger des degats subit a distance.
+*Tatami: Le ninja utilise des tatami pour proteger des degats subit a distance.
 -Applique l'etats ''Tatami'' a la cible, l'etats possede plusieur charge.
 -Permet de reduire les attaques a distance.
 -Chaque attaque subit a distence reduit le nombre de charge de l'etats de 1.
--Si lancer sur un allier, il auras 2x moin de charge sur tatami que sur sois-meme.
-
-*Chakram: Le ninja lance un chakram pour blesser plusieur cible en meme temp.
--Lance un Chakram qui attaque en arc de cercle en forme de ''U'' sur 7 ou 9 cases (selon le Lvl du sort)
-pour ensuite revenir dans la main du ninja.
--Si sous l'effet ''Connaisance du poison'' ajoute 1 Lvl de Cyanide a chaque cible toucher pas le chakram.
--Degats element Air.
-
 
 
