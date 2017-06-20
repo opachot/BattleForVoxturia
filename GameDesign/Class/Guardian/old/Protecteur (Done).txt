@@ -59,6 +59,7 @@ Barricade, Invocation Gardna).
 *Fusion d'Esprit: Le protecteur se teleporte et fusionne avec l'esprit protecteur ''Gardna''. 
 -Desinvoc Gardna et se teleporte ou il etais.
 -Ajoute l'etats ''Fusion Spirituel'' sur le protecteur se qui boost un peu % resistance self. (2 a 3 tour)
+-dont give resistance if will of destruction.
 
 *Tornade métalique: Le protecteur place ses bouclier position horizontale et tourne sur lui-meme.
 -Degats de zone au cible autour du protecteur.
