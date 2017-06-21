@@ -34,7 +34,7 @@ se fair deplacer.
 *Invocation Gardna: Le protecteur invoque un esprit protecteur avec l'apparence d'un bouclier.
 -Invoque un bouclier avec 1 PM et tres peut de vie et immuniser au degats direct.
 -Peut donner des resistences fixe a moyenne porter 1x par tour en cercle (Zone).
--Long temp de relance.
+-Long temp de relance.	
 -seulement 1 seul gardna peut etre present dans le combat.
 
 *Métamorphose Contre-Nature: Le protecteur pert tout ses envoutement et etats et scel ses sort de protection
