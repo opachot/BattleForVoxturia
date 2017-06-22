@@ -2,6 +2,7 @@
 
 Idee de Skill
 
+*-------------------------------------------------------------------------------------------------------
 *Pillier d'Eau: Invoque un pillier qui reproduit les sorts magique en les transforments en element Eau.
 -Invocation indeplacable avec pdv et resistence.
 -Resistance Eau:100% Terre:0% Feu:-50% Air:0%
@@ -13,7 +14,7 @@ Idee de Skill
 -Temps de relance de 4 tour et empeche l'utilisation des 3 autre pillier elementair pour se tour.
 -Ne reproduit pas les sorts lancer par les autres pillier.
 -Le mage n'est pas affecter par les sorts de degats que reproduit ses pillier mais ses allier oui.
-
+===
 *Pillier de Terre: Invoque un pillier qui reproduit les sorts magique en les transforments en element Terre.
 -Invocation indeplacable avec pdv et resistence.
 -Resistance Eau:0% Terre:100% Feu:0% Air:-50%
@@ -25,7 +26,9 @@ Idee de Skill
 -Temps de relance de 4 tour et empeche l'utilisation des 3 autre pillier elementair pour se tour.
 -Ne reproduit pas les sorts lancer par les autres pillier.
 -Le mage n'est pas affecter par les sorts de degats que reproduit ses pillier mais ses allier oui.
+*-------------------------------------------------------------------------------------------------------
 
+*-------------------------------------------------------------------------------------------------------
 *Pillier de Feu: Invoque un pillier qui reproduit les sorts magique en les transforments en element Feu.
 -Invocation indeplacable avec pdv et resistence.
 -Resistance Eau:-50% Terre:0% Feu:100% Air:0%
@@ -37,7 +40,7 @@ Idee de Skill
 -Temps de relance de 4 tour et empeche l'utilisation des 3 autre pillier elementair pour se tour.
 -Ne reproduit pas les sorts lancer par les autres pillier.
 -Le mage n'est pas affecter par les sorts de degats que reproduit ses pillier mais ses allier oui.
-
+===
 *Pillier d'Air: Invoque un pillier qui reproduit les sorts magique en les transforments en element Air.
 -Invocation indeplacable avec pdv et resistence.
 -Resistance Eau:0% Terre:-50% Feu:0% Air:100%
@@ -49,6 +52,7 @@ Idee de Skill
 -Temps de relance de 4 tour et empeche l'utilisation des 3 autre pillier elementair pour se tour.
 -Ne reproduit pas les sorts lancer par les autres pillier.
 -Le mage n'est pas affecter par les sorts de degats que reproduit ses pillier mais ses allier oui.
+*-------------------------------------------------------------------------------------------------------
 
 *Averse de Magie: Le mage fait tomber une averse de magie autour de lui.
 -Attaque de zone a 2PO et 4PO sur les 6 ligne autour du mage.
@@ -56,38 +60,14 @@ Idee de Skill
 -Degats sur Ennemie et allier.
 -Degats element Eau.
 
-*Barriere Magique: Le mage fait apparaitre une barriere de magie pour emprisonner des personnes dans une
- partie du terrain.
--Fait apparaitre une barriere magique en hexagone a 3 case autour du mage.
--Personne ne peut entrer ou sortire de la barriere magique sauf si on se trouve sur les case de la barriere.
--Si un pillier est toucher par la barriere, il reproduit une barriere comme le mage.
--Inflige de faible degats au ennemie et allier si la barriere apparait sur eux.
--Long temps de relance.
-
 *Onde de Choc: Le mage provoque une onde de choc puissante autour de lui.
 -Degats en zone sur 3 hexagone autour du mage.
--Le premier fait partie du sort puit le 3em puit le 5em.
--Le premier hexagone applique 100% des degats du sort, le second 75% puit le 3em 50%.
+-Le premier fait partie du sort puit le 3em
+-Le premier hexagone applique 100% des degats du sort, le second 50%.
 -Degats sur ennemie et allier.
 -Si un pillier est toucher par le sort, il reproduit le sort comme le mage.
 -Temps de relance long.
 -Degats element Air.
-
-*Teleportation: Permet de se teleporter sur la case cibler.
--Teleporte sois-meme sur la case cibler.
--Lancer en diagonal seulement. (Exemple: 2,4,6,8 PO)
-
-*Rayon Magique: Le mage utilise un rayon qui traverse tout se qu'il touche pour infliger des degats.
--Lancer en ligne.
--Inflige des degats a tout se qui se trouve dans la zone du sort.
--Si un pillier est toucher, il reproduit l'attaque comme le mage. (peut servire a attaquer a grande distance)
--Degats element Lumiere.
-
-*Immuniter Magique: Le mage utilise un bouclier qui sert a proteger ses allier de ses pillier ou de le proteger
-des degats elementair. (Que: feu, terre, eau, air ?)
--1 Tour de relance. (1 tour de trou)
--Sur un allier: protege tout les allier des degats infliger par les pillier
--Sur sois-meme: Protege de tout les degats elementaires.
 
 *Stalagmite Magique: Le mage fait sortire des stalagmites de la terre.
 -Attaque en zone sur la premiere case de diagonal autour du mage.
@@ -97,61 +77,38 @@ des degats elementair. (Que: feu, terre, eau, air ?)
 -Si un pillier est toucher, il reproduit le sort comme le mage.
 -Degats element Terre.
 
-*Souffle Magique: Le mage souffle pour fair des degats a tout ceux devent lui.
--Degats en zone triangle devent le mage.
--Si un pillier est toucher, il reproduit l'attaque comme le mage et dans la meme direction.
--Degats element Feu.
+*Rayon Magique: Le mage utilise un rayon qui traverse tout se qu'il touche pour infliger des degats.
+-Lancer en ligne.
+-Inflige des degats a tout se qui se trouve dans la zone du sort.
+-Si un pillier est toucher, il reproduit l'attaque comme le mage. (peut servire a attaquer a grande distance)
+-Degats element Feu
 
+*Teleportation: Permet de se teleporter sur la case cibler.
+-Teleporte sois-meme sur la case cibler.
+-Lancer en diagonal seulement. (Exemple: 2,4,6,8 PO)
+
+*Barriere Magique: Le mage fait apparaitre une barriere de magie pour emprisonner des personnes dans une
+ partie du terrain.
+-Fait apparaitre une barriere magique en hexagone a 3 case autour du mage.
+-Personne ne peut entrer ou sortire de la barriere magique sauf si on se trouve sur les case de la barriere.
+-Si un pillier est toucher par la barriere, il reproduit une barriere comme le mage.
+-Long temps de relance.
+
+*-------------------------------------------------------------------------------------------------------
+*Immuniter Magique: Le mage utilise un bouclier qui sert a proteger ses allier de ses pillier ou de le proteger
+des degats elementair. (Que: feu, terre, eau, air ?)
+-1 Tour de relance. (1 tour de trou)
+-Sur un allier: protege tout les allier des degats infliger par les pillier
+-Sur sois-meme: Protege de tout les degats elementaires.
+===
 *Bouclier Elementair: Un bouclier magique qui a des chance d'infliger des etats elementair au attaquent.
 -Chance en % d'appliquer un etats elementair aleatoirement a l'attaquent de la cible qui possede le sort
  Bouclier Elementair. (Exemple: 20% chance de s'activer: 25% chance etats ''Feu'' OU 25% etats ''Air'' etc..)
 -Si l'attaquent possede deja l'etats, augmente de 1 Lvl l'etats.
 -Lancable sur sois-meme ou allier.
-
-*Marche Enflamer: Le mage embrase les pieds d'une personne pour bruler partout ou elle ira.
--Dure 1 tour.
--Les case derriere la cible quend elle se deplace devienne en flamme. (Glyf de feu qui s'active a chaque 
- debut de tour et a chaque fois qu'on marche une case dedent)
--Inflige des degats de feu a tout ceux qui commence leur tour et se deplace dans les flamme.
--Les glyf de flamme dure 2 tour.
--Degats element Feu.
+*-------------------------------------------------------------------------------------------------------
 
 *Explosion Magique: Le mage provoque le declanchement des etats elementair d'une personne.
 -Temp de relance de 1 tour (1 tour de trou)
 -Permet de declancher les effet des etats: ''Eau'',''Terre'',''Feu'',''Air''.
 -une fois declancher, retire les etats ''Eau'',''Terre'',''Feu'',''Air''.
-
-*Renforcement Elementair: Le mage renforce sont emprise elementair sur une personne.
--Ajoute ou augmente de 1 Lvl les etats: ''Eau'',''Terre'',''Feu'',''Air'' sur un ennemie.
--Si la cible a le sort ''Marche Enflamer'' sur elle, pose un glyf sous elle et autour de elle qui se declanche
- au debut du tour et a chaque cases parcourue.
--La glyf dure 1 tour.
-
-*Lien Magique: Lie un pillier et un joueur ensemble pour qu'il se partage leur degats.
--Permet de lier une personne et un pillier.
--Le lien fait en sorte que si la cible ou le pillier est attaquer, il transfer la moitier des degats qu'il 
- aurais du subir au pillier ou au joueur avec qui il est lier.
--Lancable sur sois-meme,allier ou ennemie.
--La premiere cible doit etre un pillier, la 2em cible doit etre un joueur. (Imposible de lier 2 joueur ou
- 1 pillier avec une autre invocation)
--Si le 2em lien n'est pas appliquer avent la fin du tour de jeux, le sort est annuler et le cooldown ne
- s'appliqueras pas.
--Long temp de relance.
-
-*Reatribution Magique: Le mage sacrifie un de ses pillier pour reatribuer sa magie a une personne pour la guerir.
--Si est lancer, ne peut pas invoquer de pillier se tour.
--Si un pillier est utiliser se tour, rend le sort Reatribution Magique inutilisable pour le reste du tour.
--Detruit un pillier pour soigner une personne.
--Les soin sont en fonction de la vitaliter restente du pillier. (Exemple: Si le pillier a 1000 vita et que
- le sort soin 50% de la vita restente du pillier, il soigneras alors de 500)
--Lancable sur n'importe qui.
--Cible d'abors le pillier a detruir, puit la personne a soigner.
--Si la cible a soigner n'est pas cibler avent la fin du tour de jeux le sort est annuler et le cooldown ne
- s'appliqueras pas.
--Lancable 1x par tour.
-
-*Presion Magique: Le mage utilise de la presion entre lui et une personne pour se degager de celle-ci.
--Lancable de 1 a 2 PO
--Fait reculer la cible de 1 case et eloigne le mage de la cible de 1 case.
--Lancer sur un ennemie, lui inflige de faible degats en plus.
--Degats element Neutre.
