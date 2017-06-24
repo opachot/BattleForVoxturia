@@ -83,6 +83,8 @@ Idee de Skill
 -Si un pillier est toucher, il reproduit l'attaque comme le mage. (peut servire a attaquer a grande distance)
 -Degats element Feu
 
+******* SIMILAR FOR THE 4 EACH DMG SKILL *******
+
 *Teleportation: Permet de se teleporter sur la case cibler.
 -Teleporte sois-meme sur la case cibler.
 -Lancer en diagonal seulement. (Exemple: 2,4,6,8 PO)
