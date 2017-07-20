@@ -102,13 +102,13 @@ des degats elementair. (Que: feu, terre, eau, air ?)
 -Sur un allier: protege tout les allier des degats infliger par les pillier
 -Sur sois-meme: Protege de tout les degats elementaires.
 
-*Bouclier Elementair: Un bouclier magique qui a des chance d'infliger des etats elementair au attaquent.
+*elemental backfire: a des chance d'infliger des etats elementair au attaquent.
 -Chance en % d'appliquer un etats elementair aleatoirement a l'attaquent de la cible qui possede le sort
  Bouclier Elementair. (Exemple: 20% chance de s'activer: 25% chance etats ''Feu'' OU 25% etats ''Air'' etc..)
 -Si l'attaquent possede deja l'etats, augmente de 1 Lvl l'etats.
 -Lancable sur sois-meme ou allier.
 
-*Explosion Magique: Le mage provoque le declanchement des etats elementair d'une personne.
+*elemental explosion: Le mage provoque le declanchement des etats elementair d'une personne.
 -Temp de relance de 1 tour (1 tour de trou)
 -Permet de declancher les effet des etats: ''Eau'',''Terre'',''Feu'',''Air''.
 -une fois declancher, retire les etats ''Eau'',''Terre'',''Feu'',''Air''.
