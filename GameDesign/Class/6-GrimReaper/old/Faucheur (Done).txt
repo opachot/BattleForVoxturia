@@ -10,23 +10,8 @@ idée de skill
 -Peut quend meme etre soigner.
 
 *Brume Noir: Le faucheur fait apparaitre une brume noir qui nuis a la vision.
--Met l'etats ''Embrumer'' a tout les joueurs.
--L'etats ''Embrumer'' fait en sorte que tout se qui est au dela de quelques case devient non-visible.
-
-*Faux du Jugement: Le faucheur fait apparaitre une faux du monde des morts pour juger l'ennemie
--Degats de 1 a quelques PO 
--Lancer en ligne.
--Effet declancher au hazard (25% retrait d'energie,25% retrait de PM,25% retrait PO,25% retrait degats et resistance)
--Degats element Eau ou Terre ou Air ou Feu.
-
-*Meurtrissure: Le faucheur attaque son ennemi en laissent une plaie ouverte.
--Degats de 1 a quelques cases.
--inflige l'etats ''Plaie Ouverte'' se qui augmente les degats du sort Meurtrissure lors de la prochaine attaque.
--L'etats ''plaie Ouverte'' dure 2 tour
--Si meurtrissure est utiliser sur une cible avec l'etats ''Plaie Ouverte'', lui rajoute 1 Lvl d'etats et
- augmente la durer de l'etats a 2 tour.
--Lvl max d'etats a definire.
--Degats element feu/Obscure.
+-Met l'etats ''Embrumer'' a tout les joueurs exepter lui-meme.
+-L'etats ''Embrumer'' retire 100 de range.
 
 *Drain Vital: Le faucheur utilise sa faux pour drainer la vitaliter.
 -Degats a faible PO.
@@ -41,46 +26,16 @@ idée de skill
 -Retire 10% de la vie du faucheur par personne reanimer.
 -Une personne ne peut etre reanimer que 1x par combat.
 
-*Faux Tournoyante: Le faucheur fait tournoyer sa faux devant lui pour se proteger.
--Renvoie tout les degats recus de face.
--Lancable sur sois-meme seulement.
--Met fin au tour du faucheur.
-
 *Volé de Corbeau: Le faucheur envoie une volé de corbeau dans une direction.
 -Degats de zone en ligne.
 -Inflige des degats a tout les entiters presente dans la zone du sort.
 -Degats element Air.
 
-*Puie de Vie: Grace a ses pouvoir, le faucheur augmente la vitaliter.
--Augmente les % vitaliter de tout les etres vivant dans la zone du sort.
--Zone de 2 hexagone autour du faucheur.
--Dure quelques tour.
--Le sort limite l'augmentation de vitaliter a +100% de la vie de base. 
- (Pour eviter que puie de Vie + Echange Vital cree un effet de vie illimiter.)
-
-*Échange Vital: Le faucheur fait appel au pouvoir de sa faux pour échanger la vie de lui même et d'un allier
-(pour un tour?ou infini).(l'échange entre allier et ennemie serai injuste puis que l'ennemie aurai 100 vie et l'allier 
-1'on échange et on tue l'ennemie)
--Permet de cibler sois-meme et les alliers.
--Les 2 personnes cibler via le sort echange leur vie et vitaliter max.
--Temps de relance de 2 tours minimum.
--Les cible du sort ont un gros malus de % degats de durer 2x plus elever que le temp de relance du sort.
-
 *Tombe Protectrice: Invoque une tombe dans le sol pour entraver le passage.
 -Invocation statique qui bloque le passage et les lignes de vue.
 -Possede des pdv et peut etre demolie.
 -Lancer en ligne.
-
-*Âme Vengeresque: La faux du faucheur envoi une âme torturer pour attaquer l'ennemie et le hanter.
--Degats mono cible a quelques cases de porter.
--Enleve 1 a 2 PM pour 1 tour par l'effet du sort.
--Degats element Obscure.
-
-*Âme de Bonter: La faux du faucheur envoi une âme qui réduira la force pour augmenter la vitaliter.
--L'effet reduit de beaucoup les degats de la cible.
--L'effet augmente la vitaliter de la cible.
--L'effet dure 2 tour avec un temp de relance de 3 tour et +.
--Le sort affect les alliers et les ennemies mais ne peut pas etre lancer sur le faucheur lui-meme.
+- max 5 invoquer? 1 par tour.
 
 *Aura Maléfique: Des âmes maléfique forme un aura autour du faucheur et de ceux autour de lui.
 -Sort de zone autour du faucheur.
@@ -99,22 +54,9 @@ idée de skill
 -La glyf dure 2 tour avec 3 tour de relance minimum.
 -Degats element Terre.
 
-*Allonge lame: Le faucheur allonge la lame de sa faux.
--Degats de 3 a 4 PO.
--Donne l'effet ''Longue Lame'' au faucheur de 1 a 2 tour (selon lvl sort).
--L'effet ''Longue Lame'' donne un bonus de 1 a 2 de porter (selon le Lvl du sort) au sort suivent: Faux du Jugement,
- Meurtrissure, Drain Vital, Âme Vengeresque et Âme de Bonter.
--Temps de relance de 4 tours.
--Degats element Neutre.
-
-*Faux Circulaire: Le faucheur allonge sa faux pour attaquer les cibles devent de lui.
--Lancable sur une case au CAC.
--Degats de zone. (Lvl 1 a 8 zone de 3 cases coller au faucheur, lvl 9 et 10 la zone de 10 cases en demi cercle).
--Degats element Air.
-
 *Fauche de l'Âme: Le faucheur fauche l'âme de son adversaire avec une attaque puissante.
 -Degats mono-cible au CAC.
--Si l'attaque tue la cible, le faucheur gagne la moitier de la vie qu'il restais a la cible.
+-Si l'attaque tue la cible, le faucheur gagne la vie qu'il restais a la cible. ou % fix de sa propre vita max.
 -Si l'attaque tue la cible, le faucheur regagne l'energie qu'il a utiliser pour lancer se sort.
 -Degats element Obscure.
 
