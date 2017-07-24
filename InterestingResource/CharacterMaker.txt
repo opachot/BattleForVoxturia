@@ -4,3 +4,10 @@ http://charas-project.net/charas2/index.php
 
 
 https://graphicsgale.com/us/   (CREATION/ANIM)
+
+
+
+
+- Sprite editor: Paint.net (toturial to set it for sprite design)
+- Piskel
+- PyxleOS
