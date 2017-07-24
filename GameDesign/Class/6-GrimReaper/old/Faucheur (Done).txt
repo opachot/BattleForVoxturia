@@ -17,7 +17,7 @@ idée de skill
 -Degats a faible PO.
 -Degats en vol de vie.
 -Vol de vie plus importent si utiliser sur un allier.
--Degats element Eau/Lumiere.
+-Degats element obscure.
 
 *Réanimation Morbide: Le faucheur réanime un allier sous forme de zombie.
 -Reanime un allier.
