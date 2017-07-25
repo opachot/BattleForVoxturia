@@ -1,0 +1,77 @@
+-Druide-
+
+idee de skill
+
+NOTE: erosion appliquer au gens soigner (tout les sort de soin des autre classse aussi) via certain sort.
+
+*Fontaine de Vie: Le druide invoque la Fontaine de Vie qui a le pouvoir de retour a la vie 
+ selon les vieilles legende druide.
+-Si le druide ou un allier meur dans la glyf autour de la fontaine de vie, il revien a la vie
+ lors de sont tour de jeu.(Le tour du joueur mort)
+-Le joueur est ressuciter avec un nombre de pdv en % predefini.
+-Est insoignable de facon permanente et ne peut plus etre ressuciter via la fontaine de vie.
+-Si le druide meur, seul la fontaine de vie reste sur le terrain parmit tout ses sorts.
+-Quend un joueur revien a la vie, il n'a plus d'envoutement et tout ses temps de relance son a 0.
+-La fontaine reste sur le terrain temp qu'elle n'est pas reinvoquer ou que le druide hord combat.
+-Si le druide est mort et expulser du combat, la fontaine disparais.
+
+*Fontaine: Le druide invoque une fontaine qui regenaire sont equipe mais devien toxique pour les ennemies.
+-Soigne les allier qui commence leur tour sur la glyf.
+-Inflige des degats au ennemie qui commence leur tour sur la glyf.
+-Degats element Eau.
+
+*Elixir d'Oubli: Une potion qu'on ne se souvien plus de sont utiliter une fois bue...
+-Enleve les envoutements de la cible (-1 ou 2 tour d'envoutement).
+-Lancable sur allier et ennemie.
+-Temps de relance de 1 (1 tour de trou)
+
+*Potion Magique: Les potion magique du druide sont a effet variable, certain soigne d'autre rende malade.
+-Si lancer sur un allier, soigne l'allier cibler.
+-Si lancer sur un ennemie, inflige des degats a l'ennemie cibler.
+-Lancable 1x maximum par personne par tour.
+-Degats element Eau.
+
+*Medecine Avencer: La medecine avencer est une chirurgie qui permet de soigner de grosse blessur mais force a utiliser
+ moin d'energie et a moin se deplacer pour longtemp. Le druide sacrifie sa santer pour se devouer corp et ame au patient.
+-Soigne bcp de % vita si lancer sur sois-meme ou un allier mais en contrepartie, la cible perd 1 en energie
+ et 1 en PM pour 00 tour. Le druide perd un faible % en pdv max pour tout le combat non debuffable et effet cummulable.
+-Si lancer sur un ennemie, lui inflige de gros degats et lui retire 1 energie pour 3 tour 
+ non debuffable. Le duide lui auras une perte en pdv max en % pour le reste du combat (perte de pdv max  asser importente, 
+ non debuffable et cummulable).
+-Degats element Lumiere.
+ 
+*Sacrifice Animal: Le sacrifice animal sert a soigner les allier ou si vous confonder un cochon avec
+ votre adversair au moin cela lui feras bien mal.
+-Sacrifie une invocation allier et soigne autour d'elle en square de 1 case.
+-Si lancer sur un ennemie, lui inflige des degats + soigne faiblement en square de 1 autour du target.
+-Degats element Feu/Obscure.
+
+*Pierre de Connaisence: Les legende raconte que la pierre de connaisence permet d'apprendre plus vite.
+-Sort monocible.
+-Temps de relance elever.
+-Permet de reduire de 1 tour le temps de relance des sorts de la cible du sort.
+-Si lancer sur un ennemie, cela lui ajouteras 1 tour de temps de relance sur ses sort
+ en attente de relance.
+
+*Imbolc: Imbolc est un rituel de purification et de regeneration.
+-Le sort doit self.
+-Desenvoute les alliers et les ennemies qui sont dans la glyf de l'autel de rituel.
+-Au prochain tour, lors du debut du tour du druide, les membres de l'equipe du druide qui sont autour de self
+ sont soigner en % vita. 
+-Moyen temps de relance (2-4 tour).
+-Rend imposible l'utilisation du sort: Beltaine et Lugnasad pour le reste du tour.
+
+*Beltaine: Beltaine est un rituel de protection.
+-Le sort doit self.
+-Applique l'effet ''Feu de Bel'' au druide et a ses allier si ils sont autour de self.
+-L'effet ''Feu de Bel'' donne une protection en resistance fix contre les degats subit pour 1 tour.
+-Rend imposible l'utilisation du sort: Imbolc et Lugnasad pour le reste du tour.
+
+*Lugnasad: Lugnasad est un rituel de paix et d'abondance.
+-Le sort doit self.
+- au prochain tour
+-Soigne beaucoup de point de vie sur les allier et sur les ennemies dans toute la map du combat.
+ (Soigne environ 50% de la vita max du Druide)
+-Rend imposible l'utilisation du sort: Imbolc et Beltaine pour le reste du tour.
+
+
