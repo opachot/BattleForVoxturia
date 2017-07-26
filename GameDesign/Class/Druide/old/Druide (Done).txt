@@ -9,11 +9,9 @@ NOTE: erosion appliquer au gens soigner (tout les sort de soin des autre classse
 -Si le druide ou un allier meur dans la glyf autour de la fontaine de vie, il revien a la vie
  lors de sont tour de jeu.(Le tour du joueur mort)
 -Le joueur est ressuciter avec un nombre de pdv en % predefini.
--Est insoignable de facon permanente et ne peut plus etre ressuciter via la fontaine de vie.
 -Si le druide meur, seul la fontaine de vie reste sur le terrain parmit tout ses sorts.
 -Quend un joueur revien a la vie, il n'a plus d'envoutement et tout ses temps de relance son a 0.
 -La fontaine reste sur le terrain temp qu'elle n'est pas reinvoquer ou que le druide hord combat.
--Si le druide est mort et expulser du combat, la fontaine disparais.
 
 *Fontaine: Le druide invoque une fontaine qui regenaire sont equipe mais devien toxique pour les ennemies.
 -Soigne les allier qui commence leur tour sur la glyf.
