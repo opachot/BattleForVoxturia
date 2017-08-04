@@ -29,7 +29,7 @@ et dure de nouveau 1 tour. L'etats possede un lvl max (a definir en fonction de 
 -Degats element Terre.
 
 *Wakizashi: Le samouraï attaque sont adversair avec le Wakisashi pour l'affaiblir.
--Applique un malus en % resi pour 1 tour.(cumulable avec l'effet de Nito Ryu)
+-Applique un malus en % resi pour 1 tour.
 -Cout relativement faible pour des degats asser faible.
 -Degats element Terre.
 
@@ -45,7 +45,7 @@ et dure de nouveau 1 tour. L'etats possede un lvl max (a definir en fonction de 
 -Degats en vol de vie
 -Degats element Air.
 --- Sinon ---
--C +1 lvl bokken par coup.
+- +1 lvl bokken par coup.
 -Degats classic.
 -Degats element Terre.
 
