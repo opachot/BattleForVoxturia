@@ -1,0 +1,72 @@
+-Vampire-
+
+idée de skill
+
+*Morsure: Le vampire mord son adversaire pour lui voler son sang.
+-Degats au Cac et mono cible.
+-Degats en vol de vie.
+-Plus efficase sur allier.
+-Degats element Feu.
+
+*Envoler de Chauve-Sourie: Le vampire disparait dans une envolé de chauve-sourie.
+-Transforme le vampire en plusieur chauve-sourie pour 1 tour.
+-Deplace le vampire sur une autre cases.
+-Lancable de 1 a quelques PO.
+-Devient invulnérable au attaque recue au corps a corps pour 1 tour.
+
+*Manipulation de l'Ombre: Le vampire utilise son ombre pour frapper son adversaire. 
+-Degats de 2 a quelques PO.
+-Lancer en ligne.
+-Sans ldv
+-Degats element Obscure.
+
+*Transfusion Sanguine: Le vampire transfer une partie de sa vie a une autre personne.
+-Transfer une partie de sa vie a une personne.
+-Transfer plus de vie a la cible que le vampire en perd.
+-lancable sur ennemies car ghoule peut servire a rendre le sort offensif.
+
+*Marque du Vampire: Le vampire mord son adversaire pour lui poser une marque de vampire.
+-Donne l'etats ''Marque du Vampire'' a la cible.
+-Inflige un poison sur 3 tour a la cible, les degats subit par le poison est en vol de vie.
+-Le poison est plus puissant si utiliser sous l'etats ''Sombre Nuit''.
+-Degats element Feu.
+
+*Lance de l'Ombre: Le vampire utilise son ombre comme une lance pour transpercer l'âme de l'adversaire et la rendre Impure. 
+-Degats de 2 a quelques po.
+-Lancer en ligne.
+-Inflige aussi un poison qui dure quelques tour.
+-Degats element Obscure pour les 2 degats.
+
+*Enfermement: Le vampire enferme quelqun dans un cercueille.
+-Lancable sur n'importe qui.
+-Fait passer le prochain tour de la cible.
+-Rend la cible invulnerable au degats.
+-Si lancer sur lui-meme, met fin au tour du vampire et lui fait passer sont prochain tour.
+-La protection fini a la fin du prochain tour du vampire
+
+*Aura de Terreur: Le vampire crée une aura qui effrait tout les etres vivant.
+-Applique une aura de terreur sur une personne.
+-L'aura de terreur empeche toute les entiters de s'approcher du porteur de l'aura de terreur.
+-Dure 1 tour.
+
+*Invocation de Goule: Le vampire invoque un Goule. 
+-La puissance du Goule est augmenter par l'etats de ''Sombre Nuit''.
+-Le goule a un sort qui rend les soins en degats et un sort de degats au CAC qui inflige aussi un poison qui dure 2 tour.
+    (etats zombification 1 tour?) 
+    (lancable sur allier pour les heal avec les sort qui deal poison)
+    (need bonne res sur element vol vie du vampire)
+-Un goule + (nb player allier mort) peut etre sur le terrain.
+-Degats cac du goule element Terre, le poison du goule element Obscure.
+
+*Nuit Rouge: Le vampire crée une lune de sang dans le ciel qui reflete sa couleur dans la nuit.
+-Donne l'etats ''Nuit Rouge'' a tout les entiters du combat.
+-Les sort de vol de vie passe de 50% a 100% de vol de vie.
+-Toute les personnes possédent l'etats ''Marque du Vampire'' subbisent degat vol de vie au lancement du sort nuit rouge.
+-Cooldown 2x plus long que Sombre Nuit (Au Lvl de sort equivalent).
+-Si le vampire a plus de 25% de vie restent, il perdra 20% de sa vie max en utilisent se sort.
+-Les goules attaques en vol de vie sous l'etats de ''Nuit Rouge''.
+-Degats element feu sur ceux qui on la marque du vampire.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Le vampire : Ton sang et ton âme m'appartiendron.
