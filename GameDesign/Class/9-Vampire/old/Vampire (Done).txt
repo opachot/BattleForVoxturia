@@ -65,7 +65,7 @@ idée de skill
 -Cooldown 2x plus long que Sombre Nuit (Au Lvl de sort equivalent).
 -Si le vampire a plus de 25% de vie restent, il perdra 20% de sa vie max en utilisent se sort.
 -Les goules attaques en vol de vie sous l'etats de ''Nuit Rouge''.
--Degats element feu sur ceux qui on la marque du vampire.
+-Degats element feu sur ceux qui on la marque du vampire * lvl de la mark.
 
 ---------------------------------------------------------------------------------------------------------------------
 
