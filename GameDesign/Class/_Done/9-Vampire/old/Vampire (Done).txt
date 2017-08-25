@@ -50,7 +50,6 @@ idée de skill
 -Dure 1 tour.
 
 *Invocation de Goule: Le vampire invoque un Goule. 
--La puissance du Goule est augmenter par l'etats de ''Sombre Nuit''.
 -Le goule a un sort qui rend les soins en degats et un sort de degats au CAC qui inflige aussi un poison qui dure 2 tour.
     (etats zombification 1 tour?) 
     (lancable sur allier pour les heal avec les sort qui deal poison)
@@ -62,9 +61,7 @@ idée de skill
 -Donne l'etats ''Nuit Rouge'' a tout les entiters du combat.
 -Les sort de vol de vie passe de 50% a 100% de vol de vie.
 -Toute les personnes possédent l'etats ''Marque du Vampire'' subbisent degat vol de vie au lancement du sort nuit rouge.
--Cooldown 2x plus long que Sombre Nuit (Au Lvl de sort equivalent).
 -Si le vampire a plus de 25% de vie restent, il perdra 20% de sa vie max en utilisent se sort.
--Les goules attaques en vol de vie sous l'etats de ''Nuit Rouge''.
 -Degats element feu sur ceux qui on la marque du vampire * lvl de la mark.
 
 ---------------------------------------------------------------------------------------------------------------------
