@@ -12,14 +12,15 @@ NOTE: Quantiter de charge sur L'Epee-Lectronique limiter.
 -Rend les autre imposible a etre tackler par la cible.
 -Degats element Feu.
 
-*Vision-X: Le cyborg utilise sa vision a rayon-x pour voir au travers des obstacles.
--Permet de voir derriere les obstacles.
-
+				Removed and by default on the specified skills.
+//-------------------------------------------------------------------------------------------------------
 *Epee-Lectronique: Permet d'utiliser l'arme principale du cyborg. Elle permet de generer des charges.
 -Permet de gagner des charges via les sort: Coup Supercondensateur, Cyber-Slash, Borne de Recharge,
  Charge et Surcharge.
 -Lancable 1x par combat, durer infini et imposible a desenvouter.
 -Quantiter de charge maximum depent du Lvl du sort.
+//-------------------------------------------------------------------------------------------------------
+
 
 *Botte Gravitationel: Le cyborg utilise ses botte gravitationel sur lui ou sur un allier.
 -Reduit les PM par 2 (Si PM impair: EXEMPLE: 5Pm, redui les pm a 2)
@@ -32,7 +33,7 @@ NOTE: Quantiter de charge sur L'Epee-Lectronique limiter.
 *Bombe IEM: Le cyborg pose une Bombe IEM qui a pour effet d'aneantire tout les invocation et glyf et inflige
  de gros degats tout en retirer les envoutements.
 -Cout elever en charge.
--La la fin de sont prochain tour, elle explose.
+-A la fin de sont prochain tour, elle explose.
 -Detruit automatiquement tout invocation, glyf ou autre que les joueurs
 -Les joueur subise de gros degats allier comme ennemie.
 -Zone de la bombe de 2 PO en cercle.
@@ -110,18 +111,6 @@ Sur un ennemie, inflige des degats en plus.
 
 *Charge: Le cyborg concentre sont energie pour les transformer en charges.
 -Permet de gagner des charges pour un cout en energie.
-
-*Recyclage: Le cyborg ne gaspille pas sont energie, il est un expert en recyclage.
--Si lancer sur sois-meme, pose sur le sol 50% de la capaciter maximal de charge dans une capsule.
--Si le cyborg se trouve sur une capsule, lui permet de rajouter des charges a la capsule.
--Si lancer sur une capsule, regagne 50% de la capaciter maximal de charge.
--Si lancer sur la ''Bombe IEM'' retire la bombe du combat et regagne 80% (peut varier) de sont coup en charge.
-
-*Puce Electronique: Le cyborg utilise une puce electronique pour prendre le control d'une cible.
--Lancer sur une cible, permet d'en prendre control mais seulement au debut de sont tour.
--Permet seulement d'utiliser ses PM.
--Une fois fini de prendre le control le tour de la cible debute mais sans les PM que vous lui
- aurier fait prendre.
 
 *Epee Taser: Un coup puissant qui consume toute les charges presente dans l'epee.
 -Degats mono-cible au CAC.
