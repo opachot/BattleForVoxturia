@@ -4,84 +4,14 @@ Idee de Skill
 
 NOTE: Quantiter de charge sur L'Epee-Lectronique limiter.
 
-*Jetpack: Le cyborg utilise sont jetpack sur lui ou sur un allier pour se propulser dans air pour 
- proteger des degats de contact.
--Devien invulnerable au degats au CAC.
--Au debut du prochain tour, inflige de faible degat autour en se possent sur le terrain.
--Utilise des charges.
--Rend les autre imposible a etre tackler par la cible.
--Degats element Feu.
-
-				Removed and by default on the specified skills.
-//-------------------------------------------------------------------------------------------------------
-*Epee-Lectronique: Permet d'utiliser l'arme principale du cyborg. Elle permet de generer des charges.
--Permet de gagner des charges via les sort: Coup Supercondensateur, Cyber-Slash, Borne de Recharge,
- Charge et Surcharge.
--Lancable 1x par combat, durer infini et imposible a desenvouter.
--Quantiter de charge maximum depent du Lvl du sort.
-//-------------------------------------------------------------------------------------------------------
-
-
-*Botte Gravitationel: Le cyborg utilise ses botte gravitationel sur lui ou sur un allier.
--Reduit les PM par 2 (Si PM impair: EXEMPLE: 5Pm, redui les pm a 2)
--Permet de se deplacer de 1 a 2 PO pour 1 PM
--Permet de se deplacer par dessu certain obstacle.
--Apret chaque PM utiliser, inflige de faible degats autour du cyborg.
--Dure 1 tour
--Degats element Air.
-
-*Bombe IEM: Le cyborg pose une Bombe IEM qui a pour effet d'aneantire tout les invocation et glyf et inflige
- de gros degats tout en retirer les envoutements.
--Cout elever en charge.
--A la fin de sont prochain tour, elle explose.
--Detruit automatiquement tout invocation, glyf ou autre que les joueurs
--Les joueur subise de gros degats allier comme ennemie.
--Zone de la bombe de 2 PO en cercle.
--indeplacable.
--bloque le deplacement mais pas les ligne de vue.
--l'explosion desenvoute ceux dans la zone.
--Degats element Feu/Terre/Lumiere.
-
-*Queue Mechanique: Le cyborg utilise sa queue pour lui permettre d'attaquer a distance.
--Permet d'utiliser les sort: Coup Supercondensateur et Cyber-Slash a distance. (Ligne uniquement)
--Dure quelques tours.
--Bonus PO fix au sort affecter selon Lvl du sort Queue Mechanique.
-
-*Champ de Force: Le cyborg utilise un champ de force pour entraver les deplacement.
-interval de relance 1-3 tour?
--Lancable sur sois-meme, allier ou ennemie.
--Zone de 2 cases autour de la cible.
--Empeche les ennemies et les allier d'entrer ou de sortire du champ de force.
--La cible du sort peut fair entrer ou sortire les joueur de la zone du champ de force en se deplacent. 
--Dure 1 tour.
--Coup en charge plutot elever.
-
-*Grapin Attirent: Le cyborg attire une cible avec sont grapin.
-Sur un ennemie, inflige des degats en plus.
--Attire de 2 cases la cible.
--Si la cible est un ennemie, inflige des degats en plus.
--Lancer en ligne seulement.
--Degats element Neutre.
-
-*Grapin de Contournement: Le cyborg contourne une cible avec sont grapin.
--Lancable a 2 PO seulement.
--Permet de passer a 2 cases derriere la cible.
--Sur un ennemie, inflige des degats en plus.
--Degats element Neutre.
+*Charge: Le cyborg concentre sont energie pour les transformer en charges.
+-Permet de gagner des charges pour un cout en energie.
 
 *Coup Supercondensateur: Le cyborg donne un coup d'epee pour y fair gagner des charges.
--Degats mono-cible au CAC (Ou a distance avec Queue Mechanique)
+-Degats mono-cible au CAC
 -Permet de gagner beaucoup de charge. (Seulement si une cible est viser)
 -Les degats sont affecter par le nombre de charge presente. (+ %Dmg par charge deja presente)
 -Degats element Electrique.
-
-*Check Point: Le cyborg effectue une sauvgarde de placement pour permettre d'y retourner plus tard.
--Lors de la premiere utilisation, pose un check point sur la case ou se trouve le cyborg.
--Lors de la seconde utilisation, permet de se reteleporter sur la case du Check Point et retire celui-ci.
--Cout en charge lors de la seconde utilisation.
--Au moin 3 tour de relance.
--Lancable sur sois-meme ou allier.
--Le check Point est une glyf de 1 case de durer Infini.
 
 *Cyber-Slash: Le cyborg tranche avec sont epee tout se qui se trouve devent lui pour gagner le plus de 
  charge possible.
@@ -90,6 +20,31 @@ Sur un ennemie, inflige des degats en plus.
 -Gagne des charges pour chaque ennemie toucher.
 -Les degats sont affecter par le nombre de charge presente. (+ %Dmg par charge deja presente)
 -Degats element Electrique.
+
+*Epee Taser: Un coup puissant qui consume toute les charges presente dans l'epee.
+-Degats mono-cible au CAC.
+-Les degats depende du nombre de charge presente.
+-Si les charge sont au maximum, decuple la puissance du coup.
+-Fait perdre toute les charges.
+-Degats element Electrique.
+
+*Grapin Attirent: Le cyborg attire une cible avec sont grapin.
+Sur un ennemie, inflige des degats en plus.
+-Attire de 2 cases la cible.
+-Si la cible est un ennemie, inflige des degats en plus.
+-Lancer en ligne seulement.
+-Degats element Terre.
+
+*Jetpack: Le cyborg utilise sont jetpack sur lui ou sur un allier pour se propulser dans air pour 
+ proteger des degats de contact.
+- teleportation sans ligne de vue en ligne droite, cout en charge depen de la PO utiliser.
+- dega feu sur ceu dans sa ligne de deplacement
+- pose glyf feu sur la zone de deplacement.
+-Devien invulnerable au degats au CAC.
+-Au debut du prochain tour, inflige de faible degat autour en se possent sur le terrain.
+-Utilise des charges.
+-Rend les autre imposible a etre tackler par la cible.
+-Degats element Feu.
 
 *Borne de Recharge: Le cyborg pose sur le sol une borne de recharge pour donner de l'energie et des charge.
 -S'active a chaque fin de tour du cyborg.
@@ -105,17 +60,19 @@ Sur un ennemie, inflige des degats en plus.
 -Le sort est 2x moin efficase si lancer sur un allier a distance, ou de meme efficasiter sur un allier au CAC.
 -Cout en charge
 
-*Surcharge: Le cyborg convertie ses reserve electrique vital en charges.
--Perd de la vie en % pour gagner des point de charge.
- (Fair attention a l'equilibrage avec electrotherapie).
+*Champ de Force: Le cyborg utilise un champ de force pour entraver les deplacement.
+interval de relance 1-3 tour?
+-Lancable sur sois-meme, allier ou ennemie.
+-Zone de 2 cases autour de la cible.
+-Empeche les ennemies et les allier d'entrer ou de sortire du champ de force.
+-La cible du sort peut fair entrer ou sortire les joueur de la zone du champ de force en se deplacent. 
+-Dure 1 tour.
+-Coup en charge plutot elever.
 
-*Charge: Le cyborg concentre sont energie pour les transformer en charges.
--Permet de gagner des charges pour un cout en energie.
-
-*Epee Taser: Un coup puissant qui consume toute les charges presente dans l'epee.
--Degats mono-cible au CAC.
--Les degats depende du nombre de charge presente.
--Si les charge sont au maximum, decuple la puissance du coup.
--Fait perdre toute les charges.
--Degats element Electrique.
-
+*Check Point: Le cyborg effectue une sauvgarde de placement pour permettre d'y retourner plus tard.
+-Lors de la premiere utilisation, pose un check point sur la case ou se trouve le cyborg.
+-Lors de la seconde utilisation, permet de se reteleporter sur la case du Check Point et retire celui-ci.
+-Cout en charge lors de la seconde utilisation.
+-Au moin 3 tour de relance.
+-Lancable sur sois-meme ou allier.
+-Le check Point est une glyf de 1 case de durer Infini.
