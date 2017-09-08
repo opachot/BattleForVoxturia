@@ -68,6 +68,7 @@ interval de relance 1-3 tour?
 -La cible du sort peut fair entrer ou sortire les joueur de la zone du champ de force en se deplacent. 
 -Dure 1 tour.
 -Coup en charge plutot elever.
+- empeche les sort de deplacement dans la zone sauf le porteur du champ de force3.
 
 *Check Point: Le cyborg effectue une sauvgarde de placement pour permettre d'y retourner plus tard.
 -Lors de la premiere utilisation, pose un check point sur la case ou se trouve le cyborg.
