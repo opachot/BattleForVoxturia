@@ -1,1 +1,3 @@
 each element vfx splash effect on target hit depending of the dmg and the element. ex: black smoke skull head going for huge darkness dmg.
+
+bouton boolean to show information of map element: ex: glyph special field cell etc...
