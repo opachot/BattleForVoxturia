@@ -1,1 +1,5 @@
 each character created have a storyline and personality can evolve whit his basic stats depending of it.
+
+NEW: game is fight agains other (table top game simulator). Player are voxturian to fight in this
+game (for glory)? Possibility to unlock reward depending of the NPC playstyle 
+(reward such as card used in fight?)
