@@ -10,3 +10,4 @@ a la suite des jet de heal %.
 
 ------------------
 NEW: Passive/Agressive glyph insted of glyph or active glyph.
+NEW: Player card deck to use powerfull special effect.
