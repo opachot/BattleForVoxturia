@@ -11,3 +11,6 @@ a la suite des jet de heal %.
 ------------------
 NEW: Passive/Agressive glyph insted of glyph or active glyph.
 NEW: Player card deck to use powerfull special effect.
+NEW: default stats different for each classe, 
+    ex: guardian hight res in light but low in fire.
+    ex: Vampire low res in light but hight in dark.
