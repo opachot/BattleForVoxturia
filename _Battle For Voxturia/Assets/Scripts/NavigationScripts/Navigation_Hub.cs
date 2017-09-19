@@ -34,10 +34,6 @@ public class Navigation_Hub : MonoBehaviour {
 	}
     #endregion
 
-    public void QuitGame() {
-        Application.Quit();
-    }
-
     public void NavigateTo_TeamList() {
         SceneManager.LoadScene("TeamList");
     }
@@ -50,15 +46,20 @@ public class Navigation_Hub : MonoBehaviour {
         SceneManager.LoadScene("Option");
     }
 
-    public void NavigateTo_Map() {
-        SceneManager.LoadScene("Map");
+    public void NavigateTo_WorldMap() {
+        SceneManager.LoadScene("WorldMap");
     }
 
-    public void NavigateTo_Items() {
-        SceneManager.LoadScene("Items");
+    public void NavigateTo_DiscoveredItems() {
+        SceneManager.LoadScene("DiscoveredItems");
     }
 
     public void NavigateTo_Help() {
         SceneManager.LoadScene("Help");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
