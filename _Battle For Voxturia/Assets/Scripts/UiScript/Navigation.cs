@@ -1,7 +1,7 @@
 ﻿/*
 Company: Voxturia Game
 Author:  Sébastien Godbout
-Date:    17 September 2017
+Date:    19 September 2017
 */
 
 using System.Collections;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Navigation_Hub : MonoBehaviour {
+public class Navigation : MonoBehaviour {
 
 	#region DECLARATION
     // CONST
@@ -19,20 +19,24 @@ public class Navigation_Hub : MonoBehaviour {
     // PUBLIC
 
     #endregion
-    
+
 	#region UNITY METHODE
 	void Awake() {
 		
     }
 	
 	void Start() {
-        
+		
 	}
 	
 	void Update() {
 		
 	}
     #endregion
+
+    public void NavigateTo_Hub() {
+        SceneManager.LoadScene("Hub");
+    }
 
     public void NavigateTo_TeamList() {
         SceneManager.LoadScene("TeamList");
@@ -58,8 +62,7 @@ public class Navigation_Hub : MonoBehaviour {
         SceneManager.LoadScene("Help");
     }
 
-    public void QuitGame()
-    {
+    public void QuitGame() {
         Application.Quit();
     }
 }
