@@ -150,7 +150,7 @@ public class Buttons_Hub : MonoBehaviour {
     }
     #endregion
 
-    #region Quit confirmation popUp buttons
+    #region QuitConfirmation popUp buttons
     public void YesQuitButton() {
         navigation.QuitGame();
     }

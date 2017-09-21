@@ -34,6 +34,7 @@ public class Navigation : MonoBehaviour {
 	}
     #endregion
 
+
     public void NavigateTo_Hub() {
         SceneManager.LoadScene("Hub");
     }

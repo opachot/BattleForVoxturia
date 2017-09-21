@@ -1,7 +1,7 @@
 ﻿/*
 Company: Voxturia Game
 Author:  Sébastien Godbout
-Date:    19 September 2017
+Date:    20 September 2017
 */
 
 using System.Collections;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Buttons_TitleScreen : MonoBehaviour {
+public class Buttons_TeamList : MonoBehaviour {
 
     #region DECLARATION
     // CONST
@@ -17,10 +17,8 @@ public class Buttons_TitleScreen : MonoBehaviour {
     // PRIVATE
     private Navigation navigation;
 
-    public GameObject quitConfirmaton_PopUp;
-
     // PUBLIC
-    //public Button autoSelected_btn;
+    public GameObject CreateNewTeam_PopUp;
 
     #endregion
 
@@ -30,7 +28,7 @@ public class Buttons_TitleScreen : MonoBehaviour {
     }
 	
 	void Start() {
-        //autoSelected_btn.Select();
+		
 	}
 	
 	void Update() {
@@ -40,22 +38,23 @@ public class Buttons_TitleScreen : MonoBehaviour {
 
 
     #region Default buttons
-    public void PlayButton() {
-        navigation.NavigateTo_Hub();
+    public void CreateNewTeamButton() {
+        CreateNewTeam_PopUp.SetActive(true);
     }
 
-    public void QuitButton() {
-        quitConfirmaton_PopUp.SetActive(true);
+    public void ReturnButton() {
+        navigation.NavigateTo_Hub();
     }
     #endregion
 
-    #region QuitConfirmation popUp buttons
-    public void YesQuitButton() {
-        navigation.QuitGame();
+    #region CreateNewTeam popUp buttons
+    public void CreateTeamButton() {
+        // TODO: Save the creation of the team.
+        CreateNewTeam_PopUp.SetActive(false);
     }
 
-    public void NoQuitButton() {
-        quitConfirmaton_PopUp.SetActive(false);
+    public void CancelCreationButton() {
+        CreateNewTeam_PopUp.SetActive(false);
     }
     #endregion
 }
