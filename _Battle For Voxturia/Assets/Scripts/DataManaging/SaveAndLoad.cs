@@ -10,17 +10,13 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-/***************************
- *          -NOTE-
- * Will need to acces all the thing that will need to be saved.
- * ************************/
-
 public class SaveAndLoad : MonoBehaviour {
 
-	#region DECLARATION
+    #region DECLARATION
     // CONST
 
     // PRIVATE
+    private GameData gameData;
 
     // PUBLIC
 
@@ -28,7 +24,7 @@ public class SaveAndLoad : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        print("Application.persistentDataPath: " + Application.persistentDataPath);
+        gameData = gameObject.GetComponent<GameData>();
     }
 	
 	void Start() {
@@ -43,42 +39,49 @@ public class SaveAndLoad : MonoBehaviour {
 
     public void Save() {
         BinaryFormatter bf   = new BinaryFormatter();
-        FileStream      file = File.Create(Application.persistentDataPath + "/teamsInfo.dat");
 
-        SerialisableTeamsInfo teamsData = new SerialisableTeamsInfo();
+        FileStream            computerFile_Teams = File.Create(Application.persistentDataPath + "/teamsInfo.dat");
+        SerialisableTeamsInfo ComputerData_Teams = new SerialisableTeamsInfo();
+
+        // TODO: Encryption
+
+        // Write GameData to computer data.
+        ComputerData_Teams.TeamsId    = gameData.TeamsId;
+        ComputerData_Teams.TeamsNames = gameData.TeamsNames;
 
         //--------------------testing values-----------------------
-        // Need to encrypt and only pass a string
-
         const int NB_TEAM = 3;
-        teamsData.teamsNames = new string[NB_TEAM];
+        ComputerData_Teams.TeamsNames = new string[NB_TEAM];
         string[] myTeamsNames = new string[] {"TrolololTeam",
                                               "xyzTeam"     ,
                                               "metaTeam"    };
 
         for(int i = 0; i < NB_TEAM; i++) {
-            teamsData.teamsNames[i] = myTeamsNames[i];
+            ComputerData_Teams.TeamsNames[i] = myTeamsNames[i];
         }
         //---------------------------------------------------------
 
-        bf.Serialize(file, teamsData);
-        file.Close();
+        bf.Serialize(computerFile_Teams, ComputerData_Teams);
+        computerFile_Teams.Close();
 
-        print("Saving completed!");
-        print("Saved teams names: " + teamsData.teamsNames[0] + " - " + teamsData.teamsNames[1] + " - " + teamsData.teamsNames[2]);
+        Debug.Log("Saving completed!");
     }
 
     public void Load() {
         if(File.Exists(Application.persistentDataPath + "/teamsInfo.dat")) {
             BinaryFormatter bf   = new BinaryFormatter();
-            FileStream      file = File.Open(Application.persistentDataPath + "/teamsInfo.dat", FileMode.Open);
 
-            SerialisableTeamsInfo teamsData = (SerialisableTeamsInfo)bf.Deserialize(file);
-            file.Close();
-            // Need to decript
+            FileStream            computerFile_Teams = File.Open(Application.persistentDataPath + "/teamsInfo.dat", FileMode.Open);
+            SerialisableTeamsInfo ComputerData_Teams = (SerialisableTeamsInfo)bf.Deserialize(computerFile_Teams);
+            computerFile_Teams.Close();
 
-            print("Loading completed!");
-            print("Loaded teams names: " + teamsData.teamsNames[0] + " - " + teamsData.teamsNames[1] + " - " + teamsData.teamsNames[2]);
+            // TODO: Decryption
+
+            // Write computer data to GameData.
+            gameData.TeamsId    = ComputerData_Teams.TeamsId;
+            gameData.TeamsNames = ComputerData_Teams.TeamsNames;
+
+            Debug.Log("Loading completed!");
         }
     }
 }

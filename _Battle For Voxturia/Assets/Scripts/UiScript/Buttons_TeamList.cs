@@ -17,6 +17,7 @@ public class Buttons_TeamList : MonoBehaviour {
 
     // PRIVATE
     private Navigation navigation;
+    private GameData   gameData;
 
     // PUBLIC
     public GameObject createNewTeam_popUp;
@@ -33,6 +34,7 @@ public class Buttons_TeamList : MonoBehaviour {
     #region UNITY METHODE
     void Awake() {
         navigation = gameObject.GetComponent<Navigation>();
+        gameData   = GameObject.FindGameObjectWithTag("GameData").GetComponent<GameData>();
     }
 	
 	void Start() {
@@ -61,7 +63,18 @@ public class Buttons_TeamList : MonoBehaviour {
         bool   isValidName = ValidateName(newName);
 
         if(isValidName) {
-            // TODO: Save the creation of the team and reload the teamList board.
+            // TODO: Fix the updating of the GameData, save file should use List insted of array.
+            // (Beacus if we delete a team, the value will get fucked...)
+            // Warning: Serialising List is inneficient, will need to search how to make it performent.
+            int emptyIndex = gameData.TeamsId.Length;
+            int lastIndex   = gameData.TeamsId[emptyIndex - 1];
+            int newId       = lastIndex + 1;
+
+            gameData.TeamsId   [emptyIndex] = newId;
+            gameData.TeamsNames[emptyIndex] = newName;
+
+            // TODO: Reload the teamList board.
+
 
             // Reset the popUp.
             newTeamName_inputField.text = "";
