@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TeamScenes/TeamList.unity
+- path: Assets/Scenes/Option&HelpScenes/Help.unity
   isLoaded: 1
   isActive: 1

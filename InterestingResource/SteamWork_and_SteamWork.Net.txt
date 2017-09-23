@@ -1,0 +1,1 @@
+serialisable guide: https://www.sitepoint.com/saving-and-loading-player-game-data-in-unity/
