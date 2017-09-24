@@ -16,7 +16,7 @@ public class SaveAndLoad : MonoBehaviour {
     // CONST
 
     // PRIVATE
-    private GameData gameData;
+    private TeamsData teamsData;
 
     // PUBLIC
 
@@ -24,7 +24,7 @@ public class SaveAndLoad : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        gameData = gameObject.GetComponent<GameData>();
+        teamsData = gameObject.GetComponent<TeamsData>();
     }
 	
 	void Start() {
@@ -38,50 +38,56 @@ public class SaveAndLoad : MonoBehaviour {
 
 
     public void Save() {
-        BinaryFormatter bf   = new BinaryFormatter();
+        BinaryFormatter bf = new BinaryFormatter();
 
         FileStream            computerFile_Teams = File.Create(Application.persistentDataPath + "/teamsInfo.dat");
-        SerialisableTeamsInfo ComputerData_Teams = new SerialisableTeamsInfo();
+        SerialisableTeamsData computerData_Teams = new SerialisableTeamsData();
 
         // TODO: Encryption
 
-        // Write GameData to computer data.
-        ComputerData_Teams.TeamsId    = gameData.TeamsId;
-        ComputerData_Teams.TeamsNames = gameData.TeamsNames;
+        // Write TeamsData to computer data.
+        computerData_Teams.teamsId    = teamsData.teamsId;
+        computerData_Teams.teamsNames = teamsData.teamsNames;
 
-        //--------------------testing values-----------------------
-        const int NB_TEAM = 3;
-        ComputerData_Teams.TeamsNames = new string[NB_TEAM];
-        string[] myTeamsNames = new string[] {"TrolololTeam",
-                                              "xyzTeam"     ,
-                                              "metaTeam"    };
-
-        for(int i = 0; i < NB_TEAM; i++) {
-            ComputerData_Teams.TeamsNames[i] = myTeamsNames[i];
-        }
-        //---------------------------------------------------------
-
-        bf.Serialize(computerFile_Teams, ComputerData_Teams);
+        bf.Serialize(computerFile_Teams, computerData_Teams);
         computerFile_Teams.Close();
 
-        Debug.Log("Saving completed!");
+        // Console line to help debugging.
+        DebugLog_Saving(computerData_Teams);
     }
 
     public void Load() {
         if(File.Exists(Application.persistentDataPath + "/teamsInfo.dat")) {
-            BinaryFormatter bf   = new BinaryFormatter();
+            BinaryFormatter bf = new BinaryFormatter();
 
             FileStream            computerFile_Teams = File.Open(Application.persistentDataPath + "/teamsInfo.dat", FileMode.Open);
-            SerialisableTeamsInfo ComputerData_Teams = (SerialisableTeamsInfo)bf.Deserialize(computerFile_Teams);
+            SerialisableTeamsData computerData_Teams = (SerialisableTeamsData)bf.Deserialize(computerFile_Teams);
             computerFile_Teams.Close();
 
             // TODO: Decryption
 
-            // Write computer data to GameData.
-            gameData.TeamsId    = ComputerData_Teams.TeamsId;
-            gameData.TeamsNames = ComputerData_Teams.TeamsNames;
+            // Write computer data to TeamsData.
+            teamsData.teamsId    = computerData_Teams.teamsId;
+            teamsData.teamsNames = computerData_Teams.teamsNames;
 
-            Debug.Log("Loading completed!");
+            // Console line to help me debug.
+            DebugLog_Loading(teamsData);
         }
     }
+
+    #region DEBUGGING METHODE
+    public void DebugLog_Saving(SerialisableTeamsData computerData_Teams) {
+        Debug.Log("Saving completed!");
+
+        string json = JsonUtility.ToJson(computerData_Teams);
+        Debug.Log(json);
+    }
+
+    public void DebugLog_Loading(TeamsData gameData) {
+        Debug.Log("Loading completed!");
+
+        string json = JsonUtility.ToJson(gameData);
+        Debug.Log(json);
+    }
+    #endregion
 }

@@ -17,7 +17,7 @@ public class Buttons_TeamList : MonoBehaviour {
 
     // PRIVATE
     private Navigation navigation;
-    private GameData   gameData;
+    private TeamsData   teamsData;
 
     // PUBLIC
     public GameObject createNewTeam_popUp;
@@ -34,11 +34,10 @@ public class Buttons_TeamList : MonoBehaviour {
     #region UNITY METHODE
     void Awake() {
         navigation = gameObject.GetComponent<Navigation>();
-        gameData   = GameObject.FindGameObjectWithTag("GameData").GetComponent<GameData>();
     }
 	
 	void Start() {
-        
+        teamsData   = GameObject.FindGameObjectWithTag("GameData").GetComponent<TeamsData>();
 	}
 	
 	void Update() {
@@ -59,33 +58,23 @@ public class Buttons_TeamList : MonoBehaviour {
 
     #region CreateNewTeam popUp buttons
     public void CreateTeamButton() {
-        string newName      = newTeamName_inputField.text;
+        string newName     = newTeamName_inputField.text;
         bool   isValidName = ValidateName(newName);
 
         if(isValidName) {
-            // TODO: Fix the updating of the GameData, save file should use List insted of array.
-            // (Beacus if we delete a team, the value will get fucked...)
-            // Warning: Serialising List is inneficient, will need to search how to make it performent.
-            int emptyIndex = gameData.TeamsId.Length;
-            int lastIndex   = gameData.TeamsId[emptyIndex - 1];
-            int newId       = lastIndex + 1;
-
-            gameData.TeamsId   [emptyIndex] = newId;
-            gameData.TeamsNames[emptyIndex] = newName;
+            teamsData.AddNewTeam(newName);
 
             // TODO: Reload the teamList board.
 
-
-            // Reset the popUp.
-            newTeamName_inputField.text = "";
-            createTeam_btn.interactable = false;
-
-            createNewTeam_popUp.SetActive(false);
+            CloseCreateNewTeamPopUp();
         }
     }
 
     public void CancelCreationButton() {
-        // Reset the popUp.
+        CloseCreateNewTeamPopUp();
+    }
+
+    private void CloseCreateNewTeamPopUp() {
         newTeamName_inputField.text = "";
         createTeam_btn.interactable = false;
 
@@ -120,11 +109,11 @@ public class Buttons_TeamList : MonoBehaviour {
     private bool ValidateName(string newName) {
         bool isValidName = true;
 
-        if(!IsAvailableName()) {
+        if(!IsAvailableName(newName)) {
             TrowError("Error: The name is already taken");
             isValidName = false;
         }
-        else if(!IsMoralName()) {
+        else if(!IsMoralName(newName)) {
             TrowError("Error: The name is inappropriate");
             isValidName = false;
         }
@@ -132,12 +121,13 @@ public class Buttons_TeamList : MonoBehaviour {
         return isValidName;
     }
 
-    private bool IsAvailableName() {
-        // TODO
-        return true;
+    private bool IsAvailableName(string newName) {
+        bool isAvailableName = !teamsData.IsExistingName(newName);
+
+        return isAvailableName;
     }
 
-    private bool IsMoralName() {
+    private bool IsMoralName(string newName) {
         // TODO
         return true;
     }

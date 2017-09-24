@@ -20,23 +20,17 @@ using System;
  * ************************/
 
 [Serializable]
-public class SerialisableTeamsInfo {
+public class SerialisableTeamsData {
 
     #region DECLARATION
     // CONST
 
     // PRIVATE
-    private int[]    teamsId;
-    private string[] teamsNames;
 
     // PUBLIC
-
+    public List<int>    teamsId;
+    public List<string> teamsNames;
 
     #endregion
 
-
-    #region GET//SET
-    public int[]    TeamsId    { get; set; }
-    public string[] TeamsNames { get; set; }
-    #endregion
 }
