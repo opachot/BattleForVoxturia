@@ -7,6 +7,7 @@ Date:    DAY MONTH YEARS
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Test_SaveLoad_HelpSceen : MonoBehaviour {
 
@@ -40,5 +41,9 @@ public class Test_SaveLoad_HelpSceen : MonoBehaviour {
 
     public void TEMP_TEST_LOAD() {
         saveAndLoad.Load();
+    }
+
+    public void RETURN() {
+        SceneManager.LoadScene("Hub");
     }
 }

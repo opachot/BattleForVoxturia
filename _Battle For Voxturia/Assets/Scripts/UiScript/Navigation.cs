@@ -63,6 +63,12 @@ public class Navigation : MonoBehaviour {
         SceneManager.LoadScene("Help");
     }
 
+    public void NavigateTo_SelectedTeam(int teamId) {
+        // TODO: Redirect whit the teamId.
+        print("(TODO) teamId: " + teamId);
+        SceneManager.LoadScene("SelectedTeam");
+    }
+
     public void QuitGame() {
         Application.Quit();
     }

@@ -16,28 +16,39 @@ public class Buttons_TeamList : MonoBehaviour {
     private const int MIN_TEAM_NAME_LENGTH = 3;
 
     // PRIVATE
-    private Navigation navigation;
-    private TeamsData   teamsData;
+    private ResourceLoader resourceLoader;
+    private Navigation     navigation;
+    private TeamsData      teamsData;
+
+    private Transform list;
+
+    private Transform deleteConfirmationPopUp_SelectedTeam;
 
     // PUBLIC
-    public GameObject createNewTeam_popUp;
-    public GameObject error_popUp;
+    public GameObject createNewTeam_PopUp;
+    public GameObject deleteConfirmaton_PopUp;
+    public GameObject error_PopUp;
 
     public InputField newTeamName_inputField;
 
     public Button createTeam_btn;
 
-    public Text errorText;
+    public Text deleteConfirmationMessage; 
+    public Text errorMessage;
 
     #endregion
 
     #region UNITY METHODE
     void Awake() {
-        navigation = gameObject.GetComponent<Navigation>();
+        resourceLoader = gameObject.GetComponent<ResourceLoader>();
+        navigation     = gameObject.GetComponent<Navigation>();
+        teamsData      = GameObject.FindGameObjectWithTag("GameData").GetComponent<TeamsData>();
+
+        list = GameObject.Find("List").GetComponent<Transform>();
     }
 	
 	void Start() {
-        teamsData   = GameObject.FindGameObjectWithTag("GameData").GetComponent<TeamsData>();
+        GenerateTeamsList();
 	}
 	
 	void Update() {
@@ -48,11 +59,27 @@ public class Buttons_TeamList : MonoBehaviour {
 
     #region Default buttons
     public void CreateNewTeamButton() {
-        createNewTeam_popUp.SetActive(true);
+        createNewTeam_PopUp.SetActive(true);
     }
 
     public void ReturnButton() {
         navigation.NavigateTo_Hub();
+    }
+
+    public void TeamNameButton(Transform selectedTeam) {
+        int selectedTeamIndex = FindSelectedTeamIndex(selectedTeam);
+
+        int selectedTeamId = teamsData.teamsId[selectedTeamIndex];
+        navigation.NavigateTo_SelectedTeam(selectedTeamId);
+    }
+
+    public void TeamDeleteButton(Transform selectedTeam) {
+        int selectedTeamIndex   = FindSelectedTeamIndex(selectedTeam);
+        string selectedTeamName = teamsData.teamsNames[selectedTeamIndex];
+
+        deleteConfirmationPopUp_SelectedTeam = selectedTeam;
+        deleteConfirmationMessage.text = "Do you really want to delete \n" + '"' + selectedTeamName + '"' + "?";
+        deleteConfirmaton_PopUp.SetActive(true);
     }
     #endregion
 
@@ -62,9 +89,9 @@ public class Buttons_TeamList : MonoBehaviour {
         bool   isValidName = ValidateName(newName);
 
         if(isValidName) {
-            teamsData.AddNewTeam(newName);
+            teamsData.CreateNewTeam(newName);
 
-            // TODO: Reload the teamList board.
+            UpdateTeamsList();
 
             CloseCreateNewTeamPopUp();
         }
@@ -78,32 +105,74 @@ public class Buttons_TeamList : MonoBehaviour {
         newTeamName_inputField.text = "";
         createTeam_btn.interactable = false;
 
-        createNewTeam_popUp.SetActive(false);
+        createNewTeam_PopUp.SetActive(false);
+    }
+    #endregion
+
+    #region DeleteConfirmation popUp buttons
+    public void YesDeleteButton() {
+        int selectedTeamIndex = FindSelectedTeamIndex(deleteConfirmationPopUp_SelectedTeam);
+
+        teamsData.DeleteTeam(selectedTeamIndex);
+        UpdateTeamsList();
+
+        deleteConfirmaton_PopUp.SetActive(false);
+    }
+
+    public void NoDeleteButton() {
+        deleteConfirmaton_PopUp.SetActive(false);
     }
     #endregion
 
     #region Error popUp buttons
     public void ErrorOkButton() {
-        error_popUp.SetActive(false);
-        errorText.text = "Unknown Error";
+        error_PopUp.SetActive(false);
+        errorMessage.text = "Unknown Error";
     }
     #endregion
 
 
-    public void OnInputFieldValueChanged() {
-        UpdateCreateTeamButton();
+    #region Update teams list
+    private void UpdateTeamsList() {
+        CleanTeamsList();
+        GenerateTeamsList();
     }
 
-    private void UpdateCreateTeamButton() {
-        bool isValidNameLength = newTeamName_inputField.text.Length < MIN_TEAM_NAME_LENGTH;
-
-        if(isValidNameLength) {
-            createTeam_btn.interactable = false;
-        }
-        else {
-            createTeam_btn.interactable = true;
+    private void CleanTeamsList() {
+        foreach(Transform team in list) {
+            Destroy(team.gameObject);
         }
     }
+
+    private void GenerateTeamsList() {
+        int nbRegisteredTeam = teamsData.teamsId.Count;
+
+        for(int i = 0; i < nbRegisteredTeam; i++) {
+            InstantiateTeamInTeamsList(i);
+        }
+    }
+
+    private void InstantiateTeamInTeamsList(int teamIndex) {
+        Transform listElement = Instantiate(resourceLoader.teamListingElement).transform;
+        listElement.SetParent(list);
+
+        FixListElementButton(listElement, teamIndex);
+    }
+
+    private void FixListElementButton(Transform listElement, int teamIndex) {
+        // Set teamNameButton onClick event.
+        Button teamNameButton   = listElement.Find("Redirect_btn").GetComponent<Button>();
+        teamNameButton.onClick.AddListener(()   => TeamNameButton(listElement));
+
+        // Set teamDeleteButton onClick event.
+        Button teamDeleteButton = listElement.Find("Delete_btn").GetComponent<Button>();
+        teamDeleteButton.onClick.AddListener(() => TeamDeleteButton(listElement));
+
+        // Set TeamName on button.
+        Text listElementTeamName = teamNameButton.transform.GetChild(0).GetComponent<Text>();
+        listElementTeamName.text = teamsData.teamsNames[teamIndex];
+    }
+    #endregion
 
     #region Error validation
     private bool ValidateName(string newName) {
@@ -134,8 +203,43 @@ public class Buttons_TeamList : MonoBehaviour {
 
 
     private void TrowError(string error) {
-        errorText.text = error;
-        error_popUp.SetActive(true);
+        errorMessage.text = error;
+        error_PopUp.SetActive(true);
     }
     #endregion
+
+
+    public void OnInputFieldValueChanged() {
+        UpdateCreateTeamButton();
+    }
+
+    private void UpdateCreateTeamButton() {
+        bool isValidNameLength = newTeamName_inputField.text.Length < MIN_TEAM_NAME_LENGTH;
+
+        if(isValidNameLength) {
+            createTeam_btn.interactable = false;
+        }
+        else {
+            createTeam_btn.interactable = true;
+        }
+    }
+
+
+    private int FindSelectedTeamIndex(Transform selectedTeam) {
+        int selectedTeamIndex = 0;
+
+        int index = 0;
+        foreach(Transform team in list) {
+            bool selectedTeamFound = team == selectedTeam;
+
+            if(selectedTeamFound) {
+                selectedTeamIndex = index;
+                break;
+            }
+
+            index++;
+        }
+
+        return selectedTeamIndex;
+    }
 }

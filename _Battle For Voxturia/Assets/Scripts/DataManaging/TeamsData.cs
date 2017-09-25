@@ -34,7 +34,7 @@ public class TeamsData : MonoBehaviour {
     }
     #endregion
 
-    public void AddNewTeam(string teamName) {
+    public void CreateNewTeam(string teamName) {
         int newId;
         int nbId = teamsId.Count;
 
@@ -63,5 +63,13 @@ public class TeamsData : MonoBehaviour {
         }
 
         return isExistingName;
+    }
+
+
+    public void DeleteTeam(int teamIndex) {
+        //TODO: Will need to save team id to delete other data linked whit the TeamsData such as character.
+
+        teamsId.RemoveAt(teamIndex);
+        teamsNames.RemoveAt(teamIndex);
     }
 }
