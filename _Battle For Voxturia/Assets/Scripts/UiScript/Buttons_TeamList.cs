@@ -70,7 +70,7 @@ public class Buttons_TeamList : MonoBehaviour {
         int selectedTeamIndex = FindSelectedTeamIndex(selectedTeam);
 
         int selectedTeamId = teamsData.teamsId[selectedTeamIndex];
-        navigation.NavigateTo_SelectedTeam(selectedTeamId);
+        navigation.NavigateTo_TeamScreen(selectedTeamId);
     }
 
     public void TeamDeleteButton(Transform selectedTeam) {
