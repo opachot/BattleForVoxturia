@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Buttons_TeamList : MonoBehaviour {
+public class UI_TeamList : MonoBehaviour {
 
     #region DECLARATION
     // CONST
@@ -75,7 +75,7 @@ public class Buttons_TeamList : MonoBehaviour {
 
     public void TeamDeleteButton(Transform selectedTeam) {
         int selectedTeamIndex   = FindSelectedTeamIndex(selectedTeam);
-        string selectedTeamName = teamsData.teamsNames[selectedTeamIndex];
+        string selectedTeamName = teamsData.teamsName[selectedTeamIndex];
 
         deleteConfirmationPopUp_SelectedTeam = selectedTeam;
         deleteConfirmationMessage.text = "Do you really want to delete \n" + '"' + selectedTeamName + '"' + "?";
@@ -170,7 +170,7 @@ public class Buttons_TeamList : MonoBehaviour {
 
         // Set TeamName on button.
         Text listElementTeamName = teamNameButton.transform.GetChild(0).GetComponent<Text>();
-        listElementTeamName.text = teamsData.teamsNames[teamIndex];
+        listElementTeamName.text = teamsData.teamsName[teamIndex];
     }
     #endregion
 

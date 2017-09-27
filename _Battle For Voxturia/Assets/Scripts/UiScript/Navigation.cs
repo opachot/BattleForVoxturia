@@ -15,6 +15,7 @@ public class Navigation : MonoBehaviour {
     // CONST
 
     // PRIVATE
+    private TeamsData teamsData;
 
     // PUBLIC
 
@@ -22,7 +23,7 @@ public class Navigation : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-		
+		teamsData = GameObject.FindGameObjectWithTag("GameData").GetComponent<TeamsData>();
     }
 	
 	void Start() {
@@ -64,8 +65,8 @@ public class Navigation : MonoBehaviour {
     }
 
     public void NavigateTo_TeamScreen(int teamId) {
-        // TODO: Redirect whit the teamId.
-        print("(TODO) teamId: " + teamId);
+        teamsData.ExtraParam_TeamId = teamId;
+
         SceneManager.LoadScene("TeamScreen");
     }
 

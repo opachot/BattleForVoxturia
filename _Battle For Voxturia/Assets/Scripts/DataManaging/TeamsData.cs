@@ -14,10 +14,22 @@ public class TeamsData : MonoBehaviour {
     // CONST
 
     // PRIVATE
+    private int extraParam_TeamId; /* Inter screen param */
 
     // PUBLIC
     public List<int>    teamsId;
-    public List<string> teamsNames;
+    public List<string> teamsName;
+    public int          usedTeamId;
+    public List<int>    teamsLevel;
+    public List<int>    teamsCurrentXp;
+    public List<int>    teamsGoalXp;
+    public List<int>    teamsVictory;
+    public List<int>    teamsDefeat;
+    public List<int>    teamsMatch;
+    public List<int>    teamsVDRatio;
+    public List<int>    teamsCurrentPower;
+    public List<int>    teamsMaxPower;
+
     #endregion
 
     #region UNITY METHODE
@@ -48,14 +60,14 @@ public class TeamsData : MonoBehaviour {
         }
          
         teamsId.Add(newId);
-        teamsNames.Add(teamName);
+        teamsName.Add(teamName);
     }
 
     public bool IsExistingName(string name) {
         name = name.ToLower();
         bool isExistingName = false;
 
-        foreach(string teamName in teamsNames) {
+        foreach(string teamName in teamsName) {
             if(name.ToLower() == teamName.ToLower()) {
                 isExistingName = true;
                 break;
@@ -70,6 +82,15 @@ public class TeamsData : MonoBehaviour {
         //TODO: Will need to save team id to delete other data linked whit the TeamsData such as character.
 
         teamsId.RemoveAt(teamIndex);
-        teamsNames.RemoveAt(teamIndex);
+        teamsName.RemoveAt(teamIndex);
     }
+
+
+
+    #region INTER SCREEN PARAM
+    public int ExtraParam_TeamId {
+        get { return extraParam_TeamId;  }
+        set { extraParam_TeamId = value; }
+    }
+    #endregion
 }

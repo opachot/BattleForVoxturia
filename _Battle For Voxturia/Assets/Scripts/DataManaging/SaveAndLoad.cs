@@ -47,7 +47,7 @@ public class SaveAndLoad : MonoBehaviour {
 
         // Write TeamsData to computer data.
         computerData_Teams.teamsId    = teamsData.teamsId;
-        computerData_Teams.teamsNames = teamsData.teamsNames;
+        computerData_Teams.teamsName  = teamsData.teamsName;
 
         bf.Serialize(computerFile_Teams, computerData_Teams);
         computerFile_Teams.Close();
@@ -68,7 +68,7 @@ public class SaveAndLoad : MonoBehaviour {
 
             // Write computer data to TeamsData.
             teamsData.teamsId    = computerData_Teams.teamsId;
-            teamsData.teamsNames = computerData_Teams.teamsNames;
+            teamsData.teamsName  = computerData_Teams.teamsName;
 
             // Console line to help me debug.
             DebugLog_Loading(teamsData);

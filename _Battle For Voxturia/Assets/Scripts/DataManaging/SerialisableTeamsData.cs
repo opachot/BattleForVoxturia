@@ -9,16 +9,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-/***************************
- *          -NOTE-
- * Save teams name, levels and other team stats.
- * Save teams character, they skills and they equipment and lvl, etc...
- * Save character reserve list.
- * Save discovered items/budget
- * Save map/quest progression
- * Save option
- * ************************/
-
 [Serializable]
 public class SerialisableTeamsData {
 
@@ -29,7 +19,17 @@ public class SerialisableTeamsData {
 
     // PUBLIC
     public List<int>    teamsId;
-    public List<string> teamsNames;
+    public List<string> teamsName;
+    public int          usedTeamId;
+    public List<int>    teamsLevel;
+    public List<int>    teamsCurrentXp;
+    public List<int>    teamsGoalXp;
+    public List<int>    teamsVictory;
+    public List<int>    teamsDefeat;
+    public List<int>    teamsMatch;
+    public List<int>    teamsVDRatio;
+    public List<int>    teamsCurrentPower;
+    public List<int>    teamsMaxPower;
 
     #endregion
 
