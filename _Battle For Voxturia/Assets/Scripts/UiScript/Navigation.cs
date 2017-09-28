@@ -65,7 +65,7 @@ public class Navigation : MonoBehaviour {
     }
 
     public void NavigateTo_TeamScreen(int teamId) {
-        teamsData.ExtraParam_TeamId = teamId;
+        teamsData.ExtraParam_Id = teamId;
 
         SceneManager.LoadScene("TeamScreen");
     }

@@ -69,13 +69,13 @@ public class UI_TeamList : MonoBehaviour {
     public void TeamNameButton(Transform selectedTeam) {
         int selectedTeamIndex = FindSelectedTeamIndex(selectedTeam);
 
-        int selectedTeamId = teamsData.teamsId[selectedTeamIndex];
+        int selectedTeamId = teamsData.ids[selectedTeamIndex];
         navigation.NavigateTo_TeamScreen(selectedTeamId);
     }
 
     public void TeamDeleteButton(Transform selectedTeam) {
         int selectedTeamIndex   = FindSelectedTeamIndex(selectedTeam);
-        string selectedTeamName = teamsData.teamsName[selectedTeamIndex];
+        string selectedTeamName = teamsData.names[selectedTeamIndex];
 
         deleteConfirmationPopUp_SelectedTeam = selectedTeam;
         deleteConfirmationMessage.text = "Do you really want to delete \n" + '"' + selectedTeamName + '"' + "?";
@@ -145,7 +145,7 @@ public class UI_TeamList : MonoBehaviour {
     }
 
     private void GenerateTeamsList() {
-        int nbRegisteredTeam = teamsData.teamsId.Count;
+        int nbRegisteredTeam = teamsData.ids.Count;
 
         for(int i = 0; i < nbRegisteredTeam; i++) {
             InstantiateTeamInTeamsList(i);
@@ -170,7 +170,7 @@ public class UI_TeamList : MonoBehaviour {
 
         // Set TeamName on button.
         Text listElementTeamName = teamNameButton.transform.GetChild(0).GetComponent<Text>();
-        listElementTeamName.text = teamsData.teamsName[teamIndex];
+        listElementTeamName.text = teamsData.names[teamIndex];
     }
     #endregion
 

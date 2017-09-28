@@ -18,18 +18,16 @@ public class SerialisableTeamsData {
     // PRIVATE
 
     // PUBLIC
-    public List<int>    teamsId;
-    public List<string> teamsName;
+    public List<int>    ids;
+    public List<string> names;
+    public List<int>    levels;
+    public List<int>    currentXps;
+    public List<int>    goalXps;
+    public List<int>    victorys;
+    public List<int>    defeats;
+    public List<int>    currentCosts;
+    public List<int>    maxCosts;
     public int          usedTeamId;
-    public List<int>    teamsLevel;
-    public List<int>    teamsCurrentXp;
-    public List<int>    teamsGoalXp;
-    public List<int>    teamsVictory;
-    public List<int>    teamsDefeat;
-    public List<int>    teamsMatch;
-    public List<int>    teamsVDRatio;
-    public List<int>    teamsCurrentPower;
-    public List<int>    teamsMaxPower;
 
     #endregion
 

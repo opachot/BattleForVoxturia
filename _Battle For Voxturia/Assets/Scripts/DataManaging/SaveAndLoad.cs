@@ -40,40 +40,66 @@ public class SaveAndLoad : MonoBehaviour {
     public void Save() {
         BinaryFormatter bf = new BinaryFormatter();
 
-        FileStream            computerFile_Teams = File.Create(Application.persistentDataPath + "/teamsInfo.dat");
-        SerialisableTeamsData computerData_Teams = new SerialisableTeamsData();
+        FileStream            computerTeamsFile = File.Create(Application.persistentDataPath + "/Teams.dat");
+        SerialisableTeamsData computerTeamsData = new SerialisableTeamsData();
 
         // TODO: Encryption
 
         // Write TeamsData to computer data.
-        computerData_Teams.teamsId    = teamsData.teamsId;
-        computerData_Teams.teamsName  = teamsData.teamsName;
+        TeamsData_To_ComputerTeamsData(computerTeamsData);
 
-        bf.Serialize(computerFile_Teams, computerData_Teams);
-        computerFile_Teams.Close();
+        bf.Serialize(computerTeamsFile, computerTeamsData);
+        computerTeamsFile.Close();
 
         // Console line to help debugging.
-        DebugLog_Saving(computerData_Teams);
+        DebugLog_Saving(computerTeamsData);
     }
 
     public void Load() {
-        if(File.Exists(Application.persistentDataPath + "/teamsInfo.dat")) {
+        if(File.Exists(Application.persistentDataPath + "/Teams.dat")) {
             BinaryFormatter bf = new BinaryFormatter();
 
-            FileStream            computerFile_Teams = File.Open(Application.persistentDataPath + "/teamsInfo.dat", FileMode.Open);
-            SerialisableTeamsData computerData_Teams = (SerialisableTeamsData)bf.Deserialize(computerFile_Teams);
-            computerFile_Teams.Close();
+            FileStream            computerTeamsFile = File.Open(Application.persistentDataPath + "/Teams.dat", FileMode.Open);
+            SerialisableTeamsData computerTeamsData = (SerialisableTeamsData)bf.Deserialize(computerTeamsFile);
+            computerTeamsFile.Close();
 
             // TODO: Decryption
 
             // Write computer data to TeamsData.
-            teamsData.teamsId    = computerData_Teams.teamsId;
-            teamsData.teamsName  = computerData_Teams.teamsName;
-
+            ComputerTeamsData_To_TeamsData(computerTeamsData);
+            
             // Console line to help me debug.
             DebugLog_Loading(teamsData);
         }
     }
+
+
+    private void TeamsData_To_ComputerTeamsData(SerialisableTeamsData computerTeamsData) {
+        computerTeamsData.ids          = teamsData.ids;
+        computerTeamsData.names        = teamsData.names;
+        computerTeamsData.levels       = teamsData.levels;
+        computerTeamsData.currentXps   = teamsData.currentXps;
+        computerTeamsData.goalXps      = teamsData.goalXps;
+        computerTeamsData.victorys     = teamsData.victorys;
+        computerTeamsData.defeats      = teamsData.defeats;
+        computerTeamsData.currentCosts = teamsData.currentCosts;
+        computerTeamsData.maxCosts     = teamsData.maxCosts;
+        computerTeamsData.usedTeamId   = teamsData.usedTeamId;
+    }
+
+    private void ComputerTeamsData_To_TeamsData(SerialisableTeamsData computerTeamsData) {
+        teamsData.ids          = computerTeamsData.ids;
+        teamsData.names        = computerTeamsData.names;
+        teamsData.levels       = computerTeamsData.levels;
+        teamsData.currentXps   = computerTeamsData.currentXps;
+        teamsData.goalXps      = computerTeamsData.goalXps;
+        teamsData.victorys     = computerTeamsData.victorys;
+        teamsData.defeats      = computerTeamsData.defeats;
+        teamsData.currentCosts = computerTeamsData.currentCosts;
+        teamsData.maxCosts     = computerTeamsData.maxCosts;
+        teamsData.usedTeamId   = computerTeamsData.usedTeamId;
+    }
+
 
     #region DEBUGGING METHODE
     public void DebugLog_Saving(SerialisableTeamsData computerData_Teams) {
