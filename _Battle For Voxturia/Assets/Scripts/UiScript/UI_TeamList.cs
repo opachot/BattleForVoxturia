@@ -18,6 +18,7 @@ public class UI_TeamList : MonoBehaviour {
     // PRIVATE
     private ResourceLoader resourceLoader;
     private Navigation     navigation;
+    private ErrorManager   errorManager;
     private TeamsData      teamsData;
 
     private Transform list;
@@ -27,7 +28,6 @@ public class UI_TeamList : MonoBehaviour {
     // PUBLIC
     public GameObject createNewTeam_PopUp;
     public GameObject deleteConfirmaton_PopUp;
-    public GameObject error_PopUp;
 
     public InputField newTeamName_inputField;
 
@@ -42,6 +42,7 @@ public class UI_TeamList : MonoBehaviour {
     void Awake() {
         resourceLoader = gameObject.GetComponent<ResourceLoader>();
         navigation     = gameObject.GetComponent<Navigation>();
+        errorManager   = gameObject.GetComponent<ErrorManager>();
         teamsData      = GameObject.FindGameObjectWithTag("GameData").GetComponent<TeamsData>();
 
         list = GameObject.Find("List").GetComponent<Transform>();
@@ -57,9 +58,29 @@ public class UI_TeamList : MonoBehaviour {
     #endregion
 
 
+    private int FindSelectedTeamDataKey(Transform selectedTeam) {
+        int selectedTeamIndex = 0;
+
+        int index = 0;
+        foreach(Transform team in list) {
+            bool selectedTeamFound = team == selectedTeam;
+
+            if(selectedTeamFound) {
+                selectedTeamIndex = index;
+                break;
+            }
+
+            index++;
+        }
+
+        return selectedTeamIndex;
+    }
+
     #region Default buttons
     public void CreateNewTeamButton() {
         createNewTeam_PopUp.SetActive(true);
+
+        newTeamName_inputField.Select();
     }
 
     public void ReturnButton() {
@@ -67,15 +88,15 @@ public class UI_TeamList : MonoBehaviour {
     }
 
     public void TeamNameButton(Transform selectedTeam) {
-        int selectedTeamIndex = FindSelectedTeamIndex(selectedTeam);
+        int selectedTeamDataKey = FindSelectedTeamDataKey(selectedTeam);
 
-        int selectedTeamId = teamsData.ids[selectedTeamIndex];
+        int selectedTeamId = teamsData.ids[selectedTeamDataKey];
         navigation.NavigateTo_TeamScreen(selectedTeamId);
     }
 
     public void TeamDeleteButton(Transform selectedTeam) {
-        int selectedTeamIndex   = FindSelectedTeamIndex(selectedTeam);
-        string selectedTeamName = teamsData.names[selectedTeamIndex];
+        int selectedTeamDataKey   = FindSelectedTeamDataKey(selectedTeam);
+        string selectedTeamName = teamsData.names[selectedTeamDataKey];
 
         deleteConfirmationPopUp_SelectedTeam = selectedTeam;
         deleteConfirmationMessage.text = "Do you really want to delete \n" + '"' + selectedTeamName + '"' + "?";
@@ -111,9 +132,9 @@ public class UI_TeamList : MonoBehaviour {
 
     #region DeleteConfirmation popUp buttons
     public void YesDeleteButton() {
-        int selectedTeamIndex = FindSelectedTeamIndex(deleteConfirmationPopUp_SelectedTeam);
+        int teamDataKey = FindSelectedTeamDataKey(deleteConfirmationPopUp_SelectedTeam);
 
-        teamsData.DeleteTeam(selectedTeamIndex);
+        teamsData.DeleteTeam(teamDataKey);
         UpdateTeamsList();
 
         deleteConfirmaton_PopUp.SetActive(false);
@@ -121,13 +142,6 @@ public class UI_TeamList : MonoBehaviour {
 
     public void NoDeleteButton() {
         deleteConfirmaton_PopUp.SetActive(false);
-    }
-    #endregion
-
-    #region Error popUp buttons
-    public void ErrorOkButton() {
-        error_PopUp.SetActive(false);
-        errorMessage.text = "Unknown Error";
     }
     #endregion
 
@@ -171,19 +185,45 @@ public class UI_TeamList : MonoBehaviour {
         // Set TeamName on button.
         Text listElementTeamName = teamNameButton.transform.GetChild(0).GetComponent<Text>();
         listElementTeamName.text = teamsData.names[teamIndex];
+
+        // Show a visual indicator to show the used team.
+        if(IsUsedTeam(teamIndex)) {
+            ShowUsedTeam(teamNameButton, teamDeleteButton);
+        }
+    }
+
+    private bool IsUsedTeam(int teamIndex) {
+        bool isUsedTeam = teamsData.ids[teamIndex] == teamsData.usedTeamId;
+
+        return isUsedTeam;
+    }
+
+    private void ShowUsedTeam(Button teamNameButton, Button teamDeleteButton) {
+        // Define visual indicator.
+        ColorBlock usedTeamColor  = teamNameButton.colors;
+        usedTeamColor.normalColor = ConvertToDecimalColor(0, 150, 50, 255);
+
+        // Apply visual indicator.
+        teamNameButton.colors   = usedTeamColor;
+        teamDeleteButton.colors = usedTeamColor;
+    }
+
+    private Vector4 ConvertToDecimalColor(float r, float g, float b, float a) {
+        Vector4 color = new Vector4(r/255.0f, g/255.0f, b/255.0f, a/255.0f);
+        return  color;
     }
     #endregion
 
-    #region Error validation
+    #region ValidateName
     private bool ValidateName(string newName) {
         bool isValidName = true;
 
         if(!IsAvailableName(newName)) {
-            TrowError("Error: The name is already taken");
+            errorManager.TrowError("Error: The name is already taken.");
             isValidName = false;
         }
         else if(!IsMoralName(newName)) {
-            TrowError("Error: The name is inappropriate");
+            errorManager.TrowError("Error: The name is inappropriate.");
             isValidName = false;
         }
 
@@ -199,12 +239,6 @@ public class UI_TeamList : MonoBehaviour {
     private bool IsMoralName(string newName) {
         // TODO
         return true;
-    }
-
-
-    private void TrowError(string error) {
-        errorMessage.text = error;
-        error_PopUp.SetActive(true);
     }
     #endregion
 
@@ -222,24 +256,5 @@ public class UI_TeamList : MonoBehaviour {
         else {
             createTeam_btn.interactable = true;
         }
-    }
-
-
-    private int FindSelectedTeamIndex(Transform selectedTeam) {
-        int selectedTeamIndex = 0;
-
-        int index = 0;
-        foreach(Transform team in list) {
-            bool selectedTeamFound = team == selectedTeam;
-
-            if(selectedTeamFound) {
-                selectedTeamIndex = index;
-                break;
-            }
-
-            index++;
-        }
-
-        return selectedTeamIndex;
     }
 }

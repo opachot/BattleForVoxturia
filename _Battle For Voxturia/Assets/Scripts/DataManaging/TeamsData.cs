@@ -80,23 +80,23 @@ public class TeamsData : MonoBehaviour {
         return isExistingName;
     }
 
-    public void DeleteTeam(int teamIndex) {
-        int deletingId = ids[teamIndex];
+    public void DeleteTeam(int key) {
+        int deletingId = ids[key];
         if(deletingId == usedTeamId) {
             usedTeamId = 0;
         }
 
         //TODO: Will need to delete other data linked whit the TeamsData such as character.
 
-        ids         .RemoveAt(teamIndex);
-        names       .RemoveAt(teamIndex);
-        levels      .RemoveAt(teamIndex);
-        currentXps  .RemoveAt(teamIndex);
-        goalXps     .RemoveAt(teamIndex);
-        victorys    .RemoveAt(teamIndex);
-        defeats     .RemoveAt(teamIndex);
-        currentCosts.RemoveAt(teamIndex);
-        maxCosts    .RemoveAt(teamIndex);
+        ids         .RemoveAt(key);
+        names       .RemoveAt(key);
+        levels      .RemoveAt(key);
+        currentXps  .RemoveAt(key);
+        goalXps     .RemoveAt(key);
+        victorys    .RemoveAt(key);
+        defeats     .RemoveAt(key);
+        currentCosts.RemoveAt(key);
+        maxCosts    .RemoveAt(key);
     }
 
 
