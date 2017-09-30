@@ -18,12 +18,22 @@ public class UI_TeamScreen : MonoBehaviour {
     private ResourceLoader resourceLoader;
     private Navigation     navigation;
     private ErrorManager   errorManager;
+
     private TeamsData      teamsData;
+    private CharactersData charactersData;
 
     private int currentTeamId;
     private int currentTeamDataKey;
+    List<int>   teamCharacterKeys;
+
+    // keep in memory the clicked character key and id for the other pop-up.
+    private int clickedCharacterKey;
+    private int clickedCharacterId;
 
     // PUBLIC
+    public GameObject addCharacterWhitCharacter_PopUp;
+    public GameObject addCharacterWhitoutCharacter_PopUp;
+
     public Text screenTitle;
 
     public Text statsLevel;
@@ -43,12 +53,18 @@ public class UI_TeamScreen : MonoBehaviour {
 		resourceLoader = gameObject.GetComponent<ResourceLoader>();
         navigation     = gameObject.GetComponent<Navigation>();
         errorManager   = gameObject.GetComponent<ErrorManager>();
-        teamsData      = GameObject.FindGameObjectWithTag("GameData").GetComponent<TeamsData>();
+
+        GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
+        teamsData      = gameData.GetComponent<TeamsData>();
+        charactersData = gameData.GetComponent<CharactersData>();
+
+        teamCharacterKeys = new List<int>();
     }
 	
 	void Start() {
         UseExtraParam();
         FindCurrentTeamDataKey();
+        FindCharactersDataKeys();
 
         ShowTeamName();
         ShowTeamStats();
@@ -84,6 +100,16 @@ public class UI_TeamScreen : MonoBehaviour {
         }
     }
 
+    private void FindCharactersDataKeys() {
+        int nbCharacter = charactersData.ids.Count;
+
+        for(int i = 0; i < nbCharacter; i++) {
+            if(charactersData.teamDataIds[i] == currentTeamId) {
+                teamCharacterKeys.Add(i);
+            }
+        }
+    }
+
 
     private void ShowTeamName() {
         string teamName = teamsData.names[currentTeamDataKey];
@@ -115,6 +141,23 @@ public class UI_TeamScreen : MonoBehaviour {
     #endregion
 
     #region Default buttons
+    public void AddCharacterButton(int slotNumber) {
+        bool isCharacterOnSlot = slotNumber <= teamCharacterKeys.Count;
+
+        if(isCharacterOnSlot) {
+            int keyIndex = slotNumber - 1;
+
+            // Keep the info for the popUps.
+            clickedCharacterKey = teamCharacterKeys[keyIndex];
+            clickedCharacterId  = charactersData.ids[clickedCharacterKey];
+
+            addCharacterWhitCharacter_PopUp.SetActive(true);
+        }
+        else {
+            addCharacterWhitoutCharacter_PopUp.SetActive(true);
+        }
+    }
+
     public void SelectTeamButton() {
         bool   isValidTeam = ValidateTeam();
 
@@ -127,6 +170,70 @@ public class UI_TeamScreen : MonoBehaviour {
     public void ReturnButton() {
         navigation.NavigateTo_TeamList();
     }
+    #endregion
+
+    #region addCharacterWhitCharacter popUp buttons
+    public void ModifyCharacterButton() {
+        navigation.NavigateTo_CharacterCustomisation(currentTeamId, clickedCharacterId);
+    }
+
+    public void RemoveCharacterFromTeamButton() {
+        // Remove in the data the link to team.
+        charactersData.teamDataIds[clickedCharacterKey] = 0;
+
+        // TODO: Reload character display.
+
+        CloseAddCharacterWhitCharacterPopUp();
+    }
+
+    public void DeleteCharacterButton() {
+        // TODO: Bring up the confirmation popUp.
+    }
+
+    public void CancelAddCharacterWhitCharacterButton() {
+        CloseAddCharacterWhitCharacterPopUp();
+    }
+
+
+    private void CloseAddCharacterWhitCharacterPopUp() {
+        addCharacterWhitCharacter_PopUp.SetActive(false);
+    }
+    #endregion
+
+    #region addCharacterWhitoutCharacter popUp buttons
+    public void CreateCharacterButton() {
+        navigation.NavigateTo_NewCharacterCreation(currentTeamId);
+    }
+
+    public void ChooseExistingCharacterButton() {
+        navigation.NavigateTo_CharacterReserve(currentTeamId);
+    }
+
+    public void CancelAddCharacterWhitoutCharacterButton() {
+        CloseAddCharacterWhitoutCharacterPopUp();
+    }
+
+
+    private void CloseAddCharacterWhitoutCharacterPopUp() {
+        addCharacterWhitoutCharacter_PopUp.SetActive(false);
+    }
+    #endregion
+
+    #region DeleteConfirmation popUp buttons
+    /*
+    public void YesDeleteButton() {
+        int teamDataKey = FindSelectedTeamDataKey(deleteConfirmationPopUp_SelectedTeam);
+
+        teamsData.DeleteTeam(teamDataKey);
+        UpdateTeamsList();
+
+        deleteConfirmaton_PopUp.SetActive(false);
+    }
+
+    public void NoDeleteButton() {
+        deleteConfirmaton_PopUp.SetActive(false);
+    }
+    */
     #endregion
 
 
@@ -169,7 +276,13 @@ public class UI_TeamScreen : MonoBehaviour {
 
         // (Protect from divided by 0 exeption)
         if(teamDefeat == 0) {
-            ratio = teamVictory;
+            if(teamVictory == 0) {
+                // No match played.
+                ratio = 1;
+            }
+            else {
+                ratio = teamVictory;
+            }
         }
         else {
             ratio = teamVictory * FLOAT_CONVERTER / teamDefeat;
@@ -180,4 +293,5 @@ public class UI_TeamScreen : MonoBehaviour {
 
         return ratio;
     }
+
 }

@@ -15,7 +15,8 @@ public class Navigation : MonoBehaviour {
     // CONST
 
     // PRIVATE
-    private TeamsData teamsData;
+    private TeamsData      teamsData;
+    private CharactersData charactersData;
 
     // PUBLIC
 
@@ -23,7 +24,9 @@ public class Navigation : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-		teamsData = GameObject.FindGameObjectWithTag("GameData").GetComponent<TeamsData>();
+        GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
+		teamsData      = gameData.GetComponent<TeamsData>();
+        charactersData = gameData.GetComponent<CharactersData>();
     }
 	
 	void Start() {
@@ -69,6 +72,23 @@ public class Navigation : MonoBehaviour {
 
         SceneManager.LoadScene("TeamScreen");
     }
+
+    public void NavigateTo_NewCharacterCreation(int teamId) {
+        charactersData.ExtraParam_TeamId = teamId;
+        SceneManager.LoadScene("NewCharacterCreation");
+    }
+
+    public void NavigateTo_CharacterReserve(int teamId) {
+        charactersData.ExtraParam_TeamId = teamId;
+        SceneManager.LoadScene("CharacterReserve");
+    }
+
+    public void NavigateTo_CharacterCustomisation(int teamId, int characterId) {
+        charactersData.ExtraParam_TeamId      = teamId;
+        charactersData.ExtraParam_CharacterId = characterId;
+        SceneManager.LoadScene("CharacterReserve");
+    }
+
 
     public void QuitGame() {
         Application.Quit();
