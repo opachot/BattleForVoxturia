@@ -32,6 +32,7 @@ public class CharactersData : MonoBehaviour {
     public List<int>    skillTwoIds;
     public List<int>    skillThreeIds;
     public List<int>    skillFourIds;
+    public List<int>    skillFiveIds;
     
     public List<int>    helmetIds;
     public List<int>    armorIds;

@@ -6,11 +6,10 @@ Date:    29 September 2017
 
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
 
 [Serializable]
-public class SerialisableCharactersData : MonoBehaviour {
+public class SerialisableCharactersData {
 
 	#region DECLARATION
     // CONST
@@ -32,6 +31,7 @@ public class SerialisableCharactersData : MonoBehaviour {
     public List<int>    skillTwoIds;
     public List<int>    skillThreeIds;
     public List<int>    skillFourIds;
+    public List<int>    skillFiveIds;
     
     public List<int>    helmetIds;
     public List<int>    armorIds;
@@ -40,19 +40,4 @@ public class SerialisableCharactersData : MonoBehaviour {
     public List<int>    jewelIds;
 
     #endregion
-
-	#region UNITY METHODE
-	void Awake() {
-		
-    }
-	
-	void Start() {
-		
-	}
-	
-	void Update() {
-		
-	}
-	#endregion
-	
 }

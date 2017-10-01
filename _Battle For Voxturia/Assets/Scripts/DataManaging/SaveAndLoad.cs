@@ -16,7 +16,8 @@ public class SaveAndLoad : MonoBehaviour {
     // CONST
 
     // PRIVATE
-    private TeamsData teamsData;
+    private TeamsData      teamsData;
+    private CharactersData charactersData;
 
     // PUBLIC
 
@@ -24,7 +25,8 @@ public class SaveAndLoad : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        teamsData = gameObject.GetComponent<TeamsData>();
+        teamsData      = gameObject.GetComponent<TeamsData>();
+        charactersData = gameObject.GetComponent<CharactersData>();
     }
 	
 	void Start() {
@@ -40,40 +42,50 @@ public class SaveAndLoad : MonoBehaviour {
     public void Save() {
         BinaryFormatter bf = new BinaryFormatter();
 
-        FileStream            computerTeamsFile = File.Create(Application.persistentDataPath + "/Teams.dat");
-        SerialisableTeamsData computerTeamsData = new SerialisableTeamsData();
+        FileStream computerTeamsFile      = File.Create(Application.persistentDataPath + "/Teams.dat");
+        FileStream computerCharactersFile = File.Create(Application.persistentDataPath + "/Characters.dat");
 
-        // TODO: Encryption
+        SerialisableTeamsData      computerTeamsData      = new SerialisableTeamsData();
+        SerialisableCharactersData computerCharactersData = new SerialisableCharactersData();
 
-        // Write TeamsData to computer data.
-        TeamsData_To_ComputerTeamsData(computerTeamsData);
+        TeamsData_To_ComputerTeamsData          (computerTeamsData);
+        CharactersData_To_ComputerCharactersData(computerCharactersData);
 
-        bf.Serialize(computerTeamsFile, computerTeamsData);
-        computerTeamsFile.Close();
+        bf.Serialize(computerTeamsFile,      computerTeamsData);
+        bf.Serialize(computerCharactersFile, computerCharactersData);
 
-        // Console line to help debugging.
-        DebugLog_Saving(computerTeamsData);
+        computerTeamsFile     .Close();
+        computerCharactersFile.Close();
+
+        Debug.Log("Saving...");
     }
 
     public void Load() {
-        if(File.Exists(Application.persistentDataPath + "/Teams.dat")) {
-            BinaryFormatter bf = new BinaryFormatter();
+        BinaryFormatter bf = new BinaryFormatter();
 
+        // LOAD TEAMS
+        if(File.Exists(Application.persistentDataPath + "/Teams.dat")) {
             FileStream            computerTeamsFile = File.Open(Application.persistentDataPath + "/Teams.dat", FileMode.Open);
             SerialisableTeamsData computerTeamsData = (SerialisableTeamsData)bf.Deserialize(computerTeamsFile);
-            computerTeamsFile.Close();
+            computerTeamsFile     .Close();
 
-            // TODO: Decryption
-
-            // Write computer data to TeamsData.
             ComputerTeamsData_To_TeamsData(computerTeamsData);
             
-            // Console line to help me debug.
-            DebugLog_Loading(teamsData);
         }
+
+        // LOAD CHARACTERS
+        if(File.Exists(Application.persistentDataPath + "/Characters.dat")) {
+            FileStream                 computerCharactersFile = File.Open(Application.persistentDataPath + "/Characters.dat", FileMode.Open);
+            SerialisableCharactersData computerCharactersData = (SerialisableCharactersData)bf.Deserialize(computerCharactersFile);
+            computerCharactersFile.Close();
+            
+            ComputerCharactersData_To_CharactersData(computerCharactersData);
+        }
+
+        Debug.Log("Loading...");
     }
 
-
+    #region TeamsData
     private void TeamsData_To_ComputerTeamsData(SerialisableTeamsData computerTeamsData) {
         computerTeamsData.ids          = teamsData.ids;
         computerTeamsData.names        = teamsData.names;
@@ -99,21 +111,56 @@ public class SaveAndLoad : MonoBehaviour {
         teamsData.maxCosts     = computerTeamsData.maxCosts;
         teamsData.usedTeamId   = computerTeamsData.usedTeamId;
     }
+    #endregion
 
 
-    #region DEBUGGING METHODE
-    public void DebugLog_Saving(SerialisableTeamsData computerData_Teams) {
-        Debug.Log("Saving completed!");
+    #region CharactersData
+    private void CharactersData_To_ComputerCharactersData(SerialisableCharactersData computerCharactersData) {
+        computerCharactersData.ids           = charactersData.ids;
+        computerCharactersData.teamDataIds   = charactersData.teamDataIds;
 
-        string json = JsonUtility.ToJson(computerData_Teams);
-        Debug.Log(json);
+        computerCharactersData.classNames    = charactersData.classNames;
+
+        computerCharactersData.names         = charactersData.names;
+        computerCharactersData.levels        = charactersData.levels;
+        computerCharactersData.currentXps    = charactersData.currentXps;
+        computerCharactersData.goalXps       = charactersData.goalXps;
+
+        computerCharactersData.skillOneIds   = charactersData.skillOneIds;
+        computerCharactersData.skillTwoIds   = charactersData.skillTwoIds;
+        computerCharactersData.skillThreeIds = charactersData.skillThreeIds;
+        computerCharactersData.skillFourIds  = charactersData.skillFourIds;
+        computerCharactersData.skillFiveIds  = charactersData.skillFiveIds;
+
+        computerCharactersData.helmetIds     = charactersData.helmetIds;
+        computerCharactersData.armorIds      = charactersData.armorIds;
+        computerCharactersData.greaveIds     = charactersData.greaveIds;
+        computerCharactersData.bootsIds      = charactersData.bootsIds;
+        computerCharactersData.jewelIds      = charactersData.jewelIds;
     }
 
-    public void DebugLog_Loading(TeamsData gameData) {
-        Debug.Log("Loading completed!");
-
-        string json = JsonUtility.ToJson(gameData);
-        Debug.Log(json);
+    private void ComputerCharactersData_To_CharactersData(SerialisableCharactersData computerCharactersData) {
+        charactersData.ids           = computerCharactersData.ids;
+        charactersData.teamDataIds   = computerCharactersData.teamDataIds;
+ 
+        charactersData.classNames    = computerCharactersData.classNames;
+     
+        charactersData.names         = computerCharactersData.names;
+        charactersData.levels        = computerCharactersData.levels;
+        charactersData.currentXps    = computerCharactersData.currentXps;
+        charactersData.goalXps       = computerCharactersData.goalXps;
+     
+        charactersData.skillOneIds   = computerCharactersData.skillOneIds;
+        charactersData.skillTwoIds   = computerCharactersData.skillTwoIds;
+        charactersData.skillThreeIds = computerCharactersData.skillThreeIds;
+        charactersData.skillFourIds  = computerCharactersData.skillFourIds;
+        charactersData.skillFiveIds  = computerCharactersData.skillFiveIds;
+        
+        charactersData.helmetIds     = computerCharactersData.helmetIds;
+        charactersData.armorIds      = computerCharactersData.armorIds;
+        charactersData.greaveIds     = computerCharactersData.greaveIds;
+        charactersData.bootsIds      = computerCharactersData.bootsIds;
+        charactersData.jewelIds      = computerCharactersData.jewelIds;
     }
     #endregion
 }
