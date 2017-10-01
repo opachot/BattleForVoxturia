@@ -35,11 +35,11 @@ public class UI_Hub : MonoBehaviour {
 
     #region UNITY METHODE
     void Awake() {
-        navigation = gameObject.GetComponent<Navigation>();
+        navigation = GameObject.FindGameObjectWithTag("Navigation").GetComponent<Navigation>();
     }
 	
 	void Start() {
-        //team_btn.Select();
+        
     }
 	
 	void Update() {

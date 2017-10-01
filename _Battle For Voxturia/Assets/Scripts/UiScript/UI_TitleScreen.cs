@@ -26,7 +26,7 @@ public class UI_TitleScreen : MonoBehaviour {
 
     #region UNITY METHODE
     void Awake() {
-        navigation = gameObject.GetComponent<Navigation>();
+        navigation = GameObject.FindGameObjectWithTag("Navigation").GetComponent<Navigation>();
     }
 	
 	void Start() {

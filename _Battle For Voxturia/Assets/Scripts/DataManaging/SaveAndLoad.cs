@@ -25,6 +25,8 @@ public class SaveAndLoad : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
+        DontDestroyOnLoad(gameObject);
+
         teamsData      = gameObject.GetComponent<TeamsData>();
         charactersData = gameObject.GetComponent<CharactersData>();
     }
@@ -112,7 +114,6 @@ public class SaveAndLoad : MonoBehaviour {
         teamsData.usedTeamId   = computerTeamsData.usedTeamId;
     }
     #endregion
-
 
     #region CharactersData
     private void CharactersData_To_ComputerCharactersData(SerialisableCharactersData computerCharactersData) {

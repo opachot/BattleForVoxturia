@@ -39,7 +39,7 @@ public class TeamsData : MonoBehaviour {
 
     #region UNITY METHODE
     void Awake() {
-        DontDestroyOnLoad(gameObject);
+
     }
 
     void Start() {

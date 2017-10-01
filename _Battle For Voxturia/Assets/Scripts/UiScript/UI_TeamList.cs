@@ -40,10 +40,10 @@ public class UI_TeamList : MonoBehaviour {
 
     #region UNITY METHODE
     void Awake() {
-        resourceLoader = gameObject.GetComponent<ResourceLoader>();
-        navigation     = gameObject.GetComponent<Navigation>();
+        resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
+        navigation     = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
+        teamsData      = GameObject.FindGameObjectWithTag("GameData")       .GetComponent<TeamsData>();
         errorManager   = gameObject.GetComponent<ErrorManager>();
-        teamsData      = GameObject.FindGameObjectWithTag("GameData").GetComponent<TeamsData>();
 
         list = GameObject.Find("List").GetComponent<Transform>();
     }
@@ -159,6 +159,7 @@ public class UI_TeamList : MonoBehaviour {
     }
 
     private void GenerateTeamsList() {
+
         int nbRegisteredTeam = teamsData.ids.Count;
 
         for(int i = 0; i < nbRegisteredTeam; i++) {

@@ -4,6 +4,7 @@ Author:  Sébastien Godbout
 Date:    26 September 2017
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +35,11 @@ public class UI_TeamScreen : MonoBehaviour {
     public GameObject addCharacterWhitCharacter_PopUp;
     public GameObject addCharacterWhitoutCharacter_PopUp;
 
+    public Button CharacterSlot1_btn;
+    public Button CharacterSlot2_btn;
+    public Button CharacterSlot3_btn;
+    public Button CharacterSlot4_btn;
+
     public Text screenTitle;
 
     public Text statsLevel;
@@ -50,8 +56,8 @@ public class UI_TeamScreen : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-		resourceLoader = gameObject.GetComponent<ResourceLoader>();
-        navigation     = gameObject.GetComponent<Navigation>();
+		resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
+        navigation     = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
         errorManager   = gameObject.GetComponent<ErrorManager>();
 
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
@@ -68,9 +74,10 @@ public class UI_TeamScreen : MonoBehaviour {
 
         ShowTeamName();
         ShowTeamStats();
+        ShowCharactersFeature();
 	}
-	
-	void Update() {
+
+    void Update() {
 		
 	}
     #endregion
@@ -129,14 +136,79 @@ public class UI_TeamScreen : MonoBehaviour {
         int   teamCurrentCost = teamsData.currentCosts[currentTeamDataKey];
         int   teamMaxCost     = teamsData.maxCosts    [currentTeamDataKey];
 
+        // Calculating % xp
+        int xpPercentage = Mathf.RoundToInt((teamCurrentXp * 1.0f / teamGoalXp * 1.0f) * 100);
+
         // Use the data on the Team Stats display.
         statsLevel  .text = teamLevel      .ToString();
-        statsXp     .text = teamCurrentXp  .ToString() + " / " + teamGoalXp;
+        statsXp     .text = teamCurrentXp  .ToString() + " / " + teamGoalXp + " (" + xpPercentage + "%)";
         statsVictory.text = teamVictory    .ToString();
         statsDefeat .text = teamDefeat     .ToString();
         statsMatch  .text = teamMatch      .ToString();
         statsVDRatio.text = teamVDRatio    .ToString();
         statsCost   .text = teamCurrentCost.ToString() + " / " + teamMaxCost;
+    }
+
+    private void ShowCharactersFeature() {
+        Button[] charactersButtons = {CharacterSlot1_btn,
+                                      CharacterSlot2_btn,
+                                      CharacterSlot3_btn,
+                                      CharacterSlot4_btn};
+
+        for(int i = 0; i < charactersButtons.Length; i++) {
+            bool isCharacterExisting = i < teamCharacterKeys.Count;
+
+            Image      buttonIcon  = charactersButtons[i].transform.Find("Icon")         .GetComponent<Image>();
+            GameObject nameBox     = charactersButtons[i].transform.Find("NameBox")      .gameObject;
+            Text       nameBoxText = nameBox             .transform.Find("CharacterName").GetComponent<Text>();
+
+            if(isCharacterExisting) {
+                // Set class icon
+                buttonIcon.sprite = GetCharacterIcon(charactersData.classNames[teamCharacterKeys[i]]);
+
+                // Set character name
+                nameBoxText.text = charactersData.names[teamCharacterKeys[i]];
+            }
+            else {
+                // Set default icon
+                buttonIcon.sprite = resourceLoader.addCharacterIconClass;
+
+                // Hide nameBox
+                nameBox.SetActive(false);
+            }
+        }
+    }
+
+    private Sprite GetCharacterIcon(string className) {
+        Sprite classSprite = new Sprite();
+
+        switch (className)
+        {
+            case "Fighter":
+                classSprite = resourceLoader.iconFighterClass;      break;
+            case "Hunter":
+                classSprite = resourceLoader.iconHunterClass;       break;
+            case "Ninja":
+                classSprite = resourceLoader.iconNinjaClass;        break;
+            case "Guardian":
+                classSprite = resourceLoader.iconGuardianClass;     break;
+            case "Elementalist":
+                classSprite = resourceLoader.iconElementalistClass; break;
+            case "GrimReaper":
+                classSprite = resourceLoader.iconGrimReaperClass;   break;
+            case "Druid":
+                classSprite = resourceLoader.iconDruidClass;        break;
+            case "Samurai":
+                classSprite = resourceLoader.iconSamuraiClass;      break;
+            case "Vampire":
+                classSprite = resourceLoader.iconVampireClass;      break;
+            case "Cyborg":
+                classSprite = resourceLoader.iconCyborgClass;       break;
+            default:
+                classSprite = resourceLoader.emptyIconClass;        break;
+        }
+
+        return classSprite;
     }
     #endregion
 

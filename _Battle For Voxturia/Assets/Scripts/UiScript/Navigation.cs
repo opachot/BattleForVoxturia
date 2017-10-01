@@ -24,6 +24,8 @@ public class Navigation : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
+        DontDestroyOnLoad(gameObject);
+
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
 		teamsData      = gameData.GetComponent<TeamsData>();
         charactersData = gameData.GetComponent<CharactersData>();
