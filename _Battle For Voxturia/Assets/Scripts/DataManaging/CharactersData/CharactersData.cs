@@ -57,6 +57,30 @@ public class CharactersData : MonoBehaviour {
 	#endregion
 	
 
+    public void DeleteCharacter(int key) {
+        ids          .RemoveAt(key);
+        teamDataIds  .RemoveAt(key);
+
+        classNames   .RemoveAt(key);
+
+        names        .RemoveAt(key);
+        levels       .RemoveAt(key);
+        currentXps   .RemoveAt(key);
+        goalXps      .RemoveAt(key);
+
+        skillOneIds  .RemoveAt(key);
+        skillTwoIds  .RemoveAt(key);
+        skillThreeIds.RemoveAt(key);
+        skillFourIds .RemoveAt(key);
+        skillFiveIds .RemoveAt(key);
+
+        helmetIds    .RemoveAt(key);
+        armorIds     .RemoveAt(key);
+        greaveIds    .RemoveAt(key);
+        bootsIds     .RemoveAt(key);
+        jewelIds     .RemoveAt(key);
+    }
+
 
     #region INTER SCREEN PARAM
     public int ExtraParam_TeamId {

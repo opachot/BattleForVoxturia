@@ -32,8 +32,9 @@ public class UI_TeamScreen : MonoBehaviour {
     private int clickedCharacterId;
 
     // PUBLIC
-    public GameObject addCharacterWhitCharacter_PopUp;
-    public GameObject addCharacterWhitoutCharacter_PopUp;
+    public GameObject editCharacterMenu_PopUp;
+    public GameObject addCharacterMenu_PopUp;
+    public GameObject deleteConfirmaton_PopUp;
 
     public Button CharacterSlot1_btn;
     public Button CharacterSlot2_btn;
@@ -50,6 +51,7 @@ public class UI_TeamScreen : MonoBehaviour {
     public Text statsVDRatio;
     public Text statsCost;
 
+    public Text deleteConfirmationMessage;
     public Text errorMessage;
 
     #endregion
@@ -63,18 +65,16 @@ public class UI_TeamScreen : MonoBehaviour {
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
         teamsData      = gameData.GetComponent<TeamsData>();
         charactersData = gameData.GetComponent<CharactersData>();
-
-        teamCharacterKeys = new List<int>();
     }
 	
 	void Start() {
         UseExtraParam();
         FindCurrentTeamDataKey();
-        FindCharactersDataKeys();
 
         ShowTeamName();
         ShowTeamStats();
-        ShowCharactersFeature();
+
+        LoadTeamCharacters();
 	}
 
     void Update() {
@@ -223,10 +223,10 @@ public class UI_TeamScreen : MonoBehaviour {
             clickedCharacterKey = teamCharacterKeys[keyIndex];
             clickedCharacterId  = charactersData.ids[clickedCharacterKey];
 
-            addCharacterWhitCharacter_PopUp.SetActive(true);
+            editCharacterMenu_PopUp.SetActive(true);
         }
         else {
-            addCharacterWhitoutCharacter_PopUp.SetActive(true);
+            addCharacterMenu_PopUp.SetActive(true);
         }
     }
 
@@ -244,7 +244,7 @@ public class UI_TeamScreen : MonoBehaviour {
     }
     #endregion
 
-    #region addCharacterWhitCharacter popUp buttons
+    #region editCharacterMenu popUp buttons
     public void ModifyCharacterButton() {
         navigation.NavigateTo_CharacterCustomisation(currentTeamId, clickedCharacterId);
     }
@@ -253,26 +253,30 @@ public class UI_TeamScreen : MonoBehaviour {
         // Remove in the data the link to team.
         charactersData.teamDataIds[clickedCharacterKey] = 0;
 
-        // TODO: Reload character display.
+        // Reload character display.
+        LoadTeamCharacters();
 
-        CloseAddCharacterWhitCharacterPopUp();
+        CloseEditCharacterMenuPopUp();
     }
 
     public void DeleteCharacterButton() {
-        // TODO: Bring up the confirmation popUp.
+        string characterName = charactersData.names[clickedCharacterKey];
+
+        deleteConfirmationMessage.text = "Do you really want to delete \n" + '"' + characterName + '"' + "?";
+        deleteConfirmaton_PopUp.SetActive(true);
     }
 
-    public void CancelAddCharacterWhitCharacterButton() {
-        CloseAddCharacterWhitCharacterPopUp();
+    public void CancelEditCharacterMenuButton() {
+        CloseEditCharacterMenuPopUp();
     }
 
 
-    private void CloseAddCharacterWhitCharacterPopUp() {
-        addCharacterWhitCharacter_PopUp.SetActive(false);
+    private void CloseEditCharacterMenuPopUp() {
+        editCharacterMenu_PopUp.SetActive(false);
     }
     #endregion
 
-    #region addCharacterWhitoutCharacter popUp buttons
+    #region addCharacterMenu popUp buttons
     public void CreateCharacterButton() {
         navigation.NavigateTo_NewCharacterCreation(currentTeamId);
     }
@@ -281,31 +285,30 @@ public class UI_TeamScreen : MonoBehaviour {
         navigation.NavigateTo_CharacterReserve(currentTeamId);
     }
 
-    public void CancelAddCharacterWhitoutCharacterButton() {
-        CloseAddCharacterWhitoutCharacterPopUp();
+    public void CancelAddCharacterMenuButton() {
+        CloseAddCharacterMenuPopUp();
     }
 
 
-    private void CloseAddCharacterWhitoutCharacterPopUp() {
-        addCharacterWhitoutCharacter_PopUp.SetActive(false);
+    private void CloseAddCharacterMenuPopUp() {
+        addCharacterMenu_PopUp.SetActive(false);
     }
     #endregion
 
     #region DeleteConfirmation popUp buttons
-    /*
     public void YesDeleteButton() {
-        int teamDataKey = FindSelectedTeamDataKey(deleteConfirmationPopUp_SelectedTeam);
-
-        teamsData.DeleteTeam(teamDataKey);
-        UpdateTeamsList();
+        charactersData.DeleteCharacter(clickedCharacterKey);
+        LoadTeamCharacters();
 
         deleteConfirmaton_PopUp.SetActive(false);
+        CloseEditCharacterMenuPopUp();
+        clickedCharacterId = 0;
     }
 
     public void NoDeleteButton() {
         deleteConfirmaton_PopUp.SetActive(false);
     }
-    */
+    
     #endregion
 
 
@@ -364,6 +367,13 @@ public class UI_TeamScreen : MonoBehaviour {
         }
 
         return ratio;
+    }
+
+    private void LoadTeamCharacters() {
+        teamCharacterKeys = new List<int>();
+
+        FindCharactersDataKeys();
+        ShowCharactersFeature();
     }
 
 }

@@ -21,6 +21,8 @@ public class TeamsData : MonoBehaviour {
     const int DEFAULT_MAX_COST     = 1000;
 
     // PRIVATE
+    CharactersData charactersData;
+
     private int extraParam_Id; /* Inter screen param */
 
     // PUBLIC
@@ -34,12 +36,12 @@ public class TeamsData : MonoBehaviour {
     public List<int>    currentCosts;
     public List<int>    maxCosts;
     public int          usedTeamId;
-    
+
     #endregion
 
     #region UNITY METHODE
     void Awake() {
-
+        charactersData = gameObject.GetComponent<CharactersData>();
     }
 
     void Start() {
@@ -53,18 +55,18 @@ public class TeamsData : MonoBehaviour {
 
     public void CreateNewTeam(string teamName) {
         int newId = GetNewId();
-        
-        ids  .Add(newId);
+
+        ids.Add(newId);
         names.Add(teamName);
 
         // Default value
-        levels      .Add(DEFAULT_LEVEL);
-        currentXps  .Add(DEFAULT_CURRENT_XP);
-        goalXps     .Add(DEFAULT_GOAL_XP);
-        victorys    .Add(DEFAULT_VICTORY);
-        defeats     .Add(DEFAULT_DEFEAT);
+        levels.Add(DEFAULT_LEVEL);
+        currentXps.Add(DEFAULT_CURRENT_XP);
+        goalXps.Add(DEFAULT_GOAL_XP);
+        victorys.Add(DEFAULT_VICTORY);
+        defeats.Add(DEFAULT_DEFEAT);
         currentCosts.Add(DEFAULT_CURRENT_COST);
-        maxCosts    .Add(DEFAULT_MAX_COST);
+        maxCosts.Add(DEFAULT_MAX_COST);
     }
 
     public bool IsExistingName(string paramName) {
@@ -81,22 +83,39 @@ public class TeamsData : MonoBehaviour {
     }
 
     public void DeleteTeam(int key) {
-        int deletingId = ids[key];
-        if(deletingId == usedTeamId) {
+        int teamId = ids[key];
+        if(teamId == usedTeamId) {
             usedTeamId = 0;
         }
 
-        //TODO: Will need to delete other data linked whit the TeamsData such as character.
+        DeleteRecursivelyCharacterInTeam(teamId);
 
-        ids         .RemoveAt(key);
-        names       .RemoveAt(key);
-        levels      .RemoveAt(key);
-        currentXps  .RemoveAt(key);
-        goalXps     .RemoveAt(key);
-        victorys    .RemoveAt(key);
-        defeats     .RemoveAt(key);
+        ids.RemoveAt(key);
+        names.RemoveAt(key);
+        levels.RemoveAt(key);
+        currentXps.RemoveAt(key);
+        goalXps.RemoveAt(key);
+        victorys.RemoveAt(key);
+        defeats.RemoveAt(key);
         currentCosts.RemoveAt(key);
-        maxCosts    .RemoveAt(key);
+        maxCosts.RemoveAt(key);
+    }
+
+    private void DeleteRecursivelyCharacterInTeam(int teamId) {
+        int nbTotalCharacter = charactersData.ids.Count;
+
+        for(int i = 0; i < charactersData.ids.Count; i++) {
+            int analysedCharacterTeamId = charactersData.teamDataIds[i];
+
+            if(analysedCharacterTeamId == teamId) {
+                charactersData.DeleteCharacter(i);
+
+                // Fix the index because we delete data from a List, not an array.
+                i--;
+                nbTotalCharacter--;
+            }
+
+        }
     }
 
 
