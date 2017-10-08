@@ -7,6 +7,7 @@ Date:    07 October 2017
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_NewCharacterCreation : MonoBehaviour {
 
@@ -18,16 +19,22 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     private Navigation     navigation;
     private ErrorManager   errorManager;
 
-    private TeamsData      teamsData;
     private CharactersData charactersData;
 
     private int currentTeamId;
 
-    // keep in memory the clicked class name for the creation process.
     private string clickedClassName;
+    private string selectedClassName;
 
     // PUBLIC
-
+    [System.Serializable] 
+    public struct ClassPopUp {
+        public GameObject popUp;
+        public Image      icon;
+        public Text       name;
+        public Text       description;
+    }
+    public ClassPopUp classPopUp;
     #endregion
 
 	#region UNITY METHODE
@@ -37,7 +44,6 @@ public class UI_NewCharacterCreation : MonoBehaviour {
         errorManager   = gameObject.GetComponent<ErrorManager>();
 
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
-        teamsData      = gameData.GetComponent<TeamsData>();
         charactersData = gameData.GetComponent<CharactersData>();
     }
 	
@@ -52,8 +58,8 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
     #region Initialisation
     private void UseExtraParam() {
-        currentTeamId = teamsData.ExtraParam_Id;
-        teamsData.ExtraParam_Id = 0;
+        currentTeamId = charactersData.ExtraParam_TeamId;
+        charactersData.ExtraParam_TeamId = 0;
     }
     #endregion
 
@@ -61,11 +67,11 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     public void ClassButton(string className) {
         clickedClassName = className;
 
-        // Open class info pop-up.
+        LoadClassPopUp();
     }
 
     public void CreateCharacterButton() {
-        // Verifi if all condition are meet (character name at lest 3 lenght, a selected class.)
+        // Verify if all condition are meet (character name at lest 3 lenght, a selected class.)
         // if condition not meet: activate error pop-up insted.
 
         // Create (private param clickedClassName will be saved in the char className field, 
@@ -77,24 +83,109 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     public void CancelButton() {
         navigation.NavigateTo_TeamScreen(currentTeamId);
     }
+
+
+    private void LoadClassPopUp() {
+
+        classPopUp.icon       .sprite = GetCharacterIcon(clickedClassName);
+        classPopUp.name       .text   = clickedClassName;
+        classPopUp.description.text   = GetCharacterDescription(clickedClassName);
+        
+        classPopUp.popUp.SetActive(true);
+    }
+
+    private Sprite GetCharacterIcon(string className) {
+        Sprite classSprite = new Sprite();
+
+        switch (className)
+        {
+            case "Fighter":
+                classSprite = resourceLoader.iconFighterClass;      break;
+            case "Hunter":
+                classSprite = resourceLoader.iconHunterClass;       break;
+            case "Ninja":
+                classSprite = resourceLoader.iconNinjaClass;        break;
+            case "Guardian":
+                classSprite = resourceLoader.iconGuardianClass;     break;
+            case "Elementalist":
+                classSprite = resourceLoader.iconElementalistClass; break;
+            case "GrimReaper":
+                classSprite = resourceLoader.iconGrimReaperClass;   break;
+            case "Druid":
+                classSprite = resourceLoader.iconDruidClass;        break;
+            case "Samurai":
+                classSprite = resourceLoader.iconSamuraiClass;      break;
+            case "Vampire":
+                classSprite = resourceLoader.iconVampireClass;      break;
+            case "Cyborg":
+                classSprite = resourceLoader.iconCyborgClass;       break;
+            default:
+                classSprite = resourceLoader.emptyIconClass;        break;
+        }
+
+        return classSprite;
+    }
+
+    private string GetCharacterDescription(string className) {
+        string description;
+
+        switch (className)
+        {
+            case "Fighter":
+                description = "TODO: Fighter description";
+                break;
+            case "Hunter":
+                description = "TODO: Hunter description";
+                break;
+            case "Ninja":
+                description = "TODO: Ninja description";
+                break;
+            case "Guardian":
+                description = "TODO: Guardian description";
+                break;
+            case "Elementalist":
+                description = "TODO: Elementalist description";
+                break;
+            case "GrimReaper":
+                description = "TODO: GrimReaper description";
+                break;
+            case "Druid":
+                description = "TODO: Druid description";
+                break;
+            case "Samurai":
+                description = "TODO: Samurai description";
+                break;
+            case "Vampire":
+                description = "TODO: Vampire description";
+                break;
+            case "Cyborg":
+                description = "TODO: Cyborg description";
+                break;
+            default:
+                description = "Error 404: Class description not found.";
+                break;
+        }
+
+        return description;
+    }
     #endregion
 
-    #region ClassInfoButton
-    public void SelectClassButton() {
-        
+    #region Class popUp Buttons
+    public void ChooseClassButton() {
+        selectedClassName = clickedClassName;
 
-        // select the class (hightlight?)
+        // Hightlight class button UI.
 
-        ClosePopUpClassInfo();
+        CloseClassPopUp();
     }
 
-    public void CancelClassInfoButton() {
-        ClosePopUpClassInfo();
+    public void CancelClassPopUpButton() {
+        CloseClassPopUp();
     }
 
 
-    private void ClosePopUpClassInfo() {
-        // Close pop-up.
+    private void CloseClassPopUp() {
+        classPopUp.popUp.SetActive(false);
     }
     #endregion
 }
