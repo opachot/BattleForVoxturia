@@ -26,6 +26,8 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     private string clickedClassName;
     private string selectedClassName;
 
+    private Button selectedClassButton;
+
     // PUBLIC
     [System.Serializable] 
     public struct ClassPopUp {
@@ -35,6 +37,8 @@ public class UI_NewCharacterCreation : MonoBehaviour {
         public Text       description;
     }
     public ClassPopUp classPopUp;
+
+    public Text characterNameInputFieldText;
     #endregion
 
 	#region UNITY METHODE
@@ -71,13 +75,15 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     }
 
     public void CreateCharacterButton() {
-        // Verify if all condition are meet (character name at lest 3 lenght, a selected class.)
-        // if condition not meet: activate error pop-up insted.
+        bool isValideForCreation = ValidateCreation();
 
-        // Create (private param clickedClassName will be saved in the char className field, 
-        // no need to use the class Switch() condition)
+        if(isValideForCreation) {
+            string characterName = characterNameInputFieldText.text;
 
-        navigation.NavigateTo_TeamScreen(currentTeamId);
+            charactersData.CreateNewTeam(currentTeamId, selectedClassName, characterName);
+
+            navigation.NavigateTo_TeamScreen(currentTeamId);
+        }
     }
 
     public void CancelButton() {
@@ -168,13 +174,63 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
         return description;
     }
+
+    #region ValidateCreation
+    private bool ValidateCreation() {
+        bool isValidForCreation = true;
+
+        if(!IsNameChoosed()) {
+            errorManager.TrowError("Error: You need to choose a character name with a length of at least 3.");
+            isValidForCreation = false;
+        }
+        else if(!IsAvailableName()) {
+            errorManager.TrowError("Error: The name is already taken.");
+            isValidForCreation = false;
+        }
+        else if(!IsClassSelected()) {
+            errorManager.TrowError("Error: You need to select a class for your new character.");
+            isValidForCreation = false;
+        }
+
+        return isValidForCreation;
+    }
+
+
+    private bool IsNameChoosed() {
+        const int MIN_NAME_LENGTH = 3;
+
+        bool isNameChoosed = characterNameInputFieldText.text.Length >= MIN_NAME_LENGTH;
+
+        return isNameChoosed;
+    }
+
+    private bool IsAvailableName() {
+        bool isAvailableName = !charactersData.IsExistingName(characterNameInputFieldText.text);
+
+        return isAvailableName;
+    }
+
+    private bool IsClassSelected() {
+        bool isClassSelected = selectedClassName != null 
+                               &&
+                               selectedClassName != "";
+
+        return isClassSelected;
+    }
+    #endregion
+
     #endregion
 
     #region Class popUp Buttons
     public void ChooseClassButton() {
-        selectedClassName = clickedClassName;
+        if(selectedClassButton != null) {
+            resetChoosedClass(selectedClassButton);
+        }
 
-        // Hightlight class button UI.
+        selectedClassName   = clickedClassName;
+        selectedClassButton = FindChoosedClassButton();
+
+        ShowChoosedClass(selectedClassButton);
 
         CloseClassPopUp();
     }
@@ -186,6 +242,37 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
     private void CloseClassPopUp() {
         classPopUp.popUp.SetActive(false);
+    }
+
+
+    private Button FindChoosedClassButton() {
+        string buttonName         = "Class" + selectedClassName + "_btn";
+        Button choosedClassButton = GameObject.Find(buttonName).GetComponent<Button>();
+
+        return choosedClassButton;
+    }
+
+    private void resetChoosedClass(Button classButton) {
+        // Define visual indicator.
+        ColorBlock defaultColor  = classButton.colors;
+        defaultColor.normalColor = ConvertToDecimalColor(255, 255, 255, 255);
+
+        // Apply visual indicator.
+        classButton.colors = defaultColor;
+    }
+
+    private void ShowChoosedClass(Button classButton) {
+        // Define visual indicator.
+        ColorBlock hightlightColor  = classButton.colors;
+        hightlightColor.normalColor = ConvertToDecimalColor(0, 150, 50, 255);
+
+        // Apply visual indicator.
+        classButton.colors = hightlightColor;
+    }
+
+    private Vector4 ConvertToDecimalColor(float r, float g, float b, float a) {
+        Vector4 color = new Vector4(r/255.0f, g/255.0f, b/255.0f, a/255.0f);
+        return  color;
     }
     #endregion
 }

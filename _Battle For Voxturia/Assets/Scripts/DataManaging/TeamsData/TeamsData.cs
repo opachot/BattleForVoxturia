@@ -54,19 +54,18 @@ public class TeamsData : MonoBehaviour {
     #endregion
 
     public void CreateNewTeam(string teamName) {
-        int newId = GetNewId();
+        ids.Add(GetNewId());
 
-        ids.Add(newId);
         names.Add(teamName);
 
         // Default value
-        levels.Add(DEFAULT_LEVEL);
-        currentXps.Add(DEFAULT_CURRENT_XP);
-        goalXps.Add(DEFAULT_GOAL_XP);
-        victorys.Add(DEFAULT_VICTORY);
-        defeats.Add(DEFAULT_DEFEAT);
+        levels      .Add(DEFAULT_LEVEL);
+        currentXps  .Add(DEFAULT_CURRENT_XP);
+        goalXps     .Add(DEFAULT_GOAL_XP);
+        victorys    .Add(DEFAULT_VICTORY);
+        defeats     .Add(DEFAULT_DEFEAT);
         currentCosts.Add(DEFAULT_CURRENT_COST);
-        maxCosts.Add(DEFAULT_MAX_COST);
+        maxCosts    .Add(DEFAULT_MAX_COST);
     }
 
     public bool IsExistingName(string paramName) {
