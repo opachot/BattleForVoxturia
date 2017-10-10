@@ -29,6 +29,9 @@ public class CharactersData : MonoBehaviour {
     const int DEFAULT_JEWEL_ID       = 0;
 
     // PRIVATE
+    private ResourceLoader resourceLoader;
+    private ErrorManager   errorManager;
+
     private int extraParam_TeamId;      /* Inter screen param */
     private int extraParam_CharacterId; /* Inter screen param */
 
@@ -59,7 +62,8 @@ public class CharactersData : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-		
+		resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
+        errorManager   = GameObject.FindGameObjectWithTag("ErrorManager")   .GetComponent<ErrorManager>();
     }
 	
 	void Start() {
@@ -69,10 +73,63 @@ public class CharactersData : MonoBehaviour {
 	void Update() {
 		
 	}
-	#endregion
-	
+    #endregion
 
-    public void CreateNewTeam(int teamId, string className, string characterName) {
+
+    #region Validate/Create/Delete character
+    #region ValidateCharacter
+    public bool ValidateCreation(string newCharacterName, string selectedClassName) {
+        bool isValidForCreation = true;
+
+        if(!IsNameChoosed(newCharacterName)) {
+            errorManager.TrowError("Error: You need to choose a character name with a length of at least 3.");
+            isValidForCreation = false;
+        }
+        else if(!IsAvailableName(newCharacterName)) {
+            errorManager.TrowError("Error: The name is already taken.");
+            isValidForCreation = false;
+        }
+        else if(!IsClassSelected(selectedClassName)) {
+            errorManager.TrowError("Error: You need to select a class for your new character.");
+            isValidForCreation = false;
+        }
+
+        return isValidForCreation;
+    }
+
+
+    private bool IsNameChoosed(string newCharacterName) {
+        const int MIN_NAME_LENGTH = 3;
+
+        bool isNameChoosed = newCharacterName.Length >= MIN_NAME_LENGTH;
+
+        return isNameChoosed;
+    }
+
+    private bool IsAvailableName(string newCharacterName) {
+        bool isAvailableName = true;
+
+        foreach(string name in names) {
+            if(newCharacterName.ToLower() == name.ToLower()) {
+                isAvailableName = false;
+                break;
+            }
+        }
+
+        return isAvailableName;
+    }
+
+    private bool IsClassSelected(string selectedClassName) {
+        bool isClassSelected = selectedClassName != null 
+                               &&
+                               selectedClassName != "";
+
+        return isClassSelected;
+    }
+    #endregion
+
+    #region CreateCharacter
+    public void CreateNewCharacter(int teamId, string className, string characterName) {
         ids.Add(GetNewId());
 
         teamDataIds.Add(teamId);
@@ -97,6 +154,22 @@ public class CharactersData : MonoBehaviour {
         jewelIds     .Add(DEFAULT_JEWEL_ID);
     }
 
+    private int GetNewId() {
+        int newId;
+
+        if(ids.Count == 0) {
+            newId = 1;
+        }
+        else {
+            int previousId = ids[ids.Count - 1];
+
+            newId = previousId + 1;
+        }
+
+        return newId;
+    }
+    #endregion
+
     public void DeleteCharacter(int key) {
         ids          .RemoveAt(key);
         teamDataIds  .RemoveAt(key);
@@ -120,34 +193,82 @@ public class CharactersData : MonoBehaviour {
         bootsIds     .RemoveAt(key);
         jewelIds     .RemoveAt(key);
     }
+    #endregion
 
 
-    private int GetNewId() {
-        int newId;
+    public Sprite GetCharacterIcon(string className) {
+        Sprite classSprite = new Sprite();
 
-        if(ids.Count == 0) {
-            newId = 1;
+        switch (className)
+        {
+            case "Fighter":
+                classSprite = resourceLoader.iconFighterClass;      break;
+            case "Hunter":
+                classSprite = resourceLoader.iconHunterClass;       break;
+            case "Ninja":
+                classSprite = resourceLoader.iconNinjaClass;        break;
+            case "Guardian":
+                classSprite = resourceLoader.iconGuardianClass;     break;
+            case "Elementalist":
+                classSprite = resourceLoader.iconElementalistClass; break;
+            case "GrimReaper":
+                classSprite = resourceLoader.iconGrimReaperClass;   break;
+            case "Druid":
+                classSprite = resourceLoader.iconDruidClass;        break;
+            case "Samurai":
+                classSprite = resourceLoader.iconSamuraiClass;      break;
+            case "Vampire":
+                classSprite = resourceLoader.iconVampireClass;      break;
+            case "Cyborg":
+                classSprite = resourceLoader.iconCyborgClass;       break;
+            default:
+                classSprite = resourceLoader.emptyIconClass;        break;
         }
-        else {
-            int previousId = ids[ids.Count - 1];
 
-            newId = previousId + 1;
-        }
-
-        return newId;
+        return classSprite;
     }
 
-    public bool IsExistingName(string paramName) {
-        bool isExistingName = false;
+    public string GetCharacterDescription(string className) {
+        string description;
 
-        foreach(string name in names) {
-            if(paramName.ToLower() == name.ToLower()) {
-                isExistingName = true;
+        switch (className)
+        {
+            case "Fighter":
+                description = "TODO: Fighter description";
                 break;
-            }
+            case "Hunter":
+                description = "TODO: Hunter description";
+                break;
+            case "Ninja":
+                description = "TODO: Ninja description";
+                break;
+            case "Guardian":
+                description = "TODO: Guardian description";
+                break;
+            case "Elementalist":
+                description = "TODO: Elementalist description";
+                break;
+            case "GrimReaper":
+                description = "TODO: GrimReaper description";
+                break;
+            case "Druid":
+                description = "TODO: Druid description";
+                break;
+            case "Samurai":
+                description = "TODO: Samurai description";
+                break;
+            case "Vampire":
+                description = "TODO: Vampire description";
+                break;
+            case "Cyborg":
+                description = "TODO: Cyborg description";
+                break;
+            default:
+                description = "Error 404: Class description not found.";
+                break;
         }
 
-        return isExistingName;
+        return description;
     }
 
 

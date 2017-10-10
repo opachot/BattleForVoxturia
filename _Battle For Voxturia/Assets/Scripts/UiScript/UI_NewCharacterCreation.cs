@@ -15,9 +15,7 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     // CONST
 
     // PRIVATE
-    private ResourceLoader resourceLoader;
     private Navigation     navigation;
-    private ErrorManager   errorManager;
 
     private CharactersData charactersData;
 
@@ -43,12 +41,10 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-		resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
-        navigation     = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
-        errorManager   = gameObject.GetComponent<ErrorManager>();
+        navigation = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
 
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
-        charactersData = gameData.GetComponent<CharactersData>();
+        charactersData      = gameData.GetComponent<CharactersData>();
     }
 	
 	void Start() {
@@ -56,9 +52,10 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 	}
 	
 	void Update() {
-		
+
 	}
     #endregion
+
 
     #region Initialisation
     private void UseExtraParam() {
@@ -66,6 +63,7 @@ public class UI_NewCharacterCreation : MonoBehaviour {
         charactersData.ExtraParam_TeamId = 0;
     }
     #endregion
+
 
     #region Default buttons
     public void ClassButton(string className) {
@@ -75,12 +73,13 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     }
 
     public void CreateCharacterButton() {
-        bool isValideForCreation = ValidateCreation();
+        string characterName = characterNameInputFieldText.text;
+        string className     = selectedClassName;
+
+        bool isValideForCreation = charactersData.ValidateCreation(characterName, className);
 
         if(isValideForCreation) {
-            string characterName = characterNameInputFieldText.text;
-
-            charactersData.CreateNewTeam(currentTeamId, selectedClassName, characterName);
+            charactersData.CreateNewCharacter(currentTeamId, selectedClassName, characterName);
 
             navigation.NavigateTo_TeamScreen(currentTeamId);
         }
@@ -93,132 +92,12 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
     private void LoadClassPopUp() {
 
-        classPopUp.icon       .sprite = GetCharacterIcon(clickedClassName);
+        classPopUp.icon       .sprite = charactersData.GetCharacterIcon(clickedClassName);
         classPopUp.name       .text   = clickedClassName;
-        classPopUp.description.text   = GetCharacterDescription(clickedClassName);
+        classPopUp.description.text   = charactersData.GetCharacterDescription(clickedClassName);
         
         classPopUp.popUp.SetActive(true);
     }
-
-    private Sprite GetCharacterIcon(string className) {
-        Sprite classSprite = new Sprite();
-
-        switch (className)
-        {
-            case "Fighter":
-                classSprite = resourceLoader.iconFighterClass;      break;
-            case "Hunter":
-                classSprite = resourceLoader.iconHunterClass;       break;
-            case "Ninja":
-                classSprite = resourceLoader.iconNinjaClass;        break;
-            case "Guardian":
-                classSprite = resourceLoader.iconGuardianClass;     break;
-            case "Elementalist":
-                classSprite = resourceLoader.iconElementalistClass; break;
-            case "GrimReaper":
-                classSprite = resourceLoader.iconGrimReaperClass;   break;
-            case "Druid":
-                classSprite = resourceLoader.iconDruidClass;        break;
-            case "Samurai":
-                classSprite = resourceLoader.iconSamuraiClass;      break;
-            case "Vampire":
-                classSprite = resourceLoader.iconVampireClass;      break;
-            case "Cyborg":
-                classSprite = resourceLoader.iconCyborgClass;       break;
-            default:
-                classSprite = resourceLoader.emptyIconClass;        break;
-        }
-
-        return classSprite;
-    }
-
-    private string GetCharacterDescription(string className) {
-        string description;
-
-        switch (className)
-        {
-            case "Fighter":
-                description = "TODO: Fighter description";
-                break;
-            case "Hunter":
-                description = "TODO: Hunter description";
-                break;
-            case "Ninja":
-                description = "TODO: Ninja description";
-                break;
-            case "Guardian":
-                description = "TODO: Guardian description";
-                break;
-            case "Elementalist":
-                description = "TODO: Elementalist description";
-                break;
-            case "GrimReaper":
-                description = "TODO: GrimReaper description";
-                break;
-            case "Druid":
-                description = "TODO: Druid description";
-                break;
-            case "Samurai":
-                description = "TODO: Samurai description";
-                break;
-            case "Vampire":
-                description = "TODO: Vampire description";
-                break;
-            case "Cyborg":
-                description = "TODO: Cyborg description";
-                break;
-            default:
-                description = "Error 404: Class description not found.";
-                break;
-        }
-
-        return description;
-    }
-
-    #region ValidateCreation
-    private bool ValidateCreation() {
-        bool isValidForCreation = true;
-
-        if(!IsNameChoosed()) {
-            errorManager.TrowError("Error: You need to choose a character name with a length of at least 3.");
-            isValidForCreation = false;
-        }
-        else if(!IsAvailableName()) {
-            errorManager.TrowError("Error: The name is already taken.");
-            isValidForCreation = false;
-        }
-        else if(!IsClassSelected()) {
-            errorManager.TrowError("Error: You need to select a class for your new character.");
-            isValidForCreation = false;
-        }
-
-        return isValidForCreation;
-    }
-
-
-    private bool IsNameChoosed() {
-        const int MIN_NAME_LENGTH = 3;
-
-        bool isNameChoosed = characterNameInputFieldText.text.Length >= MIN_NAME_LENGTH;
-
-        return isNameChoosed;
-    }
-
-    private bool IsAvailableName() {
-        bool isAvailableName = !charactersData.IsExistingName(characterNameInputFieldText.text);
-
-        return isAvailableName;
-    }
-
-    private bool IsClassSelected() {
-        bool isClassSelected = selectedClassName != null 
-                               &&
-                               selectedClassName != "";
-
-        return isClassSelected;
-    }
-    #endregion
-
     #endregion
 
     #region Class popUp Buttons
@@ -255,7 +134,7 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     private void resetChoosedClass(Button classButton) {
         // Define visual indicator.
         ColorBlock defaultColor  = classButton.colors;
-        defaultColor.normalColor = ConvertToDecimalColor(255, 255, 255, 255);
+        defaultColor.normalColor = HelpingMethod.ConvertToDecimalColor(255, 255, 255, 255);
 
         // Apply visual indicator.
         classButton.colors = defaultColor;
@@ -264,15 +143,10 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     private void ShowChoosedClass(Button classButton) {
         // Define visual indicator.
         ColorBlock hightlightColor  = classButton.colors;
-        hightlightColor.normalColor = ConvertToDecimalColor(0, 150, 50, 255);
+        hightlightColor.normalColor = HelpingMethod.ConvertToDecimalColor(0, 150, 50, 255);
 
         // Apply visual indicator.
         classButton.colors = hightlightColor;
-    }
-
-    private Vector4 ConvertToDecimalColor(float r, float g, float b, float a) {
-        Vector4 color = new Vector4(r/255.0f, g/255.0f, b/255.0f, a/255.0f);
-        return  color;
     }
     #endregion
 }

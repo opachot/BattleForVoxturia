@@ -18,7 +18,7 @@ public class UI_TeamScreen : MonoBehaviour {
     // PRIVATE
     private ResourceLoader resourceLoader;
     private Navigation     navigation;
-    private ErrorManager   errorManager;
+    //private ErrorManager   errorManager;
 
     private TeamsData      teamsData;
     private CharactersData charactersData;
@@ -60,7 +60,6 @@ public class UI_TeamScreen : MonoBehaviour {
 	void Awake() {
 		resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
         navigation     = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
-        errorManager   = gameObject.GetComponent<ErrorManager>();
 
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
         teamsData      = gameData.GetComponent<TeamsData>();
@@ -231,7 +230,7 @@ public class UI_TeamScreen : MonoBehaviour {
     }
 
     public void SelectTeamButton() {
-        bool   isValidTeam = ValidateTeam();
+        bool   isValidTeam = teamsData.ValidateTeamSelectable(currentTeamDataKey);
 
         if(isValidTeam) {
             teamsData.usedTeamId = currentTeamId;
@@ -311,39 +310,6 @@ public class UI_TeamScreen : MonoBehaviour {
     
     #endregion
 
-
-    #region ValidateTeam
-    private bool ValidateTeam() {
-        bool isValidTeam = true;
-
-        if(!IsValideCost()) {
-            errorManager.TrowError("Error: The team cost is too hight.");
-            isValidTeam = false;
-        }
-        else if(!IsValidCharacterAmount()) {
-            errorManager.TrowError("Error: You need at lest 1 character in your team.");
-            isValidTeam = false;
-        }
-
-        return isValidTeam;
-    }
-
-    private bool IsValideCost() {
-        int currentCost = teamsData.currentCosts[currentTeamDataKey];
-        int maxCost     = teamsData.maxCosts    [currentTeamDataKey];
-
-        bool   isValidTeam = currentCost <= maxCost;
-        return isValidTeam;
-    }
-
-    private bool IsValidCharacterAmount() {
-        bool isValidCharacterAmount = true;
-
-        // TODO: Search whit the key in the character data to find if any character idTeamData is equal to currentTeamId.
-
-        return isValidCharacterAmount;
-    }
-    #endregion
 
     private float CalculatingVDRatio(int teamVictory, int teamDefeat) {
         const float FLOAT_CONVERTER = 1.0f;

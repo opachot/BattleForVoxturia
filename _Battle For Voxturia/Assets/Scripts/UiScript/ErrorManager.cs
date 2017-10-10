@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ErrorManager : MonoBehaviour {
 
@@ -16,38 +17,63 @@ public class ErrorManager : MonoBehaviour {
     const string DEFAULT_MESSAGE = "Unknown Error";
 
     // PRIVATE
-    private Text errorMessage;
 
     // PUBLIC
-    public GameObject error_PopUp;
-
+    [System.Serializable] 
+    public struct ErrorPopUp {
+        public GameObject popUp;
+        public Text       message;
+    }
+    public ErrorPopUp errorPopUp;
     #endregion
 
 	#region UNITY METHODE
-	void Awake() {                                      
-        errorMessage = error_PopUp.transform.Find("Background").Find("ErrorMessage").GetComponent<Text>();
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-	
-	void Start() {
-		
-	}
-	
-	void Update() {
-		
-	}
-	#endregion
-	
 
-    #region Default buttons
-    public void ErrorOkButton() {
-        error_PopUp.SetActive(false);
-        errorMessage.text = DEFAULT_MESSAGE;
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void Update() {
+		
+	}
+    #endregion
+
+    // Called by delegate.
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        PlaceErrorPopUpInCanvas();
+    }
+
+    #region ErrorPopUp hierarchy move
+    private void PlaceErrorPopUpInCanvas() {
+        GameObject canvas = GameObject.Find("Canvas");
+
+        if(canvas != null) {
+            gameObject.transform.SetParent(canvas.transform);
+        }
+    }
+
+    public void PlaceErrorPopUpInDontDestroyOnLoad() {
+        gameObject.transform.parent = null;
+        DontDestroyOnLoad(gameObject);
     }
     #endregion
 
-    public void TrowError(string error) {
-        errorMessage.text = error;
-        error_PopUp.SetActive(true);
-    }
 
+    #region Default buttons
+    public void ErrorOkButton() {
+        errorPopUp.popUp.SetActive(false);
+        errorPopUp.message.text = DEFAULT_MESSAGE;
+    }
+    #endregion
+
+
+    public void TrowError(string error) {
+        errorPopUp.message.text = error;
+        errorPopUp.popUp.SetActive(true);
+    }
 }

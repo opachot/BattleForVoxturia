@@ -18,6 +18,8 @@ public class Navigation : MonoBehaviour {
     private TeamsData      teamsData;
     private CharactersData charactersData;
 
+    private ErrorManager errorManager;
+
     // PUBLIC
 
     #endregion
@@ -29,6 +31,8 @@ public class Navigation : MonoBehaviour {
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
 		teamsData      = gameData.GetComponent<TeamsData>();
         charactersData = gameData.GetComponent<CharactersData>();
+
+        errorManager = GameObject.FindGameObjectWithTag("ErrorManager").GetComponent<ErrorManager>();
     }
 	
 	void Start() {
@@ -42,50 +46,71 @@ public class Navigation : MonoBehaviour {
 
 
     public void NavigateTo_Hub() {
+        PrepareToSceneSwitch();
+
         SceneManager.LoadScene("Hub");
     }
 
     public void NavigateTo_TeamList() {
+        PrepareToSceneSwitch();
+
         SceneManager.LoadScene("TeamList");
     }
 
     public void NavigateTo_Shop() {
+        PrepareToSceneSwitch();
+
         SceneManager.LoadScene("Shop");
     }
 
     public void NavigateTo_Option() {
+        PrepareToSceneSwitch();
+
         SceneManager.LoadScene("Option");
     }
 
     public void NavigateTo_WorldMap() {
+        PrepareToSceneSwitch();
+
         SceneManager.LoadScene("WorldMap");
     }
 
     public void NavigateTo_DiscoveredItems() {
+        PrepareToSceneSwitch();
+
         SceneManager.LoadScene("DiscoveredItems");
     }
 
     public void NavigateTo_Help() {
+        PrepareToSceneSwitch();
+
         SceneManager.LoadScene("Help");
     }
 
     public void NavigateTo_TeamScreen(int teamId) {
-        teamsData.ExtraParam_Id = teamId;
+        PrepareToSceneSwitch();
 
+        teamsData.ExtraParam_Id = teamId;
         SceneManager.LoadScene("TeamScreen");
     }
 
     public void NavigateTo_NewCharacterCreation(int teamId) {
+        PrepareToSceneSwitch();
+
         charactersData.ExtraParam_TeamId = teamId;
         SceneManager.LoadScene("NewCharacterCreation");
     }
 
     public void NavigateTo_CharacterReserve(int teamId) {
+        PrepareToSceneSwitch();
+
         charactersData.ExtraParam_TeamId = teamId;
         SceneManager.LoadScene("CharacterReserve");
     }
 
     public void NavigateTo_CharacterCustomisation(int teamId, int characterId) {
+        PrepareToSceneSwitch();
+
         charactersData.ExtraParam_TeamId      = teamId;
         charactersData.ExtraParam_CharacterId = characterId;
         SceneManager.LoadScene("CharacterReserve");
@@ -94,5 +119,10 @@ public class Navigation : MonoBehaviour {
 
     public void QuitGame() {
         Application.Quit();
+    }
+
+
+    private void PrepareToSceneSwitch() {
+        errorManager.PlaceErrorPopUpInDontDestroyOnLoad();
     }
 }

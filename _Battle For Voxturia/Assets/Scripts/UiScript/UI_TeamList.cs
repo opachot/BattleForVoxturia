@@ -18,7 +18,6 @@ public class UI_TeamList : MonoBehaviour {
     // PRIVATE
     private ResourceLoader resourceLoader;
     private Navigation     navigation;
-    private ErrorManager   errorManager;
     private TeamsData      teamsData;
 
     private Transform list;
@@ -43,7 +42,6 @@ public class UI_TeamList : MonoBehaviour {
         resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
         navigation     = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
         teamsData      = GameObject.FindGameObjectWithTag("GameData")       .GetComponent<TeamsData>();
-        errorManager   = gameObject.GetComponent<ErrorManager>();
 
         list = GameObject.Find("List").GetComponent<Transform>();
     }
@@ -107,9 +105,9 @@ public class UI_TeamList : MonoBehaviour {
     #region CreateNewTeam popUp buttons
     public void CreateTeamButton() {
         string newName     = newTeamName_inputField.text;
-        bool   isValidName = ValidateName(newName);
+        bool   isValidTeam = teamsData.ValidateCreation(newName);
 
-        if(isValidName) {
+        if(isValidTeam) {
             teamsData.CreateNewTeam(newName);
 
             UpdateTeamsList();
@@ -202,44 +200,11 @@ public class UI_TeamList : MonoBehaviour {
     private void ShowUsedTeam(Button teamNameButton, Button teamDeleteButton) {
         // Define visual indicator.
         ColorBlock usedTeamColor  = teamNameButton.colors;
-        usedTeamColor.normalColor = ConvertToDecimalColor(0, 150, 50, 255);
+        usedTeamColor.normalColor = HelpingMethod.ConvertToDecimalColor(0, 150, 50, 255);
 
         // Apply visual indicator.
         teamNameButton.colors   = usedTeamColor;
         teamDeleteButton.colors = usedTeamColor;
-    }
-
-    private Vector4 ConvertToDecimalColor(float r, float g, float b, float a) {
-        Vector4 color = new Vector4(r/255.0f, g/255.0f, b/255.0f, a/255.0f);
-        return  color;
-    }
-    #endregion
-
-    #region ValidateName
-    private bool ValidateName(string newName) {
-        bool isValidName = true;
-
-        if(!IsAvailableName(newName)) {
-            errorManager.TrowError("Error: The name is already taken.");
-            isValidName = false;
-        }
-        else if(!IsMoralName(newName)) {
-            errorManager.TrowError("Error: The name is inappropriate.");
-            isValidName = false;
-        }
-
-        return isValidName;
-    }
-
-    private bool IsAvailableName(string newName) {
-        bool isAvailableName = !teamsData.IsExistingName(newName);
-
-        return isAvailableName;
-    }
-
-    private bool IsMoralName(string newName) {
-        // TODO
-        return true;
     }
     #endregion
 

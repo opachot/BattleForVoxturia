@@ -44,6 +44,9 @@ public class Test_SaveLoad_HelpSceen : MonoBehaviour {
     }
 
     public void RETURN() {
+        ErrorManager errorManager = GameObject.FindGameObjectWithTag("ErrorManager").GetComponent<ErrorManager>();
+        errorManager.PlaceErrorPopUpInDontDestroyOnLoad();
+
         SceneManager.LoadScene("Hub");
     }
 }

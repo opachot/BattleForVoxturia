@@ -21,7 +21,9 @@ public class TeamsData : MonoBehaviour {
     const int DEFAULT_MAX_COST     = 1000;
 
     // PRIVATE
-    CharactersData charactersData;
+    private ErrorManager   errorManager;
+
+    private CharactersData charactersData;
 
     private int extraParam_Id; /* Inter screen param */
 
@@ -41,6 +43,8 @@ public class TeamsData : MonoBehaviour {
 
     #region UNITY METHODE
     void Awake() {
+        errorManager   = GameObject.FindGameObjectWithTag("ErrorManager")   .GetComponent<ErrorManager>();
+
         charactersData = gameObject.GetComponent<CharactersData>();
     }
 
@@ -53,6 +57,44 @@ public class TeamsData : MonoBehaviour {
     }
     #endregion
 
+    #region Validate/Create/Delete team
+    #region ValidateTeam
+    public bool ValidateCreation(string newName) {
+        bool isValidName = true;
+
+        if(!IsAvailableName(newName)) {
+            errorManager.TrowError("Error: The name is already taken.");
+            isValidName = false;
+        }
+        else if(!IsMoralName(newName)) {
+            errorManager.TrowError("Error: The name is inappropriate.");
+            isValidName = false;
+        }
+
+        return isValidName;
+    }
+
+
+    private bool IsAvailableName(string newTeamName) {
+        bool isAvailableName = true;
+
+        foreach(string name in names) {
+            if(newTeamName.ToLower() == name.ToLower()) {
+                isAvailableName = false;
+                break;
+            }
+        }
+
+        return isAvailableName;
+    }
+
+    private bool IsMoralName(string newName) {
+        // TODO
+        return true;
+    }
+    #endregion
+
+    #region CreateTeam
     public void CreateNewTeam(string teamName) {
         ids.Add(GetNewId());
 
@@ -68,19 +110,23 @@ public class TeamsData : MonoBehaviour {
         maxCosts    .Add(DEFAULT_MAX_COST);
     }
 
-    public bool IsExistingName(string paramName) {
-        bool isExistingName = false;
+    private int GetNewId() {
+        int newId;
 
-        foreach(string name in names) {
-            if(paramName.ToLower() == name.ToLower()) {
-                isExistingName = true;
-                break;
-            }
+        if(ids.Count == 0) {
+            newId = 1;
+        }
+        else {
+            int previousId = ids[ids.Count - 1];
+
+            newId = previousId + 1;
         }
 
-        return isExistingName;
+        return newId;
     }
+    #endregion
 
+    #region DeleteTeam
     public void DeleteTeam(int key) {
         int teamId = ids[key];
         if(teamId == usedTeamId) {
@@ -116,22 +162,43 @@ public class TeamsData : MonoBehaviour {
 
         }
     }
+    #endregion
+    #endregion
 
 
-    private int GetNewId() {
-        int newId;
+    #region ValidateTeamSelectable
+    public bool ValidateTeamSelectable(int key) {
+        bool isValidTeam = true;
 
-        if(ids.Count == 0) {
-            newId = 1;
+        if(!IsValidCost(key)) {
+            errorManager.TrowError("Error: The team cost is too hight.");
+            isValidTeam = false;
         }
-        else {
-            int previousId = ids[ids.Count - 1];
-
-            newId = previousId + 1;
+        else if(!IsValidCharacterAmount(key)) {
+            errorManager.TrowError("Error: You need at lest 1 character in your team.");
+            isValidTeam = false;
         }
 
-        return newId;
+        return isValidTeam;
     }
+
+
+    private bool IsValidCost(int key) {
+        int currentCost = currentCosts[key];
+        int maxCost     = maxCosts    [key];
+
+        bool   isValidTeam = currentCost <= maxCost;
+        return isValidTeam;
+    }
+
+    private bool IsValidCharacterAmount(int key) {
+        bool isValidCharacterAmount = true;
+
+        // TODO: Search whit the key in the character data to find if any character idTeamData is equal to currentTeamId.
+
+        return isValidCharacterAmount;
+    }
+    #endregion
 
 
     #region INTER SCREEN PARAM
