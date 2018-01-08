@@ -125,27 +125,43 @@ public class UI_TeamScreen : MonoBehaviour {
 
     private void ShowTeamStats() {
         // Get the data
-        int   teamLevel       = teamsData.levels      [currentTeamDataKey];
-        int   teamCurrentXp   = teamsData.currentXps  [currentTeamDataKey];
-        int   teamGoalXp      = teamsData.goalXps     [currentTeamDataKey];
-        int   teamVictory     = teamsData.victorys    [currentTeamDataKey];
-        int   teamDefeat      = teamsData.defeats     [currentTeamDataKey];
-        int   teamMatch       = teamVictory + teamDefeat;
-        float teamVDRatio     = CalculatingVDRatio(teamVictory, teamDefeat);
-        int   teamCurrentCost = teamsData.currentCosts[currentTeamDataKey];
-        int   teamMaxCost     = teamsData.maxCosts    [currentTeamDataKey];
+        int   teamLevel     = teamsData.levels      [currentTeamDataKey];
+        int   teamCurrentXp = teamsData.currentXps  [currentTeamDataKey];
+        int   teamGoalXp    = teamsData.goalXps     [currentTeamDataKey];
+        int   teamVictory   = teamsData.victorys    [currentTeamDataKey];
+        int   teamDefeat    = teamsData.defeats     [currentTeamDataKey];
+        int   teamMatch     = teamVictory + teamDefeat;
+        float teamVDRatio   = CalculatingVDRatio(teamVictory, teamDefeat);
 
         // Calculating % xp
         int xpPercentage = Mathf.RoundToInt((teamCurrentXp * 1.0f / teamGoalXp * 1.0f) * 100);
 
         // Use the data on the Team Stats display.
-        statsLevel  .text = teamLevel      .ToString();
-        statsXp     .text = teamCurrentXp  .ToString() + " / " + teamGoalXp + " (" + xpPercentage + "%)";
-        statsVictory.text = teamVictory    .ToString();
-        statsDefeat .text = teamDefeat     .ToString();
-        statsMatch  .text = teamMatch      .ToString();
-        statsVDRatio.text = teamVDRatio    .ToString();
-        statsCost   .text = teamCurrentCost.ToString() + " / " + teamMaxCost;
+        statsLevel  .text = teamLevel    .ToString();
+        statsXp     .text = teamCurrentXp.ToString() + " / " + teamGoalXp + " (" + xpPercentage + "%)";
+        statsVictory.text = teamVictory  .ToString();
+        statsDefeat .text = teamDefeat   .ToString();
+        statsMatch  .text = teamMatch    .ToString();
+        statsVDRatio.text = teamVDRatio  .ToString();
+
+        ShowTeamCost();
+    }
+
+    private void ShowTeamCost() {
+        // Get the data
+        int teamCurrentCost = teamsData.currentCosts[currentTeamDataKey];
+        int teamMaxCost     = teamsData.maxCosts    [currentTeamDataKey];
+
+        statsCost.text = teamCurrentCost.ToString() + " / " + teamMaxCost;
+
+        if(teamCurrentCost > teamMaxCost) {
+            // Red (Unselectable)
+            statsCost.color = HelpingMethod.ConvertToDecimalColor(150, 0, 0, 255);
+        }
+        else {
+            // Black (Selectable)
+            statsCost.color = HelpingMethod.ConvertToDecimalColor(50, 50, 50, 255);
+        }
     }
 
     private void ShowCharactersFeature() {
@@ -230,7 +246,7 @@ public class UI_TeamScreen : MonoBehaviour {
     }
 
     public void SelectTeamButton() {
-        bool   isValidTeam = teamsData.ValidateTeamSelectable(currentTeamDataKey);
+        bool   isValidTeam = teamsData.ValidateTeamSelectable(currentTeamDataKey, true);
 
         if(isValidTeam) {
             teamsData.usedTeamId = currentTeamId;
@@ -252,8 +268,12 @@ public class UI_TeamScreen : MonoBehaviour {
         // Remove in the data the link to team.
         charactersData.teamDataIds[clickedCharacterKey] = 0;
 
-        // Reload character display.
+        // Reload (character display) + (Team cost).
         LoadTeamCharacters();
+        ShowTeamCost();
+
+        // Unselect this team if necessary.
+        teamsData.UpdateValideSelectedTeam(currentTeamDataKey, currentTeamId);
 
         CloseEditCharacterMenuPopUp();
     }
@@ -297,7 +317,13 @@ public class UI_TeamScreen : MonoBehaviour {
     #region DeleteConfirmation popUp buttons
     public void YesDeleteButton() {
         charactersData.DeleteCharacter(clickedCharacterKey);
+
+        // Reload (character display) + (Team cost).
         LoadTeamCharacters();
+        ShowTeamCost();
+
+        // Unselect this team if necessary.
+        teamsData.UpdateValideSelectedTeam(currentTeamDataKey, currentTeamId);
 
         deleteConfirmaton_PopUp.SetActive(false);
         CloseEditCharacterMenuPopUp();
@@ -312,7 +338,6 @@ public class UI_TeamScreen : MonoBehaviour {
 
 
     private float CalculatingVDRatio(int teamVictory, int teamDefeat) {
-        const float FLOAT_CONVERTER = 1.0f;
         float ratio;
 
         // (Protect from divided by 0 exeption)
@@ -326,7 +351,7 @@ public class UI_TeamScreen : MonoBehaviour {
             }
         }
         else {
-            ratio = teamVictory * FLOAT_CONVERTER / teamDefeat;
+            ratio = (float)teamVictory / teamDefeat;
 
             // Round to 2 decimal.
             ratio = Mathf.Round(ratio * 100f) / 100f;

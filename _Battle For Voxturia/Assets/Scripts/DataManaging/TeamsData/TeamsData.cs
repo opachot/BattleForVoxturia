@@ -167,15 +167,21 @@ public class TeamsData : MonoBehaviour {
 
 
     #region ValidateTeamSelectable
-    public bool ValidateTeamSelectable(int key) {
+    public bool ValidateTeamSelectable(int key, bool shouldShowError) {
         bool isValidTeam = true;
 
         if(!IsValidCost(key)) {
-            errorManager.TrowError("Error: The team cost is too hight.");
+            if(shouldShowError) {
+                errorManager.TrowError("Error: The team cost is too hight.");
+            }
+
             isValidTeam = false;
         }
         else if(!IsValidCharacterAmount(key)) {
-            errorManager.TrowError("Error: You need at lest 1 character in your team.");
+            if(shouldShowError) {
+                errorManager.TrowError("Error: You need at lest 1 character in your team.");
+            }
+
             isValidTeam = false;
         }
 
@@ -192,13 +198,37 @@ public class TeamsData : MonoBehaviour {
     }
 
     private bool IsValidCharacterAmount(int key) {
-        bool isValidCharacterAmount = true;
+        bool isValidCharacterAmount = false;
 
-        // TODO: Search whit the key in the character data to find if any character idTeamData is equal to currentTeamId.
+        for(int i = 0; i < charactersData.ids.Count; i++) {
+            bool isCharacterInThisTeam = charactersData.teamDataIds[i] == ids[key];
+
+            if(isCharacterInThisTeam) {
+                isValidCharacterAmount = true;
+                break;
+            }
+        }
 
         return isValidCharacterAmount;
     }
     #endregion
+
+
+    public void UpdateValideSelectedTeam(int key, int testedTeamId) {
+        bool isThisTeamSelected = usedTeamId == testedTeamId;
+
+        if(isThisTeamSelected) {
+            bool isValidTeam = ValidateTeamSelectable(key, false);
+
+            if(!isValidTeam) {
+                UnselectTeam();
+            }
+        }
+    }
+
+    public void UnselectTeam() {
+        usedTeamId = 0;
+    }
 
 
     #region INTER SCREEN PARAM
