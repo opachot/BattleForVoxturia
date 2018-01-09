@@ -129,21 +129,23 @@ public class TeamsData : MonoBehaviour {
     #region DeleteTeam
     public void DeleteTeam(int key) {
         int teamId = ids[key];
+
+        // A selected team being deleted is unselected.
         if(teamId == usedTeamId) {
-            usedTeamId = 0;
+            UnselectTeam();
         }
 
         DeleteRecursivelyCharacterInTeam(teamId);
 
-        ids.RemoveAt(key);
-        names.RemoveAt(key);
-        levels.RemoveAt(key);
-        currentXps.RemoveAt(key);
-        goalXps.RemoveAt(key);
-        victorys.RemoveAt(key);
-        defeats.RemoveAt(key);
+        ids         .RemoveAt(key);
+        names       .RemoveAt(key);
+        levels      .RemoveAt(key);
+        currentXps  .RemoveAt(key);
+        goalXps     .RemoveAt(key);
+        victorys    .RemoveAt(key);
+        defeats     .RemoveAt(key);
         currentCosts.RemoveAt(key);
-        maxCosts.RemoveAt(key);
+        maxCosts    .RemoveAt(key);
     }
 
     private void DeleteRecursivelyCharacterInTeam(int teamId) {
