@@ -36,6 +36,9 @@ public class ResourceLoader : MonoBehaviour {
         [Header("TeamList Screen")]
         public GameObject teamListingElement;
 
+        [Header("CharacterReserve Screen")]
+        public GameObject characterReserveListingElement;
+
     #endregion
 
 	#region UNITY METHODE
