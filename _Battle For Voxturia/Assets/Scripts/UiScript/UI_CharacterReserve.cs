@@ -22,6 +22,8 @@ public class UI_CharacterReserve : MonoBehaviour {
 
     private Transform list;
 
+    private List<int> charactersKeys;
+
     // PUBLIC
     [Header("Character Info Section")]
     public Text       characterName;
@@ -43,6 +45,8 @@ public class UI_CharacterReserve : MonoBehaviour {
         teamsData      = GameObject.FindGameObjectWithTag("GameData")       .GetComponent<TeamsData>();
 
         list = GameObject.Find("List").GetComponent<Transform>();
+
+        charactersKeys = new List<int>();
     }
 	
 	void Start() {
@@ -57,6 +61,8 @@ public class UI_CharacterReserve : MonoBehaviour {
 
     #region Default buttons
     public void SelectCharacter(Transform selectedCharacter) {
+        // TODO: Verify if the class already exist in the team, if yes, show an error msg to warn the played he can,t have 2 time the same class.
+
         // TODO: Add character in the right team and remove it from the reserve.
         // TODO: Run the verification if the team need to be unselected if was selected (Due to a cost busting).
 
@@ -103,6 +109,39 @@ public class UI_CharacterReserve : MonoBehaviour {
 
 
     private void GenerateCharactersList() {
-        // Something similar in UI_TeamsList.cs
+        for(int i = 0; i < charactersData.ids.Count; i++) {
+            bool isCharacterInReserve = charactersData.teamDataIds[i] == 0; 
+
+            if(isCharacterInReserve) {
+                charactersKeys.Add(i);
+
+                InstantiateCharacterInList(i);
+            }
+        }
+    }
+
+    private void InstantiateCharacterInList(int characterIndex) {
+        Transform listElement = Instantiate(resourceLoader.characterReserveListingElement, list).transform;
+
+        FixListElementButton(listElement, characterIndex);
+    }
+
+    private void FixListElementButton(Transform listElement, int characterIndex) {
+        // Set characterButton onClick event.
+        Button characterButton = listElement.GetComponent<Button>();
+        characterButton.onClick.AddListener(()   => CharacterButton(listElement));
+
+        // Set characterButton Icon.
+        Image  characterButtonIcon = listElement.Find("Icon").GetComponent<Image>();
+        string className = charactersData.classNames[characterIndex];
+        Sprite classIcon = charactersData.GetCharacterIcon(className);
+
+        characterButtonIcon.sprite = classIcon;
+
+        // Set characterButton nameBox.
+        Text   characterButtonNameBox = listElement.FindDeepChild("CharacterName").GetComponent<Text>();
+        string characterName = charactersData.names[characterIndex];
+
+        characterButtonNameBox.text = characterName;
     }
 }

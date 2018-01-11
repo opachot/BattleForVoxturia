@@ -27,6 +27,8 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     private Button selectedClassButton;
 
     // PUBLIC
+    public Transform classSection;
+
     [System.Serializable] 
     public struct ClassPopUp {
         public GameObject popUp;
@@ -49,6 +51,7 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 	
 	void Start() {
 		UseExtraParam();
+        DisableAlreadyUsedClass();
 	}
 	
 	void Update() {
@@ -61,6 +64,20 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     private void UseExtraParam() {
         currentTeamId = charactersData.ExtraParam_TeamId;
         charactersData.ExtraParam_TeamId = 0;
+    }
+
+    private void DisableAlreadyUsedClass() {
+        int nbCharacter = charactersData.ids.Count;
+
+        for(int i = 0; i < nbCharacter; i++) {
+            if(charactersData.teamDataIds[i] == currentTeamId) {
+                string characterClassName = charactersData.classNames[i];
+                string classNameBtn = "Class" + characterClassName + "_btn";
+
+                Button classBtn = classSection.Find(classNameBtn).GetComponent<Button>();
+                classBtn.interactable = false;
+            }
+        }
     }
     #endregion
 

@@ -20,6 +20,29 @@ public static class HelpingMethod {
     #endregion
 
 
+    #region ExtensionsMethode
+    //Breadth-first search
+    public static Transform FindDeepChild(this Transform origine, string target)
+    {
+        Transform result = origine.Find(target);
+
+        // search deeper...
+        if(result == null) {
+            foreach(Transform child in origine)
+            {
+                result = child.FindDeepChild(target);
+
+                if(result != null) {
+                    break;
+                }
+            }
+        }
+
+        return result;
+    }
+    #endregion
+
+
     #region ConvertToDecimalColor
     public static Vector4 ConvertToDecimalColor(Color colorToConvert) {
         Vector4 convertedColor = new Vector4(colorToConvert.r/255.0f, 
@@ -40,4 +63,5 @@ public static class HelpingMethod {
         return color;
     }
     #endregion
+
 }

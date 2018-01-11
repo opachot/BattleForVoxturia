@@ -36,10 +36,12 @@ public class UI_TeamScreen : MonoBehaviour {
     public GameObject addCharacterMenu_PopUp;
     public GameObject deleteConfirmaton_PopUp;
 
-    public Button CharacterSlot1_btn;
-    public Button CharacterSlot2_btn;
-    public Button CharacterSlot3_btn;
-    public Button CharacterSlot4_btn;
+    public Button characterSlot1_btn;
+    public Button characterSlot2_btn;
+    public Button characterSlot3_btn;
+    public Button characterSlot4_btn;
+
+    public Button selectTeam_btn;
 
     public Text screenTitle;
 
@@ -69,6 +71,8 @@ public class UI_TeamScreen : MonoBehaviour {
 	void Start() {
         UseExtraParam();
         FindCurrentTeamDataKey();
+
+        UpdateSelectAndUnselectTeamBtn();
 
         ShowTeamName();
         ShowTeamStats();
@@ -165,10 +169,10 @@ public class UI_TeamScreen : MonoBehaviour {
     }
 
     private void ShowCharactersFeature() {
-        Button[] charactersButtons = {CharacterSlot1_btn,
-                                      CharacterSlot2_btn,
-                                      CharacterSlot3_btn,
-                                      CharacterSlot4_btn};
+        Button[] charactersButtons = {characterSlot1_btn,
+                                      characterSlot2_btn,
+                                      characterSlot3_btn,
+                                      characterSlot4_btn};
 
         for(int i = 0; i < charactersButtons.Length; i++) {
             bool isCharacterExisting = i < teamCharacterKeys.Count;
@@ -179,7 +183,7 @@ public class UI_TeamScreen : MonoBehaviour {
 
             if(isCharacterExisting) {
                 // Set class icon
-                buttonIcon.sprite = GetCharacterIcon(charactersData.classNames[teamCharacterKeys[i]]);
+                buttonIcon.sprite = charactersData.GetCharacterIcon(charactersData.classNames[teamCharacterKeys[i]]);
 
                 // Set character name
                 nameBoxText.text = charactersData.names[teamCharacterKeys[i]];
@@ -192,38 +196,6 @@ public class UI_TeamScreen : MonoBehaviour {
                 nameBox.SetActive(false);
             }
         }
-    }
-
-    private Sprite GetCharacterIcon(string className) {
-        Sprite classSprite = new Sprite();
-
-        switch (className)
-        {
-            case "Fighter":
-                classSprite = resourceLoader.iconFighterClass;      break;
-            case "Hunter":
-                classSprite = resourceLoader.iconHunterClass;       break;
-            case "Ninja":
-                classSprite = resourceLoader.iconNinjaClass;        break;
-            case "Guardian":
-                classSprite = resourceLoader.iconGuardianClass;     break;
-            case "Elementalist":
-                classSprite = resourceLoader.iconElementalistClass; break;
-            case "GrimReaper":
-                classSprite = resourceLoader.iconGrimReaperClass;   break;
-            case "Druid":
-                classSprite = resourceLoader.iconDruidClass;        break;
-            case "Samurai":
-                classSprite = resourceLoader.iconSamuraiClass;      break;
-            case "Vampire":
-                classSprite = resourceLoader.iconVampireClass;      break;
-            case "Cyborg":
-                classSprite = resourceLoader.iconCyborgClass;       break;
-            default:
-                classSprite = resourceLoader.emptyIconClass;        break;
-        }
-
-        return classSprite;
     }
     #endregion
 
@@ -241,17 +213,28 @@ public class UI_TeamScreen : MonoBehaviour {
             editCharacterMenu_PopUp.SetActive(true);
         }
         else {
+            VeryfiyingChooseCharacterInReserveBtnInteractibility();
             addCharacterMenu_PopUp.SetActive(true);
         }
     }
 
-    public void SelectTeamButton() {
-        bool   isValidTeam = teamsData.ValidateTeamSelectable(currentTeamDataKey, true);
+    public void SelectAndUnselectTeamButton() {
+        bool isTeamAlreadySelected = currentTeamId == teamsData.usedTeamId;
 
-        if(isValidTeam) {
-            teamsData.usedTeamId = currentTeamId;
-            navigation.NavigateTo_TeamList();
+        // Unselect.
+        if(isTeamAlreadySelected) {
+            teamsData.usedTeamId = 0;
+            UpdateSelectAndUnselectTeamBtn();
         }
+        // Select.
+        else { 
+            bool   isValidTeam = teamsData.ValidateTeamSelectable(currentTeamDataKey, true);
+
+            if(isValidTeam) {
+                teamsData.usedTeamId = currentTeamId;
+                UpdateSelectAndUnselectTeamBtn();
+            }    
+        }  
     }
 
     public void ReturnButton() {
@@ -274,6 +257,7 @@ public class UI_TeamScreen : MonoBehaviour {
 
         // Unselect this team if necessary.
         teamsData.UpdateValideSelectedTeam(currentTeamDataKey, currentTeamId);
+        UpdateSelectAndUnselectTeamBtn();
 
         CloseEditCharacterMenuPopUp();
     }
@@ -309,6 +293,23 @@ public class UI_TeamScreen : MonoBehaviour {
     }
 
 
+    private void VeryfiyingChooseCharacterInReserveBtnInteractibility() {
+        Button chooseCharacterInReserve_btn = addCharacterMenu_PopUp.transform.FindDeepChild("Choose_btn").GetComponent<Button>();
+
+        // Disable by default.
+        chooseCharacterInReserve_btn.interactable = false;
+
+        // Should be interactable?
+        for(int i = 0; i < charactersData.ids.Count; i++) {
+            bool isCharacterInReserve = charactersData.teamDataIds[i] == 0; 
+
+            if(isCharacterInReserve) {
+                chooseCharacterInReserve_btn.interactable = true;
+                break;
+            }
+        }
+    }
+
     private void CloseAddCharacterMenuPopUp() {
         addCharacterMenu_PopUp.SetActive(false);
     }
@@ -324,6 +325,7 @@ public class UI_TeamScreen : MonoBehaviour {
 
         // Unselect this team if necessary.
         teamsData.UpdateValideSelectedTeam(currentTeamDataKey, currentTeamId);
+        UpdateSelectAndUnselectTeamBtn();
 
         deleteConfirmaton_PopUp.SetActive(false);
         CloseEditCharacterMenuPopUp();
@@ -367,4 +369,14 @@ public class UI_TeamScreen : MonoBehaviour {
         ShowCharactersFeature();
     }
 
+    private void UpdateSelectAndUnselectTeamBtn() {
+        bool isTeamAlreadySelected = currentTeamId == teamsData.usedTeamId;
+
+        if(isTeamAlreadySelected) {
+            selectTeam_btn.transform.Find("Text").GetComponent<Text>().text = "Unselect team";
+        }
+        else {
+            selectTeam_btn.transform.Find("Text").GetComponent<Text>().text = "Select team";
+        }
+    }
 }

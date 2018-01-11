@@ -166,8 +166,7 @@ public class UI_TeamList : MonoBehaviour {
     }
 
     private void InstantiateTeamInTeamsList(int teamIndex) {
-        Transform listElement = Instantiate(resourceLoader.teamListingElement).transform;
-        listElement.SetParent(list);
+        Transform listElement = Instantiate(resourceLoader.teamListingElement, list).transform;
 
         FixListElementButton(listElement, teamIndex);
     }
