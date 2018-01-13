@@ -18,7 +18,6 @@ public class UI_TeamScreen : MonoBehaviour {
     // PRIVATE
     private ResourceLoader resourceLoader;
     private Navigation     navigation;
-    //private ErrorManager   errorManager;
 
     private TeamsData      teamsData;
     private CharactersData charactersData;
@@ -70,7 +69,7 @@ public class UI_TeamScreen : MonoBehaviour {
 	
 	void Start() {
         UseExtraParam();
-        FindCurrentTeamDataKey();
+        currentTeamDataKey = teamsData.FindTeamDataKey(currentTeamId);
 
         UpdateSelectAndUnselectTeamBtn();
 
@@ -90,24 +89,6 @@ public class UI_TeamScreen : MonoBehaviour {
     private void UseExtraParam() {
         currentTeamId = teamsData.ExtraParam_Id;
         teamsData.ExtraParam_Id = 0;
-    }
-
-    private void FindCurrentTeamDataKey() {
-        bool isKeyFound = false;
-        int    nbTeams  = teamsData.ids.Count;
-
-        for(int i = 0; i < nbTeams; i++) {
-            if(teamsData.ids[i] == currentTeamId) {
-                currentTeamDataKey = i;
-                isKeyFound = true;
-
-                break;
-            }
-        }
-
-        if(!isKeyFound) {
-            Debug.Log("ERROR 404: currentTeamDataKey not found!");
-        }
     }
 
     private void FindCharactersDataKeys() {
@@ -153,8 +134,8 @@ public class UI_TeamScreen : MonoBehaviour {
 
     private void ShowTeamCost() {
         // Get the data
-        int teamCurrentCost = teamsData.currentCosts[currentTeamDataKey];
-        int teamMaxCost     = teamsData.maxCosts    [currentTeamDataKey];
+        int teamCurrentCost = teamsData.GetTeamCost(currentTeamId);
+        int teamMaxCost     = teamsData.maxCosts[currentTeamDataKey];
 
         statsCost.text = teamCurrentCost.ToString() + " / " + teamMaxCost;
 
@@ -228,7 +209,7 @@ public class UI_TeamScreen : MonoBehaviour {
         }
         // Select.
         else { 
-            bool   isValidTeam = teamsData.ValidateTeamSelectable(currentTeamDataKey, true);
+            bool isValidTeam = teamsData.ValidateTeamSelectable(currentTeamDataKey, currentTeamId, true);
 
             if(isValidTeam) {
                 teamsData.usedTeamId = currentTeamId;
@@ -255,7 +236,7 @@ public class UI_TeamScreen : MonoBehaviour {
         LoadTeamCharacters();
         ShowTeamCost();
 
-        // Unselect this team if necessary.
+        // Unselect current team if necessary.
         teamsData.UpdateValideSelectedTeam(currentTeamDataKey, currentTeamId);
         UpdateSelectAndUnselectTeamBtn();
 
@@ -323,7 +304,7 @@ public class UI_TeamScreen : MonoBehaviour {
         LoadTeamCharacters();
         ShowTeamCost();
 
-        // Unselect this team if necessary.
+        // Unselect current team if necessary.
         teamsData.UpdateValideSelectedTeam(currentTeamDataKey, currentTeamId);
         UpdateSelectAndUnselectTeamBtn();
 

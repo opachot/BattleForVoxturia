@@ -28,6 +28,8 @@ public class CharactersData : MonoBehaviour {
     const int DEFAULT_BOOTS_ID       = 0;
     const int DEFAULT_JEWEL_ID       = 0;
 
+    const int DEFAULT_COST           = 500;
+
     // PRIVATE
     private ResourceLoader resourceLoader;
     private ErrorManager   errorManager;
@@ -57,6 +59,8 @@ public class CharactersData : MonoBehaviour {
     public List<int>    greaveIds;
     public List<int>    bootsIds;
     public List<int>    jewelIds;
+
+    public List<int>    costs;
 
     #endregion
 
@@ -152,6 +156,8 @@ public class CharactersData : MonoBehaviour {
         greaveIds    .Add(DEFAULT_GREAVE_ID);
         bootsIds     .Add(DEFAULT_BOOTS_ID);
         jewelIds     .Add(DEFAULT_JEWEL_ID);
+
+        costs        .Add(DEFAULT_COST);
     }
 
     private int GetNewId() {
@@ -192,6 +198,8 @@ public class CharactersData : MonoBehaviour {
         greaveIds    .RemoveAt(key);
         bootsIds     .RemoveAt(key);
         jewelIds     .RemoveAt(key);
+
+        costs        .RemoveAt(key);
     }
     #endregion
 

@@ -17,7 +17,6 @@ public class TeamsData : MonoBehaviour {
     const int DEFAULT_GOAL_XP      = 100;
     const int DEFAULT_VICTORY      = 0;
     const int DEFAULT_DEFEAT       = 0;
-    const int DEFAULT_CURRENT_COST = 0;
     const int DEFAULT_MAX_COST     = 1000;
 
     // PRIVATE
@@ -35,7 +34,6 @@ public class TeamsData : MonoBehaviour {
     public List<int>    goalXps;
     public List<int>    victorys;
     public List<int>    defeats;
-    public List<int>    currentCosts;
     public List<int>    maxCosts;
     public int          usedTeamId;
 
@@ -43,7 +41,7 @@ public class TeamsData : MonoBehaviour {
 
     #region UNITY METHODE
     void Awake() {
-        errorManager   = GameObject.FindGameObjectWithTag("ErrorManager")   .GetComponent<ErrorManager>();
+        errorManager = GameObject.FindGameObjectWithTag("ErrorManager").GetComponent<ErrorManager>();
 
         charactersData = gameObject.GetComponent<CharactersData>();
     }
@@ -106,7 +104,6 @@ public class TeamsData : MonoBehaviour {
         goalXps     .Add(DEFAULT_GOAL_XP);
         victorys    .Add(DEFAULT_VICTORY);
         defeats     .Add(DEFAULT_DEFEAT);
-        currentCosts.Add(DEFAULT_CURRENT_COST);
         maxCosts    .Add(DEFAULT_MAX_COST);
     }
 
@@ -144,7 +141,6 @@ public class TeamsData : MonoBehaviour {
         goalXps     .RemoveAt(key);
         victorys    .RemoveAt(key);
         defeats     .RemoveAt(key);
-        currentCosts.RemoveAt(key);
         maxCosts    .RemoveAt(key);
     }
 
@@ -169,10 +165,10 @@ public class TeamsData : MonoBehaviour {
 
 
     #region ValidateTeamSelectable
-    public bool ValidateTeamSelectable(int key, bool shouldShowError) {
+    public bool ValidateTeamSelectable(int key, int teamId, bool shouldShowError) {
         bool isValidTeam = true;
 
-        if(!IsValidCost(key)) {
+        if(!IsValidCost(key, teamId)) {
             if(shouldShowError) {
                 errorManager.TrowError("Error: The team cost is too hight.");
             }
@@ -191,9 +187,9 @@ public class TeamsData : MonoBehaviour {
     }
 
 
-    private bool IsValidCost(int key) {
-        int currentCost = currentCosts[key];
-        int maxCost     = maxCosts    [key];
+    private bool IsValidCost(int key, int teamId) {
+        int currentCost = GetTeamCost(teamId);
+        int maxCost     = maxCosts[key];
 
         bool   isValidTeam = currentCost <= maxCost;
         return isValidTeam;
@@ -220,7 +216,7 @@ public class TeamsData : MonoBehaviour {
         bool isThisTeamSelected = usedTeamId == testedTeamId;
 
         if(isThisTeamSelected) {
-            bool isValidTeam = ValidateTeamSelectable(key, false);
+            bool isValidTeam = ValidateTeamSelectable(key, testedTeamId, false);
 
             if(!isValidTeam) {
                 UnselectTeam();
@@ -228,8 +224,45 @@ public class TeamsData : MonoBehaviour {
         }
     }
 
+    public int GetTeamCost(int teamId) {
+        int totalCost = 0;
+
+        for(int i = 0; i < charactersData.ids.Count; i++) {
+            bool isCharacterInTeam = charactersData.teamDataIds[i] == teamId;
+
+            if(isCharacterInTeam) {
+                int cost = charactersData.costs[i];
+                totalCost += cost;
+            }
+        }
+
+        return totalCost;
+    }
+
     public void UnselectTeam() {
         usedTeamId = 0;
+    }
+
+    public int FindTeamDataKey(int teamId) {
+        int teamDataKey = 0;
+
+        bool isKeyFound = false;
+        int  nbTeams    = ids.Count;
+
+        for(int i = 0; i < nbTeams; i++) {
+            if(ids[i] == teamId) {
+                teamDataKey = i;
+                isKeyFound = true;
+
+                break;
+            }
+        }
+
+        if(!isKeyFound) {
+            Debug.Log("ERROR 404: currentTeamDataKey not found!");
+        }
+
+        return teamDataKey;
     }
 
 

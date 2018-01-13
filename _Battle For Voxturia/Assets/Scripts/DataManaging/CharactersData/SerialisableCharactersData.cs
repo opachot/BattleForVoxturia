@@ -39,5 +39,6 @@ public class SerialisableCharactersData {
     public List<int>    bootsIds;
     public List<int>    jewelIds;
 
+    public List<int>    costs;
     #endregion
 }

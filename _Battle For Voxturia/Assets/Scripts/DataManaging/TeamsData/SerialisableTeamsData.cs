@@ -24,7 +24,6 @@ public class SerialisableTeamsData {
     public List<int>    goalXps;
     public List<int>    victorys;
     public List<int>    defeats;
-    public List<int>    currentCosts;
     public List<int>    maxCosts;
     public int          usedTeamId;
 

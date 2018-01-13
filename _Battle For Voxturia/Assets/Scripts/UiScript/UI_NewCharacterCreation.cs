@@ -18,6 +18,7 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     private Navigation     navigation;
 
     private CharactersData charactersData;
+    private TeamsData      teamsData;
 
     private int currentTeamId;
 
@@ -47,6 +48,7 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
         charactersData      = gameData.GetComponent<CharactersData>();
+        teamsData           = gameData.GetComponent<TeamsData>();
     }
 	
 	void Start() {
@@ -97,6 +99,10 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
         if(isValideForCreation) {
             charactersData.CreateNewCharacter(currentTeamId, selectedClassName, characterName);
+
+            // Unselect current team if necessary.
+            int teamDataKey = teamsData.FindTeamDataKey(currentTeamId);
+            teamsData.UpdateValideSelectedTeam(teamDataKey, currentTeamId);
 
             navigation.NavigateTo_TeamScreen(currentTeamId);
         }
