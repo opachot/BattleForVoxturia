@@ -32,15 +32,48 @@ public class UI_CharacterReserve : MonoBehaviour {
     private Button highlightedCharacterButton;
 
     // PUBLIC
-    [Header("Character Info Section")]
-    public Text       characterName;
+    public Button     selectCharacter_btn;
     public GameObject characterIcon;
     public Button     deleteCharacter_btn;
     [Space(10)]
 
     [Header("Delete Confirmation Pop-Up")]
     public GameObject deleteConfirmation_PopUp;
-    public Text       deleteConfirmationMessage; 
+    public Text       deleteConfirmationMessage;
+    [Space(10)]
+
+    [Header("Character Info Section")]
+    public Text characterName;
+    public Text level;
+    public Text xp;
+    public Text cost;
+    [Space(5)]
+    public Text ap;
+    public Text mp;
+    public Text range;
+    [Space(5)]
+    public Text hp;
+    public Text will;
+    [Space(5)]
+    public Text finalDamage;
+    public Text finalMeleeDamage;
+    public Text finalRangeDamage;
+    [Space(5)]
+    public Text power;
+    public Text fireDamage;
+    public Text waterDamage;
+    public Text windDamage;
+    public Text groundDamage;
+    public Text lightDamage;
+    public Text darkDamage;
+    [Space(5)]
+    public Text damageReflection;
+    public Text fireResistance;
+    public Text waterResistance;
+    public Text windResistance;
+    public Text groundResistance;
+    public Text lightResistance;
+    public Text darkResistance;
 
     #endregion
 
@@ -91,20 +124,32 @@ public class UI_CharacterReserve : MonoBehaviour {
     }
 
     public void CharacterButton(Transform selectedCharacter) {
-        selectedCharacterDataKey = FindSelectedCharacterDataKey(selectedCharacter);
+        bool isButtonAlreadySelected = false;
+
+        if(highlightedCharacterButton != null) {
+            isButtonAlreadySelected = highlightedCharacterButton.gameObject.transform == selectedCharacter;
+        }
 
         ModifieCharacterButtonVisual(selectedCharacter);
+        ResetCharacterInfoSection();
 
+        // Activate the interactivity of the button using the character selected to behave.
+        selectCharacter_btn.interactable = !isButtonAlreadySelected;
+        deleteCharacter_btn.interactable = !isButtonAlreadySelected;
 
-        // TODO: Load the character info section.
+        // Select.
+        if(!isButtonAlreadySelected) {
+            selectedCharacterDataKey = FindSelectedCharacterDataKey(selectedCharacter);
 
+            // TODO: Load the character info section.
+        }
 
         // Fix the button glitch that make it staying highlighted.
         EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void DeleteCharacterButton() {
-        string characterName = "";                // TODO: Find a way to get the character name to delete.
+        string characterName = charactersData.names[selectedCharacterDataKey];
 
         deleteConfirmationMessage.text = "Do you really want to delete \n" + '"' + characterName + '"' + "?";
         deleteConfirmation_PopUp.SetActive(true);
@@ -113,12 +158,12 @@ public class UI_CharacterReserve : MonoBehaviour {
 
     #region DeleteConfirmation popUp buttons
     public void YesDeleteButton() {
-        // TODO: int characterDataKey = FindSelectedCharacterDataKey(selectedCharacterIcon);
+        charactersData.DeleteCharacter(selectedCharacterDataKey);
 
-        // TODO: charactersData.DeleteCharacter(key);
+        ResetCharacterInfoSection();
+        ResetSelectedCharactersList();
 
-        // TODO: Clean character info section.
-        // TODO: UpdateCharactersList();
+        GenerateCharactersList();
 
         deleteConfirmation_PopUp.SetActive(false);
     }
@@ -209,7 +254,7 @@ public class UI_CharacterReserve : MonoBehaviour {
         return isClassAlreadyInTeam;
     }
 
-
+    #region Button Highlight Methode
     private void ModifieCharacterButtonVisual(Transform selectedCharacter) {
         bool isUnselecting = selectedCharacter.gameObject.GetComponent<Button>() == highlightedCharacterButton;
 
@@ -250,4 +295,63 @@ public class UI_CharacterReserve : MonoBehaviour {
             highlightedCharacterButton = characterButton;
         }
     }
+    #endregion
+
+
+    #region Reset Methode
+    private void ResetCharacterInfoSection() {
+        characterName.text = "-";
+        characterIcon.GetComponent<Image>().sprite = resourceLoader.emptyIconClass;
+
+        level.text = "-";
+        xp   .text = "-/-";
+        cost .text = "-";
+        
+        ap   .text = "-";
+        mp   .text = "-";
+        range.text = "-";
+        
+        hp  .text = "-";
+        will.text = "-";
+        
+        finalDamage     .text = "-%";
+        finalMeleeDamage.text = "-%";
+        finalRangeDamage.text = "-%";
+        
+        power       .text = "-";
+        fireDamage  .text = "-";
+        waterDamage .text = "-";
+        windDamage  .text = "-";
+        groundDamage.text = "-";
+        lightDamage .text = "-";
+        darkDamage  .text = "-";
+        
+        damageReflection.text = "-%";
+        fireResistance  .text = "-%";
+        waterResistance .text = "-%";
+        windResistance  .text = "-%";
+        groundResistance.text = "-%";
+        lightResistance .text = "-%";
+        darkResistance  .text = "-%";
+
+        deleteCharacter_btn.interactable = false;
+    }
+
+    private void ResetSelectedCharactersList() {
+        // Destroy all the element in the List.
+        foreach(Transform t in list) {
+            Destroy(t.gameObject);
+        }
+
+        // Reset the referencing list.
+        charactersButtons.Clear();
+        charactersKeys   .Clear();
+
+        highlightedCharacterButton = null;
+        selectedCharacterDataKey   = 0;
+
+        selectCharacter_btn.interactable = false;
+    }
+    #endregion
+
 }
