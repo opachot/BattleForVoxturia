@@ -33,7 +33,6 @@ public class UI_CharacterReserve : MonoBehaviour {
 
     // PUBLIC
     public Button     selectCharacter_btn;
-    public GameObject characterIcon;
     public Button     deleteCharacter_btn;
     [Space(10)]
 
@@ -43,7 +42,9 @@ public class UI_CharacterReserve : MonoBehaviour {
     [Space(10)]
 
     [Header("Character Info Section")]
-    public Text characterName;
+    public Text       characterName;
+    public Image      characterIcon;
+    [Space(5)]
     public Text level;
     public Text xp;
     public Text cost;
@@ -133,15 +134,13 @@ public class UI_CharacterReserve : MonoBehaviour {
         ModifieCharacterButtonVisual(selectedCharacter);
         ResetCharacterInfoSection();
 
-        // Activate the interactivity of the button using the character selected to behave.
         selectCharacter_btn.interactable = !isButtonAlreadySelected;
-        deleteCharacter_btn.interactable = !isButtonAlreadySelected;
 
         // Select.
         if(!isButtonAlreadySelected) {
             selectedCharacterDataKey = FindSelectedCharacterDataKey(selectedCharacter);
 
-            // TODO: Load the character info section.
+            LoadCharacterInfo();
         }
 
         // Fix the button glitch that make it staying highlighted.
@@ -212,6 +211,50 @@ public class UI_CharacterReserve : MonoBehaviour {
         characterButtonNameBox.text = characterName;
     }
     #endregion
+
+
+    private void LoadCharacterInfo() {
+        string currentXp = charactersData.currentXps[selectedCharacterDataKey].ToString();
+        string goalXp    = charactersData.goalXps   [selectedCharacterDataKey].ToString();
+
+        characterName.text   = charactersData.names [selectedCharacterDataKey];
+        characterIcon.sprite = charactersData.GetCharacterIcon(characterName.text);
+
+        level.text = charactersData.levels[selectedCharacterDataKey].ToString();
+        xp   .text = currentXp + "/" + goalXp;
+        cost .text = charactersData.costs [selectedCharacterDataKey].ToString();
+
+
+        // TODO
+        ap   .text = "-";
+        mp   .text = "-";
+        range.text = "-";
+
+        hp  .text = "-";
+        will.text = "-";
+        
+        finalDamage     .text = "-%";
+        finalMeleeDamage.text = "-%";
+        finalRangeDamage.text = "-%";
+        
+        power       .text = "-";
+        fireDamage  .text = "-";
+        waterDamage .text = "-";
+        windDamage  .text = "-";
+        groundDamage.text = "-";
+        lightDamage .text = "-";
+        darkDamage  .text = "-";
+        
+        damageReflection.text = "-%";
+        fireResistance  .text = "-%";
+        waterResistance .text = "-%";
+        windResistance  .text = "-%";
+        groundResistance.text = "-%";
+        lightResistance .text = "-%";
+        darkResistance  .text = "-%";
+
+        deleteCharacter_btn.interactable = true;
+    }
 
 
     private void UseExtraParam() {
@@ -301,7 +344,7 @@ public class UI_CharacterReserve : MonoBehaviour {
     #region Reset Methode
     private void ResetCharacterInfoSection() {
         characterName.text = "-";
-        characterIcon.GetComponent<Image>().sprite = resourceLoader.emptyIconClass;
+        characterIcon.sprite = resourceLoader.emptyIconClass;
 
         level.text = "-";
         xp   .text = "-/-";
