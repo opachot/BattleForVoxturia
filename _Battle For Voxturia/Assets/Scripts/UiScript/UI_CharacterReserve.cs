@@ -22,6 +22,13 @@ public class UI_CharacterReserve : MonoBehaviour {
     private TeamsData      teamsData;
     private ErrorManager   errorManager;
 
+    private Items   items;
+    private Helmets helmets;
+    private Armors  armors;
+    private Greaves greaves;
+    private Boots   boots;
+    private Jewels  jewels;
+
     private Transform list;
 
     private List<Transform> charactersButtons;
@@ -85,6 +92,15 @@ public class UI_CharacterReserve : MonoBehaviour {
         charactersData = GameObject.FindGameObjectWithTag("GameData")       .GetComponent<CharactersData>();
         teamsData      = GameObject.FindGameObjectWithTag("GameData")       .GetComponent<TeamsData>();
         errorManager   = GameObject.FindGameObjectWithTag("ErrorManager")   .GetComponent<ErrorManager>();
+
+        // The list of all the items.
+        GameObject itemsHolder = GameObject.FindGameObjectWithTag("Items");
+        items   = itemsHolder.GetComponent<Items>();
+        helmets = itemsHolder.GetComponent<Helmets>();
+        armors  = itemsHolder.GetComponent<Armors>();
+        greaves = itemsHolder.GetComponent<Greaves>();
+        boots   = itemsHolder.GetComponent<Boots>();
+        jewels  = itemsHolder.GetComponent<Jewels>();
 
         list = GameObject.Find("List").GetComponent<Transform>();
 
@@ -214,6 +230,7 @@ public class UI_CharacterReserve : MonoBehaviour {
 
 
     private void LoadCharacterInfo() {
+        string className = charactersData.classNames[selectedCharacterDataKey];
         string currentXp = charactersData.currentXps[selectedCharacterDataKey].ToString();
         string goalXp    = charactersData.goalXps   [selectedCharacterDataKey].ToString();
 
@@ -224,34 +241,65 @@ public class UI_CharacterReserve : MonoBehaviour {
         xp   .text = currentXp + "/" + goalXp;
         cost .text = charactersData.costs [selectedCharacterDataKey].ToString();
 
+        List<string> helmet = helmets.GetItem(charactersData.helmetIds[selectedCharacterDataKey]);
+        List<string> armor  = armors .GetItem(charactersData.armorIds [selectedCharacterDataKey]);
+        List<string> greave = greaves.GetItem(charactersData.greaveIds[selectedCharacterDataKey]);
+        List<string> boot   = boots  .GetItem(charactersData.bootsIds [selectedCharacterDataKey]);
+        List<string> jewel  = jewels .GetItem(charactersData.jewelIds [selectedCharacterDataKey]);
 
-        // TODO
-        ap   .text = "-";
-        mp   .text = "-";
-        range.text = "-";
+        int totalAp    = charactersData.GetAp() + items.GetTotalAp   (helmet, armor, greave, boot, jewel);
+        int totalMp    = charactersData.GetMp() + items.GetTotalMp   (helmet, armor, greave, boot, jewel);
+        int totalRange =                          items.GetTotalRange(helmet, armor, greave, boot, jewel);
 
-        hp  .text = "-";
-        will.text = "-";
+        int totalHp   = charactersData.GetHp  (selectedCharacterDataKey) + items.GetTotalHp  (helmet, armor, greave, boot, jewel);
+        int totalWill = charactersData.GetWill(selectedCharacterDataKey) + items.GetTotalWill(helmet, armor, greave, boot, jewel);
+
+        int totalFinalDamage      = items.GetTotalFinalDamage     (helmet, armor, greave, boot, jewel);
+        int totalFinalMeleeDamage = items.GetTotalFinalMeleeDamage(helmet, armor, greave, boot, jewel);
+        int totalFinalRangeDamage = items.GetTotalFinalRangeDamage(helmet, armor, greave, boot, jewel);
+
+        int totalPower        = items.GetTotalPower           (helmet, armor, greave, boot, jewel);
+        int totalFireDamage   = items.GetTotalFireResistance  (helmet, armor, greave, boot, jewel);
+        int totalWaterDamage  = items.GetTotalWaterResistance (helmet, armor, greave, boot, jewel);
+        int totalWindDamage   = items.GetTotalWindResistance  (helmet, armor, greave, boot, jewel);
+        int totalGroundDamage = items.GetTotalGroundResistance(helmet, armor, greave, boot, jewel);
+        int totalLightDamage  = items.GetTotalLightResistance (helmet, armor, greave, boot, jewel);
+        int totalDarkDamage   = items.GetTotalDarkResistance  (helmet, armor, greave, boot, jewel);
+
+        int totalDamageReflection =                                                 items.GetTotalDamageReflection(helmet, armor, greave, boot, jewel);
+        int totalFireResistance   = charactersData.GetFireResistance  (className) + items.GetTotalFireResistance  (helmet, armor, greave, boot, jewel);
+        int totalWaterResistance  = charactersData.GetWaterResistance (className) + items.GetTotalWaterResistance (helmet, armor, greave, boot, jewel);
+        int totalWindResistance   = charactersData.GetWindResistance  (className) + items.GetTotalWindResistance  (helmet, armor, greave, boot, jewel);
+        int totalGroundResistance = charactersData.GetGroundResistance(className) + items.GetTotalGroundResistance(helmet, armor, greave, boot, jewel);
+        int totalLightResistance  = charactersData.GetLightResistance (className) + items.GetTotalLightResistance (helmet, armor, greave, boot, jewel);
+        int totalDarkResistance   = charactersData.GetDarkResistance  (className) + items.GetTotalDarkResistance  (helmet, armor, greave, boot, jewel);
+
+        ap   .text = totalAp   .ToString();
+        mp   .text = totalMp   .ToString();
+        range.text = totalRange.ToString();
+
+        hp  .text = totalHp  .ToString();
+        will.text = totalWill.ToString();
         
-        finalDamage     .text = "-%";
-        finalMeleeDamage.text = "-%";
-        finalRangeDamage.text = "-%";
+        finalDamage     .text = totalFinalDamage      + "%";
+        finalMeleeDamage.text = totalFinalMeleeDamage + "%";
+        finalRangeDamage.text = totalFinalRangeDamage + "%";
         
-        power       .text = "-";
-        fireDamage  .text = "-";
-        waterDamage .text = "-";
-        windDamage  .text = "-";
-        groundDamage.text = "-";
-        lightDamage .text = "-";
-        darkDamage  .text = "-";
+        power       .text = totalPower       .ToString();
+        fireDamage  .text = totalFireDamage  .ToString();
+        waterDamage .text = totalWaterDamage .ToString();
+        windDamage  .text = totalWindDamage  .ToString();
+        groundDamage.text = totalGroundDamage.ToString();
+        lightDamage .text = totalLightDamage .ToString();
+        darkDamage  .text = totalDarkDamage  .ToString();
         
-        damageReflection.text = "-%";
-        fireResistance  .text = "-%";
-        waterResistance .text = "-%";
-        windResistance  .text = "-%";
-        groundResistance.text = "-%";
-        lightResistance .text = "-%";
-        darkResistance  .text = "-%";
+        damageReflection.text = totalDamageReflection + "%";
+        fireResistance  .text = totalFireResistance   + "%";
+        waterResistance .text = totalWaterResistance  + "%";
+        windResistance  .text = totalWindResistance   + "%";
+        groundResistance.text = totalGroundResistance + "%";
+        lightResistance .text = totalLightResistance  + "%";
+        darkResistance  .text = totalDarkResistance   + "%";
 
         deleteCharacter_btn.interactable = true;
     }

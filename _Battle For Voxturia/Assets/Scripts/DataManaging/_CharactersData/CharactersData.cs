@@ -15,6 +15,7 @@ public class CharactersData : MonoBehaviour {
     const int DEFAULT_LEVEL          = 1;
     const int DEFAULT_CURRENT_XP     = 0;
     const int DEFAULT_GOAL_XP        = 100;
+    const int DEFAULT_COST           = 500;
 
     const int DEFAULT_SKILL_ONE_ID   = 0;
     const int DEFAULT_SKILL_TWO_ID   = 0;
@@ -27,8 +28,6 @@ public class CharactersData : MonoBehaviour {
     const int DEFAULT_GREAVE_ID      = 0;
     const int DEFAULT_BOOTS_ID       = 0;
     const int DEFAULT_JEWEL_ID       = 0;
-
-    const int DEFAULT_COST           = 500;
 
     // PRIVATE
     private ResourceLoader resourceLoader;
@@ -47,6 +46,7 @@ public class CharactersData : MonoBehaviour {
     public List<int>    levels;
     public List<int>    currentXps;
     public List<int>    goalXps;
+    public List<int>    costs;
 
     public List<int>    skillOneIds;
     public List<int>    skillTwoIds;
@@ -59,8 +59,6 @@ public class CharactersData : MonoBehaviour {
     public List<int>    greaveIds;
     public List<int>    bootsIds;
     public List<int>    jewelIds;
-
-    public List<int>    costs;
 
     #endregion
 
@@ -278,6 +276,184 @@ public class CharactersData : MonoBehaviour {
 
         return description;
     }
+
+
+    #region Get Stats
+    public int GetAp() {
+        const int DEFAULT_AP = 5;
+
+        return DEFAULT_AP;
+    }
+
+    public int GetMp() {
+        const int DEFAULT_MP = 3;
+
+        return DEFAULT_MP;
+    }
+
+
+    public int GetHp(int key) {
+        const int DEFAULT_HP  = 480;
+        const int HP_BY_LEVEL = 20;
+
+        int level = levels [key];
+        int hp    = DEFAULT_HP + (HP_BY_LEVEL * level);
+
+        return hp;
+    }
+
+    public int GetWill(int key) {
+        int level = levels [key];
+        int will  = level;
+
+        return will;
+    }
+
+
+    public int GetFireResistance(string className) {
+        const int DEFAULT_FIRE_RESISTANCE = 0;
+
+        const int     GUARDIAN_FIRE_RESISTANCE = -10;
+        const int ELEMENTALIST_FIRE_RESISTANCE = 5;
+        
+        int fireResistance = 0;
+
+        switch (className)
+        {
+            case "Guardian":
+                fireResistance = GUARDIAN_FIRE_RESISTANCE;     break;
+            case "Elementalist":
+                fireResistance = ELEMENTALIST_FIRE_RESISTANCE; break;
+            default:
+                fireResistance = DEFAULT_FIRE_RESISTANCE;      break;
+        }
+
+        return fireResistance;
+    }
+
+    public int GetWaterResistance(string className) {
+        const int DEFAULT_WATER_RESISTANCE = 0;
+
+        const int ELEMENTALIST_WATER_RESISTANCE = 5;
+        const int       CYBORG_WATER_RESISTANCE = -20;
+        
+        int waterResistance = 0;
+
+        switch (className)
+        {
+            case "Elementalist":
+                waterResistance = ELEMENTALIST_WATER_RESISTANCE; break;
+            case "Cyborg":
+                waterResistance = CYBORG_WATER_RESISTANCE;       break;
+            default:
+                waterResistance = DEFAULT_WATER_RESISTANCE;      break;
+        }
+
+        return waterResistance;
+    }
+
+    public int GetWindResistance(string className) {
+        const int DEFAULT_WIND_RESISTANCE = 0;
+
+        const int ELEMENTALIST_WIND_RESISTANCE = 5;
+        
+        int windResistance = 0;
+
+        switch (className)
+        {
+            case "Elementalist":
+                windResistance = ELEMENTALIST_WIND_RESISTANCE; break;
+            default:
+                windResistance = DEFAULT_WIND_RESISTANCE;      break;
+        }
+
+        return windResistance;
+    }
+
+    public int GetGroundResistance(string className) {
+        const int DEFAULT_GROUND_RESISTANCE = 0;
+
+        const int ELEMENTALIST_GROUND_RESISTANCE = 5;
+        
+        int groundResistance = 0;
+
+        switch (className)
+        {
+            case "Elementalist":
+                groundResistance = ELEMENTALIST_GROUND_RESISTANCE; break;
+            default:
+                groundResistance = DEFAULT_GROUND_RESISTANCE;      break;
+        }
+
+        return groundResistance;
+    }
+
+    public int GetLightResistance(string className) {
+        const int DEFAULT_LIGHT_RESISTANCE = 0;
+
+        const int        NINJA_LIGHT_RESISTANCE = -5;
+        const int     GUARDIAN_LIGHT_RESISTANCE = 5;
+        const int ELEMENTALIST_LIGHT_RESISTANCE = -10;
+        const int   GRIMREAPER_LIGHT_RESISTANCE = -20;
+        const int      VAMPIRE_LIGHT_RESISTANCE = -10;
+        const int       CYBORG_LIGHT_RESISTANCE = 10;
+        
+        int lightResistance = 0;
+
+        switch (className)
+        {
+            case "Ninja":
+                lightResistance = NINJA_LIGHT_RESISTANCE;         break;
+            case "Guardian":
+                lightResistance = GUARDIAN_LIGHT_RESISTANCE;      break;
+            case "Elementalist":
+                lightResistance = ELEMENTALIST_LIGHT_RESISTANCE;  break;
+            case "GrimReaper":
+                lightResistance = GRIMREAPER_LIGHT_RESISTANCE;    break;
+            case "Vampire":
+                lightResistance = VAMPIRE_LIGHT_RESISTANCE;       break;
+            case "Cyborg":
+                lightResistance = CYBORG_LIGHT_RESISTANCE;        break;
+            default:
+                lightResistance = DEFAULT_LIGHT_RESISTANCE;       break;
+        }
+
+        return lightResistance;
+    }
+
+    public int GetDarkResistance(string className) {
+        const int DEFAULT_DARK_RESISTANCE = 0;
+
+        const int        NINJA_DARK_RESISTANCE = 5;
+        const int     GUARDIAN_DARK_RESISTANCE = 5;
+        const int ELEMENTALIST_DARK_RESISTANCE = -10;
+        const int   GRIMREAPER_DARK_RESISTANCE = 20;
+        const int      VAMPIRE_DARK_RESISTANCE = 10;
+        const int       CYBORG_DARK_RESISTANCE = 10;
+        
+        int darkResistance = 0;
+
+        switch (className)
+        {
+            case "Ninja":
+                darkResistance = NINJA_DARK_RESISTANCE;         break;
+            case "Guardian":
+                darkResistance = GUARDIAN_DARK_RESISTANCE;      break;
+            case "Elementalist":
+                darkResistance = ELEMENTALIST_DARK_RESISTANCE;  break;
+            case "GrimReaper":
+                darkResistance = GRIMREAPER_DARK_RESISTANCE;    break;
+            case "Vampire":
+                darkResistance = VAMPIRE_DARK_RESISTANCE;       break;
+            case "Cyborg":
+                darkResistance = CYBORG_DARK_RESISTANCE;        break;
+            default:
+                darkResistance = DEFAULT_DARK_RESISTANCE;       break;
+        }
+
+        return darkResistance;
+    }
+    #endregion
 
 
     #region INTER SCREEN PARAM

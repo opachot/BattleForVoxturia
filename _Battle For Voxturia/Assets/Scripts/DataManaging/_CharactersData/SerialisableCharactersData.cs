@@ -26,6 +26,7 @@ public class SerialisableCharactersData {
     public List<int>    levels;
     public List<int>    currentXps;
     public List<int>    goalXps;
+    public List<int>    costs;
 
     public List<int>    skillOneIds;
     public List<int>    skillTwoIds;
@@ -38,7 +39,5 @@ public class SerialisableCharactersData {
     public List<int>    greaveIds;
     public List<int>    bootsIds;
     public List<int>    jewelIds;
-
-    public List<int>    costs;
     #endregion
 }

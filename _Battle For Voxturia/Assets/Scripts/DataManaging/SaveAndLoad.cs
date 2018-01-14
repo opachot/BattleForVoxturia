@@ -124,6 +124,7 @@ public class SaveAndLoad : MonoBehaviour {
         computerCharactersData.levels        = charactersData.levels;
         computerCharactersData.currentXps    = charactersData.currentXps;
         computerCharactersData.goalXps       = charactersData.goalXps;
+        computerCharactersData.costs         = charactersData.costs;
 
         computerCharactersData.skillOneIds   = charactersData.skillOneIds;
         computerCharactersData.skillTwoIds   = charactersData.skillTwoIds;
@@ -136,8 +137,6 @@ public class SaveAndLoad : MonoBehaviour {
         computerCharactersData.greaveIds     = charactersData.greaveIds;
         computerCharactersData.bootsIds      = charactersData.bootsIds;
         computerCharactersData.jewelIds      = charactersData.jewelIds;
-
-        computerCharactersData.costs         = charactersData.costs;
     }
 
     private void ComputerCharactersData_To_CharactersData(SerialisableCharactersData computerCharactersData) {
@@ -150,6 +149,7 @@ public class SaveAndLoad : MonoBehaviour {
         charactersData.levels        = computerCharactersData.levels;
         charactersData.currentXps    = computerCharactersData.currentXps;
         charactersData.goalXps       = computerCharactersData.goalXps;
+        charactersData.costs         = computerCharactersData.costs;
      
         charactersData.skillOneIds   = computerCharactersData.skillOneIds;
         charactersData.skillTwoIds   = computerCharactersData.skillTwoIds;
@@ -162,8 +162,6 @@ public class SaveAndLoad : MonoBehaviour {
         charactersData.greaveIds     = computerCharactersData.greaveIds;
         charactersData.bootsIds      = computerCharactersData.bootsIds;
         charactersData.jewelIds      = computerCharactersData.jewelIds;
-
-        charactersData.costs         = computerCharactersData.costs;
     }
     #endregion
 }

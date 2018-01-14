@@ -16,6 +16,7 @@ public class Greaves : MonoBehaviour {
     "name", 
     "description", 
     "lvlRequire", 
+    "shopCost",
     "cost", 
 
     "ap", 
@@ -58,6 +59,7 @@ public class Greaves : MonoBehaviour {
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
         "666",       // Level Requirment
+        "1000",      // shopCost
         "999999999", // Cost
 
         "1", // Ap
@@ -99,7 +101,7 @@ public class Greaves : MonoBehaviour {
     // TEST
     private List<string> test = new List<string>() 
     {
-        "0", // Id
+        "666", // Id
 
         "GREAVE_NAME_TEST", // Name
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
@@ -107,6 +109,7 @@ public class Greaves : MonoBehaviour {
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
         "666",       // Level Requirment
+        "1000",      // shopCost
         "999999999", // Cost
 
         "1", // Ap
@@ -256,5 +259,26 @@ public class Greaves : MonoBehaviour {
 		
 	}
     #endregion
+
+    public List<string> GetItem(int paramId) {
+        List<string> wantedItem = null;
+
+        if(paramId != 0) {
+            string id = paramId.ToString();
+
+            const int ID_INDEX = 0;
+            for(int i = 0; i < list.Count; i++) {
+                List<string> item = list[i];
+                string       itemId = item[ID_INDEX];
+
+                if(itemId == id) {
+                    wantedItem = item; 
+                    break;
+                }
+            }
+        }
+
+        return wantedItem;
+    }
 
 }
