@@ -113,7 +113,7 @@ public class Navigation : MonoBehaviour {
 
         charactersData.ExtraParam_TeamId      = teamId;
         charactersData.ExtraParam_CharacterId = characterId;
-        SceneManager.LoadScene("CharacterReserve");
+        SceneManager.LoadScene("CharacterCustomisation");
     }
 
 
