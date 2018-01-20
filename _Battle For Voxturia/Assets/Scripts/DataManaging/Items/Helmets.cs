@@ -93,13 +93,16 @@ public class Helmets : MonoBehaviour {
 
     #region DECLARATION
     // CONST
+    const int NAME_INDEX = 1;
 
     // PRIVATE
-    private List<List<string>> list = new List<List<string>>();
+    private List      <List<string>>   list             = new List<List<string>>();
+    private Dictionary<string, Sprite> spriteDictionary = new Dictionary<string, Sprite>();
 
     #region Helmets list
     // TEST
-    private List<string> test = new List<string>() 
+    public Sprite HELMET_NAME_TEST_icon;
+    private List<string> HELMET_NAME_TEST = new List<string>() 
     {
         "666", // Id
 
@@ -110,7 +113,7 @@ public class Helmets : MonoBehaviour {
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
         "666",       // Level Requirment
         "1000",      // shopCost
-        "999999999", // Cost
+        "100",       // Cost
 
         "1", // Ap
         "2", // Mp
@@ -250,7 +253,8 @@ public class Helmets : MonoBehaviour {
 	void Awake() {
         DontDestroyOnLoad(gameObject);
 
-        list.Add(test);
+        list.Add(HELMET_NAME_TEST);
+        spriteDictionary.Add(HELMET_NAME_TEST[NAME_INDEX], HELMET_NAME_TEST_icon);
     }
 	
 	void Start() {
@@ -283,180 +287,12 @@ public class Helmets : MonoBehaviour {
         return wantedItem;
     }
 
-    /*
-    #region Get Main Stats
-    public int GetAp(List<string> item) {
-        const int AP_INDEX = 6;
-        int ap = GetSpecificIntStats(item, AP_INDEX);
+    public Sprite GetIcon(string name) {
+        Sprite icon;
 
-        return ap;
+        spriteDictionary.TryGetValue(name, out icon);
+
+        return icon;
     }
 
-    public int GetMp(List<string> item) {
-        const int MP_INDEX = 7;
-        int mp = GetSpecificIntStats(item, MP_INDEX);
-
-        return mp;
-    }
-
-    public int GetRange(List<string> item) {
-        const int RANGE_INDEX = 8;
-        int range = GetSpecificIntStats(item, RANGE_INDEX);
-
-        return range;
-    }
-
-
-    public int GetHp(List<string> item) {
-        const int HP_INDEX = 9;
-        int hp = GetSpecificIntStats(item, HP_INDEX);
-
-        return hp;
-    }
-
-    public int GetWill(List<string> item) {
-        const int WILL_INDEX = 10;
-        int will = GetSpecificIntStats(item, WILL_INDEX);
-
-        return will;
-    }
-    #endregion
-
-    #region Get Final Damage Stats
-    public int GetFinalDamage(List<string> item) {
-        const int FINAL_DAMAGE_INDEX = 11;
-        int finalDamage = GetSpecificIntStats(item, FINAL_DAMAGE_INDEX);
-
-        return finalDamage;
-    }
-
-    public int GetFinalMeleeDamage(List<string> item) {
-        const int FINAL_MELEE_DAMAGE_INDEX = 12;
-        int finalMeleeDamage = GetSpecificIntStats(item, FINAL_MELEE_DAMAGE_INDEX);
-
-        return finalMeleeDamage;
-    }
-
-    public int GetFinalRangeDamage(List<string> item) {
-        const int FINAL_RANGE_DAMAGE_INDEX = 13;
-        int finalRangeDamage = GetSpecificIntStats(item, FINAL_RANGE_DAMAGE_INDEX);
-
-        return finalRangeDamage;
-    }
-    #endregion
-
-    #region Get Damage Stats
-    public int GetPower(List<string> item) {
-        const int POWER_INDEX = 14;
-        int power = GetSpecificIntStats(item, POWER_INDEX);
-
-        return power;
-    }
-
-
-    public int GetFireDamage(List<string> item) {
-        const int FIRE_DAMAGE_INDEX = 15;
-        int fireDamage = GetSpecificIntStats(item, FIRE_DAMAGE_INDEX);
-
-        return fireDamage;
-    }
-
-    public int GetWaterDamage(List<string> item) {
-        const int WATER_DAMAGE_INDEX = 16;
-        int waterDamage = GetSpecificIntStats(item, WATER_DAMAGE_INDEX);
-
-        return waterDamage;
-    }
-
-    public int GetWindDamage(List<string> item) {
-        const int WIND_DAMAGE_INDEX = 17;
-        int windDamage = GetSpecificIntStats(item, WIND_DAMAGE_INDEX);
-
-        return windDamage;
-    }
-
-    public int GetGroundDamage(List<string> item) {
-        const int GROUND_DAMAGE_INDEX = 18;
-        int groundDamage = GetSpecificIntStats(item, GROUND_DAMAGE_INDEX);
-
-        return groundDamage;
-    }
-
-    public int GetLightDamage(List<string> item) {
-        const int LIGHT_DAMAGE_INDEX = 19;
-        int lightDamage = GetSpecificIntStats(item, LIGHT_DAMAGE_INDEX);
-
-        return lightDamage;
-    }
-
-    public int GetDarkDamage(List<string> item) {
-        const int DARK_DAMAGE_INDEX = 20;
-        int darkDamage = GetSpecificIntStats(item, DARK_DAMAGE_INDEX);
-
-        return darkDamage;
-    }
-    #endregion
-
-    #region Get Resistance Stats
-    public int GetDamageReflection(List<string> item) {
-        const int DAMAGE_REFLECTION_INDEX = 21;
-        int damageReflection = GetSpecificIntStats(item, DAMAGE_REFLECTION_INDEX);
-
-        return damageReflection;
-    }
-
-
-    public int GetFireResistance(List<string> item) {
-        const int FIRE_RESISTANCE_INDEX = 22;
-        int fireResistance = GetSpecificIntStats(item, FIRE_RESISTANCE_INDEX);
-
-        return fireResistance;
-    }
-
-    public int GetWaterResistance(List<string> item) {
-        const int WATER_RESISTANCE_INDEX = 23;
-        int waterResistance = GetSpecificIntStats(item, WATER_RESISTANCE_INDEX);
-
-        return waterResistance;
-    }
-
-    public int GetWindResistance(List<string> item) {
-        const int WIND_RESISTANCE_INDEX = 24;
-        int windResistance = GetSpecificIntStats(item, WIND_RESISTANCE_INDEX);
-
-        return windResistance;
-    }
-
-    public int GetGroundResistance(List<string> item) {
-        const int GROUND_RESISTANCE_INDEX = 25;
-        int groundResistance = GetSpecificIntStats(item, GROUND_RESISTANCE_INDEX);
-
-        return groundResistance;
-    }
-
-    public int GetLightResistance(List<string> item) {
-        const int LIGHT_RESISTANCE_INDEX = 26;
-        int lightResistance = GetSpecificIntStats(item, LIGHT_RESISTANCE_INDEX);
-
-        return lightResistance;
-    }
-
-    public int GetDarkResistance(List<string> item) {
-        const int DARK_RESISTANCE_INDEX = 27;
-        int darkResistance = GetSpecificIntStats(item, DARK_RESISTANCE_INDEX);
-
-        return darkResistance;
-    }
-    #endregion
-
-    private int GetSpecificIntStats(List<string> item, int statsIndex) {
-        int stats = 0;
-
-        if(int.TryParse(item[statsIndex], out stats)) { }
-        else {
-            Debug.Log("Error: GetSpecificIntStats methode was not able to parse string to int.");
-        }
-
-        return stats;
-    }*/
 }

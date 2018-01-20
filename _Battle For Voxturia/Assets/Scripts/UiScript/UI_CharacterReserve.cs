@@ -235,17 +235,19 @@ public class UI_CharacterReserve : MonoBehaviour {
         string goalXp    = charactersData.goalXps   [selectedCharacterDataKey].ToString();
 
         characterName.text   = charactersData.names [selectedCharacterDataKey];
-        characterIcon.sprite = charactersData.GetCharacterIcon(characterName.text);
+        characterIcon.sprite = charactersData.GetCharacterIcon(className);
 
         level.text = charactersData.levels[selectedCharacterDataKey].ToString();
         xp   .text = currentXp + "/" + goalXp;
-        cost .text = charactersData.costs [selectedCharacterDataKey].ToString();
 
         List<string> helmet = helmets.GetItem(charactersData.helmetIds[selectedCharacterDataKey]);
         List<string> armor  = armors .GetItem(charactersData.armorIds [selectedCharacterDataKey]);
         List<string> greave = greaves.GetItem(charactersData.greaveIds[selectedCharacterDataKey]);
         List<string> boot   = boots  .GetItem(charactersData.bootsIds [selectedCharacterDataKey]);
         List<string> jewel  = jewels .GetItem(charactersData.jewelIds [selectedCharacterDataKey]);
+
+
+        int totalCost = charactersData.GetCost() + items.GetTotalCost(helmet, armor, greave, boot, jewel);
 
         int totalAp    = charactersData.GetAp() + items.GetTotalAp   (helmet, armor, greave, boot, jewel);
         int totalMp    = charactersData.GetMp() + items.GetTotalMp   (helmet, armor, greave, boot, jewel);
@@ -273,6 +275,9 @@ public class UI_CharacterReserve : MonoBehaviour {
         int totalGroundResistance = charactersData.GetGroundResistance(className) + items.GetTotalGroundResistance(helmet, armor, greave, boot, jewel);
         int totalLightResistance  = charactersData.GetLightResistance (className) + items.GetTotalLightResistance (helmet, armor, greave, boot, jewel);
         int totalDarkResistance   = charactersData.GetDarkResistance  (className) + items.GetTotalDarkResistance  (helmet, armor, greave, boot, jewel);
+
+
+        cost.text = totalCost.ToString();
 
         ap   .text = totalAp   .ToString();
         mp   .text = totalMp   .ToString();

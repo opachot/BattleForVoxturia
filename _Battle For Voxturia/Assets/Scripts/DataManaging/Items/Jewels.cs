@@ -93,13 +93,16 @@ public class Jewels : MonoBehaviour {
 
 	#region DECLARATION
     // CONST
+    const int NAME_INDEX = 1;
 
     // PRIVATE
-    private List<List<string>> list = new List<List<string>>();
+    private List      <List<string>>   list             = new List<List<string>>();
+    private Dictionary<string, Sprite> spriteDictionary = new Dictionary<string, Sprite>();
 
     #region Jewels list
     // TEST
-    private List<string> test = new List<string>() 
+    public Sprite JEWEL_NAME_TEST_icon;
+    private List<string> JEWEL_NAME_TEST = new List<string>() 
     {
         "666", // Id
 
@@ -110,7 +113,7 @@ public class Jewels : MonoBehaviour {
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
         "666",       // Level Requirment
         "1000",      // shopCost
-        "999999999", // Cost
+        "100",       // Cost
 
         "1", // Ap
         "2", // Mp
@@ -248,7 +251,8 @@ public class Jewels : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        list.Add(test);
+        list.Add(JEWEL_NAME_TEST);
+        spriteDictionary.Add(JEWEL_NAME_TEST[NAME_INDEX], JEWEL_NAME_TEST_icon);
     }
 	
 	void Start() {
@@ -279,6 +283,14 @@ public class Jewels : MonoBehaviour {
         }
 
         return wantedItem;
+    }
+
+    public Sprite GetIcon(string name) {
+        Sprite icon;
+
+        spriteDictionary.TryGetValue(name, out icon);
+
+        return icon;
     }
 
 }

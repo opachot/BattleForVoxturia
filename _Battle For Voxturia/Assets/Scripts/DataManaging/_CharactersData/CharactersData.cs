@@ -279,6 +279,13 @@ public class CharactersData : MonoBehaviour {
 
 
     #region Get Stats
+    public int GetCost() {
+        const int DEFAULT_COST = 500;
+
+        return DEFAULT_COST;
+    }
+
+
     public int GetAp() {
         const int DEFAULT_AP = 5;
 

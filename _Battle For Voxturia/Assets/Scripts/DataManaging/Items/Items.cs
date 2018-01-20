@@ -35,6 +35,14 @@ public class Items : MonoBehaviour {
 
 
     #region Get Main Stats
+    public int GetCost(List<string> item) {
+        const int COST_INDEX = 5;
+        int cost = GetSpecificIntStats(item, COST_INDEX);
+
+        return cost;
+    }
+
+
     public int GetAp(List<string> item) {
         const int AP_INDEX = 6;
         int ap = GetSpecificIntStats(item, AP_INDEX);
@@ -213,6 +221,13 @@ public class Items : MonoBehaviour {
     }
 
     #region Get Main Stats
+    public int GetTotalCost(List<string> helmet, List<string> armor, List<string> greave, List<string> boot, List<string> jewel) {
+        int totalCost = GetCost(helmet) + GetCost(armor) + GetCost(greave) + GetCost(boot) + GetCost(jewel);
+
+        return totalCost;
+    }
+
+
     public int GetTotalAp(List<string> helmet, List<string> armor, List<string> greave, List<string> boot, List<string> jewel) {
         int totalAp = GetAp(helmet) + GetAp(armor) + GetAp(greave) + GetAp(boot) + GetAp(jewel);
 

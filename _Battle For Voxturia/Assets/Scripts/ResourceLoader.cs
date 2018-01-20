@@ -32,6 +32,17 @@ public class ResourceLoader : MonoBehaviour {
     public Sprite iconCyborgClass;
     [Space(10)]
 
+    [Header("Equipment Icon")]
+    public Sprite emptyIconHelmet;
+    public Sprite emptyIconArmor;
+    public Sprite emptyIconGreave;
+    public Sprite emptyIconBoots;
+    public Sprite emptyIconJewel;
+    [Space(10)]
+
+    [Header("Skill Icon")]
+    public Sprite emptyIconSkill;
+
     [Header("---------- Specific Screen ----------")]
         [Header("TeamList Screen")]
         public GameObject teamListingElement;
