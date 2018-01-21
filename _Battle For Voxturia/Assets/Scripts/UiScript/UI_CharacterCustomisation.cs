@@ -19,6 +19,45 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     const int BOOTS  = 3;
     const int JEWEL  = 4;
 
+    const int SKILL_1 = 0;
+    const int SKILL_2 = 1;
+    const int SKILL_3 = 2;
+    const int SKILL_4 = 3;
+    const int SKILL_5 = 4;
+
+    enum ITEM_INFO {
+        ID,
+        NAME,
+        LORE,
+        LVL_R,
+        SHOP_COST,
+        COST,
+        AP,
+        MP,
+        RANGE,
+        HP,
+        WILL,
+        F_DMG,
+        F_M_DMG,
+        F_R_DMG,
+        POWER,
+        FIRE_DMG,
+        WATER_DMG,
+        WIND_DMG,
+        GROUND_DMG,
+        LIGHT_DMG,
+        DARK_DMG,
+        DMG_REFLECT,
+        FIRE_RES,
+        WATER_RES,
+        WIND_RES,
+        GROUND_RES,
+        LIGHT_RES,
+        DARK_RES
+     };
+
+    const int NB_MAX_EFFECT_LINE_PER_SIDE = 8;
+
     // PRIVATE
     private ResourceLoader resourceLoader;
     private Navigation     navigation;
@@ -80,6 +119,21 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     public Text groundResistance;
     public Text lightResistance;
     public Text darkResistance;
+    [Space(10)]
+
+    [Header("Selection Section")]
+    public Image selectedIcon;
+    [Space(5)]
+    public Text selectedEffect_left;
+    public Text selectedEffect_right;
+    
+    [Space(5)]
+    public Text selectedName;
+    public Text selectedLore;
+    [Space(5)]
+    public Button effect_btn;
+    public Button lore_btn;
+    public Button remove_btn;
 
     #endregion
 
@@ -121,14 +175,126 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
     #region Default buttons
     public void EquipmentButton(int equipmentSlot) { // 0 = Helmet; 1 = Armor; 2 = Greave; 3 = Boots; 4 = Jewel;
-        // TODO: Depending of the equpment slot case, check the coresponding equipment id on the character if its 0, switch screen, if not 0 get the item id and get the item and get his icon to show it + stats and lore.
+        int itemId;
+
+        switch (equipmentSlot)
+        {
+            case HELMET:
+                itemId = charactersData.helmetIds[currentCharacterDataKey]; break;
+            case ARMOR:
+                itemId = charactersData.armorIds[currentCharacterDataKey];  break;
+            case GREAVE:
+                itemId = charactersData.greaveIds[currentCharacterDataKey]; break;
+            case BOOTS:
+                itemId = charactersData.bootsIds[currentCharacterDataKey];  break;
+            case JEWEL:
+                itemId = charactersData.jewelIds[currentCharacterDataKey];  break;
+            default:
+                itemId = 0;                                                 break;
+        }
+
+        if(itemId != 0) {
+            List<string> item = helmets.GetItem(itemId);
+            string itemName;
+            Sprite itemSprite;
+
+            switch (equipmentSlot)
+            {
+                case HELMET:
+                    item       = helmets.GetItem(itemId);
+                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemSprite = helmets.GetIcon(itemName);
+                    break;
+                case ARMOR:
+                    item       = armors.GetItem(itemId);
+                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemSprite = armors.GetIcon(itemName);
+                    break;
+                case GREAVE:
+                    item       = greaves.GetItem(itemId);
+                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemSprite = greaves.GetIcon(itemName);
+                    break;
+                case BOOTS:
+                    item       = boots.GetItem(itemId);
+                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemSprite = boots.GetIcon(itemName);
+                    break;
+                case JEWEL:
+                    item       = jewels.GetItem(itemId);
+                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemSprite = jewels.GetIcon(itemName);
+                    break;
+                default:
+                    item       = null;
+                    itemName   = null;
+                    itemSprite = null;
+                    break;
+            }
+
+            // Set visual element.
+            selectedIcon.sprite = itemSprite;
+
+            selectedEffect_left .text = "";
+            selectedEffect_right.text = "";
+
+            int nbEffectLine = 0;
+            for(int i = (int)ITEM_INFO.AP; i < item.Count; i++) {
+                bool isEffectUsed = int.Parse(item[i]) != 0;
+
+                if(isEffectUsed) {
+                    string effectDescription = items.GetStatsDescription(i);
+                    string effectValue       = item[i];
+                    string percentDisplay    = items.GetPercentWhenNeeded(i);
+
+                    string effectLine = effectDescription + effectValue + percentDisplay + "\n";
+
+                    bool isSpaceAvailableLeftSide = nbEffectLine < NB_MAX_EFFECT_LINE_PER_SIDE;
+                    if(isSpaceAvailableLeftSide) {
+                        selectedEffect_left.text += effectLine;
+                    }
+                    else {
+                        selectedEffect_right.text += effectLine;
+                    }
+
+                    nbEffectLine++;
+                }
+            }
+
+            selectedName.text = itemName;
+            selectedLore.text = item[(int)ITEM_INFO.LORE];
+
+            remove_btn.interactable = true;
+        }
+        else {
+            // TODO: Switch sceen.
+        }
+        
     }
 
     public void SkillButton(int skillSlot) { // 0 = Skill1; 1 = Skill2; 2 = Skill3; 3 = Skill4; 4 = Skill5;
         // TODO: Depending of the skill slot case, check the coresponding skill id on the character if its 0, switch screen, if not 0 get the skill id and get the skill and get his icon to show it + stats and lore.
+
+        int itemId;
+
+        switch (skillSlot)
+        {
+            case HELMET:
+                itemId = charactersData.skillOneIds[currentCharacterDataKey];   break;
+            case ARMOR:
+                itemId = charactersData.skillTwoIds[currentCharacterDataKey];   break;
+            case GREAVE:
+                itemId = charactersData.skillThreeIds[currentCharacterDataKey]; break;
+            case BOOTS:
+                itemId = charactersData.skillFourIds[currentCharacterDataKey];  break;
+            case JEWEL:
+                itemId = charactersData.skillFiveIds[currentCharacterDataKey];  break;
+            default:
+                itemId = 0;                                                     break;
+        }
     }
 
-    public void StatsButton() {
+    public void EffectButton() {
         //TODO: disable this button.
         //TODO: Enable other button.
         //TODO: set text whit technical description.
@@ -181,13 +347,11 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
 
     private void LoadHelmet() {
-        const int NAME_INDEX = 1;
-
         int helmetId = charactersData.helmetIds[currentCharacterDataKey];
 
         if(helmetId != 0) {
             List<string> helmet = helmets.GetItem(helmetId);
-            string helmetName = helmet[NAME_INDEX];
+            string helmetName = helmet[(int)ITEM_INFO.NAME];
 
             Sprite helmetSprite = helmets.GetIcon(helmetName);
 
@@ -199,13 +363,11 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     }
 
     private void LoadArmor() {
-        const int NAME_INDEX = 1;
-
         int armorId = charactersData.armorIds[currentCharacterDataKey];
 
         if(armorId != 0) {
             List<string> armor = armors.GetItem(armorId);
-            string armorName = armor[NAME_INDEX];
+            string armorName = armor[(int)ITEM_INFO.NAME];
 
             Sprite armorSprite = armors.GetIcon(armorName);
 
@@ -217,13 +379,11 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     }
 
     private void LoadGreave() {
-        const int NAME_INDEX = 1;
-
         int greaveId = charactersData.greaveIds[currentCharacterDataKey];
 
         if(greaveId != 0) {
             List<string> greave = greaves.GetItem(greaveId);
-            string greaveName = greave[NAME_INDEX];
+            string greaveName = greave[(int)ITEM_INFO.NAME];
 
             Sprite greaveSprite = greaves.GetIcon(greaveName);
 
@@ -235,13 +395,11 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     }
 
     private void LoadBoots() {
-        const int NAME_INDEX = 1;
-
         int bootId = charactersData.bootsIds[currentCharacterDataKey];
 
         if(bootId != 0) {
             List<string> boot = boots.GetItem(bootId);
-            string bootName = boot[NAME_INDEX];
+            string bootName = boot[(int)ITEM_INFO.NAME];
 
             Sprite bootSprite = boots.GetIcon(bootName);
 
@@ -253,13 +411,11 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     }
 
     private void LoadJewels() {
-        const int NAME_INDEX = 1;
-
         int jewelId = charactersData.jewelIds[currentCharacterDataKey];
 
         if(jewelId != 0) {
             List<string> jewel = jewels.GetItem(jewelId);
-            string jewelName = jewel[NAME_INDEX];
+            string jewelName = jewel[(int)ITEM_INFO.NAME];
 
             Sprite jewelSprite = jewels.GetIcon(jewelName);
 

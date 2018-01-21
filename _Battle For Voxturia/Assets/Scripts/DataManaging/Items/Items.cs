@@ -10,8 +10,88 @@ using UnityEngine;
 
 public class Items : MonoBehaviour {
 
-	#region DECLARATION
+    #region DECLARATION
     // CONST
+    enum ITEM_INFO {
+        ID,
+        NAME,
+        LORE,
+        LVL_R,
+        SHOP_COST,
+        COST,
+        AP,
+        MP,
+        RANGE,
+        HP,
+        WILL,
+        F_DMG,
+        F_M_DMG,
+        F_R_DMG,
+        POWER,
+        FIRE_DMG,
+        WATER_DMG,
+        WIND_DMG,
+        GROUND_DMG,
+        LIGHT_DMG,
+        DARK_DMG,
+        DMG_REFLECT,
+        FIRE_RES,
+        WATER_RES,
+        WIND_RES,
+        GROUND_RES,
+        LIGHT_RES,
+        DARK_RES
+     };
+
+    string[] ITEMS_STATS_DESCRIPTIONS = {
+        "Id: ",
+        "Name: ",
+        "Description: ",
+        "Level Requirment: ",
+        "Shop cost: ",
+        "Cost: ",
+
+        "Ap: ",
+        "Mp: ",
+        "Range: ",
+
+        "Hp: ",
+        "Will: ",
+
+        "Final Damage: ",
+        "Final Melee Damage: ",
+        "Final Ranged Damage: ",
+
+        "Power: ",
+        "Fire Damage: ",
+        "Water Damage: ",
+        "Wind Damage: ",
+        "Ground Damage: ",
+        "Light Damage: ",
+        "Dark Damage: ",
+
+        "Damage Reflection: ",
+        "Fire Resistance: ",
+        "Water Resistance: ",
+        "Wind Resistance: ",
+        "Ground Resistance: ",
+        "Light Resistance: ",
+        "Dark Resistance: ",
+
+    };
+
+    int[] PERCENTAGE_STATS_INDEX = {
+            (int)ITEM_INFO.F_DMG,
+            (int)ITEM_INFO.F_M_DMG,
+            (int)ITEM_INFO.F_R_DMG,
+            (int)ITEM_INFO.DMG_REFLECT,
+            (int)ITEM_INFO.FIRE_RES,
+            (int)ITEM_INFO.WATER_RES,
+            (int)ITEM_INFO.WIND_RES,
+            (int)ITEM_INFO.GROUND_RES,
+            (int)ITEM_INFO.LIGHT_RES,
+            (int)ITEM_INFO.DARK_RES,
+        };
 
     // PRIVATE
 
@@ -369,4 +449,27 @@ public class Items : MonoBehaviour {
         return totalDarkResistance;
     }
     #endregion
+
+    public string GetStatsDescription(int itemStatIndex) {
+        string description = "ERROR 404: Stat description not found.";
+
+        if(itemStatIndex < ITEMS_STATS_DESCRIPTIONS.Length) {
+            description = ITEMS_STATS_DESCRIPTIONS[itemStatIndex];
+        }
+
+        return description;
+    }
+
+    public string GetPercentWhenNeeded(int itemStatIndex) {
+        string percentage = "";
+
+        for(int i = 0; i < PERCENTAGE_STATS_INDEX.Length; i++) {
+            if(itemStatIndex == PERCENTAGE_STATS_INDEX[i]) {
+                percentage = "%";
+                break;
+            }
+        }
+
+        return percentage;
+    }
 }

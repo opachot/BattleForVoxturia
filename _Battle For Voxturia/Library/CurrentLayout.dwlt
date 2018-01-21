@@ -153,8 +153,8 @@ MonoBehaviour:
     y: 0
     width: 1405
     height: 755
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -394,9 +394,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.4049615, y: -0.19064867, z: 0}
+    m_Target: {x: 2.0799775, y: -0.028601134, z: 0}
     speed: 2
-    m_Value: {x: 1.4049615, y: -0.19064867, z: 0}
+    m_Value: {x: 2.0799775, y: -0.028601134, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -423,9 +423,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.2855
+    m_Target: 11.066467
     speed: 2
-    m_Value: 10.2855
+    m_Value: 11.066467
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -515,10 +515,10 @@ MonoBehaviour:
     width: 234
     height: 466
   m_TreeViewState:
-    scrollPos: {x: 0, y: 47}
-    m_SelectedIDs: 
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 5c280000
     m_LastClickedID: 0
-    m_ExpandedIDs: 68e2ffff82e8ffff06ecffffdeedffff1afcffff000000001e2b0000282c0000423200005a32000074340000a63400007e350000b6350000ce35000082360000a836000018370000
+    m_ExpandedIDs: ce48fbffcc57fbff6461fbffa2a0fbff8aa8fbff18bbfbffd8d6fbff60e8fbff86f0fbff56fdfbff7614fcffeee0ffff4af9ffff1afcffff000000007648000098480000a8480000ac480000da4a0000ea4a00001a4b0000289500004a950000c09700008aa70000aca7000076a9000022aa0000d8aa0000faaa000070ad00001ac500003cc5000006c70000b2c70000dac70000d0ec0000f2ec000068ef000040f00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,7 +537,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
   m_ExpandedScenes:
-  - CharacterCustomisation
+  - TitleScreen
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -579,7 +579,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes/TeamScenes
+    - Assets/Scenes/_MainScenes
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -619,7 +619,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000420100004626000078260000f22600002a2700004c27000074270000dc27000022280000f6280000222900004a2900006e29000078290000ec290000002a0000222a00005e2a0000642a0000422e0000442e0000
+    m_ExpandedIDs: 00000000420100004626000078260000f22600002a2700004c27000074270000dc2700002028000022280000f6280000222900004a2900006e29000078290000ec290000002a0000222a00005e2a0000642a0000422e0000442e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
