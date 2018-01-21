@@ -246,8 +246,7 @@ public class UI_CharacterReserve : MonoBehaviour {
         List<string> boot   = boots  .GetItem(charactersData.bootsIds [selectedCharacterDataKey]);
         List<string> jewel  = jewels .GetItem(charactersData.jewelIds [selectedCharacterDataKey]);
 
-
-        int totalCost = charactersData.GetCost() + items.GetTotalCost(helmet, armor, greave, boot, jewel);
+        int totalCost = charactersData.costs[selectedCharacterDataKey];
 
         int totalAp    = charactersData.GetAp() + items.GetTotalAp   (helmet, armor, greave, boot, jewel);
         int totalMp    = charactersData.GetMp() + items.GetTotalMp   (helmet, armor, greave, boot, jewel);

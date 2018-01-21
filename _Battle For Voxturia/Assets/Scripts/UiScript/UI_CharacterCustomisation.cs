@@ -31,6 +31,8 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     private Boots   boots;
     private Jewels  jewels;
 
+    private SkillList skillList;
+
     private int currentTeamId;
     private int currentCharacterId;
     private int currentCharacterDataKey;
@@ -95,6 +97,10 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         greaves = itemsHolder.GetComponent<Greaves>();
         boots   = itemsHolder.GetComponent<Boots>();
         jewels  = itemsHolder.GetComponent<Jewels>();
+
+        // The list of all the skills.
+        GameObject skillsHolder = GameObject.FindGameObjectWithTag("Skills");
+        skillList = skillsHolder.GetComponent<SkillList>();
     }
 	
 	void Start() {
@@ -114,24 +120,30 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
 
     #region Default buttons
-    public void EquipmentButton(int equipmentIndex) { // 0 = Helmet; 1 = Armor; 2 = Greave; 3 = Boots; 4 = Jewel;
-        
+    public void EquipmentButton(int equipmentSlot) { // 0 = Helmet; 1 = Armor; 2 = Greave; 3 = Boots; 4 = Jewel;
+        // TODO: Depending of the equpment slot case, check the coresponding equipment id on the character if its 0, switch screen, if not 0 get the item id and get the item and get his icon to show it + stats and lore.
     }
 
-    public void SkillButton() {
-        
-    }
-
-    public void RemoveButton() {
-        
+    public void SkillButton(int skillSlot) { // 0 = Skill1; 1 = Skill2; 2 = Skill3; 3 = Skill4; 4 = Skill5;
+        // TODO: Depending of the skill slot case, check the coresponding skill id on the character if its 0, switch screen, if not 0 get the skill id and get the skill and get his icon to show it + stats and lore.
     }
 
     public void StatsButton() {
-        
+        //TODO: disable this button.
+        //TODO: Enable other button.
+        //TODO: set text whit technical description.
     }
 
     public void LoreButton() {
-        
+        //TODO: disable this button.
+        //TODO: Enable other button.
+        //TODO: set text whit lore description.
+    }
+
+    public void RemoveButton() {
+        // TODO: Remove the id from character data (Replaced by 0, not actual delete of index!!!!) and decrement cost in the character data. Reload info section and depending of the case the equipment or skill section.
+        // TODO: If removing a skill, need to resort them in the character skills ids data.
+        // TODO: Empty the stats/lore area, disable remove btn and empty the icon on the selection area.
     }
 
     public void ReturnButton() {
@@ -156,6 +168,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             }
         }
     }
+
 
     #region Load Equipment
     private void LoadEquipmentsSection() {
@@ -261,8 +274,14 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     #region Load Skill
     private void LoadSkillsSection() {
         for(int i = 0; i < skillIcons.Length; i++) {
-            if(FindSkillId(i) != 0) {
-                // TODO: skillIcons[i].sprite = ;
+            int skillId = FindSkillId(i);
+
+            if(skillId != 0) {
+                string className = charactersData.classNames[currentCharacterDataKey];
+
+                Sprite skillSprite = skillList.GetSkillSprite(className, skillId);
+
+                skillIcons[i].sprite = skillSprite;
             }
             else {
                 skillIcons[i].sprite = resourceLoader.emptyIconSkill;
@@ -310,8 +329,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         List<string> boot   = boots  .GetItem(charactersData.bootsIds [currentCharacterDataKey]);
         List<string> jewel  = jewels .GetItem(charactersData.jewelIds [currentCharacterDataKey]);
 
-
-        int totalCost = charactersData.GetCost() + items.GetTotalCost(helmet, armor, greave, boot, jewel);
+        int totalCost = charactersData.costs[currentCharacterDataKey];
 
         int totalAp    = charactersData.GetAp() + items.GetTotalAp   (helmet, armor, greave, boot, jewel);
         int totalMp    = charactersData.GetMp() + items.GetTotalMp   (helmet, armor, greave, boot, jewel);
