@@ -63,6 +63,10 @@ public class Skill : MonoBehaviour {
         return icon;
     }
 
+    public string GetName() {
+        return name;
+    }
+
     public string GetDescription() {
         return description;
     }

@@ -23,8 +23,8 @@ public class FighterMeditation_Skill : Skill {
 	void Awake() {
 		id = 1;
         name = "Fighter Meditation";
-        description = "Increases the target's HP and resistances.\n" +
-                      "Remove the Fighter aura effect if already has it.";
+        description = "Uncast [[Fighter Aura]]\n" +
+                      "[[Fighter Meditation]] (3 turns)";
         lore = "Todo";
         cost = 250;
     }

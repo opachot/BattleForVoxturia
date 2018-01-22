@@ -17,6 +17,7 @@ public class Navigation : MonoBehaviour {
     // PRIVATE
     private TeamsData      teamsData;
     private CharactersData charactersData;
+    private Items          items;
 
     private ErrorManager errorManager;
 
@@ -31,6 +32,9 @@ public class Navigation : MonoBehaviour {
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
 		teamsData      = gameData.GetComponent<TeamsData>();
         charactersData = gameData.GetComponent<CharactersData>();
+
+        GameObject itemsHolder = GameObject.FindGameObjectWithTag("Items");
+        items = itemsHolder.GetComponent<Items>();
 
         errorManager = GameObject.FindGameObjectWithTag("ErrorManager").GetComponent<ErrorManager>();
     }
@@ -114,6 +118,24 @@ public class Navigation : MonoBehaviour {
         charactersData.ExtraParam_TeamId      = teamId;
         charactersData.ExtraParam_CharacterId = characterId;
         SceneManager.LoadScene("CharacterCustomisation");
+    }
+
+    public void NavigateTo_EquipmentSelection(int teamId, int characterId, int equipmentType) { // 0 = Helmet; 1 = Armor; 2 = Greave; 3 = Boots; 4 = Jewel;
+        PrepareToSceneSwitch();
+
+        charactersData.ExtraParam_TeamId      = teamId;
+        charactersData.ExtraParam_CharacterId = characterId;
+        items.ExtraParam_ItemType = equipmentType;
+
+        SceneManager.LoadScene("EquipmentSelection");
+    }
+
+    public void NavigateTo_SkillSelection(int teamId, int characterId) {
+        PrepareToSceneSwitch();
+
+        charactersData.ExtraParam_TeamId      = teamId;
+        charactersData.ExtraParam_CharacterId = characterId;
+        SceneManager.LoadScene("SkillSelection");
     }
 
 

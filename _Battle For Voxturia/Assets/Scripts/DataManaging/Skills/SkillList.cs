@@ -110,6 +110,22 @@ public class SkillList : MonoBehaviour {
     #endregion
 
 
+    public Skill GetSkill(string className, int skillId) {
+        Skill skill = null;
+        List<Skill> classSkillList = FindClassSkillList(className);
+
+        for(int i = 0; i < classSkillList.Count; i++) {
+            bool isSkillFound = classSkillList[i].GetId() == skillId;
+
+            if(isSkillFound) {
+                skill = classSkillList[i];
+                break;
+            }
+        }
+
+        return skill;
+    }
+
     public Sprite GetSkillSprite(string className, int skillId) {
         Sprite skillSprite = new Sprite();
         List<Skill> classSkillList = FindClassSkillList(className);

@@ -56,7 +56,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         DARK_RES
      };
 
-    const int NB_MAX_EFFECT_LINE_PER_SIDE = 8;
+    const int NB_MAX_EFFECT_LINE_PER_SIDE = 10;
 
     // PRIVATE
     private ResourceLoader resourceLoader;
@@ -123,6 +123,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
     [Header("Selection Section")]
     public Image selectedIcon;
+    public Text  selectedCost;
     [Space(5)]
     public Text selectedEffect_left;
     public Text selectedEffect_right;
@@ -194,7 +195,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         }
 
         if(itemId != 0) {
-            List<string> item = helmets.GetItem(itemId);
+            List<string> item;
             string itemName;
             Sprite itemSprite;
 
@@ -234,6 +235,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
             // Set visual element.
             selectedIcon.sprite = itemSprite;
+            selectedCost.text = "Cost: " + item[(int)ITEM_INFO.COST];
 
             selectedEffect_left .text = "";
             selectedEffect_right.text = "";
@@ -267,43 +269,52 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             remove_btn.interactable = true;
         }
         else {
-            // TODO: Switch sceen.
+            navigation.NavigateTo_EquipmentSelection(currentTeamId, currentCharacterId, equipmentSlot);
         }
         
     }
 
     public void SkillButton(int skillSlot) { // 0 = Skill1; 1 = Skill2; 2 = Skill3; 3 = Skill4; 4 = Skill5;
-        // TODO: Depending of the skill slot case, check the coresponding skill id on the character if its 0, switch screen, if not 0 get the skill id and get the skill and get his icon to show it + stats and lore.
+        int skillId = FindSkillId(skillSlot);
 
-        int itemId;
+        if(skillId != 0) {
+            string className = charactersData.classNames[currentCharacterDataKey];
+            Skill skill = skillList.GetSkill(className, skillId);
 
-        switch (skillSlot)
-        {
-            case HELMET:
-                itemId = charactersData.skillOneIds[currentCharacterDataKey];   break;
-            case ARMOR:
-                itemId = charactersData.skillTwoIds[currentCharacterDataKey];   break;
-            case GREAVE:
-                itemId = charactersData.skillThreeIds[currentCharacterDataKey]; break;
-            case BOOTS:
-                itemId = charactersData.skillFourIds[currentCharacterDataKey];  break;
-            case JEWEL:
-                itemId = charactersData.skillFiveIds[currentCharacterDataKey];  break;
-            default:
-                itemId = 0;                                                     break;
+            selectedIcon.sprite = skill.GetIcon();
+            selectedCost.text = "Cost: " + skill.GetCost();
+
+            selectedName.text = skill.GetName();
+            selectedLore.text = skill.GetLore();
+
+            selectedEffect_left .text = skill.GetDescription();
+            selectedEffect_right.text = "";
+            
+            remove_btn.interactable = true;
+        }
+        else {
+            navigation.NavigateTo_SkillSelection(currentTeamId, currentCharacterId);
         }
     }
 
     public void EffectButton() {
-        //TODO: disable this button.
-        //TODO: Enable other button.
-        //TODO: set text whit technical description.
+        effect_btn.interactable = false;
+        selectedName.gameObject.SetActive(false);
+        selectedLore.gameObject.SetActive(false);
+
+        lore_btn.interactable = true;
+        selectedEffect_left .gameObject.SetActive(true);
+        selectedEffect_right.gameObject.SetActive(true);
     }
 
     public void LoreButton() {
-        //TODO: disable this button.
-        //TODO: Enable other button.
-        //TODO: set text whit lore description.
+        lore_btn.interactable = false;
+        selectedEffect_left .gameObject.SetActive(false);
+        selectedEffect_right.gameObject.SetActive(false);
+
+        effect_btn.interactable = true;
+        selectedName.gameObject.SetActive(true);
+        selectedLore.gameObject.SetActive(true);
     }
 
     public void RemoveButton() {
@@ -450,15 +461,15 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
         switch (index)
         {
-            case 0:
+            case SKILL_1:
                 skillId = charactersData.skillOneIds[currentCharacterDataKey];   break;
-            case 1:
+            case SKILL_2:
                 skillId = charactersData.skillTwoIds[currentCharacterDataKey];   break;
-            case 2:
+            case SKILL_3:
                 skillId = charactersData.skillThreeIds[currentCharacterDataKey]; break;
-            case 3:
+            case SKILL_4:
                 skillId = charactersData.skillFourIds[currentCharacterDataKey];  break;
-            case 4:
+            case SKILL_5:
                 skillId = charactersData.skillFiveIds[currentCharacterDataKey];  break;
             default:
                 skillId = 0;                                                     break;

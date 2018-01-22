@@ -94,6 +94,7 @@ public class Items : MonoBehaviour {
         };
 
     // PRIVATE
+    private int extraParam_ItemType; /* Inter screen param */  // 0 = Helmet; 1 = Armor; 2 = Greave; 3 = Boots; 4 = Jewel;
 
     // PUBLIC
 
@@ -472,4 +473,12 @@ public class Items : MonoBehaviour {
 
         return percentage;
     }
+
+
+    #region INTER SCREEN PARAM
+    public int ExtraParam_ItemType {
+        get { return extraParam_ItemType;  }
+        set { extraParam_ItemType = value; }
+    }
+    #endregion
 }
