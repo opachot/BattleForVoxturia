@@ -64,4 +64,17 @@ public static class HelpingMethod {
     }
     #endregion
 
+    public static string ConvertBoolToIndicator(bool tf) {
+        string indicator = "";
+
+        if(tf) {
+            indicator = "✔";
+        }
+        else {
+            indicator = "✘";
+        }
+
+        return indicator;
+    }
+
 }

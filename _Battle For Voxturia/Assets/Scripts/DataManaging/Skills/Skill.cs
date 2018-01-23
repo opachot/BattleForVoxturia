@@ -31,6 +31,7 @@ public class Skill : MonoBehaviour {
     protected bool lineOfSight;
     protected bool castStraightLine;
 
+    protected int cooldown;
     protected int castPerTurn;
     protected int castPerTurnPerTarget;
 
@@ -77,5 +78,46 @@ public class Skill : MonoBehaviour {
 
     public int GetCost() {
         return cost;
+    }
+
+
+    public int GetApCost() {
+        return apCost;
+    }
+
+    public int GetMpCost() {
+        return mpCost;
+    }
+
+    public int GetMinRange() {
+        return minRange;
+    }
+
+    public int GetMaxRange() {
+        return maxRange;
+    }
+
+    public bool GetFlexibleRange() {
+        return flexibleRange;
+    }
+
+    public bool GetLineOfSight() {
+        return lineOfSight;
+    }
+
+    public bool GetCastStraightLine() {
+        return castStraightLine;
+    }
+
+    public int GetCooldown() {
+        return cooldown;
+    }
+
+    public int GetCastPerTurn() {
+        return castPerTurn;
+    }
+
+    public int GetCastPerTurnPerTarget() {
+        return castPerTurnPerTarget;
     }
 }
