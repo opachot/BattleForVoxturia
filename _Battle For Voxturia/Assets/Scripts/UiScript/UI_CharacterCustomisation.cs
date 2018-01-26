@@ -76,6 +76,11 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     private int currentCharacterId;
     private int currentCharacterDataKey;
 
+    // Info used by the Remove btn.
+    bool isEquipmentSelected = false;
+    bool isSkillSelected     = false;
+    int? slotIndexSelected   = null;
+
     // PUBLIC
     [Header("Equipment Section")]
     public Image[] equipmentIcons = new Image[5];
@@ -193,25 +198,14 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
     #region Default buttons
     public void EquipmentButton(int equipmentSlot) { // 0 = Helmet; 1 = Armor; 2 = Greave; 3 = Boots; 4 = Jewel;
-        int itemId;
+        int itemId = FindEquipmentId(equipmentSlot);
+
+        // Keep in memory the selection for the Remove btn.
+        isEquipmentSelected = true;
+        isSkillSelected     = false;
+        slotIndexSelected   = equipmentSlot;
 
         ClearSelectionSection();
-
-        switch (equipmentSlot)
-        {
-            case HELMET:
-                itemId = charactersData.helmetIds[currentCharacterDataKey]; break;
-            case ARMOR:
-                itemId = charactersData.armorIds[currentCharacterDataKey];  break;
-            case GREAVE:
-                itemId = charactersData.greaveIds[currentCharacterDataKey]; break;
-            case BOOTS:
-                itemId = charactersData.bootsIds[currentCharacterDataKey];  break;
-            case JEWEL:
-                itemId = charactersData.jewelIds[currentCharacterDataKey];  break;
-            default:
-                itemId = 0;                                                 break;
-        }
 
         if(itemId != 0) {
             List<string> item;
@@ -293,6 +287,11 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     public void SkillButton(int skillSlot) { // 0 = Skill1; 1 = Skill2; 2 = Skill3; 3 = Skill4; 4 = Skill5;
         int skillId = FindSkillId(skillSlot);
 
+        // Keep in memory the selection for the Remove btn.
+        isEquipmentSelected = false;
+        isSkillSelected     = true;
+        slotIndexSelected   = skillSlot;
+
         ClearSelectionSection();
 
         if(skillId != 0) {
@@ -345,10 +344,26 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     }
 
     public void RemoveButton() {
-        // TODO: Remove the id from character data (Replaced by 0, not actual delete of index!!!!) and decrement cost in the character data. Reload info section and depending of the case the equipment or skill section.
-        // TODO: If removing a skill, need to resort them in the character skills ids data.
+        if(isEquipmentSelected) {
+            RemoveEquipment();
+            LoadEquipmentsSection();
+        }
+        else if(isSkillSelected) {
+            RemoveSkill();
+            LoadSkillsSection();
+        }
+        else {
+            Debug.Log("Error: Impossible case encountered.");
+        }
 
+        // Reset the parameter in memory used by this btn.
+        isEquipmentSelected = false;
+        isSkillSelected     = false;
+        slotIndexSelected   = null;
+
+        // Reload...
         ClearSelectionSection();
+        LoadCharacterInfo();
     }
 
     public void ReturnButton() {
@@ -464,6 +479,28 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             equipmentIcons[JEWEL].sprite = resourceLoader.emptyIconJewel;
         }
     }
+
+    private int FindEquipmentId(int index) {
+        int equipmentId;
+
+        switch (index)
+        {
+            case HELMET:
+                equipmentId = charactersData.helmetIds[currentCharacterDataKey]; break;
+            case ARMOR:
+                equipmentId = charactersData.armorIds[currentCharacterDataKey];  break;
+            case GREAVE:
+                equipmentId = charactersData.greaveIds[currentCharacterDataKey]; break;
+            case BOOTS:
+                equipmentId = charactersData.bootsIds[currentCharacterDataKey];  break;
+            case JEWEL:
+                equipmentId = charactersData.jewelIds[currentCharacterDataKey];  break;
+            default:
+                equipmentId = 0;                                                 break;
+        }
+
+        return equipmentId;
+    }
     #endregion
 
     #region Load Skill
@@ -507,6 +544,82 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     }
     #endregion
 
+    #region Removing
+    private void RemoveEquipment() {
+        List<string> item;
+        int itemId = FindEquipmentId((int)slotIndexSelected);
+
+        // Get the right item.
+        switch (slotIndexSelected)
+        {
+            case HELMET:
+                item = helmets.GetItem(itemId); break;
+            case ARMOR:
+                item = armors.GetItem(itemId);  break;
+            case GREAVE:
+                item = greaves.GetItem(itemId); break;
+            case BOOTS:
+                item = boots.GetItem(itemId);   break;
+            case JEWEL:
+                item = jewels.GetItem(itemId);  break;
+            default:
+                item = null;                    break;
+        }
+        
+        // Reduce the character cost.
+        int itemCost = int.Parse(item[(int)ITEM_INFO.COST]);
+        charactersData.costs[currentCharacterDataKey] -= itemCost;
+
+        // Remove the item from the character data.
+        switch (slotIndexSelected)
+        {
+            case HELMET:
+                charactersData.helmetIds[currentCharacterDataKey] = 0;  break;
+            case ARMOR:
+                charactersData.armorIds[currentCharacterDataKey]  = 0;  break;
+            case GREAVE:
+                charactersData.greaveIds[currentCharacterDataKey] = 0;  break;
+            case BOOTS:
+                charactersData.bootsIds[currentCharacterDataKey]  = 0;  break;
+            case JEWEL:
+                charactersData.jewelIds[currentCharacterDataKey]  = 0;  break;
+            default:
+                break;
+        }
+    }
+
+    private void RemoveSkill() {
+        int    skillId   = FindSkillId((int)slotIndexSelected);
+        string className = charactersData.classNames[currentCharacterDataKey];
+        Skill  skill     = skillList.GetSkill(className, skillId);
+
+        // Reduce the character cost.
+        int skillCost = skill.GetCost();
+        charactersData.costs[currentCharacterDataKey] -= skillCost;
+        
+        // Remove the skill from the character data.
+        switch (slotIndexSelected)
+        {
+            case SKILL_1:
+                charactersData.skillOneIds[currentCharacterDataKey]   = 0;  break;
+            case SKILL_2:
+                charactersData.skillTwoIds[currentCharacterDataKey]   = 0;  break;
+            case SKILL_3:
+                charactersData.skillThreeIds[currentCharacterDataKey] = 0;  break;
+            case SKILL_4:
+                charactersData.skillFourIds[currentCharacterDataKey]  = 0;  break;
+            case SKILL_5:
+                charactersData.skillFiveIds[currentCharacterDataKey]  = 0;  break;
+            default:
+                break;
+        }
+
+
+
+        // TODO: Resort the skill in the character data.
+
+    }
+
 
     private void ClearSelectionSection() {
         selectedIcon.sprite = null;
@@ -522,7 +635,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         selectedName.text = "";
         selectedLore.text = "";
     }
-
+    #endregion
 
     private void LoadCharacterInfo() {
         string className = charactersData.classNames[currentCharacterDataKey];
