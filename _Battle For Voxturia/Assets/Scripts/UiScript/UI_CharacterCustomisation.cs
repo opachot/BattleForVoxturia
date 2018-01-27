@@ -614,10 +614,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
                 break;
         }
 
-
-
-        // TODO: Resort the skill in the character data.
-
+        charactersData.SortSkillId(currentCharacterDataKey);
     }
 
 

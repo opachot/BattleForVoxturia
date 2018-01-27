@@ -202,6 +202,55 @@ public class CharactersData : MonoBehaviour {
     #endregion
 
 
+    #region Sorting Skill Id
+    public void SortSkillId(int key) {
+        List<int> [] skillsSlots = {skillOneIds,
+                                    skillTwoIds,
+                                    skillThreeIds,
+                                    skillFourIds,
+                                    skillFiveIds };
+
+        int nbSkillSlot = skillsSlots.Length;
+
+        // Loop to replace the id in slot order.
+        for(int i = 0; i < nbSkillSlot - 1; i++) {
+            List<int> analysedSkillSlot = skillsSlots[i];
+            int       analysedSkillId   = analysedSkillSlot[key];
+
+            if(analysedSkillId == 0) {
+                int nextSkillSlotIndex = i + 1;
+
+                int nextUsedSkillId = GetNextUsedSkillId(key, skillsSlots, nbSkillSlot, nextSkillSlotIndex);
+
+                // Stop looping if there is no more used skill slot.
+                if(nextUsedSkillId == 0) { break; }
+
+                analysedSkillSlot[key] = nextUsedSkillId;
+            }
+        }
+    }
+    
+    private int GetNextUsedSkillId(int key, List<int> [] skillsSlots, int nbSkillSlot, int startingIndex) {
+        int  nextUsedSkillId  = 0;
+
+        // Loop to find an id on the other slot.
+        for(int j = startingIndex; j < nbSkillSlot; j++) {
+            List<int> searchedSkillSlot = skillsSlots[j];
+            int       searchedSkillId   = searchedSkillSlot[key];
+
+            // If an id is found, we remove it from the list and pass it to the sorting methode.
+            if(searchedSkillId != 0) {
+                nextUsedSkillId = searchedSkillId;
+                searchedSkillSlot[key] = 0;
+                break;
+            }
+        }
+
+        return nextUsedSkillId;
+    }
+    #endregion
+
+
     public Sprite GetCharacterIcon(string className) {
         Sprite classSprite = new Sprite();
 
