@@ -96,13 +96,24 @@ public class Items : MonoBehaviour {
     // PRIVATE
     private int extraParam_ItemType; /* Inter screen param */  // 0 = Helmet; 1 = Armor; 2 = Greave; 3 = Boots; 4 = Jewel;
 
+    private Helmets helmets;
+    private Armors  armors;
+    private Greaves greaves;
+    private Boots   boots;
+    private Jewels  jewels;
+
     // PUBLIC
 
     #endregion
 
     #region UNITY METHODE
     void Awake() {
-        
+        // The list of all the items.
+        helmets = gameObject.GetComponent<Helmets>();
+        armors  = gameObject.GetComponent<Armors>();
+        greaves = gameObject.GetComponent<Greaves>();
+        boots   = gameObject.GetComponent<Boots>();
+        jewels  = gameObject.GetComponent<Jewels>();
     }
 	
 	void Start() {
@@ -304,6 +315,24 @@ public class Items : MonoBehaviour {
     #region Get Main Stats
     public int GetTotalCost(List<string> helmet, List<string> armor, List<string> greave, List<string> boot, List<string> jewel) {
         int totalCost = GetCost(helmet) + GetCost(armor) + GetCost(greave) + GetCost(boot) + GetCost(jewel);
+
+        return totalCost;
+    }
+
+    public int GetTotalCost(int helmetId, int armorId, int greaveId, int bootsId, int jewelId) {
+        int totalCost = 0;
+
+        List<string> helmet = helmets.GetItem(helmetId);
+        List<string> armor  = armors .GetItem(armorId);
+        List<string> greave = greaves.GetItem(greaveId);
+        List<string> boot   = boots  .GetItem(bootsId);
+        List<string> jewel  = jewels .GetItem(jewelId);
+
+        totalCost += GetCost(helmet);
+        totalCost += GetCost(armor);
+        totalCost += GetCost(greave);
+        totalCost += GetCost(boot);
+        totalCost += GetCost(jewel);
 
         return totalCost;
     }

@@ -33,6 +33,9 @@ public class CharactersData : MonoBehaviour {
     private ResourceLoader resourceLoader;
     private ErrorManager   errorManager;
 
+    private Items     items;
+    private SkillList skillList;
+
     private int extraParam_TeamId;      /* Inter screen param */
     private int extraParam_CharacterId; /* Inter screen param */
 
@@ -66,6 +69,14 @@ public class CharactersData : MonoBehaviour {
 	void Awake() {
 		resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
         errorManager   = GameObject.FindGameObjectWithTag("ErrorManager")   .GetComponent<ErrorManager>();
+
+        // The items.
+        GameObject itemsHolder = GameObject.FindGameObjectWithTag("Items");
+        items   = itemsHolder.GetComponent<Items>();
+
+        // The list of all the skills.
+        GameObject skillsHolder = GameObject.FindGameObjectWithTag("Skills");
+        skillList = skillsHolder.GetComponent<SkillList>();
     }
 	
 	void Start() {
@@ -200,6 +211,33 @@ public class CharactersData : MonoBehaviour {
         costs        .RemoveAt(key);
     }
     #endregion
+
+    public void UpdateAllCharactersCosts() {
+        int baseCost       = GetCost();
+
+        // Loop in every character.
+        for(int key = 0; key < ids.Count; key++) {
+            string className = classNames[key];
+
+            // Find Equipments costs.
+            int equipmentsCost = items.GetTotalCost(helmetIds[key], 
+                                                    armorIds [key], 
+                                                    greaveIds[key],     
+                                                    bootsIds [key], 
+                                                    jewelIds [key]);
+
+            // Find Skills costs.
+            int skillsCost = skillList.GetTotalCost(className, 
+                                                    skillOneIds  [key], 
+                                                    skillTwoIds  [key], 
+                                                    skillThreeIds[key], 
+                                                    skillFourIds [key], 
+                                                    skillFiveIds [key]);
+
+            // Update a character cost.
+            costs[key] = baseCost + equipmentsCost + skillsCost;
+        }
+    }
 
 
     #region Sorting Skill Id

@@ -158,23 +158,30 @@ public class UI_TeamScreen : MonoBehaviour {
         for(int i = 0; i < charactersButtons.Length; i++) {
             bool isCharacterExisting = i < teamCharacterKeys.Count;
 
-            Image      buttonIcon  = charactersButtons[i].transform.Find("Icon")         .GetComponent<Image>();
-            GameObject nameBox     = charactersButtons[i].transform.Find("NameBox")      .gameObject;
-            Text       nameBoxText = nameBox             .transform.Find("CharacterName").GetComponent<Text>();
+            Image      buttonIcon    = charactersButtons[i].transform.Find("Icon")         .GetComponent<Image>();
+            GameObject nameBox       = charactersButtons[i].transform.Find("NameBox")      .gameObject;
+            Text       nameBoxText   = nameBox             .transform.Find("CharacterName").GetComponent<Text>();
+            Text       characterCost = charactersButtons[i].transform.Find("CharacterCost").GetComponent<Text>();
 
             if(isCharacterExisting) {
-                // Set class icon
+                // Set class icon.
                 buttonIcon.sprite = charactersData.GetCharacterIcon(charactersData.classNames[teamCharacterKeys[i]]);
 
-                // Set character name
+                // Set character name.
                 nameBoxText.text = charactersData.names[teamCharacterKeys[i]];
+
+                // Set character cost.
+                characterCost.text = "Cost: " + charactersData.costs[teamCharacterKeys[i]];
             }
             else {
-                // Set default icon
+                // Set default icon.
                 buttonIcon.sprite = resourceLoader.addCharacterIconClass;
 
-                // Hide nameBox
+                // Hide nameBox.
                 nameBox.SetActive(false);
+
+                // Hide character cost.
+                characterCost.gameObject.SetActive(false);
             }
         }
     }
