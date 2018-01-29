@@ -251,8 +251,6 @@ public class Helmets : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        DontDestroyOnLoad(gameObject);
-
         list.Add(HELMET_NAME_TEST);
         spriteDictionary.Add(HELMET_NAME_TEST[NAME_INDEX], HELMET_NAME_TEST_icon);
     }

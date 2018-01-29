@@ -23,14 +23,14 @@ public class FighterMeditation_Skill : Skill {
 	void Awake() {
 		id = 1;
         name = "Fighter Meditation";
-        description = "Uncast [[Fighter Aura]]\n" +
-                      "[[Fighter Meditation]] (3 turns)";
+        description = "Uncast <link=" + EffectList.FIGHTER_AURA + ">[[Fighter Aura]]</link>\n" +
+                      "<link=" + EffectList.FIGHTER_MEDITATION + ">[[Fighter Meditation]]</link> (3 turns)";
         lore = "Todo";
         cost = 250;
     }
 	
 	void Start() {
-		
+
 	}
 	
 	void Update() {

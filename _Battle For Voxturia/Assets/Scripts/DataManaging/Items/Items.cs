@@ -108,6 +108,8 @@ public class Items : MonoBehaviour {
 
     #region UNITY METHODE
     void Awake() {
+        DontDestroyOnLoad(gameObject);
+
         // The list of all the items.
         helmets = gameObject.GetComponent<Helmets>();
         armors  = gameObject.GetComponent<Armors>();

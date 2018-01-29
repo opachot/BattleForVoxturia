@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_CharacterCustomisation : MonoBehaviour {
 
@@ -156,7 +157,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     public Text selectedSkillValue_Cpt;
     public Text selectedSkillValue_Cptpt;
     [Space(5)]
-    public Text selectedSkillEffect;
+    public TMP_Text selectedSkillEffect;
 
     #endregion
 
@@ -710,5 +711,5 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         lightResistance .text = totalLightResistance  + "%";
         darkResistance  .text = totalDarkResistance   + "%";
     }
-    
+
 }
