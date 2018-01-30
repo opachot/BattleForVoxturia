@@ -35,10 +35,9 @@ public class Skill : MonoBehaviour {
     protected int castPerTurn;
     protected int castPerTurnPerTarget;
 
-    protected Sprite areaOfEffect;
-
     // PUBLIC
     public Sprite icon;
+    public Sprite areaOfEffect;
 
     #endregion
 
@@ -119,5 +118,18 @@ public class Skill : MonoBehaviour {
 
     public int GetCastPerTurnPerTarget() {
         return castPerTurnPerTarget;
+    }
+
+
+    protected string FormatEffectLink(string effectName, string hexColor) {
+        string effectLink = "";
+
+        effectLink = "<link=" + effectName + ">" +
+                        "<color=" + hexColor + ">" +
+                            "[[<b><u>" + effectName + "</u></b>]]" +
+                        "</color>" +
+                     "</link>";
+
+        return effectLink;
     }
 }

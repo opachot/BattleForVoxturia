@@ -23,10 +23,10 @@ public class FighterMeditation_Effect : Effect {
 
 	#region UNITY METHODE
 	void Awake() {
-		name = EffectList.FIGHTER_MEDITATION;
+		name = FIGHTER_MEDITATION;
         description = "Increase HP by " + HP_BOOST_BY_PERCENT + "%\n" +
                       "Increase resistance by " + RESISTANCE_BOOST_BY_PERCENT + "%\n" +
-                      "(Only unbuffable by the '" + EffectList.FIGHTER_AURA + "' skill)";
+                      "(Only unbuffable by the '" + FIGHTER_AURA + "' skill)";
         maxLvl = 1;
         isUnbuffable = false;
         specificClassName = "Fighter";

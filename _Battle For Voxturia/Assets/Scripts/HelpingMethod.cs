@@ -12,6 +12,13 @@ public static class HelpingMethod {
 
     #region DECLARATION
     // CONST
+    public const string HEX_BLUE   = "0000FFFF";
+    public const string HEX_GREEN  = "007300FF";
+    public const string HEX_AQUA   = "00FFFFFF";
+    public const string HEX_PINK   = "AF00FFFF";
+    public const string HEX_YELLOW = "FFFF00FF";
+    public const string HEX_RED    = "FF0000FF";
+    public const string HEX_WHITE  = "FFFFFFFF";
 
     // PRIVATE
 

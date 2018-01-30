@@ -21,6 +21,9 @@ public class EffectPopUpControl : MonoBehaviour {
     public Text     effectName;
     public TMP_Text effectDescription;
 
+    public Image    effectIcon;
+    public Text     effectMaxLvl;
+
     #endregion
 
 	#region UNITY METHODE
@@ -47,5 +50,8 @@ public class EffectPopUpControl : MonoBehaviour {
     public void LoadPopUp(Effect effect) {
         effectName       .text = "Effect: " + effect.GetName();
         effectDescription.text = effect.GetDescription();
+
+        effectIcon  .sprite = effect.GetIcon();
+        effectMaxLvl.text   = "Max levels: " + "<b>"+effect.GetMaxLvl()+"</b>";
     }
 }

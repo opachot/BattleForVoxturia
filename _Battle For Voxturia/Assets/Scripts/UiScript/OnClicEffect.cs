@@ -58,11 +58,11 @@ public class OnClicEffect : MonoBehaviour, IPointerClickHandler {
 
             switch (linkId)
             {
-                case EffectList.FIGHTER_AURA:
+                case Effect.FIGHTER_AURA:
                     //effectPopUp.SetActive(true);
                     print("TODO: Fighter Aura"); // TODO: Fighter Aura 
                     break;
-                case EffectList.FIGHTER_MEDITATION:
+                case Effect.FIGHTER_MEDITATION:
                     effectPopUp.SetActive(true);
                     effectPopUpControl.LoadPopUp(effectList.GetFighterMeditation());
                     break;

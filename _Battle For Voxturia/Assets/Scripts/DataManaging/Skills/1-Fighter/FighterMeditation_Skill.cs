@@ -21,12 +21,29 @@ public class FighterMeditation_Skill : Skill {
 
 	#region UNITY METHODE
 	void Awake() {
+        // Format link for description.
+        string FighterAura_EffecLink       = FormatEffectLink(Effect.FIGHTER_AURA,       Effect.HEX_COLOR_DEFAULT);
+        string FighterMeditation_EffecLink = FormatEffectLink(Effect.FIGHTER_MEDITATION, Effect.HEX_COLOR_DEFAULT);
+
 		id = 1;
         name = "Fighter Meditation";
-        description = "Uncast <link=" + EffectList.FIGHTER_AURA + ">[[Fighter Aura]]</link>\n" +
-                      "<link=" + EffectList.FIGHTER_MEDITATION + ">[[Fighter Meditation]]</link> (3 turns)";
+        description = "Unbuff " + FighterAura_EffecLink + "\n" +
+                      "" + FighterMeditation_EffecLink + " <b>(3 turns)</b>";
         lore = "Todo";
         cost = 250;
+
+        apCost = 3;
+        mpCost = 0;
+        minRange = 0;
+        maxRange = 1;
+
+        flexibleRange    = false;
+        lineOfSight      = true;
+        castStraightLine = false;
+
+        cooldown             = 5;
+        castPerTurn          = 0;
+        castPerTurnPerTarget = 0;
     }
 	
 	void Start() {

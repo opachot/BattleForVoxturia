@@ -12,6 +12,21 @@ public class Effect : MonoBehaviour {
 
 	#region DECLARATION
     // CONST
+    // General Effect
+
+
+    // Specific Effect
+    public const string FIGHTER_MEDITATION = "Fighter Meditation";
+    public const string FIGHTER_AURA       = "Fighter Aura";
+
+    // Color
+    public const string HEX_COLOR_ACTION     = "#0000FFFF"; // Blue
+    public const string HEX_COLOR_MOVEMENT   = "#007300FF"; // Green
+    public const string HEX_COLOR_SIGHT      = "#00FFFFFF"; // Aqua
+    public const string HEX_COLOR_LIFE       = "#AF00FFFF"; // Pink
+    public const string HEX_COLOR_PROTECTION = "#FFFF00FF"; // Yellow
+    public const string HEX_COLOR_DAMAGE     = "#FF0000FF"; // Red
+    public const string HEX_COLOR_DEFAULT    = "#FFFFFFFF"; // White
 
     // PRIVATE
 
@@ -23,6 +38,7 @@ public class Effect : MonoBehaviour {
     protected string     specificClassName;
 
     // PUBLIC
+    public Sprite icon;
 
     #endregion
 
@@ -45,5 +61,9 @@ public class Effect : MonoBehaviour {
 
     public string GetSpecificClassName() {
         return specificClassName;
+    }
+
+    public Sprite GetIcon() {
+        return icon;
     }
 }

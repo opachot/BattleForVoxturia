@@ -12,12 +12,6 @@ public class EffectList : MonoBehaviour {
 
     #region DECLARATION
     // CONST
-    // General Effect
-
-
-    // Specific Effect
-    public const string FIGHTER_MEDITATION = "Fighter Meditation";
-    public const string FIGHTER_AURA       = "Fighter Aura";
 
     // PRIVATE
     // General Effect
