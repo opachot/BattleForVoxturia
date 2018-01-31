@@ -124,11 +124,13 @@ public class Skill : MonoBehaviour {
     protected string FormatEffectLink(string effectName, string hexColor) {
         string effectLink = "";
 
-        effectLink = "<link=" + effectName + ">" +
-                        "<color=" + hexColor + ">" +
-                            "[[<b><u>" + effectName + "</u></b>]]" +
-                        "</color>" +
-                     "</link>";
+        effectLink = "<color=" + hexColor + ">" +
+                         "<style=Link>" +
+                             "<link=" + effectName + ">" +
+                                 "[[" + effectName + "]]" +
+                             "</link>" +
+                         "</style>" +
+                     "</color>";
 
         return effectLink;
     }

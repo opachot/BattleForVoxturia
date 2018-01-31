@@ -45,9 +45,8 @@ public class OnClicEffect : MonoBehaviour, IPointerClickHandler {
 	}
 	
 	void Update() {
-		
-	}
 
+	}
 
     public void OnPointerClick(PointerEventData pointerEventData) {
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(textBloc, Input.mousePosition, Camera.main);
