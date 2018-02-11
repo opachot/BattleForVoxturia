@@ -164,7 +164,7 @@ public class SkillList : MonoBehaviour {
     }
 
 
-    private List<Skill> FindClassSkillList(string className) {
+    public List<Skill> FindClassSkillList(string className) {
         List<Skill> classSkillList;
 
         switch (className)

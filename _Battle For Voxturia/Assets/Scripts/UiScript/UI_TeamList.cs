@@ -157,7 +157,6 @@ public class UI_TeamList : MonoBehaviour {
     }
 
     private void GenerateTeamsList() {
-
         int nbRegisteredTeam = teamsData.ids.Count;
 
         for(int i = 0; i < nbRegisteredTeam; i++) {

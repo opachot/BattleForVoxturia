@@ -20,16 +20,29 @@ public class UI_SkillSelection : MonoBehaviour {
     private Navigation     navigation;
     private CharactersData charactersData;
 
+    private Transform list;
+    private List<Transform> skillButtonList = new List<Transform>();
+
     private SkillList skillList;
+    List<Skill>       classSkillList;
+    List<Skill>       displayedSkillList = new List<Skill>();
+
+    Skill selectedSkill;
 
     private int currentTeamId;
     private int currentCharacterId;
     private int currentCharacterDataKey;
 
+    private string className;
+
     // PUBLIC
+    public Button selectSkill_btn;
+    [Space(10)]
+
     [Header("Skill Info Section")]
-    public Text       skillName;
-    public Image      skillIcon;
+    public Text  skillName;
+    public Image skillIcon;
+    public Text  skillCost;
     [Space(5)]
     public GameObject skillEffectSection;
     [Space(5)]
@@ -59,6 +72,8 @@ public class UI_SkillSelection : MonoBehaviour {
         navigation     = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
         charactersData = GameObject.FindGameObjectWithTag("GameData")       .GetComponent<CharactersData>();
 
+        list = GameObject.Find("List").GetComponent<Transform>();
+
         // The list of all the skills.
         GameObject skillsHolder = GameObject.FindGameObjectWithTag("Skills");
         skillList = skillsHolder.GetComponent<SkillList>();
@@ -79,48 +94,26 @@ public class UI_SkillSelection : MonoBehaviour {
 
     #region Default buttons
     public void SkillButton(Transform clickedSkillBtn) {
-        // TODO: when instantiating all skills buttons, will need to fix they event (ex: UI_TeamList)
+        int? skillIndex = FindSkillIndex(clickedSkillBtn);
 
+        if(skillIndex != null) {
+            if(selectedSkill != displayedSkillList[(int)skillIndex]) {
+                selectedSkill = displayedSkillList[(int)skillIndex];
+                // TODO: set selected color.
+                selectSkill_btn.interactable = true;
+                
 
-
-        /*int skillId = FindSkillId(skillSlot);
-
-        // Keep in memory the selection for the Remove btn.
-        isEquipmentSelected = false;
-        isSkillSelected     = true;
-        slotIndexSelected   = skillSlot;
-
-        ClearSelectionSection();
-
-        if(skillId != 0) {
-            string className = charactersData.classNames[currentCharacterDataKey];
-            Skill skill = skillList.GetSkill(className, skillId);
-
-            selectedIcon.sprite = skill.GetIcon();
-            selectedCost.text = "Cost: " + skill.GetCost();
-
-            selectedName.text = skill.GetName();
-            selectedLore.text = skill.GetLore();
-
-            selectedSkillValue_Ap.transform.parent.gameObject.SetActive(true);
-
-            selectedSkillValue_Ap   .text = skill.GetApCost().ToString();
-            selectedSkillValue_Mp   .text = skill.GetMpCost().ToString();
-            selectedSkillValue_Range.text = skill.GetMinRange() + "-" + skill.GetMaxRange();
-            selectedSkillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator(skill.GetFlexibleRange());
-            selectedSkillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetLineOfSight());
-            selectedSkillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetCastStraightLine());
-            selectedSkillValue_Cd   .text = skill.GetCooldown()            .ToString();
-            selectedSkillValue_Cpt  .text = skill.GetCastPerTurn()         .ToString();
-            selectedSkillValue_Cptpt.text = skill.GetCastPerTurnPerTarget().ToString();
-
-            selectedSkillEffect.text = skill.GetDescription();
-            
-            remove_btn.interactable = true;
+                LoadSkillInfo(selectedSkill);
+            }
+            else {
+                selectedSkill = null;
+                selectSkill_btn.interactable = false;
+                // TODO: Unselect (remove selection color AND clear info section)
+            }
         }
         else {
-            navigation.NavigateTo_SkillSelection(currentTeamId, currentCharacterId);
-        }*/
+            Debug.Log("Error 404: Skill index not found!");
+        }
     }
 
     public void SelectButton() {
@@ -168,9 +161,103 @@ public class UI_SkillSelection : MonoBehaviour {
                 break;
             }
         }
+
+        className = charactersData.classNames[currentCharacterDataKey];
     }
 
+    #region Skill list loading
     private void LoadSkillsList() {
-        // TODO
+        classSkillList = skillList.FindClassSkillList(className);
+
+        foreach(Skill skill in classSkillList) {
+            if(!IsSkillAlreadyUsed(skill)) {
+                InstantiateSkillInList(skill);
+            }
+        }
+    }
+
+    private bool IsSkillAlreadyUsed(Skill skill) {
+        int skillId = skill.GetId();
+
+        int characterSkillOne   = charactersData.skillOneIds  [currentCharacterDataKey];
+        int characterSkillTwo   = charactersData.skillTwoIds  [currentCharacterDataKey];
+        int characterSkillThree = charactersData.skillThreeIds[currentCharacterDataKey];
+        int characterSkillFour  = charactersData.skillFourIds [currentCharacterDataKey];
+        int characterSkillFive  = charactersData.skillFiveIds [currentCharacterDataKey];
+
+        bool isSkillAlreadyUsed = skillId == characterSkillOne   ||
+                                  skillId == characterSkillTwo   ||
+                                  skillId == characterSkillThree ||
+                                  skillId == characterSkillFour  ||
+                                  skillId == characterSkillFive;
+
+        return isSkillAlreadyUsed;
+    }
+
+    private void InstantiateSkillInList(Skill skill) {
+        Transform listElement = Instantiate(resourceLoader.skillListingElement, list).transform;
+
+        FixListElementButton(listElement, skill);
+
+        skillButtonList.Add(listElement);
+        displayedSkillList.Add(skill);
+    }
+
+    private void FixListElementButton(Transform listElement, Skill skill) {
+        // Set skillButton onClick event.
+        Button skillButton   = listElement.GetComponent<Button>();
+        skillButton.onClick.AddListener(()   => SkillButton(listElement));
+
+        // Set skill icon.
+        Transform iconTransform = listElement.FindDeepChild("Icon");
+        Image     iconImage     = iconTransform.GetComponent<Image>();
+        iconImage.sprite = skill.GetIcon();
+
+        // Set skill name.
+        Transform nameTransform = listElement.FindDeepChild("Name");
+        Text      nameText      = nameTransform.GetComponent<Text>();
+        nameText.text = skill.GetName();
+
+        // Set skill cost.
+        Transform costTransform = listElement.FindDeepChild("Cost");
+        Text      costText      = costTransform.GetComponent<Text>();
+        costText.text = "Cost: " + skill.GetCost();
+    }
+    #endregion
+
+
+    private void LoadSkillInfo(Skill skill) {
+        skillName.text   = skill.GetName();
+        skillIcon.sprite = skill.GetIcon();
+        skillCost.text   = "Cost: " + skill.GetCost();
+
+        effectText.text = skill.GetDescription();
+        loreText  .text = skill.GetLore();
+
+        skillValue_Ap.transform.parent.gameObject.SetActive(true);
+
+        skillValue_Ap   .text = skill.GetApCost().ToString();
+        skillValue_Mp   .text = skill.GetMpCost().ToString();
+        skillValue_Range.text = skill.GetMinRange() + "-" + skill.GetMaxRange();
+        skillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator(skill.GetFlexibleRange());
+        skillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetLineOfSight());
+        skillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetCastStraightLine());
+        skillValue_Cd   .text = skill.GetCooldown()            .ToString();
+        skillValue_Cpt  .text = skill.GetCastPerTurn()         .ToString();
+        skillValue_Cptpt.text = skill.GetCastPerTurnPerTarget().ToString();
+    }
+
+
+    private int? FindSkillIndex(Transform skillBtn) {
+        int? skillIndex = null;
+
+        for(int i = 0; i < skillButtonList.Count; i++) {
+            if(skillBtn == skillButtonList[i]) {
+                skillIndex = i;
+                break;
+            }
+        }
+
+        return skillIndex;
     }
 }
