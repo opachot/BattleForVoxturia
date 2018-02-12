@@ -87,13 +87,8 @@ public class SaveAndLoad : MonoBehaviour {
         // ACTUALISE CHARACTERS COST.
         charactersData.UpdateAllCharactersCosts();
 
-        // UNSELECT SELECTED TEAM IF NECESSARY.
-        int usedTeamId       = teamsData.usedTeamId;
-        bool isATeamSelected = usedTeamId != 0;
-        if(isATeamSelected) {
-            int usedTeamDataKey = teamsData.FindTeamDataKey(usedTeamId);
-            teamsData.UpdateValideSelectedTeam(usedTeamDataKey, usedTeamId);
-        }
+        // UNSELECT USED TEAM IF NECESSARY.
+        teamsData.UpdateValideUsedTeam();
 
         Debug.Log("Loading...");
     }

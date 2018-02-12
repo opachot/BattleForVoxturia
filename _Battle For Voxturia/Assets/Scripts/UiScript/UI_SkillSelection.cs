@@ -27,7 +27,8 @@ public class UI_SkillSelection : MonoBehaviour {
     List<Skill>       classSkillList;
     List<Skill>       displayedSkillList = new List<Skill>();
 
-    Skill selectedSkill;
+    Skill     selectedSkill;
+    Transform highlightedSkillButton;
 
     private int currentTeamId;
     private int currentCharacterId;
@@ -44,13 +45,10 @@ public class UI_SkillSelection : MonoBehaviour {
     public Image skillIcon;
     public Text  skillCost;
     [Space(5)]
-    public GameObject skillEffectSection;
-    [Space(5)]
     public Button effect_btn;
     public Button lore_btn;
     [Space(5)]
-    public TMP_Text effectText;
-    public Text     loreText;
+    public TMP_Text effectAndLoreText;
     [Space(5)]
     public Text skillValue_Ap;
     public Text skillValue_Mp;
@@ -84,6 +82,7 @@ public class UI_SkillSelection : MonoBehaviour {
         FindCharacterDataKey();
 
         LoadSkillsList();
+        ClearSkillInfo();
 	}
 	
 	void Update() {
@@ -99,17 +98,18 @@ public class UI_SkillSelection : MonoBehaviour {
         if(skillIndex != null) {
             if(selectedSkill != displayedSkillList[(int)skillIndex]) {
                 selectedSkill = displayedSkillList[(int)skillIndex];
-                // TODO: set selected color.
                 selectSkill_btn.interactable = true;
                 
-
                 LoadSkillInfo(selectedSkill);
             }
             else {
                 selectedSkill = null;
                 selectSkill_btn.interactable = false;
-                // TODO: Unselect (remove selection color AND clear info section)
+                ClearSkillInfo();
             }
+
+            ModifieSkillButtonVisual(clickedSkillBtn);
+            HelpingMethod.ClearEventSystemButtonHighlighted();
         }
         else {
             Debug.Log("Error 404: Skill index not found!");
@@ -117,7 +117,7 @@ public class UI_SkillSelection : MonoBehaviour {
     }
 
     public void SelectButton() {
-        // TODO
+        charactersData.AddSkill(currentCharacterDataKey, selectedSkill);
 
         navigation.NavigateTo_CharacterCustomisation(currentTeamId, currentCharacterId);
     }
@@ -127,21 +127,17 @@ public class UI_SkillSelection : MonoBehaviour {
     }
 
     public void EffectButton() {
-        /*effect_btn.interactable = false;
-        loreSection.SetActive(false);
+        effect_btn.interactable = false;
+        lore_btn  .interactable = true;
 
-        lore_btn.interactable = true;
-        equipmentEffectSection.SetActive(true);
-        skillEffectSection    .SetActive(true);*/
+        LoadEffectOrLore();
     }
 
     public void LoreButton() {
-        /*lore_btn.interactable = false;
-        equipmentEffectSection.SetActive(false);
-        skillEffectSection    .SetActive(false);
-
+        lore_btn  .interactable = false;
         effect_btn.interactable = true;
-        loreSection.SetActive(true);*/
+
+        LoadEffectOrLore();
     }
     #endregion
 
@@ -231,8 +227,7 @@ public class UI_SkillSelection : MonoBehaviour {
         skillIcon.sprite = skill.GetIcon();
         skillCost.text   = "Cost: " + skill.GetCost();
 
-        effectText.text = skill.GetDescription();
-        loreText  .text = skill.GetLore();
+        LoadEffectOrLore();
 
         skillValue_Ap.transform.parent.gameObject.SetActive(true);
 
@@ -245,6 +240,26 @@ public class UI_SkillSelection : MonoBehaviour {
         skillValue_Cd   .text = skill.GetCooldown()            .ToString();
         skillValue_Cpt  .text = skill.GetCastPerTurn()         .ToString();
         skillValue_Cptpt.text = skill.GetCastPerTurnPerTarget().ToString();
+    }
+
+    private void ClearSkillInfo() {
+        skillName.text   = "-";
+        skillIcon.sprite = null;
+        skillCost.text   = "Cost: -";
+
+        effectAndLoreText.text = "";
+
+        skillValue_Ap.transform.parent.gameObject.SetActive(false);
+
+        skillValue_Ap   .text = "";                      
+        skillValue_Mp   .text = "";
+        skillValue_Range.text = "";
+        skillValue_UpPo .text = "";
+        skillValue_Fov  .text = "";
+        skillValue_Cil  .text = "";
+        skillValue_Cd   .text = "";
+        skillValue_Cpt  .text = "";
+        skillValue_Cptpt.text = "";
     }
 
 
@@ -260,4 +275,74 @@ public class UI_SkillSelection : MonoBehaviour {
 
         return skillIndex;
     }
+
+
+    #region Load Effect or Lore
+    private void LoadEffectOrLore() {
+        if(selectedSkill != null) {
+            if(effect_btn.interactable) {
+                LoadLore();
+            }
+            else if(lore_btn.interactable) {
+                LoadEffect();
+            }
+            else {
+                Debug.Log("Error: Effect and Lore button not interactable!?!?");
+            }
+        }
+    }
+
+
+    private void LoadEffect() {
+        effectAndLoreText.text = selectedSkill.GetDescription();
+    }
+
+    private void LoadLore() {
+        effectAndLoreText.text = selectedSkill.GetLore();
+    }
+    #endregion
+
+
+    #region Button Highlight Methode
+    private void ModifieSkillButtonVisual(Transform clickedSkillBtn) {
+        bool isSelecting = clickedSkillBtn != highlightedSkillButton;
+
+        UnhighlightSkillButton();
+        if(isSelecting) {
+            HighlightSkillButton(clickedSkillBtn);
+        }
+    }
+
+    private void UnhighlightSkillButton() {
+        if(highlightedSkillButton != null) {
+            Button skillButton = highlightedSkillButton.GetComponent<Button>();
+            Color  color = new Color(255, 255, 255, 255); // White
+
+            // Define visual indicator.
+            ColorBlock highlightColor  = skillButton.colors;
+            highlightColor.normalColor = HelpingMethod.ConvertToDecimalColor(color);
+
+            // Apply visual indicator.
+            skillButton.colors = highlightColor;
+
+            highlightedSkillButton = null;
+        }
+    }
+
+    private void HighlightSkillButton(Transform clickedSkillBtn) {
+        if(highlightedSkillButton == null) {
+            Button skillButton = clickedSkillBtn.gameObject.GetComponent<Button>();
+            Color  color = new Color(0, 150, 50, 255); // Green
+
+            // Define visual indicator.
+            ColorBlock highlightColor  = skillButton.colors;
+            highlightColor.normalColor = HelpingMethod.ConvertToDecimalColor(color);
+
+            // Apply visual indicator.
+            skillButton.colors   = highlightColor;
+
+            highlightedSkillButton = clickedSkillBtn;
+        }
+    }
+    #endregion
 }

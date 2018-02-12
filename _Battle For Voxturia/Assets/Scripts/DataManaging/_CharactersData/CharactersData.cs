@@ -33,6 +33,8 @@ public class CharactersData : MonoBehaviour {
     private ResourceLoader resourceLoader;
     private ErrorManager   errorManager;
 
+    private TeamsData teamsData;
+
     private Items     items;
     private SkillList skillList;
 
@@ -69,6 +71,8 @@ public class CharactersData : MonoBehaviour {
 	void Awake() {
 		resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
         errorManager   = GameObject.FindGameObjectWithTag("ErrorManager")   .GetComponent<ErrorManager>();
+
+        teamsData = gameObject.GetComponent<TeamsData>();
 
         // The items.
         GameObject itemsHolder = GameObject.FindGameObjectWithTag("Items");
@@ -287,6 +291,32 @@ public class CharactersData : MonoBehaviour {
         return nextUsedSkillId;
     }
     #endregion
+
+    public void AddSkill(int key, Skill skill) {
+        costs[key] += skill.GetCost();
+
+        if(skillOneIds[key] == 0) {
+            skillOneIds[key] = skill.GetId();
+        }
+        else if(skillTwoIds[key] == 0) {
+            skillTwoIds[key] = skill.GetId();
+        }
+        else if(skillThreeIds[key] == 0) {
+            skillThreeIds[key] = skill.GetId();
+        }
+        else if(skillFourIds[key] == 0) {
+            skillFourIds[key] = skill.GetId();
+        }
+        else if(skillFiveIds[key] == 0) {
+            skillFiveIds[key] = skill.GetId();
+        }
+        else {
+            Debug.Log("Error: No space available to store the selected skill...");
+            costs[key] -= skill.GetCost();
+        }
+
+        teamsData.UpdateValideUsedTeam();
+    }
 
 
     public Sprite GetCharacterIcon(string className) {

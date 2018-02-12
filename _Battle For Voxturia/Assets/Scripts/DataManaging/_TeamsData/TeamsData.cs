@@ -212,6 +212,14 @@ public class TeamsData : MonoBehaviour {
     #endregion
 
 
+    public void UpdateValideUsedTeam() {
+        bool isATeamSelected = usedTeamId != 0;
+        if(isATeamSelected) {
+            int usedTeamDataKey = FindTeamDataKey(usedTeamId);
+            UpdateValideSelectedTeam(usedTeamDataKey, usedTeamId);
+        }
+    }
+
     public void UpdateValideSelectedTeam(int key, int testedTeamId) {
         bool isThisTeamSelected = usedTeamId == testedTeamId;
 

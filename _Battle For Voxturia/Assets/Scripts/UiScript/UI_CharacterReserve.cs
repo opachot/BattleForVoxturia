@@ -159,8 +159,7 @@ public class UI_CharacterReserve : MonoBehaviour {
             LoadCharacterInfo();
         }
 
-        // Fix the button glitch that make it staying highlighted.
-        EventSystem.current.SetSelectedGameObject(null);
+        HelpingMethod.ClearEventSystemButtonHighlighted();
     }
 
     public void DeleteCharacterButton() {

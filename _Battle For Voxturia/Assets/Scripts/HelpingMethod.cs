@@ -7,6 +7,7 @@ Date:    09 October 2017
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public static class HelpingMethod {
 
@@ -82,6 +83,11 @@ public static class HelpingMethod {
         }
 
         return indicator;
+    }
+
+    public static void ClearEventSystemButtonHighlighted() {
+        // Fix the button glitch that make it staying highlighted.
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
 }
