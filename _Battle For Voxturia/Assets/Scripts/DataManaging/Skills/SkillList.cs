@@ -60,6 +60,7 @@ public class SkillList : MonoBehaviour {
         GameObject skills = transform.Find("FighterSkills").gameObject;
 
         fighterSkills.Add(skills.GetComponent<FighterMeditation_Skill>());
+        fighterSkills.Add(skills.GetComponent<FighterAura_Skill>());
 
     }
 

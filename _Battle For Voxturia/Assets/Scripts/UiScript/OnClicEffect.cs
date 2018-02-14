@@ -55,18 +55,23 @@ public class OnClicEffect : MonoBehaviour, IPointerClickHandler {
             TMP_LinkInfo linkInfo = textBloc.textInfo.linkInfo[linkIndex];
             string linkId = linkInfo.GetLinkID();
 
+            bool isLoadableEffect = true;
             switch (linkId)
             {
                 case Effect.FIGHTER_AURA:
-                    //effectPopUp.SetActive(true);
-                    print("TODO: Fighter Aura"); // TODO: Fighter Aura 
+                    effectPopUpControl.LoadPopUp(effectList.fighterAura_Effect);
                     break;
                 case Effect.FIGHTER_MEDITATION:
-                    effectPopUp.SetActive(true);
-                    effectPopUpControl.LoadPopUp(effectList.GetFighterMeditation());
+                    effectPopUpControl.LoadPopUp(effectList.fighterMeditation_Effect);
                     break;
                 default:
+                    Debug.Log("Effect in OnClicEffect script not defined...");
+                    isLoadableEffect = false;
                     break;
+            }
+
+            if(isLoadableEffect) {
+                effectPopUp.SetActive(true);
             }
         }
     }

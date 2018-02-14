@@ -12,7 +12,7 @@ public class FighterMeditation_Effect : Effect {
 
     #region DECLARATION
     // CONST
-    const int HP_BOOST_BY_PERCENT = 30;
+    const int HP_BOOST_BY_PERCENT         = 30;
     const int RESISTANCE_BOOST_BY_PERCENT = 15;
 
     // PRIVATE

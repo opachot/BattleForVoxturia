@@ -313,9 +313,14 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             selectedSkillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator(skill.GetFlexibleRange());
             selectedSkillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetLineOfSight());
             selectedSkillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetCastStraightLine());
-            selectedSkillValue_Cd   .text = skill.GetCooldown()            .ToString();
-            selectedSkillValue_Cpt  .text = skill.GetCastPerTurn()         .ToString();
-            selectedSkillValue_Cptpt.text = skill.GetCastPerTurnPerTarget().ToString();
+
+            string skillCooldown             = "-"; if(skill.GetCooldown()             != 0) { skillCooldown             = skill.GetCooldown()            .ToString(); }
+            string skillCastPerTurn          = "-"; if(skill.GetCastPerTurn()          != 0) { skillCastPerTurn          = skill.GetCastPerTurn()         .ToString(); }
+            string skillCastPerTurnPerTarget = "-"; if(skill.GetCastPerTurnPerTarget() != 0) { skillCastPerTurnPerTarget = skill.GetCastPerTurnPerTarget().ToString(); }
+
+            selectedSkillValue_Cd   .text = skillCooldown;
+            selectedSkillValue_Cpt  .text = skillCastPerTurn;
+            selectedSkillValue_Cptpt.text = skillCastPerTurnPerTarget;
 
             selectedSkillEffect.text = skill.GetDescription();
             

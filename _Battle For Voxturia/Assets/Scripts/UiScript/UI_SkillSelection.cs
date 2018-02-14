@@ -237,9 +237,14 @@ public class UI_SkillSelection : MonoBehaviour {
         skillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator(skill.GetFlexibleRange());
         skillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetLineOfSight());
         skillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetCastStraightLine());
-        skillValue_Cd   .text = skill.GetCooldown()            .ToString();
-        skillValue_Cpt  .text = skill.GetCastPerTurn()         .ToString();
-        skillValue_Cptpt.text = skill.GetCastPerTurnPerTarget().ToString();
+
+        string skillCooldown             = "-"; if(skill.GetCooldown()             != 0) { skillCooldown             = skill.GetCooldown()            .ToString(); }
+        string skillCastPerTurn          = "-"; if(skill.GetCastPerTurn()          != 0) { skillCastPerTurn          = skill.GetCastPerTurn()         .ToString(); }
+        string skillCastPerTurnPerTarget = "-"; if(skill.GetCastPerTurnPerTarget() != 0) { skillCastPerTurnPerTarget = skill.GetCastPerTurnPerTarget().ToString(); }
+
+        skillValue_Cd   .text = skillCooldown;
+        skillValue_Cpt  .text = skillCastPerTurn;
+        skillValue_Cptpt.text = skillCastPerTurnPerTarget;
     }
 
     private void ClearSkillInfo() {

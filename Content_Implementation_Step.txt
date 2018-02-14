@@ -1,0 +1,34 @@
+SKILL:
+ (own script)
+ 1- Create script
+ 2- Extend Skill
+ 3- Add in Awake() the info
+ 4- Add icon and area of effect in the public field in the editor.
+ 5- Create effect when needed. 
+ 
+ (SkillList script)
+ 6- In "Load Skills" region, add the skill in the list.
+
+************************************************************************************
+
+EFFECT:
+ (own script)
+ 1- Create script
+ 2- Extend Effect
+ 3- Add as CONST the value
+ 4- Add in Awake() the info
+ 5- Add icon in the public field in the editor.
+
+ (Effect script)
+ 6- Add as public CONST the name of the effect.
+
+ (EffectList script)
+ 7- Add as public the new script of the effect and link it in the editor.
+
+ (OnClicEffect)
+ 8- Add in the OnPointerClick methode the CASE of the new effect.
+
+************************************************************************************
+
+EQUIPMENT:
+ ...
