@@ -61,6 +61,7 @@ public class SkillList : MonoBehaviour {
 
         fighterSkills.Add(skills.GetComponent<FighterMeditation_Skill>());
         fighterSkills.Add(skills.GetComponent<FighterAura_Skill>());
+        fighterSkills.Add(skills.GetComponent<Focus_Skill>());
 
     }
 

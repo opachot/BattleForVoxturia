@@ -17,6 +17,9 @@ public class EffectList : MonoBehaviour {
 
     // PUBLIC
     [Header("General Effect")]
+    public Vitality_Effect      vitality_Effect;
+    public Incurable_Effect     incurable_Effect;
+    public Vulnerability_Effect vulnerability_Effect;
     [Space(10)]
 
     [Header("Specific Effect")]

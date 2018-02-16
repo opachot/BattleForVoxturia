@@ -13,12 +13,14 @@ public class Effect : MonoBehaviour {
 	#region DECLARATION
     // CONST
     // General Effect
-
-
+    public const string INCURABLE     = "Incurable";
+    public const string VULNERABILITY = "Vulnerability";
+    public const string VITALITY      = "Vitality";
+    
     // Specific Effect
     public const string FIGHTER_MEDITATION = "Fighter Meditation";
     public const string FIGHTER_AURA       = "Fighter Aura";
-
+    
     // Color
     public const string HEX_COLOR_ACTION     = "#0000FFFF"; // Blue
     public const string HEX_COLOR_MOVEMENT   = "#007300FF"; // Green
@@ -65,5 +67,20 @@ public class Effect : MonoBehaviour {
 
     public Sprite GetIcon() {
         return icon;
+    }
+
+
+    protected string FormatEffectLink(string effectName, string hexColor) {
+        string effectLink = "";
+
+        effectLink = "<color=" + hexColor + ">" +
+                         "<style=Link>" +
+                             "<link=" + effectName + ">" +
+                                 "[[" + effectName + "]]" +
+                             "</link>" +
+                         "</style>" +
+                     "</color>";
+
+        return effectLink;
     }
 }

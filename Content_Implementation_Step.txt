@@ -3,11 +3,12 @@ SKILL:
  1- Create script
  2- Extend Skill
  3- Add in Awake() the info
- 4- Add icon and area of effect in the public field in the editor.
- 5- Create effect when needed. 
+ 4- Add the script in the editor at Skills->[class]Skills.
+ 5- Add icon and area of effect in the public field in the editor.
+ 6- Create effect when needed. 
  
  (SkillList script)
- 6- In "Load Skills" region, add the skill in the list.
+ 7- In "Load Skills" region, add the skill in the list.
 
 ************************************************************************************
 
