@@ -16,6 +16,8 @@ public class Effect : MonoBehaviour {
     public const string INCURABLE     = "Incurable";
     public const string VULNERABILITY = "Vulnerability";
     public const string VITALITY      = "Vitality";
+    public const string POWER         = "Power";
+    public const string PREPARATION   = "Preparation";
     
     // Specific Effect
     public const string FIGHTER_MEDITATION = "Fighter Meditation";

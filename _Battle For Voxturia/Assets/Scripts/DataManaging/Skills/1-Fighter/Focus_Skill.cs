@@ -12,7 +12,7 @@ public class Focus_Skill : Skill {
 
     #region DECLARATION
     // CONST
-    private const int VULNERABILITY_LEVEL = 20;
+    private const int VULNERABILITY_LEVEL   = 20;
     private const int VULNERABILITY_NB_TURN = 2;
 
     private const int INCURABLE_NB_TURN = 2;

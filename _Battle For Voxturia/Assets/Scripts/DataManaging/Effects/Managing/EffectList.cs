@@ -20,6 +20,8 @@ public class EffectList : MonoBehaviour {
     public Vitality_Effect      vitality_Effect;
     public Incurable_Effect     incurable_Effect;
     public Vulnerability_Effect vulnerability_Effect;
+    public Preparation_Effect   preparation_Effect;
+    public Power_Effect         power_Effect;
     [Space(10)]
 
     [Header("Specific Effect")]

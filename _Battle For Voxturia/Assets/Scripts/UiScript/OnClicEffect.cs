@@ -58,6 +58,7 @@ public class OnClicEffect : MonoBehaviour, IPointerClickHandler {
             bool isLoadableEffect = true;
             switch (linkId)
             {
+                // General Effect...............................................
                 case Effect.VITALITY:
                     effectPopUpControl.LoadPopUp(effectList.vitality_Effect);
                     break;
@@ -67,6 +68,13 @@ public class OnClicEffect : MonoBehaviour, IPointerClickHandler {
                 case Effect.VULNERABILITY:
                     effectPopUpControl.LoadPopUp(effectList.vulnerability_Effect);
                     break;
+                case Effect.PREPARATION:
+                    effectPopUpControl.LoadPopUp(effectList.preparation_Effect);
+                    break;
+                case Effect.POWER:
+                    effectPopUpControl.LoadPopUp(effectList.power_Effect);
+                    break;
+                // Specific Effect..............................................
                 case Effect.FIGHTER_AURA:
                     effectPopUpControl.LoadPopUp(effectList.fighterAura_Effect);
                     break;

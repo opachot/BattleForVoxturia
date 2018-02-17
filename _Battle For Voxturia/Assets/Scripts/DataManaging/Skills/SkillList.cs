@@ -62,7 +62,10 @@ public class SkillList : MonoBehaviour {
         fighterSkills.Add(skills.GetComponent<FighterMeditation_Skill>());
         fighterSkills.Add(skills.GetComponent<FighterAura_Skill>());
         fighterSkills.Add(skills.GetComponent<Focus_Skill>());
-
+        fighterSkills.Add(skills.GetComponent<PrecisionStrike_Skill>());
+        fighterSkills.Add(skills.GetComponent<Slide_Skill>());
+        fighterSkills.Add(skills.GetComponent<StrategicRetreat_Skill>());
+        fighterSkills.Add(skills.GetComponent<EagleFlight_Skill>());
     }
 
     private void LoadHunterSkills() {
