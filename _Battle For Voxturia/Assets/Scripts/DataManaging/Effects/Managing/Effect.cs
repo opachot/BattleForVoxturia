@@ -1,7 +1,7 @@
 ﻿/*
 Company: Voxturia Game
 Author:  Sébastien Godbout
-Date:    DAY MONTH YEARS
+Date:    28 January 2018
 */
 
 using System.Collections;
@@ -13,11 +13,13 @@ public class Effect : MonoBehaviour {
 	#region DECLARATION
     // CONST
     // General Effect
+    public const string VITALITY      = "Vitality";
     public const string INCURABLE     = "Incurable";
     public const string VULNERABILITY = "Vulnerability";
-    public const string VITALITY      = "Vitality";
-    public const string POWER         = "Power";
     public const string PREPARATION   = "Preparation";
+    public const string POWER         = "Power";
+    public const string POWERLESS     = "Powerless";
+    public const string UNDERPOWER    = "Under-power";
     
     // Specific Effect
     public const string FIGHTER_MEDITATION = "Fighter Meditation";

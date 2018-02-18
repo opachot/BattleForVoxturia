@@ -66,6 +66,9 @@ public class SkillList : MonoBehaviour {
         fighterSkills.Add(skills.GetComponent<Slide_Skill>());
         fighterSkills.Add(skills.GetComponent<StrategicRetreat_Skill>());
         fighterSkills.Add(skills.GetComponent<EagleFlight_Skill>());
+        fighterSkills.Add(skills.GetComponent<IronPunch_Skill>());
+        fighterSkills.Add(skills.GetComponent<KiBlast_Skill>());
+        fighterSkills.Add(skills.GetComponent<LiquidKick_Skill>());
     }
 
     private void LoadHunterSkills() {

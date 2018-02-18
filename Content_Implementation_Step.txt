@@ -1,21 +1,22 @@
 SKILL:
  (own script)
  1- Create script
- 2- Extend Skill
- 3- Add in Awake() the info
- 4- Add the script in the editor at Skills->[class]Skills.
- 5- Add icon and area of effect in the public field in the editor.
- 6- Create effect when needed. 
+ 2- Extend Skill + Add date
+ 3- Add as CONST the value
+ 4- Add in Awake() the info
+ 5- Add the script in the editor at Skills->[class]Skills.
+ 6- Add icon and area of effect in the public field in the editor.
+ 7- Create effect when needed. 
  
  (SkillList script)
- 7- In "Load Skills" region, add the skill in the list.
+ 8- In "Load Skills" region, add the skill in the list.
 
 ************************************************************************************
 
 EFFECT:
  (own script)
  1- Create script
- 2- Extend Effect
+ 2- Extend Effect + Add date
  3- Add as CONST the value
  4- Add in Awake() the info
  5- Add icon in the public field in the editor.

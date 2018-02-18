@@ -58,29 +58,58 @@ public class OnClicEffect : MonoBehaviour, IPointerClickHandler {
             bool isLoadableEffect = true;
             switch (linkId)
             {
-                // General Effect...............................................
+                // ................... General Effect ...................
+                // Action
+
+                // Movement
+
+                // Sight
+
+                // Life
                 case Effect.VITALITY:
-                    effectPopUpControl.LoadPopUp(effectList.vitality_Effect);
-                    break;
+                    effectPopUpControl.LoadPopUp(effectList.vitality_Effect); break;
+
                 case Effect.INCURABLE:
-                    effectPopUpControl.LoadPopUp(effectList.incurable_Effect);
-                    break;
+                    effectPopUpControl.LoadPopUp(effectList.incurable_Effect); break;
+
+                // Protection
                 case Effect.VULNERABILITY:
-                    effectPopUpControl.LoadPopUp(effectList.vulnerability_Effect);
-                    break;
+                    effectPopUpControl.LoadPopUp(effectList.vulnerability_Effect); break;
+                
+                // Damage
+                case Effect.UNDERPOWER:
+                    effectPopUpControl.LoadPopUp(effectList.underPower_Effect); break;
+
                 case Effect.PREPARATION:
-                    effectPopUpControl.LoadPopUp(effectList.preparation_Effect);
-                    break;
+                    effectPopUpControl.LoadPopUp(effectList.preparation_Effect); break;
+
                 case Effect.POWER:
-                    effectPopUpControl.LoadPopUp(effectList.power_Effect);
-                    break;
-                // Specific Effect..............................................
+                    effectPopUpControl.LoadPopUp(effectList.power_Effect); break;
+
+                case Effect.POWERLESS:
+                    effectPopUpControl.LoadPopUp(effectList.powerless_Effect); break;
+
+                // ................... Specific Effect ...................
+                // Fighter
                 case Effect.FIGHTER_AURA:
-                    effectPopUpControl.LoadPopUp(effectList.fighterAura_Effect);
-                    break;
+                    effectPopUpControl.LoadPopUp(effectList.fighterAura_Effect); break;
+
                 case Effect.FIGHTER_MEDITATION:
-                    effectPopUpControl.LoadPopUp(effectList.fighterMeditation_Effect);
-                    break;
+                    effectPopUpControl.LoadPopUp(effectList.fighterMeditation_Effect); break;
+                
+                // Hunter
+
+                // Ninja
+
+                // Elementalist
+
+                // Samurai
+
+                // Vampire
+
+                // Cyborg
+
+                // ................... Error Handling ...................
                 default:
                     Debug.Log("Effect in OnClicEffect script not defined...");
                     isLoadableEffect = false;

@@ -12,6 +12,7 @@ public class FighterAura_Skill : Skill {
 
 	#region DECLARATION
     // CONST
+    private const int FIGHTER_AURA_NB_TURN = 3;
 
     // PRIVATE
 
@@ -27,10 +28,10 @@ public class FighterAura_Skill : Skill {
 
 		id = 2;
         name = "Fighter Aura";
-        description = "Unbuff " + FighterMeditation_EffecLink + "\n" +
-                      "" + FighterAura_EffecLink + " <b>(3 turns)</b>";
+        description = FighterAura_EffecLink + "<b>" + " (" + FIGHTER_AURA_NB_TURN + " turns)" + "</b>" + "\n" +
+                      "Unbuff " + FighterMeditation_EffecLink;
         lore = "Todo";
-        cost = 200;
+        cost = 250;
 
         apCost = 3;
         mpCost = 0;
