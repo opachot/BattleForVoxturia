@@ -33,4 +33,7 @@ EFFECT:
 ************************************************************************************
 
 EQUIPMENT:
- ...
+ 1- Copy/Paste the sprite + items stats.
+ 2- Change the info from 1...
+ 3- Add in Awake() the item in the list and add the key/value for the sprite.
+ 4- Add sprite in the editor in the Items gameObject.

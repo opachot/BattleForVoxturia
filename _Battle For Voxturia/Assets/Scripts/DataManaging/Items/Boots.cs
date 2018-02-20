@@ -101,46 +101,130 @@ public class Boots : MonoBehaviour {
 
     #region Boots list
     // TEST
-    public Sprite BOOTS_NAME_TEST_icon;
-    private List<string> BOOTS_NAME_TEST = new List<string>() 
+    public Sprite BOOTS_TEST_1_icon;
+    private List<string> BOOTS_TEST_1 = new List<string>() 
     {
-        "666", // Id
+        "1000001", // Id
 
-        "BOOTS_NAME_TEST", // Name
+        "BOOTS_TEST_1", // Name
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
-        "666",       // Level Requirment
+        "1",       // Level Requirment
         "1000",      // shopCost
         "100",       // Cost
 
-        "1", // Ap
+        "0", // Ap
         "2", // Mp
-        "3", // Range
+        "0", // Range
 
-        "1000", // Hp
-        "5000", // Will
+        "50", // Hp
+        "500", // Will
 
-        "100", // Final Damage
-        "50",  // Final Melee Damage
-        "50",  // Final Ranged Damage
+        "0", // Final Damage
+        "0",  // Final Melee Damage
+        "20",  // Final Ranged Damage
 
-        "100", // Power
-        "20",  // Fire Damage
-        "20",  // Water Damage
-        "20",  // Wind Damage
-        "20",  // Ground Damage
-        "20",  // Light Damage
-        "20",  // Dark Damage
+        "0", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
 
-        "10", // Damage Reflection
+        "0", // Damage Reflection
         "25", // Fire Resistance
-        "25", // Water Resistance
-        "25", // Wind Resistance
+        "0", // Water Resistance
+        "0", // Wind Resistance
         "25", // Ground Resistance
-        "25", // Light Resistance
-        "25"  // Dark Resistance
+        "0", // Light Resistance
+        "0"  // Dark Resistance
+    };
+
+    public Sprite BOOTS_TEST_2_icon;
+    private List<string> BOOTS_TEST_2 = new List<string>() 
+    {
+        "1000002", // Id
+
+        "BOOTS_TEST_2", // Name
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
+        "1",       // Level Requirment
+        "1000",      // shopCost
+        "100",       // Cost
+
+        "0", // Ap
+        "2", // Mp
+        "0", // Range
+
+        "50", // Hp
+        "500", // Will
+
+        "0", // Final Damage
+        "0",  // Final Melee Damage
+        "20",  // Final Ranged Damage
+
+        "0", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
+
+        "0", // Damage Reflection
+        "25", // Fire Resistance
+        "0", // Water Resistance
+        "0", // Wind Resistance
+        "25", // Ground Resistance
+        "0", // Light Resistance
+        "0"  // Dark Resistance
+    };
+
+    public Sprite BOOTS_TEST_3_icon;
+    private List<string> BOOTS_TEST_3 = new List<string>() 
+    {
+        "1000003", // Id
+
+        "BOOTS_TEST_3", // Name
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
+        "2",       // Level Requirment
+        "1000",      // shopCost
+        "100",       // Cost
+
+        "0", // Ap
+        "2", // Mp
+        "0", // Range
+
+        "50", // Hp
+        "500", // Will
+
+        "0", // Final Damage
+        "0",  // Final Melee Damage
+        "20",  // Final Ranged Damage
+
+        "0", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
+
+        "0", // Damage Reflection
+        "25", // Fire Resistance
+        "0", // Water Resistance
+        "0", // Wind Resistance
+        "25", // Ground Resistance
+        "0", // Light Resistance
+        "0"  // Dark Resistance
     };
 
     // Level 1
@@ -251,8 +335,14 @@ public class Boots : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        list.Add(BOOTS_NAME_TEST);
-        spriteDictionary.Add(BOOTS_NAME_TEST[NAME_INDEX], BOOTS_NAME_TEST_icon);
+        list.Add(BOOTS_TEST_1);
+        spriteDictionary.Add(BOOTS_TEST_1[NAME_INDEX], BOOTS_TEST_1_icon);
+
+        list.Add(BOOTS_TEST_2);
+        spriteDictionary.Add(BOOTS_TEST_2[NAME_INDEX], BOOTS_TEST_2_icon);
+
+        list.Add(BOOTS_TEST_3);
+        spriteDictionary.Add(BOOTS_TEST_3[NAME_INDEX], BOOTS_TEST_3_icon);
     }
 	
 	void Start() {

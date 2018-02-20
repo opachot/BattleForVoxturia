@@ -101,46 +101,130 @@ public class Jewels : MonoBehaviour {
 
     #region Jewels list
     // TEST
-    public Sprite JEWEL_NAME_TEST_icon;
-    private List<string> JEWEL_NAME_TEST = new List<string>() 
+    public Sprite JEWEL_TEST_1_icon;
+    private List<string> JEWEL_TEST_1 = new List<string>() 
     {
-        "666", // Id
+        "1000001", // Id
 
-        "JEWEL_NAME_TEST", // Name
+        "JEWEL_TEST_1", // Name
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
-        "666",       // Level Requirment
+        "1",       // Level Requirment
         "1000",      // shopCost
-        "100",       // Cost
+        "5000",       // Cost
 
-        "1", // Ap
-        "2", // Mp
-        "3", // Range
+        "2", // Ap
+        "1", // Mp
+        "1", // Range
 
-        "1000", // Hp
-        "5000", // Will
+        "0", // Hp
+        "200", // Will
 
-        "100", // Final Damage
-        "50",  // Final Melee Damage
-        "50",  // Final Ranged Damage
+        "20", // Final Damage
+        "0",  // Final Melee Damage
+        "0",  // Final Ranged Damage
 
-        "100", // Power
-        "20",  // Fire Damage
-        "20",  // Water Damage
-        "20",  // Wind Damage
-        "20",  // Ground Damage
-        "20",  // Light Damage
-        "20",  // Dark Damage
+        "20", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
 
-        "10", // Damage Reflection
-        "25", // Fire Resistance
-        "25", // Water Resistance
-        "25", // Wind Resistance
-        "25", // Ground Resistance
-        "25", // Light Resistance
-        "25"  // Dark Resistance
+        "5", // Damage Reflection
+        "0", // Fire Resistance
+        "0", // Water Resistance
+        "0", // Wind Resistance
+        "0", // Ground Resistance
+        "0", // Light Resistance
+        "0"  // Dark Resistance
+    };
+
+    public Sprite JEWEL_TEST_2_icon;
+    private List<string> JEWEL_TEST_2 = new List<string>() 
+    {
+        "1000002", // Id
+
+        "JEWEL_TEST_2", // Name
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
+        "1",       // Level Requirment
+        "1000",      // shopCost
+        "5000",       // Cost
+
+        "2", // Ap
+        "1", // Mp
+        "1", // Range
+
+        "0", // Hp
+        "200", // Will
+
+        "20", // Final Damage
+        "0",  // Final Melee Damage
+        "0",  // Final Ranged Damage
+
+        "20", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
+
+        "5", // Damage Reflection
+        "0", // Fire Resistance
+        "0", // Water Resistance
+        "0", // Wind Resistance
+        "0", // Ground Resistance
+        "0", // Light Resistance
+        "0"  // Dark Resistance
+    };
+
+    public Sprite JEWEL_TEST_3_icon;
+    private List<string> JEWEL_TEST_3 = new List<string>() 
+    {
+        "1000003", // Id
+
+        "JEWEL_TEST_3", // Name
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
+        "2",       // Level Requirment
+        "1000",      // shopCost
+        "5000",       // Cost
+
+        "2", // Ap
+        "1", // Mp
+        "1", // Range
+
+        "0", // Hp
+        "200", // Will
+
+        "20", // Final Damage
+        "0",  // Final Melee Damage
+        "0",  // Final Ranged Damage
+
+        "20", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
+
+        "5", // Damage Reflection
+        "0", // Fire Resistance
+        "0", // Water Resistance
+        "0", // Wind Resistance
+        "0", // Ground Resistance
+        "0", // Light Resistance
+        "0"  // Dark Resistance
     };
 
     // Level 1
@@ -251,8 +335,14 @@ public class Jewels : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        list.Add(JEWEL_NAME_TEST);
-        spriteDictionary.Add(JEWEL_NAME_TEST[NAME_INDEX], JEWEL_NAME_TEST_icon);
+        list.Add(JEWEL_TEST_1);
+        spriteDictionary.Add(JEWEL_TEST_1[NAME_INDEX], JEWEL_TEST_1_icon);
+
+        list.Add(JEWEL_TEST_2);
+        spriteDictionary.Add(JEWEL_TEST_2[NAME_INDEX], JEWEL_TEST_2_icon);
+
+        list.Add(JEWEL_TEST_3);
+        spriteDictionary.Add(JEWEL_TEST_3[NAME_INDEX], JEWEL_TEST_3_icon);
     }
 	
 	void Start() {

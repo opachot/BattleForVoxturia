@@ -101,46 +101,130 @@ public class Armors : MonoBehaviour {
 
     #region Armors list
     // TEST
-    public Sprite ARMOR_NAME_TEST_icon;
-    private List<string> ARMOR_NAME_TEST = new List<string>() 
+    public Sprite ARMOR_TEST_1_icon;
+    private List<string> ARMOR_TEST_1 = new List<string>() 
     {
-        "666", // Id
+        "1000001", // Id
 
-        "ARMOR_NAME_TEST", // Name
+        "ARMOR_TEST_1", // Name
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
-        "666",       // Level Requirment
+        "1",       // Level Requirment
         "1000",      // shopCost
         "100",       // Cost
 
         "1", // Ap
-        "2", // Mp
-        "3", // Range
+        "0", // Mp
+        "0", // Range
 
-        "1000", // Hp
-        "5000", // Will
+        "300", // Hp
+        "200", // Will
 
-        "100", // Final Damage
-        "50",  // Final Melee Damage
-        "50",  // Final Ranged Damage
+        "0", // Final Damage
+        "15",  // Final Melee Damage
+        "0",  // Final Ranged Damage
 
-        "100", // Power
-        "20",  // Fire Damage
-        "20",  // Water Damage
-        "20",  // Wind Damage
-        "20",  // Ground Damage
-        "20",  // Light Damage
-        "20",  // Dark Damage
+        "75", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
 
         "10", // Damage Reflection
-        "25", // Fire Resistance
-        "25", // Water Resistance
-        "25", // Wind Resistance
-        "25", // Ground Resistance
-        "25", // Light Resistance
-        "25"  // Dark Resistance
+        "20", // Fire Resistance
+        "20", // Water Resistance
+        "20", // Wind Resistance
+        "20", // Ground Resistance
+        "10", // Light Resistance
+        "10"  // Dark Resistance
+    };
+
+    public Sprite ARMOR_TEST_2_icon;
+    private List<string> ARMOR_TEST_2 = new List<string>() 
+    {
+        "1000002", // Id
+
+        "ARMOR_TEST_2", // Name
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
+        "1",       // Level Requirment
+        "1000",      // shopCost
+        "100",       // Cost
+
+        "1", // Ap
+        "0", // Mp
+        "0", // Range
+
+        "300", // Hp
+        "200", // Will
+
+        "0", // Final Damage
+        "15",  // Final Melee Damage
+        "0",  // Final Ranged Damage
+
+        "75", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
+
+        "10", // Damage Reflection
+        "20", // Fire Resistance
+        "20", // Water Resistance
+        "20", // Wind Resistance
+        "20", // Ground Resistance
+        "10", // Light Resistance
+        "10"  // Dark Resistance
+    };
+
+    public Sprite ARMOR_TEST_3_icon;
+    private List<string> ARMOR_TEST_3 = new List<string>() 
+    {
+        "1000003", // Id
+
+        "ARMOR_TEST_3", // Name
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", // Description
+        "2",       // Level Requirment
+        "1000",      // shopCost
+        "100",       // Cost
+
+        "1", // Ap
+        "0", // Mp
+        "0", // Range
+
+        "300", // Hp
+        "200", // Will
+
+        "0", // Final Damage
+        "15",  // Final Melee Damage
+        "0",  // Final Ranged Damage
+
+        "75", // Power
+        "0",  // Fire Damage
+        "0",  // Water Damage
+        "0",  // Wind Damage
+        "0",  // Ground Damage
+        "0",  // Light Damage
+        "0",  // Dark Damage
+
+        "10", // Damage Reflection
+        "20", // Fire Resistance
+        "20", // Water Resistance
+        "20", // Wind Resistance
+        "20", // Ground Resistance
+        "10", // Light Resistance
+        "10"  // Dark Resistance
     };
 
     // Level 1
@@ -251,9 +335,14 @@ public class Armors : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        list.Add(ARMOR_NAME_TEST);
-        spriteDictionary.Add(ARMOR_NAME_TEST[NAME_INDEX], ARMOR_NAME_TEST_icon);
+        list.Add(ARMOR_TEST_1);
+        spriteDictionary.Add(ARMOR_TEST_1[NAME_INDEX], ARMOR_TEST_1_icon);
 
+        list.Add(ARMOR_TEST_2);
+        spriteDictionary.Add(ARMOR_TEST_2[NAME_INDEX], ARMOR_TEST_2_icon);
+
+        list.Add(ARMOR_TEST_3);
+        spriteDictionary.Add(ARMOR_TEST_3[NAME_INDEX], ARMOR_TEST_3_icon);
     }
 	
 	void Start() {
