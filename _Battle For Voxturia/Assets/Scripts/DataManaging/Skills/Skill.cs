@@ -96,6 +96,22 @@ public class Skill : MonoBehaviour {
         return maxRange;
     }
 
+    public string GetRangeDisplay() {
+        string rangeDisplay = "";
+
+        int minRange = GetMinRange();
+        int maxRange = GetMaxRange();
+
+        if(minRange == maxRange) {
+            rangeDisplay = minRange.ToString();
+        }
+        else {
+            rangeDisplay = minRange + "-" + maxRange;
+        }
+
+        return rangeDisplay;
+    }
+
     public bool GetFlexibleRange() {
         return flexibleRange;
     }

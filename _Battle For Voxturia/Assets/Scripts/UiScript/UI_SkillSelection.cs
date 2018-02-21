@@ -233,7 +233,7 @@ public class UI_SkillSelection : MonoBehaviour {
 
         skillValue_Ap   .text = skill.GetApCost().ToString();
         skillValue_Mp   .text = skill.GetMpCost().ToString();
-        skillValue_Range.text = skill.GetMinRange() + "-" + skill.GetMaxRange();
+        skillValue_Range.text = skill.GetRangeDisplay();
         skillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator(skill.GetFlexibleRange());
         skillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetLineOfSight());
         skillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetCastStraightLine());
