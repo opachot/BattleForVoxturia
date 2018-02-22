@@ -50,8 +50,8 @@ public class ResourceLoader : MonoBehaviour {
         [Header("CharacterReserve Screen")]
         public GameObject characterReserveListingElement;
 
-        [Header("SkillSelection Screen")]
-        public GameObject skillListingElement;
+        [Header("Skill & Equipment Selection Screen")]
+        public GameObject skillAndEquipmentListingElement;
 
     #endregion
 

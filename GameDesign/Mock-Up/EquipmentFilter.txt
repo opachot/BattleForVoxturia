@@ -1,0 +1,15 @@
+--InputText--
+min lvl [default 0]
+max lvl [default 50]
+max cost [default null]
+
+-- Checkbox --
+equip type [default all true]
+possible charact [default all true]
+
+
+
+NOTE: Les equipement dans la selection d'equipement pour un personnage
+      devrai etre filtrer selon le context: ex: character lvl 12  devrai filtrer
+      selon minLvl = 0 et MaxLvl = 12 (De base mais peut etre modifier) 
+      (Affichage d'un msg d'erreur si selectionne un equipement trop HL).

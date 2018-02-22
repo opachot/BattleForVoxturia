@@ -14,48 +14,17 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
     #region DECLARATION
     // CONST
-    const int HELMET = 0;
-    const int ARMOR  = 1;
-    const int GREAVE = 2;
-    const int BOOTS  = 3;
-    const int JEWEL  = 4;
+    private const int HELMET = 0;
+    private const int ARMOR  = 1;
+    private const int GREAVE = 2;
+    private const int BOOTS  = 3;
+    private const int JEWEL  = 4;
 
-    const int SKILL_1 = 0;
-    const int SKILL_2 = 1;
-    const int SKILL_3 = 2;
-    const int SKILL_4 = 3;
-    const int SKILL_5 = 4;
-
-    enum ITEM_INFO {
-        ID,
-        NAME,
-        LORE,
-        LVL_R,
-        SHOP_COST,
-        COST,
-        AP,
-        MP,
-        RANGE,
-        HP,
-        WILL,
-        F_DMG,
-        F_M_DMG,
-        F_R_DMG,
-        POWER,
-        FIRE_DMG,
-        WATER_DMG,
-        WIND_DMG,
-        GROUND_DMG,
-        LIGHT_DMG,
-        DARK_DMG,
-        DMG_REFLECT,
-        FIRE_RES,
-        WATER_RES,
-        WIND_RES,
-        GROUND_RES,
-        LIGHT_RES,
-        DARK_RES
-     };
+    private const int SKILL_1 = 0;
+    private const int SKILL_2 = 1;
+    private const int SKILL_3 = 2;
+    private const int SKILL_4 = 3;
+    private const int SKILL_5 = 4;
 
     const int NB_MAX_EFFECT_LINE_PER_SIDE = 12;
 
@@ -217,27 +186,27 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             {
                 case HELMET:
                     item       = helmets.GetItem(itemId);
-                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemName   = item[(int)Items.ITEM_INFO.NAME];
                     itemSprite = helmets.GetIcon(itemName);
                     break;
                 case ARMOR:
                     item       = armors.GetItem(itemId);
-                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemName   = item[(int)Items.ITEM_INFO.NAME];
                     itemSprite = armors.GetIcon(itemName);
                     break;
                 case GREAVE:
                     item       = greaves.GetItem(itemId);
-                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemName   = item[(int)Items.ITEM_INFO.NAME];
                     itemSprite = greaves.GetIcon(itemName);
                     break;
                 case BOOTS:
                     item       = boots.GetItem(itemId);
-                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemName   = item[(int)Items.ITEM_INFO.NAME];
                     itemSprite = boots.GetIcon(itemName);
                     break;
                 case JEWEL:
                     item       = jewels.GetItem(itemId);
-                    itemName   = item[(int)ITEM_INFO.NAME];
+                    itemName   = item[(int)Items.ITEM_INFO.NAME];
                     itemSprite = jewels.GetIcon(itemName);
                     break;
                 default:
@@ -249,10 +218,10 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
             // Set visual element.
             selectedIcon.sprite = itemSprite;
-            selectedCost.text = "Cost: " + item[(int)ITEM_INFO.COST];
+            selectedCost.text = "Cost: " + item[(int)Items.ITEM_INFO.COST];
 
             int nbEffectLine = 0;
-            for(int i = (int)ITEM_INFO.AP; i < item.Count; i++) {
+            for(int i = (int)Items.ITEM_INFO.AP; i < item.Count; i++) {
                 bool isEffectUsed = int.Parse(item[i]) != 0;
 
                 if(isEffectUsed) {
@@ -275,7 +244,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             }
 
             selectedName.text = itemName;
-            selectedLore.text = item[(int)ITEM_INFO.LORE];
+            selectedLore.text = item[(int)Items.ITEM_INFO.LORE];
 
             remove_btn.interactable = true;
         }
@@ -411,7 +380,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
         if(helmetId != 0) {
             List<string> helmet = helmets.GetItem(helmetId);
-            string helmetName = helmet[(int)ITEM_INFO.NAME];
+            string helmetName = helmet[(int)Items.ITEM_INFO.NAME];
 
             Sprite helmetSprite = helmets.GetIcon(helmetName);
 
@@ -427,7 +396,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
         if(armorId != 0) {
             List<string> armor = armors.GetItem(armorId);
-            string armorName = armor[(int)ITEM_INFO.NAME];
+            string armorName = armor[(int)Items.ITEM_INFO.NAME];
 
             Sprite armorSprite = armors.GetIcon(armorName);
 
@@ -443,7 +412,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
         if(greaveId != 0) {
             List<string> greave = greaves.GetItem(greaveId);
-            string greaveName = greave[(int)ITEM_INFO.NAME];
+            string greaveName = greave[(int)Items.ITEM_INFO.NAME];
 
             Sprite greaveSprite = greaves.GetIcon(greaveName);
 
@@ -459,7 +428,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
         if(bootId != 0) {
             List<string> boot = boots.GetItem(bootId);
-            string bootName = boot[(int)ITEM_INFO.NAME];
+            string bootName = boot[(int)Items.ITEM_INFO.NAME];
 
             Sprite bootSprite = boots.GetIcon(bootName);
 
@@ -475,7 +444,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
         if(jewelId != 0) {
             List<string> jewel = jewels.GetItem(jewelId);
-            string jewelName = jewel[(int)ITEM_INFO.NAME];
+            string jewelName = jewel[(int)Items.ITEM_INFO.NAME];
 
             Sprite jewelSprite = jewels.GetIcon(jewelName);
 
@@ -573,7 +542,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         }
         
         // Reduce the character cost.
-        int itemCost = int.Parse(item[(int)ITEM_INFO.COST]);
+        int itemCost = int.Parse(item[(int)Items.ITEM_INFO.COST]);
         charactersData.costs[currentCharacterDataKey] -= itemCost;
 
         // Remove the item from the character data.

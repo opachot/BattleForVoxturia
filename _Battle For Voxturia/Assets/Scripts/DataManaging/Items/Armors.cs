@@ -455,6 +455,10 @@ public class Armors : MonoBehaviour {
 	}
     #endregion
 
+    public List<List<string>> GetAllItems() {
+        return list;
+    }
+
     public List<string> GetItem(int paramId) {
         List<string> wantedItem = null;
 

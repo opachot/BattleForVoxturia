@@ -24,11 +24,11 @@ public class UI_SkillSelection : MonoBehaviour {
     private List<Transform> skillButtonList = new List<Transform>();
 
     private SkillList skillList;
-    List<Skill>       classSkillList;
-    List<Skill>       displayedSkillList = new List<Skill>();
-
-    Skill     selectedSkill;
-    Transform highlightedSkillButton;
+    private List<Skill>       classSkillList;
+    private List<Skill>       displayedSkillList = new List<Skill>();
+            
+    private Skill     selectedSkill;
+    private Transform highlightedSkillButton;
 
     private int currentTeamId;
     private int currentCharacterId;
@@ -191,7 +191,7 @@ public class UI_SkillSelection : MonoBehaviour {
     }
 
     private void InstantiateSkillInList(Skill skill) {
-        Transform listElement = Instantiate(resourceLoader.skillListingElement, list).transform;
+        Transform listElement = Instantiate(resourceLoader.skillAndEquipmentListingElement, list).transform;
 
         FixListElementButton(listElement, skill);
 
@@ -201,8 +201,8 @@ public class UI_SkillSelection : MonoBehaviour {
 
     private void FixListElementButton(Transform listElement, Skill skill) {
         // Set skillButton onClick event.
-        Button skillButton   = listElement.GetComponent<Button>();
-        skillButton.onClick.AddListener(()   => SkillButton(listElement));
+        Button skillButton = listElement.GetComponent<Button>();
+        skillButton.onClick.AddListener(() => SkillButton(listElement));
 
         // Set skill icon.
         Transform iconTransform = listElement.FindDeepChild("Icon");

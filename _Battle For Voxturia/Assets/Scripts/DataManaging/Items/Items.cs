@@ -12,7 +12,7 @@ public class Items : MonoBehaviour {
 
     #region DECLARATION
     // CONST
-    enum ITEM_INFO {
+    public enum ITEM_INFO {
         ID,
         NAME,
         LORE,
@@ -43,7 +43,13 @@ public class Items : MonoBehaviour {
         DARK_RES
      };
 
-    string[] ITEMS_STATS_DESCRIPTIONS = {
+    private const int HELMET = 0;
+    private const int ARMOR  = 1;
+    private const int GREAVE = 2;
+    private const int BOOTS  = 3;
+    private const int JEWEL  = 4;
+
+    private string[] ITEMS_STATS_DESCRIPTIONS = {
         "Id: ",
         "Name: ",
         "Description: ",
@@ -80,7 +86,7 @@ public class Items : MonoBehaviour {
 
     };
 
-    int[] PERCENTAGE_STATS_INDEX = {
+    private int[] PERCENTAGE_STATS_INDEX = {
             (int)ITEM_INFO.F_DMG,
             (int)ITEM_INFO.F_M_DMG,
             (int)ITEM_INFO.F_R_DMG,
@@ -503,6 +509,28 @@ public class Items : MonoBehaviour {
         }
 
         return percentage;
+    }
+
+    public Sprite GetIcon(int itemType, string name) {
+        Sprite icon;
+
+        switch (itemType)
+        {
+            case HELMET:
+                icon = helmets.GetIcon(name); break;
+            case ARMOR:
+                icon = armors.GetIcon(name);  break;
+            case GREAVE:
+                icon = greaves.GetIcon(name); break;
+            case BOOTS:
+                icon = boots.GetIcon(name);   break;
+            case JEWEL:
+                icon = jewels.GetIcon(name);  break;
+            default:
+                icon = new Sprite(); break;
+        }
+
+        return icon;
     }
 
 
