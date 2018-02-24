@@ -48,6 +48,7 @@ public class UI_EquipmentSelection : MonoBehaviour {
 
     // PUBLIC
     public TMP_Text titleScreenText;
+    public Button selectSkill_btn;
 
     #endregion
 
@@ -90,27 +91,27 @@ public class UI_EquipmentSelection : MonoBehaviour {
 
     #region Default buttons
     public void EquipmentButton(Transform clickedEquipmentBtn) {
-        /*int? skillIndex = FindSkillIndex(clickedSkillBtn);
+        int? equipmentIndex = FindEquipmentIndex(clickedEquipmentBtn);
 
-        if(skillIndex != null) {
-            if(selectedSkill != displayedSkillList[(int)skillIndex]) {
-                selectedSkill = displayedSkillList[(int)skillIndex];
+        if(equipmentIndex != null) {
+            if(selectedEquipment != displayedEquipmentList[(int)equipmentIndex]) {
+                selectedEquipment = displayedEquipmentList[(int)equipmentIndex];
                 selectSkill_btn.interactable = true;
                 
-                LoadSkillInfo(selectedSkill);
+                // TODO: LoadEquipmentInfo(selectedEquipment);
             }
             else {
-                selectedSkill = null;
+                selectedEquipment = null;
                 selectSkill_btn.interactable = false;
-                ClearSkillInfo();
+                // TODO: ClearEquipmentInfo();
             }
 
-            ModifieSkillButtonVisual(clickedSkillBtn);
+            ModifieEquipmentButtonVisual(clickedEquipmentBtn);
             HelpingMethod.ClearEventSystemButtonHighlighted();
         }
         else {
-            Debug.Log("Error 404: Skill index not found!");
-        }*/
+            Debug.Log("Error 404: equipment index not found!");
+        }
     }
 
     public void FilterButton() {
@@ -118,9 +119,9 @@ public class UI_EquipmentSelection : MonoBehaviour {
     }
 
     public void SelectButton() {
-        /*charactersData.AddSkill(currentCharacterDataKey, selectedSkill);
+        charactersData.AddEquipment(currentCharacterDataKey, equipmentType, selectedEquipment);
 
-        navigation.NavigateTo_CharacterCustomisation(currentTeamId, currentCharacterId);*/
+        navigation.NavigateTo_CharacterCustomisation(currentTeamId, currentCharacterId);
     }
 
     public void CancelButton() {
@@ -283,6 +284,64 @@ public class UI_EquipmentSelection : MonoBehaviour {
         Transform costTransform = listElement.FindDeepChild("Cost");
         Text      costText      = costTransform.GetComponent<Text>();
         costText.text = "Cost: " + equipmentCost;
+    }
+    #endregion
+
+
+    private int? FindEquipmentIndex(Transform equipmentBtn) {
+        int? equipmentIndex = null;
+
+        for(int i = 0; i < equipmentButtonList.Count; i++) {
+            if(equipmentBtn == equipmentButtonList[i]) {
+                equipmentIndex = i;
+                break;
+            }
+        }
+
+        return equipmentIndex;
+    }
+
+
+    #region Button Highlight Methode
+    private void ModifieEquipmentButtonVisual(Transform clickedEquipmentBtn) {
+        bool isSelecting = clickedEquipmentBtn != highlightedEquipmentButton;
+
+        UnhighlightEquipmentButton();
+        if(isSelecting) {
+            HighlightEquipmentButton(clickedEquipmentBtn);
+        }
+    }
+
+    private void UnhighlightEquipmentButton() {
+        if(highlightedEquipmentButton != null) {
+            Button equipmentButton = highlightedEquipmentButton.GetComponent<Button>();
+            Color  color = new Color(255, 255, 255, 255); // White
+
+            // Define visual indicator.
+            ColorBlock highlightColor  = equipmentButton.colors;
+            highlightColor.normalColor = HelpingMethod.ConvertToDecimalColor(color);
+
+            // Apply visual indicator.
+            equipmentButton.colors = highlightColor;
+
+            highlightedEquipmentButton = null;
+        }
+    }
+
+    private void HighlightEquipmentButton(Transform clickedEquipmentBtn) {
+        if(highlightedEquipmentButton == null) {
+            Button equipmentButton = clickedEquipmentBtn.gameObject.GetComponent<Button>();
+            Color  color = new Color(0, 150, 50, 255); // Green
+
+            // Define visual indicator.
+            ColorBlock highlightColor  = equipmentButton.colors;
+            highlightColor.normalColor = HelpingMethod.ConvertToDecimalColor(color);
+
+            // Apply visual indicator.
+            equipmentButton.colors   = highlightColor;
+
+            highlightedEquipmentButton = clickedEquipmentBtn;
+        }
     }
     #endregion
 

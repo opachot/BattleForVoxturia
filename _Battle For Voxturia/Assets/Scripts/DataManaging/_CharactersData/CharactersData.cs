@@ -292,6 +292,7 @@ public class CharactersData : MonoBehaviour {
     }
     #endregion
 
+
     public void AddSkill(int key, Skill skill) {
         costs[key] += skill.GetCost();
 
@@ -313,6 +314,42 @@ public class CharactersData : MonoBehaviour {
         else {
             Debug.Log("Error: No space available to store the selected skill...");
             costs[key] -= skill.GetCost();
+        }
+
+        teamsData.UpdateValideUsedTeam();
+    }
+
+    public void AddEquipment(int key, int equipmentType, List<string> equipment) {
+        const int HELMET = 0;
+        const int ARMOR  = 1;
+        const int GREAVE = 2;
+        const int BOOTS  = 3;
+        const int JEWEL  = 4;
+
+        int equipmentIdIndex   = (int)Items.ITEM_INFO.ID;
+        int equipmentCostIndex = (int)Items.ITEM_INFO.COST;
+
+        int equipmentId   = int.Parse(equipment[equipmentIdIndex]);
+        int equipmentCost = int.Parse(equipment[equipmentCostIndex]);
+
+        costs[key] += equipmentCost;
+        
+        switch (equipmentType)
+        {
+            case HELMET:
+                helmetIds[key] = equipmentId; break;
+            case ARMOR:
+                armorIds[key]  = equipmentId; break;
+            case GREAVE:
+                greaveIds[key] = equipmentId; break;
+            case BOOTS:
+                bootsIds[key]  = equipmentId; break;
+            case JEWEL:
+                jewelIds[key]  = equipmentId; break;
+            default:
+                Debug.Log("Error 404: Equipment type not found");
+                costs[key] -= equipmentCost;
+                break;
         }
 
         teamsData.UpdateValideUsedTeam();
