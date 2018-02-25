@@ -24,6 +24,7 @@ public class UI_EquipmentSelection : MonoBehaviour {
     private ResourceLoader resourceLoader;
     private Navigation     navigation;
     private CharactersData charactersData;
+    private ErrorManager   errorManager;
 
     private Items items;
     private Helmets helmets;
@@ -43,12 +44,23 @@ public class UI_EquipmentSelection : MonoBehaviour {
     private int currentTeamId;
     private int currentCharacterId;
     private int currentCharacterDataKey;
-    private int currentEquipmentId;
     private int equipmentType; // 0 = Helmet; 1 = Armor; 2 = Greave; 3 = Boots; 4 = Jewel;
 
     // PUBLIC
     public TMP_Text titleScreenText;
     public Button selectSkill_btn;
+    [Space(10)]
+
+    [Header("Skill Info Section")]
+    public Text     infoName;
+    public Image    infoIcon;
+    public TMP_Text infoLvlReq;
+    public TMP_Text infoCost;
+    [Space(5)]
+    public TMP_Text effectAndLoreText;
+    [Space(5)]
+    public Button effect_btn;
+    public Button lore_btn;
 
     #endregion
 
@@ -57,6 +69,7 @@ public class UI_EquipmentSelection : MonoBehaviour {
 		resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
         navigation     = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
         charactersData = GameObject.FindGameObjectWithTag("GameData")       .GetComponent<CharactersData>();
+        errorManager   = GameObject.FindGameObjectWithTag("ErrorManager")   .GetComponent<ErrorManager>();
 
         GameObject itemsHolder = GameObject.FindGameObjectWithTag("Items");
         items   = itemsHolder.GetComponent<Items>();
@@ -72,15 +85,11 @@ public class UI_EquipmentSelection : MonoBehaviour {
 	void Start() {
 		UseExtraParam();
         FindCharacterDataKey();
-        FindcurrentEquiped();
 
         LoadScreenName();
         LoadEquipmentsList();
         
-        // TODO
-        /*
-         * ClearEquipmentInfo();
-        */
+        ClearEquipmentInfo();
 	}
 	
 	void Update() {
@@ -98,12 +107,12 @@ public class UI_EquipmentSelection : MonoBehaviour {
                 selectedEquipment = displayedEquipmentList[(int)equipmentIndex];
                 selectSkill_btn.interactable = true;
                 
-                // TODO: LoadEquipmentInfo(selectedEquipment);
+                LoadEquipmentInfo();
             }
             else {
                 selectedEquipment = null;
                 selectSkill_btn.interactable = false;
-                // TODO: ClearEquipmentInfo();
+                ClearEquipmentInfo();
             }
 
             ModifieEquipmentButtonVisual(clickedEquipmentBtn);
@@ -119,9 +128,19 @@ public class UI_EquipmentSelection : MonoBehaviour {
     }
 
     public void SelectButton() {
-        charactersData.AddEquipment(currentCharacterDataKey, equipmentType, selectedEquipment);
+        int characterLvl        = charactersData.levels[currentCharacterDataKey];
+        int equipmentLvlRequire = int.Parse(selectedEquipment[(int)Items.ITEM_INFO.LVL_R]);
 
-        navigation.NavigateTo_CharacterCustomisation(currentTeamId, currentCharacterId);
+        if(characterLvl >= equipmentLvlRequire) {
+            charactersData.AddEquipment(currentCharacterDataKey, equipmentType, selectedEquipment);
+
+            navigation.NavigateTo_CharacterCustomisation(currentTeamId, currentCharacterId);
+        }
+        else {
+            errorManager.TrowError("Error: Your character level is not high enough to use this equipment. \n" + 
+                                   "Your character level: " + characterLvl + "\n" +
+                                   "The selected equipment required level: " + equipmentLvlRequire);
+        }
     }
 
     public void CancelButton() {
@@ -129,17 +148,17 @@ public class UI_EquipmentSelection : MonoBehaviour {
     }
 
     public void EffectButton() {
-        /*effect_btn.interactable = false;
+        effect_btn.interactable = false;
         lore_btn  .interactable = true;
 
-        LoadEffectOrLore();*/
+        LoadEffectOrLore();
     }
 
     public void LoreButton() {
-        /*lore_btn  .interactable = false;
+        lore_btn  .interactable = false;
         effect_btn.interactable = true;
 
-        LoadEffectOrLore();*/
+        LoadEffectOrLore();
     }
     #endregion
 
@@ -161,28 +180,6 @@ public class UI_EquipmentSelection : MonoBehaviour {
                 break;
             }
         }
-    }
-
-    private void FindcurrentEquiped() {
-        int equipmentId;
-
-        switch (equipmentType)
-        {
-            case HELMET:
-                equipmentId = charactersData.helmetIds[currentCharacterDataKey]; break;
-            case ARMOR:
-                equipmentId = charactersData.armorIds[currentCharacterDataKey];  break;
-            case GREAVE:
-                equipmentId = charactersData.greaveIds[currentCharacterDataKey]; break;
-            case BOOTS:
-                equipmentId = charactersData.bootsIds[currentCharacterDataKey];  break;
-            case JEWEL:
-                equipmentId = charactersData.jewelIds[currentCharacterDataKey];  break;
-            default:
-                equipmentId = 0;                                                 break;
-        }
-
-        currentEquipmentId = equipmentId;
     }
 
 
@@ -215,9 +212,7 @@ public class UI_EquipmentSelection : MonoBehaviour {
         //List<List<string>> filteredList = ;
 
         foreach(List<string> equipment in listOfEquipmentType) {
-            if(!IsEquipmentAlreadyUsed(equipment)) {
-                InstantiateEquipmentInList(equipment);
-            }
+            InstantiateEquipmentInList(equipment);
         }
     }
 
@@ -241,15 +236,6 @@ public class UI_EquipmentSelection : MonoBehaviour {
         }
 
         return listOfEquipmentType;
-    }
-
-    private bool IsEquipmentAlreadyUsed(List<string> equipment) {
-        int equipmentIdIndex = (int)Items.ITEM_INFO.ID;
-        int equipmentId = int.Parse(equipment[equipmentIdIndex]);
-
-        bool isSkillAlreadyUsed = equipmentId == currentEquipmentId;
-
-        return isSkillAlreadyUsed;
     }
 
     private void InstantiateEquipmentInList(List<string> equipment) {
@@ -344,5 +330,68 @@ public class UI_EquipmentSelection : MonoBehaviour {
         }
     }
     #endregion
+
+
+    #region Load Effect or Lore
+    private void LoadEffectOrLore() {
+        if(selectedEquipment != null) {
+            if(effect_btn.interactable) {
+                LoadLore();
+            }
+            else if(lore_btn.interactable) {
+                LoadEffect();
+            }
+            else {
+                Debug.Log("Error: Effect and Lore button not interactable!?!?");
+            }
+        }
+    }
+
+
+    private void LoadEffect() {
+        effectAndLoreText.text = "";
+
+        for(int i = (int)Items.ITEM_INFO.AP; i < selectedEquipment.Count; i++) {
+            bool isEffectUsed = int.Parse(selectedEquipment[i]) != 0;
+
+            if(isEffectUsed) {
+                string effectDescription = items.GetStatsDescription(i);
+                string effectValue       = selectedEquipment[i];
+                string percentDisplay    = items.GetPercentWhenNeeded(i);
+
+                string effectLine = effectDescription + effectValue + percentDisplay + "\n";
+
+                effectAndLoreText.text += effectLine;
+            }
+        }
+    }
+
+    private void LoadLore() {
+        effectAndLoreText.text = selectedEquipment[(int)Items.ITEM_INFO.LORE];
+    }
+    #endregion
+
+
+    private void ClearEquipmentInfo() {
+        infoName.text   = "-";
+        infoIcon.sprite = null;
+        infoLvlReq.text = "Required Levels: -";
+        infoCost.text   = "Cost: -";
+        effectAndLoreText.text = "";
+    }
+
+    private void LoadEquipmentInfo() {
+        string name   = selectedEquipment[(int)Items.ITEM_INFO.NAME];
+        string lvlReq = selectedEquipment[(int)Items.ITEM_INFO.LVL_R];
+        string cost   = selectedEquipment[(int)Items.ITEM_INFO.COST];
+        infoName  .text = name;
+        infoLvlReq.text = "Required Levels: " + lvlReq;
+        infoCost  .text = "Cost: " + cost;
+
+        Sprite icon = items.GetIcon(equipmentType, name);
+        infoIcon.sprite = icon;
+
+        LoadEffectOrLore();
+    }
 
 }
