@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TeamScenes/EquipmentSelection.unity
+- path: Assets/Scenes/_MainScenes/TitleScreen.unity
   isLoaded: 1
   isActive: 1

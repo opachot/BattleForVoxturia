@@ -26,12 +26,9 @@ public class UI_EquipmentSelection : MonoBehaviour {
     private CharactersData charactersData;
     private ErrorManager   errorManager;
 
+    private EquipmentFilter equipmentFilter;
+
     private Items items;
-    private Helmets helmets;
-    private Armors  armors;
-    private Greaves greaves;
-    private Boots   boots;
-    private Jewels  jewels;
 
     private Transform list;
 
@@ -49,6 +46,7 @@ public class UI_EquipmentSelection : MonoBehaviour {
     // PUBLIC
     public TMP_Text titleScreenText;
     public Button selectSkill_btn;
+    public GameObject filter_PopUp;
     [Space(10)]
 
     [Header("Skill Info Section")]
@@ -71,13 +69,10 @@ public class UI_EquipmentSelection : MonoBehaviour {
         charactersData = GameObject.FindGameObjectWithTag("GameData")       .GetComponent<CharactersData>();
         errorManager   = GameObject.FindGameObjectWithTag("ErrorManager")   .GetComponent<ErrorManager>();
 
+        equipmentFilter = filter_PopUp.GetComponent<EquipmentFilter>();
+
         GameObject itemsHolder = GameObject.FindGameObjectWithTag("Items");
         items   = itemsHolder.GetComponent<Items>();
-        helmets = itemsHolder.GetComponent<Helmets>();
-        armors  = itemsHolder.GetComponent<Armors>();
-        greaves = itemsHolder.GetComponent<Greaves>();
-        boots   = itemsHolder.GetComponent<Boots>();
-        jewels  = itemsHolder.GetComponent<Jewels>();
 
         list = GameObject.Find("List").GetComponent<Transform>();
     }
@@ -85,6 +80,7 @@ public class UI_EquipmentSelection : MonoBehaviour {
 	void Start() {
 		UseExtraParam();
         FindCharacterDataKey();
+        InitEquipmentFilter();
 
         LoadScreenName();
         LoadEquipmentsList();
@@ -124,7 +120,7 @@ public class UI_EquipmentSelection : MonoBehaviour {
     }
 
     public void FilterButton() {
-        // TODO. (look in gameDesign MakeUp folder for more detail)
+        filter_PopUp.SetActive(true);
     }
 
     public void SelectButton() {
@@ -160,6 +156,13 @@ public class UI_EquipmentSelection : MonoBehaviour {
 
         LoadEffectOrLore();
     }
+
+
+    public void FilterPopUpApplyButton() {
+        LoadEquipmentsList();
+
+        filter_PopUp.SetActive(false);
+    }
     #endregion
 
 
@@ -180,6 +183,13 @@ public class UI_EquipmentSelection : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    private void InitEquipmentFilter() {
+        int characterLevel = charactersData.levels[currentCharacterDataKey];
+
+        equipmentFilter.DesactivateEquipmentTypeFilter(equipmentType);
+        equipmentFilter.SetMaxLvl(characterLevel);
     }
 
 
@@ -207,35 +217,13 @@ public class UI_EquipmentSelection : MonoBehaviour {
 
     #region Equipment list loading
     private void LoadEquipmentsList() {
-        List<List<string>> listOfEquipmentType = FindListOfCurrentEquipmentType();
-        // TODO: FILTER THAT LIST TO CREATE A NEW LIST BUT FILTERED (discovered equipment and filter). (Add isEquipmentAlreadyUsed in filter?)
-        //List<List<string>> filteredList = ;
+        ClearEquipmentList();
 
-        foreach(List<string> equipment in listOfEquipmentType) {
+        List<List<string>> filteredListOfEquipmentType = equipmentFilter.Filter();
+
+        foreach(List<string> equipment in filteredListOfEquipmentType) {
             InstantiateEquipmentInList(equipment);
         }
-    }
-
-    private List<List<string>> FindListOfCurrentEquipmentType() {
-        List<List<string>> listOfEquipmentType;
-
-        switch (equipmentType)
-        {
-            case HELMET:
-                listOfEquipmentType = helmets.GetAllItems(); break;
-            case ARMOR:
-                listOfEquipmentType = armors.GetAllItems();  break;
-            case GREAVE:
-                listOfEquipmentType = greaves.GetAllItems(); break;
-            case BOOTS:
-                listOfEquipmentType = boots.GetAllItems();   break;
-            case JEWEL:
-                listOfEquipmentType = jewels.GetAllItems();  break;
-            default:
-                listOfEquipmentType = new List<List<string>>(); break;
-        }
-
-        return listOfEquipmentType;
     }
 
     private void InstantiateEquipmentInList(List<string> equipment) {
@@ -270,6 +258,22 @@ public class UI_EquipmentSelection : MonoBehaviour {
         Transform costTransform = listElement.FindDeepChild("Cost");
         Text      costText      = costTransform.GetComponent<Text>();
         costText.text = "Cost: " + equipmentCost;
+    }
+
+    private void ClearEquipmentList() {
+        selectedEquipment          = null;
+        highlightedEquipmentButton = null;
+
+        selectSkill_btn.interactable = false;
+
+        foreach(Transform t in equipmentButtonList) {
+            Destroy(t.gameObject);
+        }
+
+        equipmentButtonList    = new List<Transform>();
+        displayedEquipmentList = new List<List<string>>();
+
+        ClearEquipmentInfo();
     }
     #endregion
 

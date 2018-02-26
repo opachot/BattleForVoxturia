@@ -24,8 +24,8 @@ public class UI_SkillSelection : MonoBehaviour {
     private List<Transform> skillButtonList = new List<Transform>();
 
     private SkillList skillList;
-    private List<Skill>       classSkillList;
-    private List<Skill>       displayedSkillList = new List<Skill>();
+    private List<Skill> classSkillList;
+    private List<Skill> displayedSkillList = new List<Skill>();
             
     private Skill     selectedSkill;
     private Transform highlightedSkillButton;
