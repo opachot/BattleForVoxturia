@@ -41,7 +41,7 @@ public class UI_SkillSelection : MonoBehaviour {
     [Space(10)]
 
     [Header("Skill Info Section")]
-    public Text     skillName;
+    public TMP_Text     skillName;
     public Image    skillIcon;
     public TMP_Text skillCost;
     [Space(5)]
@@ -211,12 +211,12 @@ public class UI_SkillSelection : MonoBehaviour {
 
         // Set skill name.
         Transform nameTransform = listElement.FindDeepChild("Name");
-        Text      nameText      = nameTransform.GetComponent<Text>();
+        TMP_Text  nameText      = nameTransform.GetComponent<TMP_Text>();
         nameText.text = skill.GetName();
 
         // Set skill cost.
         Transform costTransform = listElement.FindDeepChild("Cost");
-        Text      costText      = costTransform.GetComponent<Text>();
+        TMP_Text  costText      = costTransform.GetComponent<TMP_Text>();
         costText.text = "Cost: " + skill.GetCost();
     }
     #endregion

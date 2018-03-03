@@ -50,7 +50,7 @@ public class UI_EquipmentSelection : MonoBehaviour {
     [Space(10)]
 
     [Header("Skill Info Section")]
-    public Text     infoName;
+    public TMP_Text infoName;
     public Image    infoIcon;
     public TMP_Text infoLvlReq;
     public TMP_Text infoCost;
@@ -251,12 +251,12 @@ public class UI_EquipmentSelection : MonoBehaviour {
 
         // Set equipment name.
         Transform nameTransform = listElement.FindDeepChild("Name");
-        Text      nameText      = nameTransform.GetComponent<Text>();
+        TMP_Text  nameText      = nameTransform.GetComponent<TMP_Text>();
         nameText.text = equipmentName;
 
         // Set equipment cost.
         Transform costTransform = listElement.FindDeepChild("Cost");
-        Text      costText      = costTransform.GetComponent<Text>();
+        TMP_Text  costText      = costTransform.GetComponent<TMP_Text>();
         costText.text = "Cost: " + equipmentCost;
     }
 
