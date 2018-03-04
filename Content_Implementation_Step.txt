@@ -1,4 +1,5 @@
 SKILL:
+ Note: Bond de 100 pour les id entre chaque classe. ex: 1-10, 101-110 etc  
  (own script)
  1- Create script
  2- Extend Skill + Add date
@@ -33,6 +34,7 @@ EFFECT:
 ************************************************************************************
 
 EQUIPMENT:
+ Note: Bond de 100 pour les id entre chaque lvl d'item.
  1- Copy/Paste the sprite + items stats.
  2- Change the info from 1...
  3- Add in Awake() the item in the list and add the key/value for the sprite.
