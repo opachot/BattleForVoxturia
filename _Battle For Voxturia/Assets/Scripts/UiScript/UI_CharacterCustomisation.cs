@@ -26,8 +26,6 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     private const int SKILL_4 = 3;
     private const int SKILL_5 = 4;
 
-    const int NB_MAX_EFFECT_LINE_PER_SIDE = 12;
-
     // PRIVATE
     private ResourceLoader resourceLoader;
     private Navigation     navigation;
@@ -45,6 +43,11 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     private int currentTeamId;
     private int currentCharacterId;
     private int currentCharacterDataKey;
+
+    private string selectedEquipmentEffect;
+    private string selectedEquipmentLore;
+    private string selectedSkillEffect;
+    private string selectedSkillLore;
 
     // Info used by the Remove btn.
     bool isEquipmentSelected = false;
@@ -100,19 +103,16 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     public Image selectedIcon;
     public Text  selectedCost;
     [Space(5)]
-    public GameObject equipmentEffectSection;
-    public GameObject skillEffectSection;
-    public GameObject loreSection;
+    public GameObject equipmentView;
+    public GameObject skillView;
     [Space(5)]
-    public Text selectedName;
-    public Text selectedLore;
+    public TMP_Text selectedName;
+    public TMP_Text selectedEquipmentEffectAndLore;
+    public TMP_Text selectedSkillEffectAndLore;
     [Space(5)]
     public Button effect_btn;
     public Button lore_btn;
     public Button remove_btn;
-    [Space(5)]
-    public Text selectedEquipmentEffect_left;
-    public Text selectedEquipmentEffect_right;
     [Space(5)]
     public Text selectedSkillValue_Ap;
     public Text selectedSkillValue_Mp;
@@ -125,9 +125,6 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     public Text selectedSkillValue_Cd;
     public Text selectedSkillValue_Cpt;
     public Text selectedSkillValue_Cptpt;
-    [Space(5)]
-    public TMP_Text selectedSkillEffect;
-
     #endregion
 
 	#region UNITY METHODE
@@ -156,6 +153,8 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
         LoadEquipmentsSection();
         LoadSkillsSection();
+
+        ClearSelectionSection();
 
 		LoadCharacterInfo();
 	}
@@ -219,7 +218,9 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             // Set visual element.
             selectedIcon.sprite = itemSprite;
             selectedCost.text = "Cost: " + item[(int)Items.ITEM_INFO.COST];
+            selectedName.text = itemName;
 
+            // Define Effect.
             int nbEffectLine = 0;
             for(int i = (int)Items.ITEM_INFO.AP; i < item.Count; i++) {
                 bool isEffectUsed = int.Parse(item[i]) != 0;
@@ -230,22 +231,18 @@ public class UI_CharacterCustomisation : MonoBehaviour {
                     string percentDisplay    = items.GetPercentWhenNeeded(i);
 
                     string effectLine = effectDescription + effectValue + percentDisplay + "\n";
-
-                    bool isSpaceAvailableLeftSide = nbEffectLine < NB_MAX_EFFECT_LINE_PER_SIDE;
-                    if(isSpaceAvailableLeftSide) {
-                        selectedEquipmentEffect_left.text += effectLine;
-                    }
-                    else {
-                        selectedEquipmentEffect_right.text += effectLine;
-                    }
+                    selectedEquipmentEffect += effectLine;
 
                     nbEffectLine++;
                 }
             }
 
-            selectedName.text = itemName;
-            selectedLore.text = item[(int)Items.ITEM_INFO.LORE];
+            // Define Lore.
+            selectedEquipmentLore = item[(int)Items.ITEM_INFO.LORE];
 
+            useEffectOrLore();
+
+            equipmentView.SetActive(true);
             remove_btn.interactable = true;
         }
         else {
@@ -272,10 +269,8 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             selectedCost.text = "Cost: " + skill.GetCost();
 
             selectedName.text = skill.GetName();
-            selectedLore.text = skill.GetLore();
 
-            selectedSkillValue_Ap.transform.parent.gameObject.SetActive(true);
-
+            // Show Skill main info.
             selectedSkillValue_Ap   .text = skill.GetApCost().ToString();
             selectedSkillValue_Mp   .text = skill.GetMpCost().ToString();
             selectedSkillValue_Range.text = skill.GetRangeDisplay();
@@ -291,8 +286,13 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             selectedSkillValue_Cpt  .text = skillCastPerTurn;
             selectedSkillValue_Cptpt.text = skillCastPerTurnPerTarget;
 
-            selectedSkillEffect.text = skill.GetDescription();
-            
+            // Define Effect and Lore.
+            selectedSkillEffect = skill.GetDescription();
+            selectedSkillLore   = skill.GetLore();
+
+            useEffectOrLore();
+
+            skillView.SetActive(true);
             remove_btn.interactable = true;
         }
         else {
@@ -302,20 +302,16 @@ public class UI_CharacterCustomisation : MonoBehaviour {
 
     public void EffectButton() {
         effect_btn.interactable = false;
-        loreSection.SetActive(false);
+        lore_btn  .interactable = true;
 
-        lore_btn.interactable = true;
-        equipmentEffectSection.SetActive(true);
-        skillEffectSection    .SetActive(true);
+        useEffectOrLore();
     }
 
     public void LoreButton() {
-        lore_btn.interactable = false;
-        equipmentEffectSection.SetActive(false);
-        skillEffectSection    .SetActive(false);
-
+        lore_btn.  interactable = false;
         effect_btn.interactable = true;
-        loreSection.SetActive(true);
+
+        useEffectOrLore();
     }
 
     public void RemoveButton() {
@@ -598,14 +594,37 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         selectedCost.text = "Cost: -";
         remove_btn.interactable = false;
 
-        selectedSkillValue_Ap.transform.parent.gameObject.SetActive(false);
-        selectedSkillEffect.text = "";
+        equipmentView.SetActive(false);
+        skillView    .SetActive(false);
 
-        selectedEquipmentEffect_left.text  = "";
-        selectedEquipmentEffect_right.text = "";
+        selectedEquipmentEffect = "";
+        selectedEquipmentLore   = "";
+        selectedSkillEffect = "";
+        selectedSkillLore   = "";
 
         selectedName.text = "";
-        selectedLore.text = "";
+        selectedEquipmentEffectAndLore.text = "";
+        selectedSkillEffectAndLore    .text = "";
+    }
+
+    private void useEffectOrLore() {
+        bool isEffect = !effect_btn.interactable;
+        bool isLore   = !lore_btn  .interactable;
+
+        if(isEffect) {
+            selectedEquipmentEffectAndLore.text = selectedEquipmentEffect;
+            selectedSkillEffectAndLore    .text = selectedSkillEffect;
+        }
+        else if(isLore) {
+            selectedEquipmentEffectAndLore.text = selectedEquipmentLore;
+            selectedSkillEffectAndLore    .text = selectedSkillLore;
+        }
+        else {
+            Debug.Log("Error: Effect AND Lore btn aren't interactible!?!");
+        }
+        
+        selectedEquipmentEffectAndLore.AdjustTMPBlockHeight();
+        selectedSkillEffectAndLore    .AdjustTMPBlockHeight();
     }
     #endregion
 

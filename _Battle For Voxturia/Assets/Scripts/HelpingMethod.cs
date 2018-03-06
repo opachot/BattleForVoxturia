@@ -8,6 +8,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
 
 public static class HelpingMethod {
 
@@ -47,6 +49,17 @@ public static class HelpingMethod {
         }
 
         return result;
+    }
+
+    // Used to resize correctly a TMP_Text to fit perfectly in a ScrollView.
+    public static void AdjustTMPBlockHeight(this TMP_Text origine) {
+        // Update the textInfo.lineCount
+        origine.ForceMeshUpdate();
+
+        float width  = origine.rectTransform.sizeDelta.x;
+        float height = origine.GetPreferredValues(origine.text, width, 0).y;
+
+        origine.rectTransform.sizeDelta = new Vector2(width, height);
     }
     #endregion
 
