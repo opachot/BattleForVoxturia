@@ -125,6 +125,9 @@ public class UI_CharacterCustomisation : MonoBehaviour {
     public Text selectedSkillValue_Cd;
     public Text selectedSkillValue_Cpt;
     public Text selectedSkillValue_Cptpt;
+    [Space(5)]
+    public ScrollRect equipmentViewScrollRect;
+    public ScrollRect skillViewScrollRect;
     #endregion
 
 	#region UNITY METHODE
@@ -606,6 +609,7 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         selectedEquipmentEffectAndLore.text = "";
         selectedSkillEffectAndLore    .text = "";
     }
+    #endregion
 
     private void useEffectOrLore() {
         bool isEffect = !effect_btn.interactable;
@@ -625,8 +629,14 @@ public class UI_CharacterCustomisation : MonoBehaviour {
         
         selectedEquipmentEffectAndLore.AdjustTMPBlockHeight();
         selectedSkillEffectAndLore    .AdjustTMPBlockHeight();
+
+        ResetSelectionScrollBar();
     }
-    #endregion
+
+    private void ResetSelectionScrollBar() {
+        equipmentViewScrollRect.ScrollToTop();
+        skillViewScrollRect    .ScrollToTop();
+    }
 
     private void LoadCharacterInfo() {
         string className = charactersData.classNames[currentCharacterDataKey];

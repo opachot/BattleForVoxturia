@@ -61,6 +61,12 @@ public static class HelpingMethod {
 
         origine.rectTransform.sizeDelta = new Vector2(width, height);
     }
+
+    public static void ScrollToTop(this ScrollRect origine) {
+        const int TOP_VALUE = 1;
+
+        origine.verticalNormalizedPosition = TOP_VALUE;
+    }
     #endregion
 
 
