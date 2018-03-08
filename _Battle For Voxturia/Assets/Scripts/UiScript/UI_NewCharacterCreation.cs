@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class UI_NewCharacterCreation : MonoBehaviour {
 
@@ -99,12 +100,14 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
         if(isValideForCreation) {
             charactersData.CreateNewCharacter(currentTeamId, selectedClassName, characterName);
+            int newCharacterId = charactersData.ids.Last();
 
             // Unselect current team if necessary.
             int teamDataKey = teamsData.FindTeamDataKey(currentTeamId);
             teamsData.UpdateValideSelectedTeam(teamDataKey, currentTeamId);
 
-            navigation.NavigateTo_TeamScreen(currentTeamId);
+            //navigation.NavigateTo_TeamScreen(currentTeamId);
+            navigation.NavigateTo_CharacterCustomisation(currentTeamId, newCharacterId);
         }
     }
 

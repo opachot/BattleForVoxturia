@@ -8,6 +8,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using TMPro;
 
 public class UI_TeamList : MonoBehaviour {
 
@@ -32,9 +34,9 @@ public class UI_TeamList : MonoBehaviour {
 
     public Button createTeam_btn;
 
-    public Text deleteConfirmationMessage; 
-    public Text errorMessage;
+    public TMP_Text noTeamText;
 
+    public Text deleteConfirmationMessage;
     #endregion
 
     #region UNITY METHODE
@@ -109,18 +111,13 @@ public class UI_TeamList : MonoBehaviour {
 
         if(isValidTeam) {
             teamsData.CreateNewTeam(newName);
+            int newTeamId = teamsData.ids.Last();
 
-            UpdateTeamsList();
-
-            CloseCreateNewTeamPopUp();
+            navigation.NavigateTo_TeamScreen(newTeamId);
         }
     }
 
     public void CancelCreationButton() {
-        CloseCreateNewTeamPopUp();
-    }
-
-    private void CloseCreateNewTeamPopUp() {
         newTeamName_inputField.text = "";
         createTeam_btn.interactable = false;
 
@@ -159,8 +156,23 @@ public class UI_TeamList : MonoBehaviour {
     private void GenerateTeamsList() {
         int nbRegisteredTeam = teamsData.ids.Count;
 
+        ManagingEmptyListMsg();
+
         for(int i = 0; i < nbRegisteredTeam; i++) {
             InstantiateTeamInTeamsList(i);
+        }
+    }
+
+    private void ManagingEmptyListMsg() {
+        int nbRegisteredTeam = teamsData.ids.Count;
+
+        if(nbRegisteredTeam > 0) {
+            // Hide
+            noTeamText.gameObject.SetActive(false);
+        }
+        else {
+            // Show
+            noTeamText.gameObject.SetActive(true);
         }
     }
 
