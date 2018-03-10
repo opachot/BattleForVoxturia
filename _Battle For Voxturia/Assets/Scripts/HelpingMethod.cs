@@ -56,8 +56,13 @@ public static class HelpingMethod {
         // Update the textInfo.lineCount
         origine.ForceMeshUpdate();
 
+        // Find the margin (used to fix the GetPreferredValues that dosn't take them in consideration...)
+        float marginsLeft   = origine.margin.w;
+        float marginsRight  = origine.margin.y;
+        float totalWidthLostByMargins = marginsLeft + marginsRight;
+
         float width  = origine.rectTransform.sizeDelta.x;
-        float height = origine.GetPreferredValues(origine.text, width, 0).y;
+        float height = origine.GetPreferredValues(origine.text, width - totalWidthLostByMargins, 0).y;
 
         origine.rectTransform.sizeDelta = new Vector2(width, height);
     }

@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Linq;
 
 public class UI_NewCharacterCreation : MonoBehaviour {
@@ -23,22 +24,25 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
     private int currentTeamId;
 
-    private string clickedClassName;
     private string selectedClassName;
-
     private Button selectedClassButton;
 
     // PUBLIC
     public Transform classSection;
+    [Space(10)]
 
-    [System.Serializable] 
-    public struct ClassPopUp {
-        public GameObject popUp;
-        public Image      icon;
-        public Text       name;
-        public Text       description;
-    }
-    public ClassPopUp classPopUp;
+    [Header("Info Section")]
+    public TMP_Text infoName;
+    public Image    infoIcon;
+    public TMP_Text infoCost;
+    [Space(5)]
+    public TMP_Text infoDescription;
+    public ScrollRect descriptionViewScrollRect;
+    [Space(5)]
+    public Image    infoIconRole1;
+    public TMP_Text infoNameRole1;
+    public Image    infoIconRole2;
+    public TMP_Text infoNameRole2;
 
     public Text characterNameInputFieldText;
     #endregion
@@ -55,6 +59,7 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 	void Start() {
 		UseExtraParam();
         DisableAlreadyUsedClass();
+        CleanClassInfo();
 	}
 	
 	void Update() {
@@ -87,9 +92,31 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
     #region Default buttons
     public void ClassButton(string className) {
-        clickedClassName = className;
+        if(className != selectedClassName) {
+            // Reset the visual selection indicator.
+            resetChoosedClass(selectedClassButton);
 
-        LoadClassPopUp();
+            // Update the selected Values.
+            selectedClassName   = className;
+            selectedClassButton = FindChoosedClassButton();
+
+            // Show the visual selection indicator.
+            ShowChoosedClass(selectedClassButton);
+
+            LoadClassInfo();
+        }
+        else {
+            // Reset the visual selection indicator.
+            resetChoosedClass(selectedClassButton);
+
+            // Update the selected Values.
+            selectedClassName   = null;
+            selectedClassButton = null;
+
+            CleanClassInfo();
+        }
+
+        HelpingMethod.ClearEventSystemButtonHighlighted();
     }
 
     public void CreateCharacterButton() {
@@ -106,7 +133,6 @@ public class UI_NewCharacterCreation : MonoBehaviour {
             int teamDataKey = teamsData.FindTeamDataKey(currentTeamId);
             teamsData.UpdateValideSelectedTeam(teamDataKey, currentTeamId);
 
-            //navigation.NavigateTo_TeamScreen(currentTeamId);
             navigation.NavigateTo_CharacterCustomisation(currentTeamId, newCharacterId);
         }
     }
@@ -114,40 +140,7 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     public void CancelButton() {
         navigation.NavigateTo_TeamScreen(currentTeamId);
     }
-
-
-    private void LoadClassPopUp() {
-
-        classPopUp.icon       .sprite = charactersData.GetCharacterIcon(clickedClassName);
-        classPopUp.name       .text   = clickedClassName;
-        classPopUp.description.text   = charactersData.GetCharacterDescription(clickedClassName);
-        
-        classPopUp.popUp.SetActive(true);
-    }
     #endregion
-
-    #region Class popUp Buttons
-    public void ChooseClassButton() {
-        if(selectedClassButton != null) {
-            resetChoosedClass(selectedClassButton);
-        }
-
-        selectedClassName   = clickedClassName;
-        selectedClassButton = FindChoosedClassButton();
-
-        ShowChoosedClass(selectedClassButton);
-
-        CloseClassPopUp();
-    }
-
-    public void CancelClassPopUpButton() {
-        CloseClassPopUp();
-    }
-
-
-    private void CloseClassPopUp() {
-        classPopUp.popUp.SetActive(false);
-    }
 
 
     private Button FindChoosedClassButton() {
@@ -157,22 +150,65 @@ public class UI_NewCharacterCreation : MonoBehaviour {
         return choosedClassButton;
     }
 
-    private void resetChoosedClass(Button classButton) {
-        // Define visual indicator.
-        ColorBlock defaultColor  = classButton.colors;
-        defaultColor.normalColor = HelpingMethod.ConvertToDecimalColor(255, 255, 255, 255);
+    #region Class info section management
+    private void CleanClassInfo() {
+        infoName       .text   = "-";
+        infoIcon       .sprite = null;
+        infoCost.text = "Cost: -";
+        infoDescription.text   = "";
+        
+        // Roles
+        infoIconRole1.sprite = null;
+        infoNameRole1.text   = "-";
+        infoIconRole2.sprite = null;
+        infoNameRole2.text   = "-";
 
-        // Apply visual indicator.
-        classButton.colors = defaultColor;
+        infoDescription.AdjustTMPBlockHeight();
+        descriptionViewScrollRect.ScrollToTop();
+    }
+
+    private void LoadClassInfo() {
+        infoName       .text   = selectedClassName;
+        infoIcon       .sprite = charactersData.GetCharacterIcon(selectedClassName);
+        infoCost.text = "Cost: " + charactersData.GetCost();
+        infoDescription.text   = charactersData.GetCharacterDescription(selectedClassName);
+
+        /* TODO: 
+        // Roles
+        infoIconRole1.sprite = ;
+        infoNameRole1.text   = ;
+        infoIconRole2.sprite = ;
+        infoNameRole2.text   = ;
+        */
+
+        infoDescription.AdjustTMPBlockHeight();
+        descriptionViewScrollRect.ScrollToTop();
+    }
+    #endregion
+
+
+    #region Selection visual indicator management
+    private void resetChoosedClass(Button classButton) {
+        if(classButton != null) {
+            // Define visual indicator.
+            ColorBlock defaultColor  = classButton.colors;
+            defaultColor.normalColor = HelpingMethod.ConvertToDecimalColor(255, 255, 255, 255);
+
+            // Apply visual indicator.
+            classButton.colors = defaultColor;
+        }
+        
     }
 
     private void ShowChoosedClass(Button classButton) {
-        // Define visual indicator.
-        ColorBlock hightlightColor  = classButton.colors;
-        hightlightColor.normalColor = HelpingMethod.ConvertToDecimalColor(0, 150, 50, 255);
+        if(classButton != null) {
+            // Define visual indicator.
+            ColorBlock hightlightColor  = classButton.colors;
+            hightlightColor.normalColor = HelpingMethod.ConvertToDecimalColor(0, 150, 50, 255);
 
-        // Apply visual indicator.
-        classButton.colors = hightlightColor;
+            // Apply visual indicator.
+            classButton.colors = hightlightColor;
+        }
     }
     #endregion
 }
