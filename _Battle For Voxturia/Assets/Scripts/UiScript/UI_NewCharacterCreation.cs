@@ -17,7 +17,9 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     // CONST
 
     // PRIVATE
+    private ResourceLoader resourceLoader;
     private Navigation     navigation;
+    private ClassRole      classRole;
 
     private CharactersData charactersData;
     private TeamsData      teamsData;
@@ -49,7 +51,9 @@ public class UI_NewCharacterCreation : MonoBehaviour {
 
 	#region UNITY METHODE
 	void Awake() {
-        navigation = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
+        resourceLoader = GameObject.FindGameObjectWithTag("RessourceLoader").GetComponent<ResourceLoader>();
+        navigation     = GameObject.FindGameObjectWithTag("Navigation")     .GetComponent<Navigation>();
+        classRole      = gameObject.GetComponent<ClassRole>();
 
         GameObject gameData = GameObject.FindGameObjectWithTag("GameData");
         charactersData      = gameData.GetComponent<CharactersData>();
@@ -154,33 +158,39 @@ public class UI_NewCharacterCreation : MonoBehaviour {
     private void CleanClassInfo() {
         infoName       .text   = "-";
         infoIcon       .sprite = null;
-        infoCost.text = "Cost: -";
+        infoCost       .text   = "Cost: -";
         infoDescription.text   = "";
         
         // Roles
-        infoIconRole1.sprite = null;
+        infoIconRole1.sprite = resourceLoader.emptyIconClassRole;
         infoNameRole1.text   = "-";
-        infoIconRole2.sprite = null;
+        infoIconRole2.sprite = resourceLoader.emptyIconClassRole;
         infoNameRole2.text   = "-";
 
+        // Fix ScrollView
         infoDescription.AdjustTMPBlockHeight();
         descriptionViewScrollRect.ScrollToTop();
     }
 
     private void LoadClassInfo() {
+        const int INDEX_ROLE_1 = 0;
+        const int INDEX_ROLE_2 = 1;
+
         infoName       .text   = selectedClassName;
         infoIcon       .sprite = charactersData.GetCharacterIcon(selectedClassName);
-        infoCost.text = "Cost: " + charactersData.GetCost();
+        infoCost       .text   = "Cost: " + charactersData.GetCost();
         infoDescription.text   = charactersData.GetCharacterDescription(selectedClassName);
 
-        /* TODO: 
         // Roles
-        infoIconRole1.sprite = ;
-        infoNameRole1.text   = ;
-        infoIconRole2.sprite = ;
-        infoNameRole2.text   = ;
-        */
+        Sprite[] rolesSprites = classRole.GetRoleIcons(selectedClassName);
+        string[] rolesNames   = classRole.GetRoleNames(selectedClassName);
 
+        infoIconRole1.sprite = rolesSprites[INDEX_ROLE_1];
+        infoNameRole1.text   = rolesNames  [INDEX_ROLE_1];
+        infoIconRole2.sprite = rolesSprites[INDEX_ROLE_2];
+        infoNameRole2.text   = rolesNames  [INDEX_ROLE_2];
+
+        // Fix ScrollView
         infoDescription.AdjustTMPBlockHeight();
         descriptionViewScrollRect.ScrollToTop();
     }

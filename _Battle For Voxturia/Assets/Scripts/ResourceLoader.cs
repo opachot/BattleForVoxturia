@@ -42,6 +42,19 @@ public class ResourceLoader : MonoBehaviour {
 
     [Header("Skill Icon")]
     public Sprite emptyIconSkill;
+    [Space(10)]
+
+    [Header("Class Roles Icon")]
+    public Sprite emptyIconClassRole;
+    public Sprite iconClassRoleDamageDealer;
+    public Sprite iconClassRoleHealer;
+    public Sprite iconClassRoleBuffer;
+    public Sprite iconClassRoleDebuffer;
+    public Sprite iconClassRoleTank;
+    public Sprite iconClassRoleProtector;
+    public Sprite iconClassRolePositioner;
+    public Sprite iconClassRoleSummoner;
+    public Sprite iconClassRoleResurrecter;
 
     [Header("---------- Specific Screen ----------")]
         [Header("TeamList Screen")]
