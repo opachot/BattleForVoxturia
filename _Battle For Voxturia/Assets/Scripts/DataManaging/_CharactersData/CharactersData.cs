@@ -29,6 +29,35 @@ public class CharactersData : MonoBehaviour {
     const int DEFAULT_BOOTS_ID       = 0;
     const int DEFAULT_JEWEL_ID       = 0;
 
+    const string FIGHTER_DESCRIPTION = "He masters close range combat and have good mobility. \n" +
+                                       "When he hit an opponent, he gets stronger and his opponent gets weaker. \n" +
+                                       "\n" +
+                                       "<size=10><align=center><b><i> ~ Victory is always possible ~ </i></b>";
+
+    const string HUNTER_DESCRIPTION = "He masters long range combat. \n" + 
+                                      "He can reach an opponent that any other character could not. \n" +
+                                      "He also can summon a wolf to help him. \n" +
+                                      "\n" +
+                                      "<align=center><b><i> ~ We breathe, we live ~ </i></b>";
+
+    const string NINJA_DESCRIPTION = "Without a doubt the best poison user. When his opponent realises the danger, it’s already too late. \n" +
+                                     "He has good mobility and can help his team in many ways. \n" +
+                                     "\n" +
+                                     "<size=9><align=center><b><i> ~ In the darkness we bring light ~ </i></b>";
+
+    const string GUARDIAN_DESCRIPTION = "Without a doubt the best protector. \n" +
+                                        "He’s good to prevent opponent to go where they want. \n" +
+                                        "He also can summon a protection spirit. \n" +
+                                        "\n" +
+                                        "<align=center><b><i> ~ One shield, one goal ~ </i></b>";
+
+    const string ELEMENTAL_DESCRIPTION = "His true power is revealed in front of large amount of opponent. \n" +
+                                         "He uses the element to weaken his opponent and to block path. \n" +
+                                         "His elemental power is decupled by the pillar he can summon. \n" +
+                                         "\n" +
+                                         "<size=10><align=center><b><i> ~ Born from the elements and from them they should perish ~ </i></b>";
+
+
     // PRIVATE
     private ResourceLoader resourceLoader;
     private ErrorManager   errorManager;
@@ -394,19 +423,19 @@ public class CharactersData : MonoBehaviour {
         switch (className)
         {
             case "Fighter":
-                description = "TODO: Fighter description";
+                description = FIGHTER_DESCRIPTION;
                 break;
             case "Hunter":
-                description = "TODO: Hunter description";
+                description = HUNTER_DESCRIPTION;
                 break;
             case "Ninja":
-                description = "TODO: Ninja description";
+                description = NINJA_DESCRIPTION;
                 break;
             case "Guardian":
-                description = "TODO: Guardian description";
+                description = GUARDIAN_DESCRIPTION;
                 break;
             case "Elementalist":
-                description = "TODO: Elementalist description";
+                description = ELEMENTAL_DESCRIPTION;
                 break;
             case "GrimReaper":
                 description = "TODO: GrimReaper description";
