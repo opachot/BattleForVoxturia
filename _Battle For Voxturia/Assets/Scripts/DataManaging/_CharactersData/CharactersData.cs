@@ -28,35 +28,63 @@ public class CharactersData : MonoBehaviour {
     const int DEFAULT_GREAVE_ID      = 0;
     const int DEFAULT_BOOTS_ID       = 0;
     const int DEFAULT_JEWEL_ID       = 0;
-
-    const string FIGHTER_DESCRIPTION = "He masters close range combat and have good mobility. \n" +
-                                       "When he hit an opponent, he gets stronger and his opponent gets weaker. \n" +
-                                       "\n" +
-                                       "<size=10><align=center><b><i> ~ Victory is always possible ~ </i></b>";
-
-    const string HUNTER_DESCRIPTION = "He masters long range combat. \n" + 
-                                      "He can reach an opponent that any other character could not. \n" +
-                                      "He also can summon a wolf to help him. \n" +
-                                      "\n" +
-                                      "<align=center><b><i> ~ We breathe, we live ~ </i></b>";
-
-    const string NINJA_DESCRIPTION = "Without a doubt the best poison user. When his opponent realises the danger, it’s already too late. \n" +
-                                     "He has good mobility and can help his team in many ways. \n" +
-                                     "\n" +
-                                     "<size=9><align=center><b><i> ~ In the darkness we bring light ~ </i></b>";
-
-    const string GUARDIAN_DESCRIPTION = "Without a doubt the best protector. \n" +
-                                        "He’s good to prevent opponent to go where they want. \n" +
-                                        "He also can summon a protection spirit. \n" +
-                                        "\n" +
-                                        "<align=center><b><i> ~ One shield, one goal ~ </i></b>";
-
-    const string ELEMENTAL_DESCRIPTION = "His true power is revealed in front of large amount of opponent. \n" +
-                                         "He uses the element to weaken his opponent and to block path. \n" +
-                                         "His elemental power is decupled by the pillar he can summon. \n" +
-                                         "\n" +
-                                         "<size=10><align=center><b><i> ~ Born from the elements and from them they should perish ~ </i></b>";
-
+    
+    // Class Descriptions:
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string FIGHTER_DESCRIPTION    = "He masters close range combat and have good mobility. \n" +
+                                          "When he hit an opponent, he gets stronger and his opponent gets weaker. \n" +
+                                          "\n" +
+                                          "<size=10><align=center><b><i> ~ Victory is always possible ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string HUNTER_DESCRIPTION     = "He masters long range combat. \n" + 
+                                          "He can reach an opponent that any other character could not. \n" +
+                                          "He also can summon a wolf to help him. \n" +
+                                          "\n" +
+                                          "<align=center><b><i> ~ We breathe, we live ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string NINJA_DESCRIPTION      = "Without a doubt the best poison user. When his opponent realises the danger, it’s already too late. \n" +
+                                          "He has good mobility and can help his team in many ways. \n" +
+                                          "\n" +
+                                          "<size=9><align=center><b><i> ~ In the darkness we bring light ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string GUARDIAN_DESCRIPTION   = "Without a doubt the best protector. \n" +
+                                          "He’s good to prevent opponent to go where they want. \n" +
+                                          "He also can summon a protection spirit. \n" +
+                                          "\n" +
+                                          "<align=center><b><i> ~ One shield, one goal ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string ELEMENTAL_DESCRIPTION  = "His true power is revealed in front of large amount of opponent. \n" +
+                                          "He uses the elements to weaken his opponent and to block path. \n" +
+                                          "His elemental power is decupled by the pillar he can summon. \n" +
+                                          "\n" +
+                                          "<size=10><align=center><b><i> ~ Born from the elements and from them they should perish ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string GRIMREAPER_DESCRIPTION = "For him, death is only where the fun begins. \n" +
+                                          "He can revive death and control the field, turning it into  a cemetery. \n" +
+                                          "He roams on the field, tormenting his opponents, waiting to collect their souls. \n" +
+                                          "\n" +
+                                          "<align=center><b><i> ~ Death brings salvation ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string DRUID_DESCRIPTION      = "He masters the art of healing and manipulating effect duration. \n" +
+                                          "With many types of potion and ritual, he protects his allies. \n" +
+                                          "With his magic, he can create fountains that can regenerate and even prevent death. \n" +
+                                          "\n" +
+                                          "<align=center><b><i> ~ Spirits watch over us ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string SAMURAI_DESCRIPTION    = "He’s a multi talent warrior. \n" +
+                                          "Sometime holding the front line, others time supporting troop behind it. \n" +
+                                          "The more he trains the stronger he gets. \n" +
+                                          "For him, honor goes before his own life. \n" +
+                                          "\n" +
+                                          "<align=center><b><i> ~ Pride and honor ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string VAMPIRE_DESCRIPTION    = "His robustness come from others bloods and he uses shadows at his advantage. \n" +
+                                          "As time pass, he gets stronger by using his dead allies to raise his army. \n" +
+                                          "\n" +
+                                          "<align=center><b><i> ~ Bound by the blood ~ </i></b>";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    const string CYBORG_DESCRIPTION     = "TODO";
+    //----------------------------------------------------------------------------------------------------------------------------------------------
 
     // PRIVATE
     private ResourceLoader resourceLoader;
@@ -438,19 +466,19 @@ public class CharactersData : MonoBehaviour {
                 description = ELEMENTAL_DESCRIPTION;
                 break;
             case "GrimReaper":
-                description = "TODO: GrimReaper description";
+                description = GRIMREAPER_DESCRIPTION;
                 break;
             case "Druid":
-                description = "TODO: Druid description";
+                description = DRUID_DESCRIPTION;
                 break;
             case "Samurai":
-                description = "TODO: Samurai description";
+                description = SAMURAI_DESCRIPTION;
                 break;
             case "Vampire":
-                description = "TODO: Vampire description";
+                description = VAMPIRE_DESCRIPTION;
                 break;
             case "Cyborg":
-                description = "TODO: Cyborg description";
+                description = CYBORG_DESCRIPTION;
                 break;
             default:
                 description = "Error 404: Class description not found.";

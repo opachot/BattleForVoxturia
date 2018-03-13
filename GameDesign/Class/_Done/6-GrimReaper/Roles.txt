@@ -1,2 +1,2 @@
-Resurrecter 
 Debuffer
+Resurrecter

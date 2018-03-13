@@ -75,8 +75,8 @@ public class ClassRole : MonoBehaviour {
                 icons[INDEX_ROLE_2] = resourceLoader.iconClassRoleSummoner;
                 break;
             case "GrimReaper":
-                icons[INDEX_ROLE_1] = resourceLoader.iconClassRoleResurrecter;
-                icons[INDEX_ROLE_2] = resourceLoader.iconClassRoleDebuffer;
+                icons[INDEX_ROLE_1] = resourceLoader.iconClassRoleDebuffer;
+                icons[INDEX_ROLE_2] = resourceLoader.iconClassRoleResurrecter;
                 break;
             case "Druid":
                 icons[INDEX_ROLE_1] = resourceLoader.iconClassRoleHealer;
@@ -128,8 +128,8 @@ public class ClassRole : MonoBehaviour {
                 names[INDEX_ROLE_2] = SUMMONER;
                 break;
             case "GrimReaper":
-                names[INDEX_ROLE_1] = RESURRECTER;
-                names[INDEX_ROLE_2] = DEBUFFER;
+                names[INDEX_ROLE_1] = DEBUFFER;
+                names[INDEX_ROLE_2] = RESURRECTER;
                 break;
             case "Druid":
                 names[INDEX_ROLE_1] = HEALER;
