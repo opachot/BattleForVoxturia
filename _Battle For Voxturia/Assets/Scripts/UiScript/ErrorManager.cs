@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class ErrorManager : MonoBehaviour {
@@ -22,7 +23,7 @@ public class ErrorManager : MonoBehaviour {
     [System.Serializable] 
     public struct ErrorPopUp {
         public GameObject popUp;
-        public Text       message;
+        public TMP_Text   message;
     }
     public ErrorPopUp errorPopUp;
     #endregion

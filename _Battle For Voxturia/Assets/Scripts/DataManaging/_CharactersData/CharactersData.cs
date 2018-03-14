@@ -33,30 +33,30 @@ public class CharactersData : MonoBehaviour {
     //----------------------------------------------------------------------------------------------------------------------------------------------
     const string FIGHTER_DESCRIPTION    = "He masters close range combat and have good mobility. \n" +
                                           "When he hit an opponent, he gets stronger and his opponent gets weaker. \n" +
-                                          "\n" +
+                                          "\n \n \n \n" +
                                           "<size=10><align=center><b><i> ~ Victory is always possible ~ </i></b>";
     //----------------------------------------------------------------------------------------------------------------------------------------------
     const string HUNTER_DESCRIPTION     = "He masters long range combat. \n" + 
                                           "He can reach an opponent that any other character could not. \n" +
                                           "He also can summon a wolf to help him. \n" +
-                                          "\n" +
+                                          "\n \n \n \n" +
                                           "<align=center><b><i> ~ We breathe, we live ~ </i></b>";
     //----------------------------------------------------------------------------------------------------------------------------------------------
     const string NINJA_DESCRIPTION      = "Without a doubt the best poison user. When his opponent realises the danger, it’s already too late. \n" +
                                           "He has good mobility and can help his team in many ways. \n" +
-                                          "\n" +
+                                          "\n \n \n \n" +
                                           "<size=9><align=center><b><i> ~ In the darkness we bring light ~ </i></b>";
     //----------------------------------------------------------------------------------------------------------------------------------------------
     const string GUARDIAN_DESCRIPTION   = "Without a doubt the best protector. \n" +
                                           "He’s good to prevent opponent to go where they want. \n" +
                                           "He also can summon a protection spirit. \n" +
-                                          "\n" +
+                                          "\n \n \n \n" +
                                           "<align=center><b><i> ~ One shield, one goal ~ </i></b>";
     //----------------------------------------------------------------------------------------------------------------------------------------------
     const string ELEMENTAL_DESCRIPTION  = "His true power is revealed in front of large amount of opponent. \n" +
                                           "He uses the elements to weaken his opponent and to block path. \n" +
                                           "His elemental power is decupled by the pillar he can summon. \n" +
-                                          "\n" +
+                                          "\n \n" +
                                           "<size=10><align=center><b><i> ~ Born from the elements and from them they should perish ~ </i></b>";
     //----------------------------------------------------------------------------------------------------------------------------------------------
     const string GRIMREAPER_DESCRIPTION = "For him, death is only where the fun begins. \n" +
@@ -68,7 +68,7 @@ public class CharactersData : MonoBehaviour {
     const string DRUID_DESCRIPTION      = "He masters the art of healing and manipulating effect duration. \n" +
                                           "With many types of potion and ritual, he protects his allies. \n" +
                                           "With his magic, he can create fountains that can regenerate and even prevent death. \n" +
-                                          "\n" +
+                                          "\n \n" +
                                           "<align=center><b><i> ~ Spirits watch over us ~ </i></b>";
     //----------------------------------------------------------------------------------------------------------------------------------------------
     const string SAMURAI_DESCRIPTION    = "He’s a multi talent warrior. \n" +
@@ -80,10 +80,13 @@ public class CharactersData : MonoBehaviour {
     //----------------------------------------------------------------------------------------------------------------------------------------------
     const string VAMPIRE_DESCRIPTION    = "His robustness come from others bloods and he uses shadows at his advantage. \n" +
                                           "As time pass, he gets stronger by using his dead allies to raise his army. \n" +
-                                          "\n" +
+                                          "\n \n \n" +
                                           "<align=center><b><i> ~ Bound by the blood ~ </i></b>";
     //----------------------------------------------------------------------------------------------------------------------------------------------
-    const string CYBORG_DESCRIPTION     = "TODO";
+    const string CYBORG_DESCRIPTION     = "In a never-ending quest to gather energy, most of his ability rely on it. Without it, he’s outclassed by others life form. \n" +
+                                          "With enough energy, he can turn into a true killing machine or into a protector. \n" +
+                                          "\n" +
+                                          "<align=center><b><i> ~ Always progress, always move forward ~ </i></b>";
     //----------------------------------------------------------------------------------------------------------------------------------------------
 
     // PRIVATE
