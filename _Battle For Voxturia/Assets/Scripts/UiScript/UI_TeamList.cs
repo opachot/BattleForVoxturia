@@ -36,7 +36,7 @@ public class UI_TeamList : MonoBehaviour {
 
     public TMP_Text noTeamText;
 
-    public Text deleteConfirmationMessage;
+    public TMP_Text deleteConfirmationMessage;
     #endregion
 
     #region UNITY METHODE
