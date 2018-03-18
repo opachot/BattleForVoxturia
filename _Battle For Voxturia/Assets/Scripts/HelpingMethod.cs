@@ -96,7 +96,20 @@ public static class HelpingMethod {
     }
     #endregion
 
-    public static string ConvertBoolToIndicator(bool tf) {
+    public static string ConvertBoolToIndicator1(bool tf) {
+        string indicator = "";
+
+        if(tf) {
+            indicator = "O";
+        }
+        else {
+            indicator = "X";
+        }
+
+        return indicator;
+    }
+
+    public static string ConvertBoolToIndicator2(bool tf) {
         string indicator = "";
 
         if(tf) {

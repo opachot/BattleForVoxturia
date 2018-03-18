@@ -50,18 +50,17 @@ public class UI_SkillSelection : MonoBehaviour {
     [Space(5)]
     public TMP_Text effectAndLoreText;
     [Space(5)]
-    public Text skillValue_Ap;
-    public Text skillValue_Mp;
-    public Text skillValue_Range;
+    public TMP_Text skillValue_Ap;
+    public TMP_Text skillValue_Mp;
+    public TMP_Text skillValue_Range;
 
-    public Text skillValue_UpPo;
-    public Text skillValue_Fov;
-    public Text skillValue_Cil;
+    public TMP_Text skillValue_UpPo;
+    public TMP_Text skillValue_Fov;
+    public TMP_Text skillValue_Cil;
 
-    public Text skillValue_Cd;
-    public Text skillValue_Cpt;
-    public Text skillValue_Cptpt;
-
+    public TMP_Text skillValue_Cd;
+    public TMP_Text skillValue_Cpt;
+    public TMP_Text skillValue_Cptpt;
     #endregion
 
 	#region UNITY METHODE
@@ -234,9 +233,9 @@ public class UI_SkillSelection : MonoBehaviour {
         skillValue_Ap   .text = skill.GetApCost().ToString();
         skillValue_Mp   .text = skill.GetMpCost().ToString();
         skillValue_Range.text = skill.GetRangeDisplay();
-        skillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator(skill.GetFlexibleRange());
-        skillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetLineOfSight());
-        skillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetCastStraightLine());
+        skillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator1(skill.GetFlexibleRange());
+        skillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator1(skill.GetLineOfSight());
+        skillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator1(skill.GetCastStraightLine());
 
         string skillCooldown             = "-"; if(skill.GetCooldown()             != 0) { skillCooldown             = skill.GetCooldown()            .ToString(); }
         string skillCastPerTurn          = "-"; if(skill.GetCastPerTurn()          != 0) { skillCastPerTurn          = skill.GetCastPerTurn()         .ToString(); }

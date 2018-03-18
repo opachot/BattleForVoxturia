@@ -277,9 +277,9 @@ public class UI_CharacterCustomisation : MonoBehaviour {
             selectedSkillValue_Ap   .text = skill.GetApCost().ToString();
             selectedSkillValue_Mp   .text = skill.GetMpCost().ToString();
             selectedSkillValue_Range.text = skill.GetRangeDisplay();
-            selectedSkillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator(skill.GetFlexibleRange());
-            selectedSkillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetLineOfSight());
-            selectedSkillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator(skill.GetCastStraightLine());
+            selectedSkillValue_UpPo .text = HelpingMethod.ConvertBoolToIndicator1(skill.GetFlexibleRange());
+            selectedSkillValue_Fov  .text = HelpingMethod.ConvertBoolToIndicator1(skill.GetLineOfSight());
+            selectedSkillValue_Cil  .text = HelpingMethod.ConvertBoolToIndicator1(skill.GetCastStraightLine());
 
             string skillCooldown             = "-"; if(skill.GetCooldown()             != 0) { skillCooldown             = skill.GetCooldown()            .ToString(); }
             string skillCastPerTurn          = "-"; if(skill.GetCastPerTurn()          != 0) { skillCastPerTurn          = skill.GetCastPerTurn()         .ToString(); }
