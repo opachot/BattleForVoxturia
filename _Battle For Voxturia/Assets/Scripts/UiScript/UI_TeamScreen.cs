@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_TeamScreen : MonoBehaviour {
 
@@ -42,18 +43,17 @@ public class UI_TeamScreen : MonoBehaviour {
 
     public Button selectTeam_btn;
 
-    public Text screenTitle;
+    public TMP_Text screenTitle;
 
-    public Text statsLevel;
-    public Text statsXp;
-    public Text statsVictory;
-    public Text statsDefeat;
-    public Text statsMatch;
-    public Text statsVDRatio;
-    public Text statsCost;
+    public TMP_Text statsLevel;
+    public TMP_Text statsXp;
+    public TMP_Text statsVictory;
+    public TMP_Text statsDefeat;
+    public TMP_Text statsMatch;
+    public TMP_Text statsVDRatio;
+    public TMP_Text statsCost;
 
-    public Text deleteConfirmationMessage;
-    public Text errorMessage;
+    public TMP_Text deleteConfirmationMessage;
 
     #endregion
 
@@ -160,8 +160,8 @@ public class UI_TeamScreen : MonoBehaviour {
 
             Image      buttonIcon    = charactersButtons[i].transform.Find("Icon")         .GetComponent<Image>();
             GameObject nameBox       = charactersButtons[i].transform.Find("NameBox")      .gameObject;
-            Text       nameBoxText   = nameBox             .transform.Find("CharacterName").GetComponent<Text>();
-            Text       characterCost = charactersButtons[i].transform.Find("CharacterCost").GetComponent<Text>();
+            TMP_Text   nameBoxText   = nameBox             .transform.Find("CharacterName").GetComponent<TMP_Text>();
+            TMP_Text   characterCost = charactersButtons[i].transform.Find("CharacterCost").GetComponent<TMP_Text>();
 
             if(isCharacterExisting) {
                 // Set class icon.
@@ -361,10 +361,10 @@ public class UI_TeamScreen : MonoBehaviour {
         bool isTeamAlreadySelected = currentTeamId == teamsData.usedTeamId;
 
         if(isTeamAlreadySelected) {
-            selectTeam_btn.transform.Find("Text").GetComponent<Text>().text = "Unselect team";
+            selectTeam_btn.transform.Find("Text").GetComponent<TMP_Text>().text = "Unselect team";
         }
         else {
-            selectTeam_btn.transform.Find("Text").GetComponent<Text>().text = "Select team";
+            selectTeam_btn.transform.Find("Text").GetComponent<TMP_Text>().text = "Select team";
         }
     }
 }

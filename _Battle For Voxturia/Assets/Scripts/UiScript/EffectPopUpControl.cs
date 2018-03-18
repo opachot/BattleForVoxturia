@@ -1,7 +1,7 @@
 ﻿/*
 Company: Voxturia Game
 Author:  Sébastien Godbout
-Date:    DAY MONTH YEARS
+Date:    29 January 2017
 */
 
 using System.Collections;
@@ -18,11 +18,11 @@ public class EffectPopUpControl : MonoBehaviour {
     // PRIVATE
 
     // PUBLIC
-    public Text     effectName;
+    public TMP_Text effectName;
     public TMP_Text effectDescription;
 
     public Image    effectIcon;
-    public Text     effectMaxLvl;
+    public TMP_Text effectMaxLvl;
 
     #endregion
 

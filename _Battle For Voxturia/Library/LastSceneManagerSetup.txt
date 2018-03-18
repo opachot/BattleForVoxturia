@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TeamScenes/SkillSelection.unity
+- path: Assets/Scenes/TeamScenes/CharacterReserve.unity
   isLoaded: 1
   isActive: 1
