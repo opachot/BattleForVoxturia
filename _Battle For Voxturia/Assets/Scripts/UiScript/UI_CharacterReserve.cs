@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.EventSystems;
 
 public class UI_CharacterReserve : MonoBehaviour {
@@ -39,22 +40,22 @@ public class UI_CharacterReserve : MonoBehaviour {
     private Button highlightedCharacterButton;
 
     // PUBLIC
-    public Button     selectCharacter_btn;
-    public Button     deleteCharacter_btn;
+    public Button selectCharacter_btn;
+    public Button deleteCharacter_btn;
     [Space(10)]
 
     [Header("Delete Confirmation Pop-Up")]
     public GameObject deleteConfirmation_PopUp;
-    public Text       deleteConfirmationMessage;
+    public TMP_Text   deleteConfirmationMessage;
     [Space(10)]
 
     [Header("Character Info Section")]
-    public Text       characterName;
-    public Image      characterIcon;
+    public TMP_Text characterName;
+    public Image    characterIcon;
+    public TMP_Text characterCost;
     [Space(5)]
     public Text level;
     public Text xp;
-    public Text cost;
     [Space(5)]
     public Text ap;
     public Text mp;
@@ -233,8 +234,11 @@ public class UI_CharacterReserve : MonoBehaviour {
         string currentXp = charactersData.currentXps[selectedCharacterDataKey].ToString();
         string goalXp    = charactersData.goalXps   [selectedCharacterDataKey].ToString();
 
+        int totalCost = charactersData.costs[selectedCharacterDataKey];
+
         characterName.text   = charactersData.names [selectedCharacterDataKey];
         characterIcon.sprite = charactersData.GetCharacterIcon(className);
+        characterCost.text   = "Cost: " + totalCost.ToString();
 
         level.text = charactersData.levels[selectedCharacterDataKey].ToString();
         xp   .text = currentXp + "/" + goalXp;
@@ -244,8 +248,6 @@ public class UI_CharacterReserve : MonoBehaviour {
         List<string> greave = greaves.GetItem(charactersData.greaveIds[selectedCharacterDataKey]);
         List<string> boot   = boots  .GetItem(charactersData.bootsIds [selectedCharacterDataKey]);
         List<string> jewel  = jewels .GetItem(charactersData.jewelIds [selectedCharacterDataKey]);
-
-        int totalCost = charactersData.costs[selectedCharacterDataKey];
 
         int totalAp    = charactersData.GetAp() + items.GetTotalAp   (helmet, armor, greave, boot, jewel);
         int totalMp    = charactersData.GetMp() + items.GetTotalMp   (helmet, armor, greave, boot, jewel);
@@ -273,9 +275,6 @@ public class UI_CharacterReserve : MonoBehaviour {
         int totalGroundResistance = charactersData.GetGroundResistance(className) + items.GetTotalGroundResistance(helmet, armor, greave, boot, jewel);
         int totalLightResistance  = charactersData.GetLightResistance (className) + items.GetTotalLightResistance (helmet, armor, greave, boot, jewel);
         int totalDarkResistance   = charactersData.GetDarkResistance  (className) + items.GetTotalDarkResistance  (helmet, armor, greave, boot, jewel);
-
-
-        cost.text = totalCost.ToString();
 
         ap   .text = totalAp   .ToString();
         mp   .text = totalMp   .ToString();
@@ -396,10 +395,10 @@ public class UI_CharacterReserve : MonoBehaviour {
     private void ResetCharacterInfoSection() {
         characterName.text = "-";
         characterIcon.sprite = resourceLoader.emptyIconClass;
+        characterCost.text = "Cost: -";
 
         level.text = "-";
         xp   .text = "-/-";
-        cost .text = "-";
         
         ap   .text = "-";
         mp   .text = "-";

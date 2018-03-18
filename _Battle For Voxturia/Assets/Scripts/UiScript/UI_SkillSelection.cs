@@ -41,7 +41,7 @@ public class UI_SkillSelection : MonoBehaviour {
     [Space(10)]
 
     [Header("Skill Info Section")]
-    public TMP_Text     skillName;
+    public TMP_Text skillName;
     public Image    skillIcon;
     public TMP_Text skillCost;
     [Space(5)]
